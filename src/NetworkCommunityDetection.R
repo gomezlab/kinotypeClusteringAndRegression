@@ -2,6 +2,7 @@
 
 #install.packages("ProNet")
 #install.packages("igraph")
+#install.packages('purrr')
 
 #args<-commandArgs(TRUE) #args[1]==input network /path/to/file, args[2]==yes/no weighted, args[3]==output subnetworks path/to/file
 library("igraph")
@@ -38,10 +39,60 @@ sc <- spinglass.community(mainG, spins=100)
 
 numnodes <- length(sc$names)
 votes <- mat.or.vec(numnodes,numnodes)
-numiter <- 20
+numiter <- 1000
+dim(votes)
+
+## do some parallelization
+library('parallel')
+library('purrr')
+
+single_spinglass <- function(numiter, g, numnodes, spins = 100){
+  local_votes <- mat.or.vec(numnodes, numnodes)
+  for (k in 1:numiter){
+    sc <- igraph::spinglass.community(g, spins=100)
+    for (i in 1:numnodes){
+      local_votes[i,] <- (sc$membership == sc$membership[i])
+    }
+  }
+  return(local_votes)
+}
+
+para_spinglass <- function(g, numnodes, numiter = 1000, spins = 100, cores=max(detectCores()-1,1)){
+  # create a list of results and a list of parameters for the spinglasses
+  numiter_params = c(rep(numiter %/% cores))
+  
+  # add one to the number of iterations per core if the total number of iterations
+  # is not divisible by the number of cores
+  if(numiter %% cores > 0){
+    numiter_params[1:(numiter%%cores)] = numiter_params[1:(numiter%%cores)] + 1
+  }
+  
+  # start up a cluster
+  c1 <- makeCluster(cores)
+  votes <- Reduce('+', parLapply(cl = c1, X = numiter_params, fun = single_spinglass, g=mainG, numnodes=numnodes))
+  stopCluster(c1)
+  
+  return(votes)
+}
+
+print(Sys.time())
+votes <- para_spinglass(g=mainG, numnodes = numnodes, numiter = 100)
+print(Sys.time())
+
+temp <- function(x){
+  return(exp(exp(x)))
+}
+
+c2 <-makeCluster(11)
+t <- parLapply(cl = c2, X=c(rep(1:100, 100000)), fun = temp)
+stopCluster(c2)
+
+votes <- mat.or.vec(numnodes, numnodes)
+
 
 # this does numiter iterations of the spinglass
-for (k in 1:numiter){
+print(Sys.time())
+for (k in 1:10){
 	sc <- spinglass.community(mainG, spins=100)
 	for (i in 1:numnodes){
 		for (j in 1:numnodes) {
@@ -51,6 +102,7 @@ for (k in 1:numiter){
 		}
 	}
 }
+print(Sys.time())
 
 thresh <- 0.9*numiter
 visited <- mat.or.vec(numnodes,1)
