@@ -9,11 +9,11 @@ library("igraph")
 #library("ProNet")
 #G <- read.graph("/Users/lutzka/Desktop/testgraph.txt",format="ncol",names=TRUE,weights="yes",directed=FALSE)
 #G <- read.graph("/Users/lutzka/Desktop/Kinome+OneHopCompiled/All_Databases_Combined_Gene_Names_one_hop_to_kinases.txt",format="ncol",names=TRUE,weights="no",directed=FALSE)
-G <- read.graph("~/Lab/subnetclustering/data/Full_Kinome_Network_Compiled_weighted_pathways.txt",format="ncol",names=TRUE,weights="yes",directed=FALSE)
+G <- read.graph("~/Github/subnetclustering/data/Full_Kinome_Network_Compiled_weighted_pathways.txt",format="ncol",names=TRUE,weights="yes",directed=FALSE)
 #G <- read.graph(args[1],format="ncol",names=TRUE,weights=args[2],directed=FALSE)
 #dd <- read.table("/Users/lutzka/Dropbox/GomezLabShare/Kinome/NetworkData/All_Databases_Combined_Gene_Names_kinome_only.txt")
 #G <- graph.data.frame(dd,directed=FALSE)
-tmp <- read.table("~/Lab/subnetclustering/data/Full_Kinome_Network_Compiled_weighted_pathways.txt")
+tmp <- read.table("~/Github/subnetclustering/data/Full_Kinome_Network_Compiled_weighted_pathways.txt")
 W <- tmp$V3
 
 ##Algorithms to try:
@@ -76,33 +76,9 @@ para_spinglass <- function(g, numnodes, numiter = 1000, spins = 100, cores=max(d
 }
 
 print(Sys.time())
-votes <- para_spinglass(g=mainG, numnodes = numnodes, numiter = 100)
+votes <- para_spinglass(g=mainG, numnodes = numnodes, numiter = 1000)
 print(Sys.time())
 
-temp <- function(x){
-  return(exp(exp(x)))
-}
-
-c2 <-makeCluster(11)
-t <- parLapply(cl = c2, X=c(rep(1:100, 100000)), fun = temp)
-stopCluster(c2)
-
-votes <- mat.or.vec(numnodes, numnodes)
-
-
-# this does numiter iterations of the spinglass
-print(Sys.time())
-for (k in 1:10){
-	sc <- spinglass.community(mainG, spins=100)
-	for (i in 1:numnodes){
-		for (j in 1:numnodes) {
-			if (sc$membership[i] == sc$membership[j]) {
-				votes[i,j] <- votes[i,j] + 1 #increase the count for this pair by 1
-			}
-		}
-	}
-}
-print(Sys.time())
 
 thresh <- 0.9*numiter
 visited <- mat.or.vec(numnodes,1)
