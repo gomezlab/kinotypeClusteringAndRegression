@@ -52,7 +52,7 @@ single_spinglass <- function(numiter, g, numnodes, spins = 100){
   for (k in 1:numiter){
     sc <- igraph::spinglass.community(g, spins=100)
     for (i in 1:numnodes){
-      local_votes[i,] <- (sc$membership == sc$membership[i])
+      local_votes[i,] = local_votes[i,] + (sc$membership == sc$membership[i])
     }
   }
   return(local_votes)
@@ -88,7 +88,7 @@ groups <- mat.or.vec(numnodes,1)
 k <- 1
 for (i in 1:numnodes){
 	x <- which(votes[i,] > thresh)
-	if (visited[x[1]] == 0){
+	if (visited[x[0]] == 0){
 		visited[x] <- 1
 		groups[x] <- k
 		k <- k + 1
