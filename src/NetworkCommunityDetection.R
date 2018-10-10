@@ -57,6 +57,8 @@ single_spinglass <- function(numiter, g, numnodes, spins = 100){
   return(local_votes)
 }
 
+single_spinglass(2, mainG, numnodes)
+
 para_spinglass <- function(g, numnodes, numiter = 1000, spins = 100, cores=max(detectCores()-1,1)){
   # create a list of results and a list of parameters for the spinglasses
   numiter_params = c(rep(numiter %/% cores))
@@ -76,9 +78,8 @@ para_spinglass <- function(g, numnodes, numiter = 1000, spins = 100, cores=max(d
 }
 
 print(Sys.time())
-votes <- para_spinglass(g=mainG, numnodes = numnodes, numiter = 1000)
+votes <- para_spinglass(g=mainG, numnodes = numnodes, numiter = 20)
 print(Sys.time())
-
 
 thresh <- 0.9*numiter
 visited <- mat.or.vec(numnodes,1)
@@ -95,8 +96,8 @@ for (i in 1:numnodes){
 
 compiled.votes <- data.frame(names=sc$names, cluster=groups)
 fggroups <- data.frame(names=fc$names, cluster=fc$membership)
-write.table(compiled.votes, '~/lab/subnetclustering/reproduced/consensusclusters_spinglass_greaterthan90percent.txt',quote=FALSE,sep="\t",row.names=FALSE)
-write.table(fggroups, '~/Lab/subnetclustering/reproduced/fastgreedy_clusters.txt',quote=FALSE,sep="\t",row.names=FALSE)
+write.table(compiled.votes, '~/Github/subnetclustering/reproduced/consensusclusters_spinglass_greaterthan90percent.txt',quote=FALSE,sep="\t",row.names=FALSE)
+write.table(fggroups, '~/Github/subnetclustering/reproduced/fastgreedy_clusters.txt',quote=FALSE,sep="\t",row.names=FALSE)
 
 
 #mcode clustering
