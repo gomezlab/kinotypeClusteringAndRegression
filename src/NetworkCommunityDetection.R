@@ -42,6 +42,7 @@ votes <- mat.or.vec(numnodes,numnodes)
 numiter <- 1000
 dim(votes)
 
+
 ## do some parallelization
 library('parallel')
 library('purrr')
@@ -57,29 +58,29 @@ single_spinglass <- function(numiter, g, numnodes, spins = 100){
   return(local_votes)
 }
 
-single_spinglass(2, mainG, numnodes)
-
 para_spinglass <- function(g, numnodes, numiter = 1000, spins = 100, cores=max(detectCores()-1,1)){
   # create a list of results and a list of parameters for the spinglasses
-  numiter_params = c(rep(numiter %/% cores))
+  numiter_params = c(rep(numiter %/% cores, cores))
+  
   
   # add one to the number of iterations per core if the total number of iterations
   # is not divisible by the number of cores
   if(numiter %% cores > 0){
     numiter_params[1:(numiter%%cores)] = numiter_params[1:(numiter%%cores)] + 1
   }
+  print(numiter_params)
   
   # start up a cluster
-  c1 <- makeCluster(cores)
-  votes <- Reduce('+', parLapply(cl = c1, X = numiter_params, fun = single_spinglass, g=mainG, numnodes=numnodes))
-  stopCluster(c1)
+  votes <- Reduce('+', parallel::mclapply(X = numiter_params, FUN = single_spinglass, g=mainG, numnodes=numnodes, mc.cores = cores))
   
   return(votes)
 }
 
+
 print(Sys.time())
-votes <- para_spinglass(g=mainG, numnodes = numnodes, numiter = 20)
+votes <- para_spinglass(g=mainG, numnodes = numnodes, numiter = 1000)
 print(Sys.time())
+
 
 thresh <- 0.9*numiter
 visited <- mat.or.vec(numnodes,1)
