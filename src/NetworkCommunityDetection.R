@@ -88,7 +88,7 @@ groups <- mat.or.vec(numnodes,1)
 k <- 1
 for (i in 1:numnodes){
 	x <- which(votes[i,] > thresh)
-	if (visited[x[0]] == 0){
+	if (visited[x[1]] == 0){
 		visited[x] <- 1
 		groups[x] <- k
 		k <- k + 1
@@ -144,7 +144,7 @@ for (i in 1:numnodes){
 }
 
 lec.compiled.votes <- data.frame(names=lec$names, cluster=groups)
-write.table(lec.compiled.votes, '~/Lab/subnetclustering/reproduced/consensusclusters_leadingeigenvector_greaterthan90percent.txt',quote=FALSE,sep="\t",row.names=FALSE)
+write.table(lec.compiled.votes, '~/Github/subnetclustering/reproduced/consensusclusters_leadingeigenvector_greaterthan90percent.txt',quote=FALSE,sep="\t",row.names=FALSE)
 
 
 
