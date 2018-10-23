@@ -63,8 +63,11 @@ def add_cluster_labels(path_to_file, ser):
 
     dat = pd.read_csv(path_to_file, header=0, sep='\t')
     dat.set_index('names', inplace=True)
-    n, m = dat.shape # save shape for
+    n, m = dat.shape # save shape for drop amount
     dat = dat.join(other=ser) # SQL left join
+    dat.dropna(axis=0, inplace=True)
+    
+    print('Dropped ', n-dat.shape[0], 'kinases due to zero length post-processing')
 
     # no need to verify size of output, left join is always the same as input.
     # may be good to add a NaN checker later
@@ -166,3 +169,9 @@ def validate_learnability(n_run, dat_df, clf, X_col_name='GO Labels', test_size 
         output = list(it.chain.from_iterable(output))
 
     return output
+    
+def get_svm_coeffs_for_cluster(svm, cluster_num):
+    num_classes = len(svm.classes_)
+    combos = list(it.combinations(range(num_classes),2))
+    idx_locs = [x for x, y in enumerate(np.array(list(it.combinations(range(num_classes), 2)))) if cluster_num in y]
+    return svm.coef_[idx_locs,:]
