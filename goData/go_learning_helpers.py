@@ -175,3 +175,97 @@ def get_svm_coeffs_for_cluster(svm, cluster_num):
     combos = list(it.combinations(range(num_classes),2))
     idx_locs = [x for x, y in enumerate(np.array(list(it.combinations(range(num_classes), 2)))) if cluster_num in y]
     return svm.coef_[idx_locs,:]
+
+def generate_kinase_labels(path_to_synonyms='../data/go_synonym_data.txt', path_to_kinase_network='../data/Full_Kinome_Network_Compiled_no_header.txt', path_to_alias_spreadsheet='../data/KINASESmasterlist_w_Aliases.xlsx', path_to_stopwords='./stopwords.csv', path_to_process_list='./go_biological_processes.txt', out_path = 'kinase_go_processes.csv'):
+
+    df = pd.read_csv(path_to_synonyms, header=None, sep='\t', low_memory=False,)
+    df.columns = ['ID', 'Gene/Product', 'Name', 'GO Class Labels', 'Synonyms']
+
+    def splitter(x):
+        try:
+            temp = x.split('|')
+        except:
+            temp = []
+        return temp
+
+    df['Synonyms'] = df['Synonyms'].apply(splitter)
+
+    kinase_network_df = pd.read_csv(path_to_kinase_network, header=None, sep='\t')
+    known_kinases = list(set(kinase_network_df[0]) | set(kinase_network_df[1]))
+
+    alias = pd.read_excel(path_to_alias_spreadsheet, header = 0)
+    kin_map = alias.set_index('Uniprot Protein')['MS Gene'].to_dict()
+    all_aliases = alias.set_index('Uniprot Protein')['Aliases (Conservative)'].dropna().apply(lambda x: x.split(',')).to_dict()
+
+    go_dat = {}
+
+    for k in known_kinases:
+        temp = df[df['Gene/Product']==k]
+        if(temp.shape[0] == 0):
+            temp = df[df['Synonyms'].apply(lambda x: k in x)]
+            if(temp.shape[0] == 0):
+                temp = df[df['Gene/Product']==kin_map[k]]
+                if(temp.shape[0] == 0):
+                    temp = df[df['Synonyms'].apply(lambda x: kin_map[k] in x)]
+                    if(temp.shape[0]==0):
+                        r = all_aliases.get(k)
+                        if(r is not None):
+                            for a in r:
+                                temp = df[df['Gene/Product']==a]
+                                if(temp.shape[0] ==0):
+                                    temp = df[df['Synonyms'].apply(lambda x: a in x)]
+                                    if(temp.shape[0]==0):
+                                        pass
+                                    else:
+                                        go_dat[k] = temp
+                                        break
+                                else:
+                                    go_dat[k] = temp
+                    else:
+                        go_dat[k] = temp
+                else:
+                    go_dat[k] = temp
+            else:
+                go_dat[k] = temp
+        else:
+            go_dat[k] = temp
+
+    # find any kinases where multiple gene/product IDs were returned
+    fix_list = []
+
+    for x in go_dat.keys():
+        if(go_dat[x].shape[0] > 1):
+            fix_list.append(x)
+
+    for x in fix_list:
+        temp = go_dat[x].iloc[0]
+        temp['GO Class Labels']='|'.join(list(set(go_dat[x]['GO Class Labels'].iloc[0].split('|')) | set(go_dat['P4K2B']['GO Class Labels'].iloc[1].split('|'))))
+        go_dat[x] = temp
+
+
+    def helper(x):
+        try:
+            temp = go_dat[x]['GO Class Labels'].values[0].split('|')
+        except:
+            temp = go_dat[x]['GO Class Labels'].split('|')
+        return temp
+
+    just_labels = {x:helper(x) for x in go_dat.keys()}
+    agg_labels = [x for y in just_labels.values() for x in y]
+
+    stopwords = pd.read_csv(path_to_stopwords).iloc[:,0].tolist()
+    processes = set(pd.read_csv(path_to_process_list, sep='\t', header=None).set_index(0)[1].tolist())
+
+    def stophelper_plus_is_process(x):
+        try:
+            temp = go_dat[x]['GO Class Labels'].values[0].split('|')
+        except:
+            temp = go_dat[x]['GO Class Labels'].split('|')
+        return list(filter(lambda x: x in processes, filter(lambda x: x not in stopwords, temp)))
+
+    kinase_labels = {x:stophelper_plus_is_process(x) for x in go_dat.keys()}
+    labeled_kinases = pd.Series(kinase_labels)
+
+    labeled_kinases.to_csv(out_path)
+                           
+    return None
