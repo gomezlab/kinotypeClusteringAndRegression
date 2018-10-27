@@ -1,19 +1,11 @@
 #!/usr/bin/env Rscript
 
-#install.packages("ProNet")
 #install.packages("igraph")
 #install.packages('purrr')
 
-#args<-commandArgs(TRUE) #args[1]==input network /path/to/file, args[2]==yes/no weighted, args[3]==output subnetworks path/to/file
 library("igraph")
-#library("ProNet")
-#G <- read.graph("/Users/lutzka/Desktop/testgraph.txt",format="ncol",names=TRUE,weights="yes",directed=FALSE)
-#G <- read.graph("/Users/lutzka/Desktop/Kinome+OneHopCompiled/All_Databases_Combined_Gene_Names_one_hop_to_kinases.txt",format="ncol",names=TRUE,weights="no",directed=FALSE)
-G <- read.graph("~/Github/subnetclustering/data/Full_Kinome_Network_Compiled_weighted_pathways.txt",format="ncol",names=TRUE,weights="yes",directed=FALSE)
-#G <- read.graph(args[1],format="ncol",names=TRUE,weights=args[2],directed=FALSE)
-#dd <- read.table("/Users/lutzka/Dropbox/GomezLabShare/Kinome/NetworkData/All_Databases_Combined_Gene_Names_kinome_only.txt")
-#G <- graph.data.frame(dd,directed=FALSE)
-tmp <- read.table("~/Github/subnetclustering/data/Full_Kinome_Network_Compiled_weighted_pathways.txt")
+G <- read.graph("~/Github/learningSubnetClusters/data/Full_Kinome_Network_Compiled_weighted_pathways.txt",format="ncol",names=TRUE,weights="yes",directed=FALSE)
+tmp <- read.table("~/Github/learningSubnetClusters/data/Full_Kinome_Network_Compiled_weighted_pathways.txt")
 W <- tmp$V3
 
 ##Algorithms to try:
@@ -22,26 +14,39 @@ W <- tmp$V3
 ###3. leading.eigenvector.community (top-down hierarchical) -- run 1000x
 ###4. label.propogation.community (relies on initial random seeds) -- run 1000x
 ###5. walktrap.community (random walks) -- run 1000x
+###6. cluster_louvain (hierarchical modularity) -- run 1x
+###7. cluster_infomap (random walks) -- run 1000x
+###8. edge.betweenness.community  -- this will take a long time
 
-##Algorithms NOT to try:
-###1. edge.betweenness.community -- size of the network makes this one not very feasible
+louv <- cluster_louvain(G, weights = W)
+louv$membership
+louv2 <- cluster_louvain(G, weights = W)
 
+info <- cluster_infomap(G, e.weights = W)
+info$membership
+
+
+for (i in unique(info$membership)){
+  print(paste(toString(i), toString(sum(info$membership == i))))
+}
+toString(sum(info$membership == 4))
 
 V(G)$comp <- components(G)$membership
 mainG <- induced_subgraph(G,V(G)$comp==1)
 
 ###1. fastgreedy.community
 fc <- fastgreedy.community(mainG)
+fg_clusts <- data.frame(names=fc$names, cluster=fc$membership)
+write.table(fg_clusts, '~/GitHub/learningSubnetClusters/results/fastgreedy_clusters.txt',quote=FALSE,sep="\t",row.names=FALSE)
 
-
-###2. spinglass.community
+###2. spinglass.community - knows to use in weights
 sc <- spinglass.community(mainG, spins=100)
 
+# create a votes matrix to store individual cluster tallies
 numnodes <- length(sc$names)
 votes <- mat.or.vec(numnodes,numnodes)
 numiter <- 1000
 dim(votes)
-
 
 ## do some parallelization
 library('parallel')
@@ -62,7 +67,6 @@ para_spinglass <- function(g, numnodes, numiter = 1000, spins = 100, cores=max(d
   # create a list of results and a list of parameters for the spinglasses
   numiter_params = c(rep(numiter %/% cores, cores))
   
-  
   # add one to the number of iterations per core if the total number of iterations
   # is not divisible by the number of cores
   if(numiter %% cores > 0){
@@ -76,11 +80,9 @@ para_spinglass <- function(g, numnodes, numiter = 1000, spins = 100, cores=max(d
   return(votes)
 }
 
-
 print(Sys.time())
 votes <- para_spinglass(g=mainG, numnodes = numnodes, numiter = 1000)
 print(Sys.time())
-
 
 thresh <- 0.9*numiter
 visited <- mat.or.vec(numnodes,1)
@@ -95,40 +97,47 @@ for (i in 1:numnodes){
 	}
 }
 
-compiled.votes <- data.frame(names=sc$names, cluster=groups)
-fggroups <- data.frame(names=fc$names, cluster=fc$membership)
-write.table(compiled.votes, '~/Github/subnetclustering/reproduced/consensusclusters_spinglass_greaterthan90percent.txt',quote=FALSE,sep="\t",row.names=FALSE)
-write.table(fggroups, '~/Github/subnetclustering/reproduced/fastgreedy_clusters.txt',quote=FALSE,sep="\t",row.names=FALSE)
+sc_clusts <- data.frame(names=sc$names, cluster=groups)
+write.table(sc_clusts, '~/Github/subnetclustering/results/consensus_spinglass.txt',quote=FALSE,sep="\t",row.names=FALSE)
 
+###3. leading.eigenvector.community -- knows to use weights
+lev <- leading.eigenvector.community(mainG)
 
-#mcode clustering
-#mcodeclust <- mcode(mainG, vwp = 0.5, haircut = TRUE, fluff = FALSE, fdt = 0.9, loops = TRUE) #mcodeclust$COMPLEX[[i]] -- these are the lists of nodes (index numbers, not names) in each cluster
-#mcodegroups <- mat.or.vec(numnodes,1)
-#for (i in 1:length(mcodeclust$COMPLEX)){
-#  mcodegroups[mcodeclust$COMPLEX[[i]]] <- i
-#}
-
-#mcgroups <- data.frame(names=sc$names, cluster=mcodegroups)
-#write.table(mcgroups, '/Users/lutzka/Dropbox/Analyses/DrugComboMethod/Results/mcode_clusters.txt',quote=FALSE,sep="\t",row.names=FALSE)
-
-
-###3. leading.eigenvector.community
-lec <- leading.eigenvector.community(mainG)
-
-numnodes <- length(lec$names)
+numnodes <- length(lev$names)
 votes <- mat.or.vec(numnodes,numnodes)
-numiter <-20
+numiter <- 1000
 
-for (k in 1:numiter){
-  lec <- leading.eigenvector.community(mainG)
-  for (i in 1:numnodes){
-    for (j in 1:numnodes) {
-      if (lec$membership[i] == lec$membership[j]) {
-        votes[i,j] <- votes[i,j] + 1 #increase the count for this pair by 1
-      }
+single_lev <- function(numiter, g, numnodes){
+  local_votes <- mat.or.vec(numnodes, numnodes)
+  for (k in 1:numiter){
+    lev <- igraph::leading.eigenvector.community(g)
+    for (i in 1:numnodes){
+      local_votes[i,] = local_votes[i,] + (lev$membership == lev$membership[i])
     }
   }
+  return(local_votes)
 }
+
+para_lev <- function(g, numnodes, numiter = 1000, cores=max(detectCores()-1,1)){
+  # create a list of results and a list of parameters for the spinglasses
+  numiter_params = c(rep(numiter %/% cores, cores))
+  
+  # add one to the number of iterations per core if the total number of iterations
+  # is not divisible by the number of cores
+  if(numiter %% cores > 0){
+    numiter_params[1:(numiter%%cores)] = numiter_params[1:(numiter%%cores)] + 1
+  }
+  print(numiter_params)
+  
+  # start up a cluster
+  votes <- Reduce('+', parallel::mclapply(X = numiter_params, FUN = single_lev, g=mainG, numnodes=numnodes, mc.cores = cores))
+  
+  return(votes)
+}
+
+print(Sys.time())
+votes <- para_lev(g=mainG, numnodes = numnodes, numiter = 1000)
+print(Sys.time())
 
 thresh <- 0.9*numiter
 visited <- mat.or.vec(numnodes,1)
@@ -143,10 +152,8 @@ for (i in 1:numnodes){
   }
 }
 
-lec.compiled.votes <- data.frame(names=lec$names, cluster=groups)
-write.table(lec.compiled.votes, '~/Github/subnetclustering/reproduced/consensusclusters_leadingeigenvector_greaterthan90percent.txt',quote=FALSE,sep="\t",row.names=FALSE)
-
-
+lev_clusters <- data.frame(names=lev$names, cluster=groups)
+write.table(lev_clusters, '~/Github/learningSubnetClusters/results/consensus_eigenvector.txt',quote=FALSE,sep="\t",row.names=FALSE)
 
 ###4. label.propagation.community
 lp <- label.propagation.community(mainG)
@@ -155,16 +162,37 @@ numnodes <- length(lp$names)
 votes <- mat.or.vec(numnodes,numnodes)
 numiter <- 1000
 
-for (k in 1:numiter){
-  lp <- label.propagation.community(mainG)
-  for (i in 1:numnodes){
-    for (j in 1:numnodes) {
-      if (lp$membership[i] == lp$membership[j]) {
-        votes[i,j] <- votes[i,j] + 1 #increase the count for this pair by 1
-      }
+single_lp <- function(numiter, g, numnodes){
+  local_votes <- mat.or.vec(numnodes, numnodes)
+  for (k in 1:numiter){
+    lp <- igraph::label.propagation.community(g)
+    for (i in 1:numnodes){
+      local_votes[i,] = local_votes[i,] + (lp$membership == lp$membership[i])
     }
   }
+  return(local_votes)
 }
+
+para_lp <- function(g, numnodes, numiter = 1000, cores=max(detectCores()-1,1)){
+  # create a list of results and a list of parameters for the spinglasses
+  numiter_params = c(rep(numiter %/% cores, cores))
+  
+  # add one to the number of iterations per core if the total number of iterations
+  # is not divisible by the number of cores
+  if(numiter %% cores > 0){
+    numiter_params[1:(numiter%%cores)] = numiter_params[1:(numiter%%cores)] + 1
+  }
+  print(numiter_params)
+  
+  # start up a cluster
+  votes <- Reduce('+', parallel::mclapply(X = numiter_params, FUN = single_lp, g=mainG, numnodes=numnodes, mc.cores = cores))
+  
+  return(votes)
+}
+
+print(Sys.time())
+votes <- para_lp(g=mainG, numnodes = numnodes, numiter = 1000)
+print(Sys.time())
 
 thresh <- 0.9*numiter
 visited <- mat.or.vec(numnodes,1)
@@ -179,27 +207,41 @@ for (i in 1:numnodes){
   }
 }
 
-lp.compiled.votes <- data.frame(names=lp$names, cluster=groups)
-write.table(lp.compiled.votes, '/Users/lutzka/Dropbox/Analyses/DrugComboMethod/Results/consensusclusters_labelpropogation_greaterthan90percent.txt',quote=FALSE,sep="\t",row.names=FALSE)
-
+lp_clusts <- data.frame(names=lp$names, cluster=groups)
+write.table(lp_clusts, '~/GitHub/learningSubnetClusters/results/consensus_label_propagation.txt',quote=FALSE,sep="\t",row.names=FALSE)
 
 ###5. walktrap.community
 wt <- walktrap.community(mainG, modularity=TRUE)
-#wmemb <- cutat(wt,steps=which.max(wt$modularity)-1)
 
 numnodes <- length(wt$names)
 votes <- mat.or.vec(numnodes,numnodes)
 numiter <- 1000
-
-for (k in 1:numiter){
-  wt <- walktrap.community(mainG, modularity=TRUE)
-  for (i in 1:numnodes){
-    for (j in 1:numnodes) {
-      if (wt$membership[i] == wt$membership[j]) {
-        votes[i,j] <- votes[i,j] + 1 #increase the count for this pair by 1
-      }
+single_wt <- function(numiter, g, numnodes){
+  local_votes <- mat.or.vec(numnodes, numnodes)
+  for (k in 1:numiter){
+    wt <- igraph::walktrap.community(g, modularity=TRUE)
+    for (i in 1:numnodes){
+      local_votes[i,] = local_votes[i,] + (wt$membership == wt$membership[i])
     }
   }
+  return(local_votes)
+}
+
+para_wt <- function(g, numnodes, numiter = 1000, cores=max(detectCores()-1,1)){
+  # create a list of results and a list of parameters for the spinglasses
+  numiter_params = c(rep(numiter %/% cores, cores))
+  
+  # add one to the number of iterations per core if the total number of iterations
+  # is not divisible by the number of cores
+  if(numiter %% cores > 0){
+    numiter_params[1:(numiter%%cores)] = numiter_params[1:(numiter%%cores)] + 1
+  }
+  print(numiter_params)
+  
+  # start up a cluster
+  votes <- Reduce('+', parallel::mclapply(X = numiter_params, FUN = single_wt, g=mainG, numnodes=numnodes, mc.cores = cores))
+  
+  return(votes)
 }
 
 thresh <- 0.9*numiter
@@ -215,31 +257,80 @@ for (i in 1:numnodes){
   }
 }
 
-wt.compiled.votes <- data.frame(names=wt.$names, cluster=groups)
-write.table(wt.compiled.votes, '/Users/lutzka/Dropbox/Analyses/DrugComboMethod/Results/consensusclusters_walktrap_greaterthan90percent.txt',quote=FALSE,sep="\t",row.names=FALSE)
+wt_clusts <- data.frame(names=wt$names, cluster=groups)
+write.table(wt_clusts, '~/Github/learningSubnetClusters/Results/consensus_walktrap.txt',quote=FALSE,sep="\t",row.names=FALSE)
 
+###6. cluster_louvain
+louv <- cluster_louvain(mainG)
+louv_clusts <- data.frame(names=louv$names, cluster=louv$membership)
+write.table(louv_clusts, '~/GitHub/learningSubnetClusters/results/louvrain_clusters.txt',quote=FALSE,sep="\t",row.names=FALSE)
 
-### write output file with memberships for each community detection method
-outfile="/Users/lutzka/Dropbox/Analyses/DrugComboMethod/Results/Kinase_all_clustering_membership_results.txt"
-compiled.data = data.frame(KinaseNames=fc$names,
-                           FastGreedyCommunity=fc$membership,
-                           SpinGlassCommunity=sc$membership,
-                           WalkTrapCommunity=wt$membership,
-                           LeadingEigenvectorCommunity=lec$membership,
-                           LabelPropogationCommunity=lp$membership,
-                           MCODEcommunity=mcgroups$cluster)
-write.table(compiled.data,outfile,quote=FALSE,sep="\t",row.names=FALSE)
+###7. cluster_infomap (random walks) 
+info <- walktrap.community(mainG)
 
+numnodes <- length(info$names)
+votes <- mat.or.vec(numnodes,numnodes)
+numiter <- 1000
 
+single_wt <- function(numiter, g, numnodes){
+  local_votes <- mat.or.vec(numnodes, numnodes)
+  for (k in 1:numiter){
+    info <- igraph::cluster_infomap(g)
+    for (i in 1:numnodes){
+      local_votes[i,] = local_votes[i,] + (info$membership == info$membership[i])
+    }
+  }
+  return(local_votes)
+}
+
+para_wt <- function(g, numnodes, numiter = 1000, cores=max(detectCores()-1,1)){
+  # create a list of results and a list of parameters for the spinglasses
+  numiter_params = c(rep(numiter %/% cores, cores))
+  
+  # add one to the number of iterations per core if the total number of iterations
+  # is not divisible by the number of cores
+  if(numiter %% cores > 0){
+    numiter_params[1:(numiter%%cores)] = numiter_params[1:(numiter%%cores)] + 1
+  }
+  print(numiter_params)
+  
+  # start up a cluster
+  votes <- Reduce('+', parallel::mclapply(X = numiter_params, FUN = single_info, g=mainG, numnodes=numnodes, mc.cores = cores))
+  
+  return(votes)
+}
+
+thresh <- 0.9*numiter
+visited <- mat.or.vec(numnodes,1)
+groups <- mat.or.vec(numnodes,1)
+k <- 1
+for (i in 1:numnodes){
+  x <- which(votes[i,] > thresh)
+  if (visited[x[1]] == 0){
+    visited[x] <- 1
+    groups[x] <- k
+    k <- k + 1
+  }
+}
+
+info_clusters <- data.frame(names=info$names, cluster=groups)
+write.table(info_clusters, '~/Github/learningSubnetClusters/Results/consensus_infomap.txt',quote=FALSE,sep="\t",row.names=FALSE)
+
+###8. edge.betweenness.community
+eb <- edge.betweenness.community(mainG)
+eb_clusts <- data.frame(names=eb$names, cluster=eb$membership)
+write.table(eb_clusts, '~/GitHub/learningSubnetClusters/results/edge_betweenness_community_clusters.txt',quote=FALSE,sep="\t",row.names=FALSE)
 
 mod <- list()
-mod$fc <- modularity(mainG,fc$membership,weights=W)
-mod$sc <- modularity(mainG,sc$membership,weights=W)
-mod$mcode <- modularity(mainG,mcgroups,weights=W)
-mod$lec <- modularity(mainG,lec$membership,weights=W)
-mod$lp <- modularity(mainG,lp$membership,weights=W)
-mod$wt <- modularity(mainG,wt$membership,weights=W)
+mod$fast_greedy <- modularity(mainG,fg_clusts,weights=W)
+mod$spinglass <- modularity(mainG,sc_clusts,weights=W)
+mod$eigen <- modularity(mainG,lev_clusts,weights=W)
+mod$walktrap <- modularity(mainG,wt_clusts,weights=W)
+mod$label <- modularity(mainG,lp_clusts,weights=W)
+mod$louvrain <- modularity(mainG,louv_clusts,weights=W)
+mod$infomap <- modularity(mainG,info_clusts,weights=W)
+mod$edge_between <- modularity(mainG,eb_clusts,weights=W)
 
-outfile="~/Dropbox/Analyses/DrugComboMethod/Results/Kinase_all_clustering_modularity_results.txt"
+outfile="~/Github/learningSubnetClusters/clustering_modularity_results.txt"
 write.table(mod,outfile,quote=FALSE,sep="\t",row.names = FALSE)
 
