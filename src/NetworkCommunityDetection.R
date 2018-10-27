@@ -4,8 +4,8 @@
 #install.packages('purrr')
 
 library("igraph")
-G <- read.graph("~/Github/learningSubnetClusters/data/Full_Kinome_Network_Compiled_weighted_pathways.txt",format="ncol",names=TRUE,weights="yes",directed=FALSE)
-tmp <- read.table("~/Github/learningSubnetClusters/data/Full_Kinome_Network_Compiled_weighted_pathways.txt")
+G <- read.graph("~/Github/KIN_ClusteringWithAnnotations/data/Full_Kinome_Network_Compiled_weighted_pathways.txt",format="ncol",names=TRUE,weights="yes",directed=FALSE)
+tmp <- read.table("~/Github/KIN_ClusteringWithAnnotations/data/Full_Kinome_Network_Compiled_weighted_pathways.txt")
 W <- tmp$V3
 
 ##Algorithms to try:
@@ -37,7 +37,7 @@ mainG <- induced_subgraph(G,V(G)$comp==1)
 ###1. fastgreedy.community
 fc <- fastgreedy.community(mainG)
 fg_clusts <- data.frame(names=fc$names, cluster=fc$membership)
-write.table(fg_clusts, '~/GitHub/learningSubnetClusters/results/fastgreedy_clusters.txt',quote=FALSE,sep="\t",row.names=FALSE)
+write.table(fg_clusts, '~/GitHub/KIN_ClusteringWithAnnotations/results/fastgreedy_clusters.txt',quote=FALSE,sep="\t",row.names=FALSE)
 
 ###2. spinglass.community - knows to use in weights
 sc <- spinglass.community(mainG, spins=100)
@@ -98,7 +98,7 @@ for (i in 1:numnodes){
 }
 
 sc_clusts <- data.frame(names=sc$names, cluster=groups)
-write.table(sc_clusts, '~/Github/subnetclustering/results/consensus_spinglass.txt',quote=FALSE,sep="\t",row.names=FALSE)
+write.table(sc_clusts, '~/Github/KIN_ClusteringWithAnnotations/results/consensus_spinglass.txt',quote=FALSE,sep="\t",row.names=FALSE)
 
 ###3. leading.eigenvector.community -- knows to use weights
 lev <- leading.eigenvector.community(mainG)
@@ -153,7 +153,7 @@ for (i in 1:numnodes){
 }
 
 lev_clusters <- data.frame(names=lev$names, cluster=groups)
-write.table(lev_clusters, '~/Github/learningSubnetClusters/results/consensus_eigenvector.txt',quote=FALSE,sep="\t",row.names=FALSE)
+write.table(lev_clusters, '~/Github/KIN_ClusteringWithAnnotations/results/consensus_eigenvector.txt',quote=FALSE,sep="\t",row.names=FALSE)
 
 ###4. label.propagation.community
 lp <- label.propagation.community(mainG)
@@ -208,7 +208,7 @@ for (i in 1:numnodes){
 }
 
 lp_clusts <- data.frame(names=lp$names, cluster=groups)
-write.table(lp_clusts, '~/GitHub/learningSubnetClusters/results/consensus_label_propagation.txt',quote=FALSE,sep="\t",row.names=FALSE)
+write.table(lp_clusts, '~/GitHub/KIN_ClusteringWithAnnotations/results/consensus_label_propagation.txt',quote=FALSE,sep="\t",row.names=FALSE)
 
 ###5. walktrap.community
 wt <- walktrap.community(mainG, modularity=TRUE)
@@ -258,12 +258,12 @@ for (i in 1:numnodes){
 }
 
 wt_clusts <- data.frame(names=wt$names, cluster=groups)
-write.table(wt_clusts, '~/Github/learningSubnetClusters/Results/consensus_walktrap.txt',quote=FALSE,sep="\t",row.names=FALSE)
+write.table(wt_clusts, '~/Github/KIN_ClusteringWithAnnotations/Results/consensus_walktrap.txt',quote=FALSE,sep="\t",row.names=FALSE)
 
 ###6. cluster_louvain
 louv <- cluster_louvain(mainG)
 louv_clusts <- data.frame(names=louv$names, cluster=louv$membership)
-write.table(louv_clusts, '~/GitHub/learningSubnetClusters/results/louvrain_clusters.txt',quote=FALSE,sep="\t",row.names=FALSE)
+write.table(louv_clusts, '~/GitHub/KIN_ClusteringWithAnnotations/results/louvrain_clusters.txt',quote=FALSE,sep="\t",row.names=FALSE)
 
 ###7. cluster_infomap (random walks) 
 info <- walktrap.community(mainG)
@@ -314,12 +314,12 @@ for (i in 1:numnodes){
 }
 
 info_clusters <- data.frame(names=info$names, cluster=groups)
-write.table(info_clusters, '~/Github/learningSubnetClusters/Results/consensus_infomap.txt',quote=FALSE,sep="\t",row.names=FALSE)
+write.table(info_clusters, '~/Github/KIN_ClusteringWithAnnotations/Results/consensus_infomap.txt',quote=FALSE,sep="\t",row.names=FALSE)
 
 ###8. edge.betweenness.community
 eb <- edge.betweenness.community(mainG)
 eb_clusts <- data.frame(names=eb$names, cluster=eb$membership)
-write.table(eb_clusts, '~/GitHub/learningSubnetClusters/results/edge_betweenness_community_clusters.txt',quote=FALSE,sep="\t",row.names=FALSE)
+write.table(eb_clusts, '~/GitHub/KIN_ClusteringWithAnnotations/results/edge_betweenness_community_clusters.txt',quote=FALSE,sep="\t",row.names=FALSE)
 
 mod <- list()
 mod$fast_greedy <- modularity(mainG,fg_clusts,weights=W)
@@ -331,6 +331,6 @@ mod$louvrain <- modularity(mainG,louv_clusts,weights=W)
 mod$infomap <- modularity(mainG,info_clusts,weights=W)
 mod$edge_between <- modularity(mainG,eb_clusts,weights=W)
 
-outfile="~/Github/learningSubnetClusters/clustering_modularity_results.txt"
+outfile="~/Github/KIN_ClusteringWithAnnotations/clustering_modularity_results.txt"
 write.table(mod,outfile,quote=FALSE,sep="\t",row.names = FALSE)
 
