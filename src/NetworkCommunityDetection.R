@@ -328,10 +328,10 @@ mod$spinglass <- modularity(mainG,sc_clusts$cluster+1,weights=W)
 mod$eigen <- modularity(mainG,lev_clusts$cluster,weights=W)
 mod$walktrap <- modularity(mainG,wt_clusts$cluster,weights=W)
 mod$label <- modularity(mainG,lp_clusts$cluster,weights=W)
-mod$louvrain <- modularity(mainG,louv_clusts$cluster,weights=W)
+mod$louvain <- modularity(mainG,louv_clusts$cluster,weights=W)
 mod$infomap <- modularity(mainG,info_clusts$cluster,weights=W)
 mod$edge_between <- modularity(mainG,eb_clusts$cluster,weights=W)
 
-outfile="~/Github/KIN_ClusteringWithAnnotations/clustering_modularity_results.txt"
+outfile="~/Github/KIN_ClusteringWithAnnotations/results/clustering_modularity_results.txt"
 write.table(mod,outfile,quote=FALSE,sep="\t",row.names = FALSE)
 
