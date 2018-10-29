@@ -257,7 +257,7 @@ write.table(wt_clusts, '~/Github/KIN_ClusteringWithAnnotations/Results/consensus
 ###6. cluster_louvain
 louv <- cluster_louvain(mainG)
 louv_clusts <- data.frame(names=louv$names, cluster=louv$membership)
-write.table(louv_clusts, '~/GitHub/KIN_ClusteringWithAnnotations/results/louvrain_clusters.txt',quote=FALSE,sep="\t",row.names=FALSE)
+write.table(louv_clusts, '~/GitHub/KIN_ClusteringWithAnnotations/results/louvain_clusters.txt',quote=FALSE,sep="\t",row.names=FALSE)
 
 ###7. cluster_infomap (random walks) 
 info <- walktrap.community(mainG)
