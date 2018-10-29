@@ -18,19 +18,6 @@ W <- tmp$V3
 ###7. cluster_infomap (random walks) -- run 1000x
 ###8. edge.betweenness.community  -- this will take a long time
 
-louv <- cluster_louvain(G, weights = W)
-louv$membership
-louv2 <- cluster_louvain(G, weights = W)
-
-info <- cluster_infomap(G, e.weights = W)
-info$membership
-
-
-for (i in unique(info$membership)){
-  print(paste(toString(i), toString(sum(info$membership == i))))
-}
-toString(sum(info$membership == 4))
-
 V(G)$comp <- components(G)$membership
 mainG <- induced_subgraph(G,V(G)$comp==1)
 
@@ -97,6 +84,8 @@ for (i in 1:numnodes){
 	}
 }
 
+sum()
+
 sc_clusts <- data.frame(names=sc$names, cluster=groups)
 write.table(sc_clusts, '~/Github/KIN_ClusteringWithAnnotations/results/consensus_spinglass.txt',quote=FALSE,sep="\t",row.names=FALSE)
 
@@ -152,8 +141,8 @@ for (i in 1:numnodes){
   }
 }
 
-lev_clusters <- data.frame(names=lev$names, cluster=groups)
-write.table(lev_clusters, '~/Github/KIN_ClusteringWithAnnotations/results/consensus_eigenvector.txt',quote=FALSE,sep="\t",row.names=FALSE)
+lev_clusts <- data.frame(names=lev$names, cluster=groups)
+write.table(lev_clusts, '~/Github/KIN_ClusteringWithAnnotations/results/consensus_eigenvector.txt',quote=FALSE,sep="\t",row.names=FALSE)
 
 ###4. label.propagation.community
 lp <- label.propagation.community(mainG)
@@ -244,6 +233,11 @@ para_wt <- function(g, numnodes, numiter = 1000, cores=max(detectCores()-1,1)){
   return(votes)
 }
 
+print(Sys.time())
+votes <- para_wt(g=mainG, numnodes = numnodes, numiter = 1000)
+print(Sys.time())
+
+
 thresh <- 0.9*numiter
 visited <- mat.or.vec(numnodes,1)
 groups <- mat.or.vec(numnodes,1)
@@ -272,7 +266,7 @@ numnodes <- length(info$names)
 votes <- mat.or.vec(numnodes,numnodes)
 numiter <- 1000
 
-single_wt <- function(numiter, g, numnodes){
+single_info <- function(numiter, g, numnodes){
   local_votes <- mat.or.vec(numnodes, numnodes)
   for (k in 1:numiter){
     info <- igraph::cluster_infomap(g)
@@ -283,7 +277,7 @@ single_wt <- function(numiter, g, numnodes){
   return(local_votes)
 }
 
-para_wt <- function(g, numnodes, numiter = 1000, cores=max(detectCores()-1,1)){
+para_info <- function(g, numnodes, numiter = 1000, cores=max(detectCores()-1,1)){
   # create a list of results and a list of parameters for the spinglasses
   numiter_params = c(rep(numiter %/% cores, cores))
   
@@ -300,6 +294,10 @@ para_wt <- function(g, numnodes, numiter = 1000, cores=max(detectCores()-1,1)){
   return(votes)
 }
 
+print(Sys.time())
+votes <- para_info(g=mainG, numnodes = numnodes, numiter = 1000)
+print(Sys.time())
+
 thresh <- 0.9*numiter
 visited <- mat.or.vec(numnodes,1)
 groups <- mat.or.vec(numnodes,1)
@@ -313,23 +311,26 @@ for (i in 1:numnodes){
   }
 }
 
-info_clusters <- data.frame(names=info$names, cluster=groups)
-write.table(info_clusters, '~/Github/KIN_ClusteringWithAnnotations/Results/consensus_infomap.txt',quote=FALSE,sep="\t",row.names=FALSE)
+info_clusts <- data.frame(names=info$names, cluster=groups)
+write.table(info_clusts, '~/Github/KIN_ClusteringWithAnnotations/Results/consensus_infomap.txt',quote=FALSE,sep="\t",row.names=FALSE)
 
 ###8. edge.betweenness.community
 eb <- edge.betweenness.community(mainG)
 eb_clusts <- data.frame(names=eb$names, cluster=eb$membership)
 write.table(eb_clusts, '~/GitHub/KIN_ClusteringWithAnnotations/results/edge_betweenness_community_clusters.txt',quote=FALSE,sep="\t",row.names=FALSE)
 
-mod <- list()
-mod$fast_greedy <- modularity(mainG,fg_clusts,weights=W)
-mod$spinglass <- modularity(mainG,sc_clusts,weights=W)
-mod$eigen <- modularity(mainG,lev_clusts,weights=W)
-mod$walktrap <- modularity(mainG,wt_clusts,weights=W)
-mod$label <- modularity(mainG,lp_clusts,weights=W)
-mod$louvrain <- modularity(mainG,louv_clusts,weights=W)
-mod$infomap <- modularity(mainG,info_clusts,weights=W)
-mod$edge_between <- modularity(mainG,eb_clusts,weights=W)
+#### collect modularity data
+mod <- data.frame(row.names = "modularity")
+mod$fast_greedy <- modularity(mainG,fg_clusts$cluster,weights=W)
+# modularity function doesn't accept the '0' cluster name, so we shift all 
+# membership values up by one to get the modularity
+mod$spinglass <- modularity(mainG,sc_clusts$cluster+1,weights=W) 
+mod$eigen <- modularity(mainG,lev_clusts$cluster,weights=W)
+mod$walktrap <- modularity(mainG,wt_clusts$cluster,weights=W)
+mod$label <- modularity(mainG,lp_clusts$cluster,weights=W)
+mod$louvrain <- modularity(mainG,louv_clusts$cluster,weights=W)
+mod$infomap <- modularity(mainG,info_clusts$cluster,weights=W)
+mod$edge_between <- modularity(mainG,eb_clusts$cluster,weights=W)
 
 outfile="~/Github/KIN_ClusteringWithAnnotations/clustering_modularity_results.txt"
 write.table(mod,outfile,quote=FALSE,sep="\t",row.names = FALSE)
