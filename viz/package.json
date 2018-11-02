@@ -1,0 +1,22 @@
+{
+  "name": "graph_viz",
+  "version": "0.1.0",
+  "description": "Visualizations for the KIN_ClusteringWithAnnotations Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isrobson/KIN_ClusteringWithAnnotations.git"
+  },
+  "author": "Isaac S. Robson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/isrobson/KIN_ClusteringWithAnnotations/issues"
+  },
+  "homepage": "https://github.com/isrobson/KIN_ClusteringWithAnnotations#readme",
+  "dependencies": {
+    "sigma": "^1.2.1"
+  }
+}
