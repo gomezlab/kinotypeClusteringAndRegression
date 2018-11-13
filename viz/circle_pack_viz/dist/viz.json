@@ -1,0 +1,721 @@
+{"name": "viz", "children": [
+{
+"name": "louvain_0", "children": [
+{
+"name": "spinglass_29", "children": [
+{
+"name": "STK39", "size": 2}, 
+ {"name": "OXSR1", "size": 3}, 
+ {"name": "WNK1", "size": 3}, 
+ {"name": "WNK4", "size": 2}, 
+ {"name": "LMTK1", "size": 1}, 
+ {"name": "WNK2", "size": 2}, 
+ {"name": "WNK3", "size": 1}]}
+,
+ 
+ {"name": "spinglass_18", "children": [
+{
+"name": "BMPR2", "size": 3}, 
+ {"name": "TGFR2", "size": 4}, 
+ {"name": "TGFR1", "size": 4}, 
+ {"name": "AMHR2", "size": 1}, 
+ {"name": "ACVL1", "size": 2}, 
+ {"name": "BMR1B", "size": 4}, 
+ {"name": "BMR1A", "size": 3}, 
+ {"name": "AVR2B", "size": 3}, 
+ {"name": "ACV1B", "size": 2}, 
+ {"name": "TSSK1", "size": 2}, 
+ {"name": "DAPK2", "size": 1}, 
+ {"name": "ACVR1", "size": 3}, 
+ {"name": "NEK8", "size": 2}, 
+ {"name": "STK35", "size": 1}, 
+ {"name": "CDKL1", "size": 1}, 
+ {"name": "MYO3A", "size": 1}, 
+ {"name": "TSSK4", "size": 1}, 
+ {"name": "AVR2A", "size": 3}, 
+ {"name": "SG196", "size": 1}, 
+ {"name": "VRK2", "size": 3}, 
+ {"name": "ACV1C", "size": 2}, 
+ {"name": "ST17B", "size": 1}]}]}
+,
+ 
+ {"name": "louvain_1", "children": [
+{
+"name": "spinglass_5", "children": [
+{
+"name": "KSYK", "size": 4}, 
+ {"name": "BTK", "size": 4}, 
+ {"name": "ZAP70", "size": 3}, 
+ {"name": "LCK", "size": 4}]}
+,
+ 
+ {"name": "spinglass_43", "children": [
+{
+"name": "JAK2", "size": 4}]}
+,
+ 
+ {"name": "spinglass_6", "children": [
+{
+"name": "VGFR1", "size": 3}, 
+ {"name": "TYK2", "size": 3}, 
+ {"name": "KPCD", "size": 4}, 
+ {"name": "KPCT", "size": 3}, 
+ {"name": "PK3CG", "size": 4}, 
+ {"name": "PK3CA", "size": 4}, 
+ {"name": "E2AK2", "size": 3}, 
+ {"name": "IKKB", "size": 4}, 
+ {"name": "KPCZ", "size": 4}, 
+ {"name": "GSK3A", "size": 4}, 
+ {"name": "KPCB", "size": 3}, 
+ {"name": "GSK3B", "size": 5}, 
+ {"name": "PDPK1", "size": 5}, 
+ {"name": "RIPK4", "size": 1}, 
+ {"name": "PK3CB", "size": 4}, 
+ {"name": "AKT3", "size": 3}, 
+ {"name": "KPCI", "size": 4}, 
+ {"name": "IKKA", "size": 4}, 
+ {"name": "M3K14", "size": 3}, 
+ {"name": "SMG1", "size": 1}, 
+ {"name": "JAK3", "size": 4}, 
+ {"name": "KS6B1", "size": 4}, 
+ {"name": "ILK", "size": 4}, 
+ {"name": "SGK1", "size": 3}, 
+ {"name": "PDK2", "size": 2}, 
+ {"name": "PDK1", "size": 4}, 
+ {"name": "RIPK1", "size": 4}, 
+ {"name": "E2AK3", "size": 1}, 
+ {"name": "RIPK3", "size": 2}, 
+ {"name": "SGK3", "size": 2}, 
+ {"name": "KS6B2", "size": 4}, 
+ {"name": "KPCL", "size": 3}, 
+ {"name": "AKT1", "size": 5}, 
+ {"name": "E2AK4", "size": 3}, 
+ {"name": "IGF1R", "size": 4}, 
+ {"name": "VGFR3", "size": 3}, 
+ {"name": "JAK1", "size": 4}, 
+ {"name": "PI42B", "size": 2}, 
+ {"name": "TBK1", "size": 3}, 
+ {"name": "CSF1R", "size": 3}, 
+ {"name": "AKT2", "size": 4}, 
+ {"name": "TRIB3", "size": 3}, 
+ {"name": "IKKE", "size": 3}, 
+ {"name": "PK3CD", "size": 4}, 
+ {"name": "MLKL", "size": 2}, 
+ {"name": "KHK", "size": 1}, 
+ {"name": "PDXK", "size": 1}, 
+ {"name": "SLK", "size": 1}, 
+ {"name": "MTOR", "size": 3}, 
+ {"name": "NRBP", "size": 1}, 
+ {"name": "PIM2", "size": 1}, 
+ {"name": "MRCKG", "size": 1}, 
+ {"name": "HXK1", "size": 2}, 
+ {"name": "ROR2", "size": 2}, 
+ {"name": "STYK1", "size": 1}, 
+ {"name": "ADCK4", "size": 1}, 
+ {"name": "FLT3", "size": 2}, 
+ {"name": "GRK6", "size": 1}]}
+,
+ 
+ {"name": "spinglass_27", "children": [
+{
+"name": "M3K8", "size": 4}]}
+,
+ 
+ {"name": "spinglass_44", "children": [
+{
+"name": "PI51B", "size": 2}, 
+ {"name": "PI51A", "size": 3}, 
+ {"name": "PI51C", "size": 2}, 
+ {"name": "PI42A", "size": 3}, 
+ {"name": "PI42C", "size": 2}, 
+ {"name": "P3C2A", "size": 2}, 
+ {"name": "PI4KA", "size": 2}, 
+ {"name": "P4K2B", "size": 2}, 
+ {"name": "PGK1", "size": 2}]}]}
+,
+ 
+ {"name": "louvain_2", "children": [
+{
+"name": "spinglass_25", "children": [
+{
+"name": "MK15", "size": 2}]}
+,
+ 
+ {"name": "spinglass_12", "children": [
+{
+"name": "M3K5", "size": 4}, 
+ {"name": "M3K4", "size": 3}, 
+ {"name": "TRIB1", "size": 2}, 
+ {"name": "MK14", "size": 5}, 
+ {"name": "DYR1B", "size": 3}, 
+ {"name": "MAPK5", "size": 3}, 
+ {"name": "IRAK1", "size": 4}, 
+ {"name": "MK08", "size": 4}, 
+ {"name": "PKN1", "size": 3}, 
+ {"name": "MP2K6", "size": 4}, 
+ {"name": "MK12", "size": 3}, 
+ {"name": "MLTK", "size": 2}, 
+ {"name": "MP2K4", "size": 4}, 
+ {"name": "IRAK2", "size": 4}, 
+ {"name": "IRAK3", "size": 2}, 
+ {"name": "IRAK4", "size": 2}, 
+ {"name": "M3K12", "size": 2}, 
+ {"name": "M3K11", "size": 3}, 
+ {"name": "MP2K7", "size": 4}, 
+ {"name": "M4K2", "size": 2}, 
+ {"name": "M3K10", "size": 3}, 
+ {"name": "MAPK3", "size": 3}, 
+ {"name": "MP2K3", "size": 4}, 
+ {"name": "M3K7", "size": 4}, 
+ {"name": "M3K2", "size": 3}, 
+ {"name": "MK13", "size": 3}, 
+ {"name": "MK09", "size": 4}, 
+ {"name": "MK10", "size": 3}, 
+ {"name": "M3K3", "size": 4}, 
+ {"name": "ERN1", "size": 2}, 
+ {"name": "M3K6", "size": 2}, 
+ {"name": "PKN2", "size": 3}, 
+ {"name": "M4K4", "size": 3}, 
+ {"name": "MK11", "size": 3}, 
+ {"name": "M3K13", "size": 2}, 
+ {"name": "NLK", "size": 2}, 
+ {"name": "HIPK2", "size": 3}, 
+ {"name": "MAPK2", "size": 4}, 
+ {"name": "RIPK2", "size": 4}, 
+ {"name": "M3K1", "size": 4}, 
+ {"name": "TNIK", "size": 2}, 
+ {"name": "M3KL4", "size": 1}, 
+ {"name": "DYR1A", "size": 2}, 
+ {"name": "ADCK3", "size": 2}, 
+ {"name": "M4K3", "size": 1}, 
+ {"name": "NEK10", "size": 1}, 
+ {"name": "MYLK3", "size": 1}, 
+ {"name": "PRKY", "size": 1}]}
+,
+ 
+ {"name": "spinglass_45", "children": [
+{
+"name": "ALK", "size": 3}]}
+,
+ 
+ {"name": "spinglass_21", "children": [
+{
+"name": "MP2K5", "size": 2}]}
+,
+ 
+ {"name": "spinglass_9", "children": [
+{
+"name": "M4K1", "size": 3}]}]}
+,
+ 
+ {"name": "louvain_3", "children": [
+{
+"name": "spinglass_38", "children": [
+{
+"name": "TLK2", "size": 1}]}
+,
+ 
+ {"name": "spinglass_46", "children": [
+{
+"name": "LRRK1", "size": 3}]}
+,
+ 
+ {"name": "spinglass_50", "children": [
+{
+"name": "MAST3", "size": 2}]}
+,
+ 
+ {"name": "spinglass_55", "children": [
+{
+"name": "DYRK4", "size": 1}]}
+,
+ 
+ {"name": "spinglass_28", "children": [
+{
+"name": "BRSK1", "size": 2}, 
+ {"name": "STK11", "size": 4}, 
+ {"name": "EF2K", "size": 4}, 
+ {"name": "AAPK2", "size": 4}, 
+ {"name": "STRAB", "size": 1}, 
+ {"name": "STRAA", "size": 1}, 
+ {"name": "PI3R4", "size": 2}, 
+ {"name": "PK3C3", "size": 2}, 
+ {"name": "AAPK1", "size": 4}, 
+ {"name": "KKCC2", "size": 3}, 
+ {"name": "TRPM7", "size": 1}, 
+ {"name": "TRPM6", "size": 1}, 
+ {"name": "KCC4", "size": 1}, 
+ {"name": "SNRK", "size": 2}, 
+ {"name": "PASK", "size": 2}, 
+ {"name": "STK16", "size": 2}, 
+ {"name": "MELK", "size": 2}, 
+ {"name": "ULK2", "size": 3}, 
+ {"name": "ULK1", "size": 2}, 
+ {"name": "SIK1", "size": 2}, 
+ {"name": "PCKGM", "size": 1}]}
+,
+ 
+ {"name": "spinglass_7", "children": [
+{
+"name": "ATR", "size": 3}, 
+ {"name": "PRKDC", "size": 4}, 
+ {"name": "NEK2", "size": 3}, 
+ {"name": "MARK4", "size": 3}, 
+ {"name": "KPYM", "size": 5}, 
+ {"name": "MARK2", "size": 3}, 
+ {"name": "TITIN", "size": 3}, 
+ {"name": "WEE1", "size": 3}, 
+ {"name": "CSK21", "size": 4}, 
+ {"name": "ATM", "size": 4}, 
+ {"name": "MOS", "size": 2}, 
+ {"name": "TOPK", "size": 2}, 
+ {"name": "ARBK1", "size": 3}, 
+ {"name": "PLK4", "size": 3}, 
+ {"name": "TAOK2", "size": 2}, 
+ {"name": "LATS1", "size": 3}, 
+ {"name": "TIF1A", "size": 2}, 
+ {"name": "TIF1B", "size": 4}, 
+ {"name": "PLK1", "size": 4}, 
+ {"name": "PMYT1", "size": 3}, 
+ {"name": "CHK2", "size": 3}, 
+ {"name": "MARK1", "size": 2}, 
+ {"name": "TAOK1", "size": 3}, 
+ {"name": "BUB1B", "size": 3}, 
+ {"name": "NEK6", "size": 3}, 
+ {"name": "CHK1", "size": 4}, 
+ {"name": "TLK1", "size": 2}, 
+ {"name": "TAOK3", "size": 2}, 
+ {"name": "NEK9", "size": 3}, 
+ {"name": "CDK7", "size": 3}, 
+ {"name": "NEK7", "size": 1}, 
+ {"name": "CSK22", "size": 3}, 
+ {"name": "MAST2", "size": 2}, 
+ {"name": "STK36", "size": 1}, 
+ {"name": "CDK9", "size": 4}, 
+ {"name": "CDK2", "size": 4}, 
+ {"name": "AURKB", "size": 4}, 
+ {"name": "CDK4", "size": 4}, 
+ {"name": "CDK6", "size": 3}, 
+ {"name": "STK3", "size": 3}, 
+ {"name": "STK4", "size": 4}, 
+ {"name": "LATS2", "size": 3}, 
+ {"name": "CDC7", "size": 2}, 
+ {"name": "CLK2", "size": 2}, 
+ {"name": "CLK3", "size": 2}, 
+ {"name": "CDK5", "size": 4}, 
+ {"name": "KC1D", "size": 4}, 
+ {"name": "GAK", "size": 2}, 
+ {"name": "ST38L", "size": 2}, 
+ {"name": "STK24", "size": 3}, 
+ {"name": "BUB1", "size": 3}, 
+ {"name": "NEK11", "size": 1}, 
+ {"name": "MST4", "size": 3}, 
+ {"name": "DUSTY", "size": 1}, 
+ {"name": "STK25", "size": 3}, 
+ {"name": "TTBK1", "size": 1}, 
+ {"name": "TTBK2", "size": 3}, 
+ {"name": "LMTK2", "size": 1}, 
+ {"name": "LTK", "size": 2}, 
+ {"name": "CDK1", "size": 4}, 
+ {"name": "BRD4", "size": 2}, 
+ {"name": "VRK1", "size": 2}, 
+ {"name": "VRK3", "size": 2}, 
+ {"name": "KC1E", "size": 4}, 
+ {"name": "CSKP", "size": 2}, 
+ {"name": "HIPK1", "size": 1}, 
+ {"name": "MAST1", "size": 1}, 
+ {"name": "SRPK1", "size": 4}, 
+ {"name": "SRPK2", "size": 3}, 
+ {"name": "NUAK1", "size": 2}, 
+ {"name": "LRRK2", "size": 4}, 
+ {"name": "NDK7", "size": 1}, 
+ {"name": "PLK2", "size": 2}, 
+ {"name": "STK38", "size": 3}, 
+ {"name": "TTK", "size": 3}, 
+ {"name": "DDR1", "size": 1}, 
+ {"name": "DYRK2", "size": 2}, 
+ {"name": "CDK13", "size": 3}, 
+ {"name": "CDK16", "size": 2}, 
+ {"name": "BRD2", "size": 1}, 
+ {"name": "KCRM", "size": 1}, 
+ {"name": "CDK17", "size": 2}, 
+ {"name": "CD11A", "size": 2}, 
+ {"name": "CDK20", "size": 3}, 
+ {"name": "MAK", "size": 1}, 
+ {"name": "BRD3", "size": 1}, 
+ {"name": "CD11B", "size": 2}, 
+ {"name": "CDK15", "size": 2}, 
+ {"name": "CDK19", "size": 1}, 
+ {"name": "CDK8", "size": 2}, 
+ {"name": "KAD1", "size": 1}, 
+ {"name": "CDK3", "size": 3}, 
+ {"name": "RIOK2", "size": 3}, 
+ {"name": "RIOK1", "size": 2}, 
+ {"name": "PINK1", "size": 2}, 
+ {"name": "ICK", "size": 2}, 
+ {"name": "GRK5", "size": 2}, 
+ {"name": "HASP", "size": 1}, 
+ {"name": "PRP4B", "size": 2}, 
+ {"name": "CLK4", "size": 1}, 
+ {"name": "CDK14", "size": 2}, 
+ {"name": "CDK18", "size": 2}, 
+ {"name": "CDK12", "size": 2}, 
+ {"name": "DCLK3", "size": 1}, 
+ {"name": "CDKL3", "size": 1}, 
+ {"name": "CLK1", "size": 2}, 
+ {"name": "SRPK3", "size": 2}, 
+ {"name": "AURKC", "size": 2}, 
+ {"name": "ARBK2", "size": 1}, 
+ {"name": "NEK1", "size": 2}, 
+ {"name": "STK33", "size": 1}, 
+ {"name": "DYRK3", "size": 1}, 
+ {"name": "STK40", "size": 2}, 
+ {"name": "TSSK2", "size": 1}, 
+ {"name": "TRIB2", "size": 2}, 
+ {"name": "DCLK2", "size": 1}, 
+ {"name": "KC1G2", "size": 2}, 
+ {"name": "E2AK1", "size": 1}, 
+ {"name": "KC1G1", "size": 1}, 
+ {"name": "NEK3", "size": 1}, 
+ {"name": "MINK1", "size": 1}, 
+ {"name": "KC1G3", "size": 1}, 
+ {"name": "STK6", "size": 4}, 
+ {"name": "STK10", "size": 1}, 
+ {"name": "TNK1", "size": 1}, 
+ {"name": "TEX14", "size": 1}]}
+,
+ 
+ {"name": "spinglass_39", "children": [
+{
+"name": "BRSK2", "size": 1}]}
+,
+ 
+ {"name": "spinglass_53", "children": [
+{
+"name": "MOK", "size": 1}]}
+,
+ 
+ {"name": "spinglass_11", "children": [
+{
+"name": "PHKG1", "size": 1}, 
+ {"name": "PHKG2", "size": 2}]}
+,
+ 
+ {"name": "spinglass_40", "children": [
+{
+"name": "NUAK2", "size": 2}]}
+,
+ 
+ {"name": "spinglass_56", "children": [
+{
+"name": "PAK7", "size": 2}]}
+,
+ 
+ {"name": "spinglass_33", "children": [
+{
+"name": "PAK4", "size": 3}, 
+ {"name": "PAK6", "size": 3}, 
+ {"name": "MYLK2", "size": 2}]}
+,
+ 
+ {"name": "spinglass_19", "children": [
+{
+"name": "MK06", "size": 3}, 
+ {"name": "MK04", "size": 2}, 
+ {"name": "FAKD5", "size": 2}]}]}
+,
+ 
+ {"name": "louvain_4", "children": [
+{
+"name": "spinglass_57", "children": [
+{
+"name": "PRKX", "size": 2}]}
+,
+ 
+ {"name": "spinglass_2", "children": [
+{
+"name": "ERBB2", "size": 5}, 
+ {"name": "KIT", "size": 4}, 
+ {"name": "PGFRB", "size": 4}, 
+ {"name": "PGFRA", "size": 4}, 
+ {"name": "HXK2", "size": 1}, 
+ {"name": "PTK6", "size": 3}, 
+ {"name": "TIE1", "size": 1}, 
+ {"name": "TIE2", "size": 4}, 
+ {"name": "EGFR", "size": 5}, 
+ {"name": "FGFR3", "size": 4}, 
+ {"name": "FGFR1", "size": 4}, 
+ {"name": "FGFR2", "size": 4}, 
+ {"name": "FGFR4", "size": 4}, 
+ {"name": "FER", "size": 3}, 
+ {"name": "KT3K", "size": 1}, 
+ {"name": "PKN3", "size": 1}, 
+ {"name": "SRMS", "size": 1}]}
+,
+ 
+ {"name": "spinglass_30", "children": [
+{
+"name": "MERTK", "size": 2}]}
+,
+ 
+ {"name": "spinglass_54", "children": [
+{
+"name": "ROS1", "size": 3}]}
+,
+ 
+ {"name": "spinglass_32", "children": [
+{
+"name": "KGP2", "size": 2}, 
+ {"name": "KGP1", "size": 3}]}
+,
+ 
+ {"name": "spinglass_51", "children": [
+{
+"name": "RIOK3", "size": 2}]}
+,
+ 
+ {"name": "spinglass_26", "children": [
+{
+"name": "ERBB4", "size": 4}, 
+ {"name": "ERBB3", "size": 4}, 
+ {"name": "ROR1", "size": 2}]}
+,
+ 
+ {"name": "spinglass_52", "children": [
+{
+"name": "PDK3", "size": 1}]}
+,
+ 
+ {"name": "spinglass_20", "children": [
+{
+"name": "KPCD1", "size": 3}, 
+ {"name": "KPCD3", "size": 2}]}
+,
+ 
+ {"name": "spinglass_22", "children": [
+{
+"name": "RET", "size": 3}]}
+,
+ 
+ {"name": "spinglass_17", "children": [
+{
+"name": "MYLK", "size": 3}]}
+,
+ 
+ {"name": "spinglass_47", "children": [
+{
+"name": "KPCD2", "size": 3}]}
+,
+ 
+ {"name": "spinglass_4", "children": [
+{
+"name": "KPCA", "size": 4}, 
+ {"name": "KPCG", "size": 3}]}
+,
+ 
+ {"name": "spinglass_48", "children": [
+{
+"name": "BLK", "size": 2}]}
+,
+ 
+ {"name": "spinglass_49", "children": [
+{
+"name": "MRCKB", "size": 2}]}
+,
+ 
+ {"name": "spinglass_1", "children": [
+{
+"name": "PAK1", "size": 5}, 
+ {"name": "PAK2", "size": 4}, 
+ {"name": "PAK3", "size": 3}]}
+,
+ 
+ {"name": "spinglass_3", "children": [
+{
+"name": "RON", "size": 2}, 
+ {"name": "YES", "size": 4}, 
+ {"name": "TYRO3", "size": 2}, 
+ {"name": "LYN", "size": 5}, 
+ {"name": "SRC", "size": 5}, 
+ {"name": "MATK", "size": 3}, 
+ {"name": "TEC", "size": 3}, 
+ {"name": "FGR", "size": 4}, 
+ {"name": "FAK1", "size": 5}, 
+ {"name": "VGFR2", "size": 4}, 
+ {"name": "FAK2", "size": 4}, 
+ {"name": "EPHA8", "size": 3}, 
+ {"name": "EPHA2", "size": 4}, 
+ {"name": "ABL1", "size": 5}, 
+ {"name": "DAPK3", "size": 2}, 
+ {"name": "MET", "size": 4}, 
+ {"name": "ITK", "size": 3}, 
+ {"name": "BMX", "size": 3}, 
+ {"name": "OBSCN", "size": 2}, 
+ {"name": "EPHB2", "size": 4}, 
+ {"name": "M4K5", "size": 2}, 
+ {"name": "DDR2", "size": 1}, 
+ {"name": "TXK", "size": 2}, 
+ {"name": "GUC2C", "size": 1}, 
+ {"name": "UFO", "size": 3}, 
+ {"name": "RYK", "size": 3}, 
+ {"name": "EPHB3", "size": 4}, 
+ {"name": "EPHB6", "size": 2}, 
+ {"name": "EPHB1", "size": 3}, 
+ {"name": "TRIO", "size": 3}, 
+ {"name": "LIMK1", "size": 4}, 
+ {"name": "ROCK1", "size": 4}, 
+ {"name": "LIMK2", "size": 3}, 
+ {"name": "MRCKA", "size": 2}, 
+ {"name": "FES", "size": 3}, 
+ {"name": "KALRN", "size": 3}, 
+ {"name": "EPHA4", "size": 4}, 
+ {"name": "FYN", "size": 5}, 
+ {"name": "HCK", "size": 4}, 
+ {"name": "CSK", "size": 4}, 
+ {"name": "AGK", "size": 1}, 
+ {"name": "PIM1", "size": 2}, 
+ {"name": "EPHA3", "size": 3}, 
+ {"name": "ACK1", "size": 3}, 
+ {"name": "NTRK2", "size": 2}, 
+ {"name": "ABL2", "size": 3}, 
+ {"name": "HIPK3", "size": 1}, 
+ {"name": "ROCK2", "size": 4}, 
+ {"name": "UHMK1", "size": 1}, 
+ {"name": "CDKL5", "size": 2}, 
+ {"name": "GUC2D", "size": 1}, 
+ {"name": "EPHB4", "size": 4}, 
+ {"name": "EPHA1", "size": 4}, 
+ {"name": "PTK7", "size": 1}, 
+ {"name": "EPHA7", "size": 4}, 
+ {"name": "BMP2K", "size": 1}, 
+ {"name": "FRK", "size": 3}, 
+ {"name": "EPHA5", "size": 3}, 
+ {"name": "EPHA6", "size": 3}, 
+ {"name": "EPHAA", "size": 3}, 
+ {"name": "HUNK", "size": 1}]}]}
+,
+ 
+ {"name": "louvain_5", "children": [
+{
+"name": "spinglass_42", "children": [
+{
+"name": "NDKA", "size": 2}, 
+ {"name": "NDKM", "size": 1}, 
+ {"name": "NDK3", "size": 2}, 
+ {"name": "NDKB", "size": 2}, 
+ {"name": "KAD2", "size": 2}]}]}
+,
+ 
+ {"name": "louvain_6", "children": [
+{
+"name": "spinglass_31", "children": [
+{
+"name": "KCC2G", "size": 4}, 
+ {"name": "KCC2A", "size": 4}, 
+ {"name": "KCC2B", "size": 4}, 
+ {"name": "KCC2D", "size": 4}]}
+,
+ 
+ {"name": "spinglass_13", "children": [
+{
+"name": "KS6A2", "size": 4}, 
+ {"name": "KS6A4", "size": 3}, 
+ {"name": "KS6A3", "size": 4}, 
+ {"name": "KS6A1", "size": 4}, 
+ {"name": "KS6A5", "size": 3}, 
+ {"name": "KS6A6", "size": 3}, 
+ {"name": "GWL", "size": 1}]}
+,
+ 
+ {"name": "spinglass_24", "children": [
+{
+"name": "KAPCA", "size": 5}, 
+ {"name": "KAPCB", "size": 4}, 
+ {"name": "ANPRA", "size": 1}, 
+ {"name": "KAPCG", "size": 3}, 
+ {"name": "GRK7", "size": 1}]}
+,
+ 
+ {"name": "spinglass_36", "children": [
+{
+"name": "KKCC1", "size": 2}]}
+,
+ 
+ {"name": "spinglass_37", "children": [
+{
+"name": "KCC1A", "size": 3}, 
+ {"name": "KCC1D", "size": 2}, 
+ {"name": "KCC1G", "size": 1}]}
+,
+ 
+ {"name": "spinglass_35", "children": [
+{
+"name": "PLK3", "size": 2}]}
+,
+ 
+ {"name": "spinglass_16", "children": [
+{
+"name": "MKNK2", "size": 3}]}
+,
+ 
+ {"name": "spinglass_8", "children": [
+{
+"name": "MK03", "size": 5}, 
+ {"name": "MK01", "size": 5}, 
+ {"name": "MP2K1", "size": 4}, 
+ {"name": "ARAF", "size": 3}, 
+ {"name": "KSR2", "size": 2}, 
+ {"name": "MP2K2", "size": 4}, 
+ {"name": "MKNK1", "size": 2}, 
+ {"name": "MARK3", "size": 3}, 
+ {"name": "DAPK1", "size": 3}, 
+ {"name": "RAF1", "size": 5}, 
+ {"name": "KSR1", "size": 3}, 
+ {"name": "DMPK", "size": 1}, 
+ {"name": "BRAF", "size": 4}, 
+ {"name": "HIPK4", "size": 2}]}
+,
+ 
+ {"name": "spinglass_34", "children": [
+{
+"name": "MK07", "size": 4}]}
+,
+ 
+ {"name": "spinglass_14", "children": [
+{
+"name": "KPCE", "size": 4}]}
+,
+ 
+ {"name": "spinglass_23", "children": [
+{
+"name": "NTRK1", "size": 3}, 
+ {"name": "SGK2", "size": 1}]}
+,
+ 
+ {"name": "spinglass_15", "children": [
+{
+"name": "NTRK3", "size": 3}]}]}
+,
+ 
+ {"name": "louvain_7", "children": [
+{
+"name": "spinglass_10", "children": [
+{
+"name": "K6PF", "size": 2}, 
+ {"name": "K6PL", "size": 3}, 
+ {"name": "TESK1", "size": 1}, 
+ {"name": "K6PP", "size": 3}]}]}
+,
+ 
+ {"name": "spinglass_0", "children": [
+{
+"name": "INSR", "size": 3}, 
+ {"name": "INSRR", "size": 1}, 
+ {"name": "SIK3", "size": 2}, 
+ {"name": "SIK2", "size": 2}]}
+,
+ 
+ {"name": "spinglass_41", "children": [
+{
+"name": "KC1A", "size": 4}, 
+ {"name": "PRPK", "size": 2}]}]}
