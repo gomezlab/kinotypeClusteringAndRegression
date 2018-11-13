@@ -14,10 +14,11 @@
   "author": "Isaac S. Robson",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/isrobson/KIN_ClusteringWithAnnotations/issues"
+    "url": "https://github.com/gomezlab/KIN_ClusteringWithAnnotations/issues"
   },
-  "homepage": "https://github.com/isrobson/KIN_ClusteringWithAnnotations#readme",
+  "homepage": "https://github.com/gomezlab/KIN_ClusteringWithAnnotations#readme",
   "dependencies": {
+    "http-server": "^0.11.1",
     "imports-loader": "^0.8.0",
     "jquery": "^3.3.1",
     "npm-watch": "^0.4.0",
