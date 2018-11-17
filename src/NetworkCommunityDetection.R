@@ -4,8 +4,8 @@
 #install.packages('purrr')
 
 library("igraph")
-G <- read.graph("~/Github/KIN_ClusteringWithAnnotations/data/Full_Kinome_Network_Compiled_weighted_pathways.txt",format="ncol",names=TRUE,weights="yes",directed=FALSE)
-tmp <- read.table("~/Github/KIN_ClusteringWithAnnotations/data/Full_Kinome_Network_Compiled_weighted_pathways.txt")
+G <- read.graph("~/Github/KIN_ClusteringWithAnnotations/data/KIN_edges_no_weights.txt",format="ncol",names=TRUE,weights="yes",directed=FALSE)
+tmp <- read.table("~/Github/KIN_ClusteringWithAnnotations/data/KIN_weighted_edges.txt")
 W <- tmp$V3
 
 ##Algorithms to try:
@@ -256,8 +256,10 @@ write.table(wt_clusts, '~/Github/KIN_ClusteringWithAnnotations/Results/consensus
 
 ###6. cluster_louvain
 louv <- cluster_louvain(mainG)
-louv_clusts <- data.frame(names=louv$names, cluster=louv$membership)
+louv_clusts <- data.frame(names=louv$names, cluster=louv$memberships[2,])
+louv_small_clusts <- data.frame(names=louv$names, cluster=louv$memberships[1,])
 write.table(louv_clusts, '~/GitHub/KIN_ClusteringWithAnnotations/results/louvain_clusters.txt',quote=FALSE,sep="\t",row.names=FALSE)
+write.table(louv_small_clusts, '~/GitHub/KIN_ClusteringWithAnnotations/results/louvain_small_clusters.txt',quote=FALSE,sep="\t",row.names=FALSE)
 
 ###7. cluster_infomap (random walks) 
 info <- walktrap.community(mainG)
@@ -329,6 +331,7 @@ mod$eigen <- modularity(mainG,lev_clusts$cluster,weights=W)
 mod$walktrap <- modularity(mainG,wt_clusts$cluster,weights=W)
 mod$label <- modularity(mainG,lp_clusts$cluster,weights=W)
 mod$louvain <- modularity(mainG,louv_clusts$cluster,weights=W)
+mod$small_louvain <- modularity(mainG,louv_small_clusts$cluster,weights=W)
 mod$infomap <- modularity(mainG,info_clusts$cluster,weights=W)
 mod$edge_between <- modularity(mainG,eb_clusts$cluster,weights=W)
 
