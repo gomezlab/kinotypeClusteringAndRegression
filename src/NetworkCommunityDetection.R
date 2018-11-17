@@ -4,7 +4,7 @@
 #install.packages('purrr')
 
 library("igraph")
-G <- read.graph("~/Github/KIN_ClusteringWithAnnotations/data/KIN_edges_no_weights.txt",format="ncol",names=TRUE,weights="yes",directed=FALSE)
+G <- read.graph("~/Github/KIN_ClusteringWithAnnotations/data/KIN_weighted_edges.txt",format="ncol",names=TRUE,weights="yes",directed=FALSE)
 tmp <- read.table("~/Github/KIN_ClusteringWithAnnotations/data/KIN_weighted_edges.txt")
 W <- tmp$V3
 
