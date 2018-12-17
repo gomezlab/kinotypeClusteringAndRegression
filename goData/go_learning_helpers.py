@@ -176,7 +176,7 @@ def get_svm_coeffs_for_cluster(svm, cluster_num):
     idx_locs = [x for x, y in enumerate(np.array(list(it.combinations(range(num_classes), 2)))) if cluster_num in y]
     return svm.coef_[idx_locs,:]
 
-def generate_kinase_labels(path_to_synonyms='../data/go_synonym_data.txt', path_to_kinase_network='../data/Full_Kinome_Network_Compiled_no_header.txt', path_to_alias_spreadsheet='../data/KINASESmasterlist_w_Aliases.xlsx', path_to_stopwords='./stopwords.csv', path_to_process_list='./go_biological_processes.txt', out_path = 'kinase_go_processes.csv'):
+def generate_kinase_labels(path_to_synonyms='../data/go_synonym_data.txt', path_to_kinase_network='../data/KIN_edges_no_weights.txt', path_to_alias_spreadsheet='../data/KINASESmasterlist_w_Aliases.xlsx', path_to_stopwords='./stopwords.csv', path_to_process_list='./go_biological_processes.txt', out_path = 'kinase_go_processes.csv'):
 
     df = pd.read_csv(path_to_synonyms, header=None, sep='\t', low_memory=False,)
     df.columns = ['ID', 'Gene/Product', 'Name', 'GO Class Labels', 'Synonyms']
@@ -239,7 +239,7 @@ def generate_kinase_labels(path_to_synonyms='../data/go_synonym_data.txt', path_
 
     for x in fix_list:
         temp = go_dat[x].iloc[0]
-        temp['GO Class Labels']='|'.join(list(set(go_dat[x]['GO Class Labels'].iloc[0].split('|')) | set(go_dat['P4K2B']['GO Class Labels'].iloc[1].split('|'))))
+        temp['GO Class Labels']='|'.join(list(set(go_dat[x]['GO Class Labels'].iloc[0].split('|')) | set(go_dat[x]['GO Class Labels'].iloc[1].split('|'))))
         go_dat[x] = temp
 
 
