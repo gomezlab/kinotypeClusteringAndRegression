@@ -2,7 +2,7 @@ library("igraph")
 G <- read.graph("~/Github/KIN_ClusteringWithAnnotations/data/KIN_weighted_edges.txt",format="ncol",names=TRUE,weights="yes",directed=FALSE)
 tmp <- read.table("~/Github/KIN_ClusteringWithAnnotations/data/KIN_weighted_edges.txt")
 W <- tmp$V3
-
+new_G <- read.graph('~/Github/KIN_ClusteringWithAnnotations/data/KIN_random_graph.txt',names=TRUE,format='ncol',directed=FALSE)
 d <- degree(G)
 new_G <- degree.sequence.game(out.deg = d, method=c("vl"))
 V(new_G)$comp <- components(new_G)$membership
