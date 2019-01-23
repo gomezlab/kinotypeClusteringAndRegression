@@ -65,8 +65,9 @@ d3.json("viz.json", function(error, root) {
     .data(nodes)
     .enter().append("circle")
       .attr("class", function(d) { return d.parent ? d.children ? "node" : "node node--leaf" : "node node--root"; })
-      .style("fill", function(d) { return d.children ? color(d.depth) : null; })
+      .style("fill", function(d) { return !(d.children) ? d.data['studied'] == 'dark' ? 'green' : null : color(d.depth); })
       .on("click", function(d) { if (focus !== d) zoom(d), d3.event.stopPropagation(); });
+      //.style("fill", function(d) { console.log(d.parent ? d.children ? "node " + color(d.depth).toString() : "node node--leaf "+ color(d.depth).toString() : "node node--root " + color(d.depth).toString()); console.log(d.data['studied'] == 'dark'); return d.parent ? d.children ? color(d.depth) : color(d.depth) : null; })
 
   var text = g.selectAll("text")
     .data(nodes)
