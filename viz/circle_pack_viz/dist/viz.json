@@ -4,630 +4,630 @@
 {
 "name": "subcluster_8", "children": [
 {
-"name": "BMPR2", "size": 3}, 
- {"name": "BMPR1B", "size": 4}, 
- {"name": "BMPR1A", "size": 3}, 
- {"name": "ACVR2B", "size": 3}, 
- {"name": "ACVR1B", "size": 2}, 
- {"name": "ACVR1", "size": 3}, 
- {"name": "ACVR2A", "size": 3}, 
- {"name": "ACVR1C", "size": 2}]}
+"name": "BMPR2", "size": 3, "studied": "well"}, 
+ {"name": "BMPR1B", "size": 3, "studied": "well"}, 
+ {"name": "BMPR1A", "size": 2, "studied": "well"}, 
+ {"name": "ACVR2B", "size": 2, "studied": "well"}, 
+ {"name": "ACVR1B", "size": 3, "studied": "well"}, 
+ {"name": "ACVR1", "size": 4, "studied": "well"}, 
+ {"name": "ACVR2A", "size": 1, "studied": "well"}, 
+ {"name": "ACVR1C", "size": 1, "studied": "well"}]}
 ,
  
  {"name": "subcluster_7", "children": [
 {
-"name": "TGFBR2", "size": 4}, 
- {"name": "TGFBR1", "size": 4}, 
- {"name": "AMHR2", "size": 1}, 
- {"name": "ACVRL1", "size": 2}, 
- {"name": "TSSK1B", "size": 2}, 
- {"name": "DAPK2", "size": 1}, 
- {"name": "STK35", "size": 1}, 
- {"name": "CDKL1", "size": 1}, 
- {"name": "MYO3A", "size": 1}, 
- {"name": "TSSK4", "size": 1}, 
- {"name": "SGK196", "size": 1}, 
- {"name": "STK17B", "size": 1}]}
+"name": "TGFBR2", "size": 3, "studied": "well"}, 
+ {"name": "TGFBR1", "size": 4, "studied": "well"}, 
+ {"name": "AMHR2", "size": 1, "studied": "well"}, 
+ {"name": "ACVRL1", "size": 1, "studied": "well"}, 
+ {"name": "TSSK1B", "size": 1, "studied": "dark"}, 
+ {"name": "DAPK2", "size": 1, "studied": "well"}, 
+ {"name": "STK35", "size": 1, "studied": "well"}, 
+ {"name": "CDKL1", "size": 1, "studied": "dark"}, 
+ {"name": "MYO3A", "size": 1, "studied": "well"}, 
+ {"name": "TSSK4", "size": 1, "studied": "dark"}, 
+ {"name": "SGK196", "size": 1, "studied": "well"}, 
+ {"name": "STK17B", "size": 1, "studied": "dark"}]}
 ,
  
  {"name": "subcluster_26", "children": [
 {
-"name": "STK39", "size": 2}, 
- {"name": "OXSR1", "size": 3}, 
- {"name": "WNK1", "size": 3}, 
- {"name": "WNK4", "size": 2}, 
- {"name": "AATK", "size": 1}, 
- {"name": "WNK2", "size": 2}, 
- {"name": "WNK3", "size": 1}]}]}
+"name": "STK39", "size": 1, "studied": "well"}, 
+ {"name": "OXSR1", "size": 1, "studied": "well"}, 
+ {"name": "WNK1", "size": 1, "studied": "well"}, 
+ {"name": "WNK4", "size": 1, "studied": "well"}, 
+ {"name": "AATK", "size": 1, "studied": "well"}, 
+ {"name": "WNK2", "size": 1, "studied": "dark"}, 
+ {"name": "WNK3", "size": 1, "studied": "dark"}]}]}
 ,
  
  {"name": "supercluster_2", "children": [
 {
-"name": "subcluster_9", "children": [
+"name": "subcluster_20", "children": [
 {
-"name": "PRKCQ", "size": 3}, 
- {"name": "IKBKB", "size": 4}, 
- {"name": "CHUK", "size": 4}, 
- {"name": "MAP3K8", "size": 4}, 
- {"name": "MAP3K14", "size": 3}, 
- {"name": "RIPK1", "size": 4}, 
- {"name": "EIF2AK3", "size": 1}, 
- {"name": "MAP3K13", "size": 2}, 
- {"name": "RIPK3", "size": 2}, 
- {"name": "PRKCH", "size": 3}, 
- {"name": "TBK1", "size": 3}, 
- {"name": "IKBKE", "size": 3}, 
- {"name": "MLKL", "size": 2}, 
- {"name": "TNIK", "size": 2}, 
- {"name": "PDXK", "size": 1}, 
- {"name": "SLK", "size": 1}, 
- {"name": "CDC42BPG", "size": 1}, 
- {"name": "FLT3", "size": 2}]}
+"name": "TYK2", "size": 3, "studied": "well"}, 
+ {"name": "EIF2AK2", "size": 1, "studied": "well"}, 
+ {"name": "JAK3", "size": 1, "studied": "well"}, 
+ {"name": "JAK2", "size": 3, "studied": "well"}, 
+ {"name": "JAK1", "size": 3, "studied": "well"}]}
 ,
  
  {"name": "subcluster_4", "children": [
 {
-"name": "LYN", "size": 5}, 
- {"name": "SYK", "size": 4}, 
- {"name": "FLT1", "size": 3}, 
- {"name": "PRKCD", "size": 4}, 
- {"name": "BTK", "size": 4}, 
- {"name": "PIK3CG", "size": 4}, 
- {"name": "PIK3CA", "size": 4}, 
- {"name": "PRKCZ", "size": 4}, 
- {"name": "GSK3A", "size": 4}, 
- {"name": "PRKCB", "size": 3}, 
- {"name": "GSK3B", "size": 5}, 
- {"name": "PDPK1", "size": 5}, 
- {"name": "RIPK4", "size": 1}, 
- {"name": "PIK3CB", "size": 4}, 
- {"name": "AKT3", "size": 3}, 
- {"name": "PRKCI", "size": 4}, 
- {"name": "SMG1", "size": 1}, 
- {"name": "RPS6KB1", "size": 4}, 
- {"name": "ILK", "size": 4}, 
- {"name": "SGK1", "size": 3}, 
- {"name": "PDK2", "size": 2}, 
- {"name": "PDK1", "size": 4}, 
- {"name": "SGK3", "size": 2}, 
- {"name": "RPS6KB2", "size": 4}, 
- {"name": "AKT1", "size": 5}, 
- {"name": "IGF1R", "size": 4}, 
- {"name": "FLT4", "size": 3}, 
- {"name": "PIP4K2B", "size": 2}, 
- {"name": "CSF1R", "size": 3}, 
- {"name": "AKT2", "size": 4}, 
- {"name": "TRIB3", "size": 3}, 
- {"name": "PIK3CD", "size": 4}, 
- {"name": "KHK", "size": 1}, 
- {"name": "MTOR", "size": 3}, 
- {"name": "NRBP1", "size": 1}, 
- {"name": "PIM2", "size": 1}, 
- {"name": "HK1", "size": 2}, 
- {"name": "ROR2", "size": 2}, 
- {"name": "STYK1", "size": 1}, 
- {"name": "ADCK4", "size": 1}, 
- {"name": "GRK6", "size": 1}]}
+"name": "LYN", "size": 4, "studied": "well"}, 
+ {"name": "SYK", "size": 3, "studied": "well"}, 
+ {"name": "FLT1", "size": 1, "studied": "well"}, 
+ {"name": "PRKCD", "size": 4, "studied": "well"}, 
+ {"name": "BTK", "size": 4, "studied": "well"}, 
+ {"name": "PIK3CG", "size": 1, "studied": "well"}, 
+ {"name": "PIK3CA", "size": 1, "studied": "well"}, 
+ {"name": "PRKCZ", "size": 1, "studied": "well"}, 
+ {"name": "GSK3A", "size": 4, "studied": "well"}, 
+ {"name": "PRKCB", "size": 3, "studied": "well"}, 
+ {"name": "GSK3B", "size": 4, "studied": "well"}, 
+ {"name": "PDPK1", "size": 1, "studied": "well"}, 
+ {"name": "RIPK4", "size": 1, "studied": "well"}, 
+ {"name": "PIK3CB", "size": 1, "studied": "well"}, 
+ {"name": "AKT3", "size": 2, "studied": "well"}, 
+ {"name": "PRKCI", "size": 2, "studied": "well"}, 
+ {"name": "SMG1", "size": 1, "studied": "well"}, 
+ {"name": "RPS6KB1", "size": 2, "studied": "well"}, 
+ {"name": "ILK", "size": 1, "studied": "well"}, 
+ {"name": "SGK1", "size": 1, "studied": "well"}, 
+ {"name": "PDK2", "size": 1, "studied": "well"}, 
+ {"name": "PDK1", "size": 1, "studied": "well"}, 
+ {"name": "SGK3", "size": 1, "studied": "well"}, 
+ {"name": "RPS6KB2", "size": 1, "studied": "well"}, 
+ {"name": "AKT1", "size": 2, "studied": "well"}, 
+ {"name": "IGF1R", "size": 3, "studied": "well"}, 
+ {"name": "FLT4", "size": 1, "studied": "well"}, 
+ {"name": "PIP4K2B", "size": 1, "studied": "well"}, 
+ {"name": "CSF1R", "size": 1, "studied": "well"}, 
+ {"name": "AKT2", "size": 2, "studied": "well"}, 
+ {"name": "TRIB3", "size": 1, "studied": "well"}, 
+ {"name": "PIK3CD", "size": 1, "studied": "well"}, 
+ {"name": "KHK", "size": 1, "studied": "well"}, 
+ {"name": "MTOR", "size": 1, "studied": "well"}, 
+ {"name": "NRBP1", "size": 1, "studied": "well"}, 
+ {"name": "PIM2", "size": 1, "studied": "well"}, 
+ {"name": "HK1", "size": 1, "studied": "well"}, 
+ {"name": "ROR2", "size": 1, "studied": "well"}, 
+ {"name": "STYK1", "size": 1, "studied": "well"}, 
+ {"name": "COQ8B", "size": 1, "studied": "dark"}, 
+ {"name": "GRK6", "size": 1, "studied": "well"}]}
 ,
  
- {"name": "subcluster_10", "children": [
+ {"name": "subcluster_9", "children": [
 {
-"name": "ZAP70", "size": 3}, 
- {"name": "LCK", "size": 4}]}
+"name": "PRKCQ", "size": 3, "studied": "dark"}, 
+ {"name": "IKBKB", "size": 1, "studied": "well"}, 
+ {"name": "CHUK", "size": 1, "studied": "well"}, 
+ {"name": "MAP3K8", "size": 1, "studied": "well"}, 
+ {"name": "MAP3K14", "size": 1, "studied": "dark"}, 
+ {"name": "RIPK1", "size": 1, "studied": "well"}, 
+ {"name": "EIF2AK3", "size": 1, "studied": "well"}, 
+ {"name": "MAP3K13", "size": 1, "studied": "well"}, 
+ {"name": "RIPK3", "size": 4, "studied": "well"}, 
+ {"name": "PRKCH", "size": 1, "studied": "well"}, 
+ {"name": "TBK1", "size": 4, "studied": "well"}, 
+ {"name": "IKBKE", "size": 4, "studied": "well"}, 
+ {"name": "MLKL", "size": 1, "studied": "well"}, 
+ {"name": "TNIK", "size": 3, "studied": "well"}, 
+ {"name": "PDXK", "size": 2, "studied": "well"}, 
+ {"name": "SLK", "size": 4, "studied": "well"}, 
+ {"name": "CDC42BPG", "size": 1, "studied": "dark"}, 
+ {"name": "FLT3", "size": 5, "studied": "well"}]}
 ,
  
  {"name": "subcluster_21", "children": [
 {
-"name": "PIP5K1B", "size": 2}, 
- {"name": "PIP5K1A", "size": 3}, 
- {"name": "PIP5K1C", "size": 2}, 
- {"name": "PIP4K2A", "size": 3}, 
- {"name": "PIP4K2C", "size": 2}, 
- {"name": "PIK3C2A", "size": 2}, 
- {"name": "PI4KA", "size": 2}, 
- {"name": "PI4K2B", "size": 2}, 
- {"name": "PGK1", "size": 2}]}
+"name": "PIP5K1B", "size": 1, "studied": "dark"}, 
+ {"name": "PIP5K1A", "size": 1, "studied": "dark"}, 
+ {"name": "PIP5K1C", "size": 1, "studied": "dark"}, 
+ {"name": "PIP4K2A", "size": 1, "studied": "well"}, 
+ {"name": "PIP4K2C", "size": 3, "studied": "dark"}, 
+ {"name": "PIK3C2A", "size": 1, "studied": "well"}, 
+ {"name": "PI4KA", "size": 1, "studied": "dark"}, 
+ {"name": "PI4K2B", "size": 1, "studied": "well"}, 
+ {"name": "PGK1", "size": 1, "studied": "well"}]}
 ,
  
- {"name": "subcluster_20", "children": [
+ {"name": "subcluster_10", "children": [
 {
-"name": "TYK2", "size": 3}, 
- {"name": "EIF2AK2", "size": 3}, 
- {"name": "JAK3", "size": 4}, 
- {"name": "JAK2", "size": 4}, 
- {"name": "JAK1", "size": 4}]}]}
+"name": "ZAP70", "size": 1, "studied": "well"}, 
+ {"name": "LCK", "size": 4, "studied": "well"}]}]}
 ,
  
  {"name": "supercluster_3", "children": [
 {
 "name": "subcluster_11", "children": [
 {
-"name": "MAPK14", "size": 5}, 
- {"name": "DYRK1B", "size": 3}, 
- {"name": "MAPKAPK5", "size": 3}, 
- {"name": "PKN1", "size": 3}, 
- {"name": "MAP2K6", "size": 4}, 
- {"name": "MAPK12", "size": 3}, 
- {"name": "MAPK15", "size": 2}, 
- {"name": "ZAK", "size": 2}, 
- {"name": "MAP3K10", "size": 3}, 
- {"name": "MAPKAPK3", "size": 3}, 
- {"name": "MAP2K3", "size": 4}, 
- {"name": "MAPK13", "size": 3}, 
- {"name": "TAOK2", "size": 2}, 
- {"name": "TAOK1", "size": 3}, 
- {"name": "MAP3K6", "size": 2}, 
- {"name": "PKN2", "size": 3}, 
- {"name": "MAPK11", "size": 3}, 
- {"name": "TAOK3", "size": 2}, 
- {"name": "MAPKAPK2", "size": 4}, 
- {"name": "EIF2AK4", "size": 3}, 
- {"name": "KIAA1804", "size": 1}, 
- {"name": "MYLK3", "size": 1}, 
- {"name": "PRKY", "size": 1}]}
+"name": "MAPK14", "size": 3, "studied": "well"}, 
+ {"name": "DYRK1B", "size": 1, "studied": "dark"}, 
+ {"name": "MAPKAPK5", "size": 2, "studied": "well"}, 
+ {"name": "PKN1", "size": 4, "studied": "well"}, 
+ {"name": "MAP2K6", "size": 3, "studied": "well"}, 
+ {"name": "MAPK12", "size": 1, "studied": "well"}, 
+ {"name": "MAPK15", "size": 2, "studied": "dark"}, 
+ {"name": "MAP3K20", "size": 4, "studied": "well"}, 
+ {"name": "MAP3K10", "size": 1, "studied": "dark"}, 
+ {"name": "MAPKAPK3", "size": 2, "studied": "well"}, 
+ {"name": "MAP2K3", "size": 2, "studied": "well"}, 
+ {"name": "MAPK13", "size": 1, "studied": "well"}, 
+ {"name": "TAOK2", "size": 3, "studied": "dark"}, 
+ {"name": "TAOK1", "size": 3, "studied": "dark"}, 
+ {"name": "MAP3K6", "size": 2, "studied": "well"}, 
+ {"name": "PKN2", "size": 3, "studied": "well"}, 
+ {"name": "MAPK11", "size": 3, "studied": "well"}, 
+ {"name": "TAOK3", "size": 3, "studied": "well"}, 
+ {"name": "MAPKAPK2", "size": 3, "studied": "well"}, 
+ {"name": "EIF2AK4", "size": 1, "studied": "well"}, 
+ {"name": "MAP3K21", "size": 1, "studied": "dark"}, 
+ {"name": "MYLK3", "size": 3, "studied": "well"}, 
+ {"name": "PRKY", "size": 1, "studied": "well"}]}
 ,
  
  {"name": "subcluster_12", "children": [
 {
-"name": "MAP4K1", "size": 3}, 
- {"name": "MAP3K5", "size": 4}, 
- {"name": "MAP3K4", "size": 3}, 
- {"name": "TRIB1", "size": 2}, 
- {"name": "IRAK1", "size": 4}, 
- {"name": "MAP2K5", "size": 2}, 
- {"name": "MAPK8", "size": 4}, 
- {"name": "MAP2K4", "size": 4}, 
- {"name": "IRAK2", "size": 4}, 
- {"name": "IRAK3", "size": 2}, 
- {"name": "IRAK4", "size": 2}, 
- {"name": "MAP3K12", "size": 2}, 
- {"name": "MAP3K11", "size": 3}, 
- {"name": "MAP2K7", "size": 4}, 
- {"name": "MAP4K2", "size": 2}, 
- {"name": "MAP3K7", "size": 4}, 
- {"name": "MAP3K2", "size": 3}, 
- {"name": "MAPK9", "size": 4}, 
- {"name": "MAPK10", "size": 3}, 
- {"name": "MAP3K3", "size": 4}, 
- {"name": "ERN1", "size": 2}, 
- {"name": "MAP4K4", "size": 3}, 
- {"name": "NLK", "size": 2}, 
- {"name": "HIPK2", "size": 3}, 
- {"name": "STK4", "size": 4}, 
- {"name": "RIPK2", "size": 4}, 
- {"name": "ALK", "size": 3}, 
- {"name": "MAP3K1", "size": 4}, 
- {"name": "VRK2", "size": 3}, 
- {"name": "DYRK1A", "size": 2}, 
- {"name": "STK38", "size": 3}, 
- {"name": "CABC1", "size": 2}, 
- {"name": "MAP4K3", "size": 1}, 
- {"name": "PINK1", "size": 2}, 
- {"name": "NEK10", "size": 1}]}]}
+"name": "MAP4K1", "size": 4, "studied": "well"}, 
+ {"name": "MAP3K5", "size": 3, "studied": "well"}, 
+ {"name": "MAP3K4", "size": 3, "studied": "well"}, 
+ {"name": "TRIB1", "size": 1, "studied": "well"}, 
+ {"name": "IRAK1", "size": 3, "studied": "well"}, 
+ {"name": "MAP2K5", "size": 4, "studied": "well"}, 
+ {"name": "MAPK8", "size": 4, "studied": "well"}, 
+ {"name": "MAP2K4", "size": 1, "studied": "well"}, 
+ {"name": "IRAK2", "size": 1, "studied": "well"}, 
+ {"name": "IRAK3", "size": 4, "studied": "well"}, 
+ {"name": "IRAK4", "size": 4, "studied": "well"}, 
+ {"name": "MAP3K12", "size": 1, "studied": "well"}, 
+ {"name": "MAP3K11", "size": 4, "studied": "well"}, 
+ {"name": "MAP2K7", "size": 1, "studied": "well"}, 
+ {"name": "MAP4K2", "size": 4, "studied": "well"}, 
+ {"name": "MAP3K7", "size": 1, "studied": "well"}, 
+ {"name": "MAP3K2", "size": 3, "studied": "well"}, 
+ {"name": "MAPK9", "size": 4, "studied": "well"}, 
+ {"name": "MAPK10", "size": 3, "studied": "well"}, 
+ {"name": "MAP3K3", "size": 3, "studied": "well"}, 
+ {"name": "ERN1", "size": 3, "studied": "well"}, 
+ {"name": "MAP4K4", "size": 4, "studied": "well"}, 
+ {"name": "NLK", "size": 2, "studied": "well"}, 
+ {"name": "HIPK2", "size": 1, "studied": "well"}, 
+ {"name": "STK4", "size": 4, "studied": "well"}, 
+ {"name": "RIPK2", "size": 4, "studied": "well"}, 
+ {"name": "ALK", "size": 1, "studied": "well"}, 
+ {"name": "MAP3K1", "size": 4, "studied": "well"}, 
+ {"name": "VRK2", "size": 1, "studied": "dark"}, 
+ {"name": "DYRK1A", "size": 4, "studied": "well"}, 
+ {"name": "STK38", "size": 1, "studied": "well"}, 
+ {"name": "COQ8A", "size": 2, "studied": "dark"}, 
+ {"name": "MAP4K3", "size": 4, "studied": "well"}, 
+ {"name": "PINK1", "size": 1, "studied": "well"}, 
+ {"name": "NEK10", "size": 1, "studied": "dark"}]}]}
 ,
  
  {"name": "supercluster_4", "children": [
 {
-"name": "subcluster_1", "children": [
+"name": "subcluster_28", "children": [
 {
-"name": "PHKG1", "size": 1}, 
- {"name": "PHKG2", "size": 2}]}
-,
- 
- {"name": "subcluster_23", "children": [
-{
-"name": "BUB1B", "size": 3}, 
- {"name": "BUB1", "size": 3}]}
-,
- 
- {"name": "subcluster_14", "children": [
-{
-"name": "TRPM7", "size": 1}, 
- {"name": "TRPM6", "size": 1}]}
-,
- 
- {"name": "subcluster_13", "children": [
-{
-"name": "MARK2", "size": 3}, 
- {"name": "BRSK1", "size": 2}, 
- {"name": "STK11", "size": 4}, 
- {"name": "EEF2K", "size": 4}, 
- {"name": "PRKAA2", "size": 4}, 
- {"name": "MARK1", "size": 2}, 
- {"name": "STRADB", "size": 1}, 
- {"name": "STRADA", "size": 1}, 
- {"name": "PIK3R4", "size": 2}, 
- {"name": "PIK3C3", "size": 2}, 
- {"name": "PRKAA1", "size": 4}, 
- {"name": "CAMKK2", "size": 3}, 
- {"name": "CAMK4", "size": 1}, 
- {"name": "BRSK2", "size": 1}, 
- {"name": "NUAK2", "size": 2}, 
- {"name": "SNRK", "size": 2}, 
- {"name": "PASK", "size": 2}, 
- {"name": "STK16", "size": 2}, 
- {"name": "MELK", "size": 2}, 
- {"name": "SIK3", "size": 2}, 
- {"name": "ULK2", "size": 3}, 
- {"name": "ULK1", "size": 2}, 
- {"name": "MAST3", "size": 2}, 
- {"name": "NUAK1", "size": 2}, 
- {"name": "SIK2", "size": 2}, 
- {"name": "SIK1", "size": 2}, 
- {"name": "PCK2", "size": 1}]}
-,
- 
- {"name": "subcluster_16", "children": [
-{
-"name": "CDK4", "size": 4}, 
- {"name": "CDK6", "size": 3}, 
- {"name": "CDKL3", "size": 1}, 
- {"name": "EIF2AK1", "size": 1}]}
-,
- 
- {"name": "subcluster_27", "children": [
-{
-"name": "PAK4", "size": 3}, 
- {"name": "PAK6", "size": 3}, 
- {"name": "MYLK2", "size": 2}, 
- {"name": "PAK7", "size": 2}]}
-,
- 
- {"name": "subcluster_34", "children": [
-{
-"name": "PRPF4B", "size": 2}, 
- {"name": "SRPK3", "size": 2}]}
-,
- 
- {"name": "subcluster_28", "children": [
-{
-"name": "VRK1", "size": 2}, 
- {"name": "VRK3", "size": 2}]}
-,
- 
- {"name": "subcluster_15", "children": [
-{
-"name": "MAST2", "size": 2}, 
- {"name": "STK36", "size": 1}]}
-,
- 
- {"name": "subcluster_32", "children": [
-{
-"name": "BRD4", "size": 2}, 
- {"name": "BRD2", "size": 1}, 
- {"name": "CKM", "size": 1}, 
- {"name": "BRD3", "size": 1}, 
- {"name": "AK1", "size": 1}]}
-,
- 
- {"name": "subcluster_36", "children": [
-{
-"name": "CSNK1G2", "size": 2}, 
- {"name": "CSNK1G1", "size": 1}]}
+"name": "VRK1", "size": 1, "studied": "well"}, 
+ {"name": "VRK3", "size": 1, "studied": "dark"}]}
 ,
  
  {"name": "subcluster_6", "children": [
 {
-"name": "ATR", "size": 3}, 
- {"name": "PRKDC", "size": 4}, 
- {"name": "PKM2", "size": 5}, 
- {"name": "TTN", "size": 3}, 
- {"name": "WEE1", "size": 3}, 
- {"name": "CSNK2A1", "size": 4}, 
- {"name": "ATM", "size": 4}, 
- {"name": "MOS", "size": 2}, 
- {"name": "PBK", "size": 2}, 
- {"name": "TRIM24", "size": 2}, 
- {"name": "TRIM28", "size": 4}, 
- {"name": "PLK1", "size": 4}, 
- {"name": "PKMYT1", "size": 3}, 
- {"name": "CHEK2", "size": 3}, 
- {"name": "NEK6", "size": 3}, 
- {"name": "CHEK1", "size": 4}, 
- {"name": "TLK1", "size": 2}, 
- {"name": "NEK9", "size": 3}, 
- {"name": "CDK7", "size": 3}, 
- {"name": "NEK7", "size": 1}, 
- {"name": "CSNK2A2", "size": 3}, 
- {"name": "CDK9", "size": 4}, 
- {"name": "TLK2", "size": 1}, 
- {"name": "CDK2", "size": 4}, 
- {"name": "AURKB", "size": 4}, 
- {"name": "CDC7", "size": 2}, 
- {"name": "CLK2", "size": 2}, 
- {"name": "CLK3", "size": 2}, 
- {"name": "CDK5", "size": 4}, 
- {"name": "GAK", "size": 2}, 
- {"name": "STK38L", "size": 2}, 
- {"name": "STK24", "size": 3}, 
- {"name": "NEK11", "size": 1}, 
- {"name": "MST4", "size": 3}, 
- {"name": "DSTYK", "size": 1}, 
- {"name": "LRRK1", "size": 3}, 
- {"name": "STK25", "size": 3}, 
- {"name": "LMTK2", "size": 1}, 
- {"name": "LTK", "size": 2}, 
- {"name": "CDK1", "size": 4}, 
- {"name": "CASK", "size": 2}, 
- {"name": "HIPK1", "size": 1}, 
- {"name": "MAST1", "size": 1}, 
- {"name": "SRPK1", "size": 4}, 
- {"name": "SRPK2", "size": 3}, 
- {"name": "LRRK2", "size": 4}, 
- {"name": "PLK2", "size": 2}, 
- {"name": "TTK", "size": 3}, 
- {"name": "DYRK2", "size": 2}, 
- {"name": "CDK13", "size": 3}, 
- {"name": "CDK16", "size": 2}, 
- {"name": "CDK17", "size": 2}, 
- {"name": "CDK11A", "size": 2}, 
- {"name": "CDK20", "size": 3}, 
- {"name": "MAK", "size": 1}, 
- {"name": "CDK11B", "size": 2}, 
- {"name": "CDK15", "size": 2}, 
- {"name": "CDK19", "size": 1}, 
- {"name": "CDK8", "size": 2}, 
- {"name": "CDK3", "size": 3}, 
- {"name": "RIOK2", "size": 3}, 
- {"name": "RIOK1", "size": 2}, 
- {"name": "ICK", "size": 2}, 
- {"name": "GRK5", "size": 2}, 
- {"name": "GSG2", "size": 1}, 
- {"name": "CLK4", "size": 1}, 
- {"name": "CDK14", "size": 2}, 
- {"name": "DYRK4", "size": 1}, 
- {"name": "CDK18", "size": 2}, 
- {"name": "CDK12", "size": 2}, 
- {"name": "DCLK3", "size": 1}, 
- {"name": "CLK1", "size": 2}, 
- {"name": "AURKC", "size": 2}, 
- {"name": "TP53RK", "size": 2}, 
- {"name": "NEK1", "size": 2}, 
- {"name": "STK33", "size": 1}, 
- {"name": "DYRK3", "size": 1}, 
- {"name": "STK40", "size": 2}, 
- {"name": "TSSK2", "size": 1}, 
- {"name": "TRIB2", "size": 2}, 
- {"name": "DCLK2", "size": 1}, 
- {"name": "NEK3", "size": 1}, 
- {"name": "MINK1", "size": 1}, 
- {"name": "CSNK1G3", "size": 1}, 
- {"name": "AURKA", "size": 4}, 
- {"name": "STK10", "size": 1}, 
- {"name": "TNK1", "size": 1}, 
- {"name": "TEX14", "size": 1}]}
-,
- 
- {"name": "subcluster_24", "children": [
-{
-"name": "MAPK6", "size": 3}, 
- {"name": "MAPK4", "size": 2}, 
- {"name": "DDR1", "size": 1}, 
- {"name": "RAGE", "size": 1}, 
- {"name": "FASTKD5", "size": 2}]}
+"name": "ATR", "size": 1, "studied": "well"}, 
+ {"name": "PRKDC", "size": 1, "studied": "well"}, 
+ {"name": "PKM", "size": 1, "studied": "well"}, 
+ {"name": "TTN", "size": 1, "studied": "well"}, 
+ {"name": "WEE1", "size": 3, "studied": "well"}, 
+ {"name": "CSNK2A1", "size": 1, "studied": "well"}, 
+ {"name": "ATM", "size": 1, "studied": "well"}, 
+ {"name": "MOS", "size": 1, "studied": "well"}, 
+ {"name": "PBK", "size": 1, "studied": "well"}, 
+ {"name": "TRIM24", "size": 1, "studied": "well"}, 
+ {"name": "TRIM28", "size": 1, "studied": "well"}, 
+ {"name": "PLK1", "size": 2, "studied": "well"}, 
+ {"name": "PKMYT1", "size": 2, "studied": "dark"}, 
+ {"name": "CHEK2", "size": 1, "studied": "well"}, 
+ {"name": "NEK6", "size": 1, "studied": "dark"}, 
+ {"name": "CHEK1", "size": 3, "studied": "well"}, 
+ {"name": "TLK1", "size": 1, "studied": "dark"}, 
+ {"name": "NEK9", "size": 3, "studied": "dark"}, 
+ {"name": "CDK7", "size": 4, "studied": "well"}, 
+ {"name": "NEK7", "size": 1, "studied": "dark"}, 
+ {"name": "CSNK2A2", "size": 4, "studied": "dark"}, 
+ {"name": "CDK9", "size": 4, "studied": "well"}, 
+ {"name": "TLK2", "size": 1, "studied": "dark"}, 
+ {"name": "CDK2", "size": 4, "studied": "well"}, 
+ {"name": "AURKB", "size": 4, "studied": "well"}, 
+ {"name": "CDC7", "size": 1, "studied": "well"}, 
+ {"name": "CLK2", "size": 3, "studied": "well"}, 
+ {"name": "CLK3", "size": 2, "studied": "dark"}, 
+ {"name": "CDK5", "size": 4, "studied": "well"}, 
+ {"name": "GAK", "size": 5, "studied": "well"}, 
+ {"name": "STK38L", "size": 1, "studied": "dark"}, 
+ {"name": "STK24", "size": 2, "studied": "well"}, 
+ {"name": "NEK11", "size": 1, "studied": "dark"}, 
+ {"name": "STK26", "size": 3, "studied": "well"}, 
+ {"name": "DSTYK", "size": 1, "studied": "dark"}, 
+ {"name": "LRRK1", "size": 1, "studied": "dark"}, 
+ {"name": "STK25", "size": 1, "studied": "well"}, 
+ {"name": "LMTK2", "size": 1, "studied": "dark"}, 
+ {"name": "LTK", "size": 1, "studied": "dark"}, 
+ {"name": "CDK1", "size": 3, "studied": "well"}, 
+ {"name": "CASK", "size": 1, "studied": "well"}, 
+ {"name": "HIPK1", "size": 1, "studied": "dark"}, 
+ {"name": "MAST1", "size": 1, "studied": "well"}, 
+ {"name": "SRPK1", "size": 1, "studied": "well"}, 
+ {"name": "SRPK2", "size": 1, "studied": "well"}, 
+ {"name": "LRRK2", "size": 1, "studied": "well"}, 
+ {"name": "PLK2", "size": 1, "studied": "well"}, 
+ {"name": "TTK", "size": 1, "studied": "well"}, 
+ {"name": "DYRK2", "size": 1, "studied": "dark"}, 
+ {"name": "CDK13", "size": 3, "studied": "dark"}, 
+ {"name": "CDK16", "size": 4, "studied": "dark"}, 
+ {"name": "CDK17", "size": 3, "studied": "dark"}, 
+ {"name": "CDK11A", "size": 1, "studied": "dark"}, 
+ {"name": "CDK20", "size": 1, "studied": "dark"}, 
+ {"name": "MAK", "size": 1, "studied": "well"}, 
+ {"name": "CDK11B", "size": 1, "studied": "dark"}, 
+ {"name": "CDK15", "size": 1, "studied": "dark"}, 
+ {"name": "CDK19", "size": 1, "studied": "dark"}, 
+ {"name": "CDK8", "size": 1, "studied": "well"}, 
+ {"name": "CDK3", "size": 3, "studied": "well"}, 
+ {"name": "RIOK2", "size": 1, "studied": "dark"}, 
+ {"name": "RIOK1", "size": 1, "studied": "dark"}, 
+ {"name": "ICK", "size": 3, "studied": "dark"}, 
+ {"name": "GRK5", "size": 1, "studied": "well"}, 
+ {"name": "HASPIN", "size": 1, "studied": "well"}, 
+ {"name": "CLK4", "size": 2, "studied": "dark"}, 
+ {"name": "CDK14", "size": 1, "studied": "dark"}, 
+ {"name": "DYRK4", "size": 1, "studied": "dark"}, 
+ {"name": "CDK18", "size": 1, "studied": "dark"}, 
+ {"name": "CDK12", "size": 3, "studied": "dark"}, 
+ {"name": "DCLK3", "size": 1, "studied": "dark"}, 
+ {"name": "CLK1", "size": 4, "studied": "well"}, 
+ {"name": "AURKC", "size": 1, "studied": "well"}, 
+ {"name": "TP53RK", "size": 3, "studied": "dark"}, 
+ {"name": "NEK1", "size": 2, "studied": "dark"}, 
+ {"name": "STK33", "size": 1, "studied": "dark"}, 
+ {"name": "DYRK3", "size": 1, "studied": "dark"}, 
+ {"name": "STK40", "size": 1, "studied": "dark"}, 
+ {"name": "TSSK2", "size": 1, "studied": "dark"}, 
+ {"name": "TRIB2", "size": 1, "studied": "well"}, 
+ {"name": "DCLK2", "size": 1, "studied": "well"}, 
+ {"name": "NEK3", "size": 3, "studied": "dark"}, 
+ {"name": "MINK1", "size": 2, "studied": "well"}, 
+ {"name": "CSNK1G3", "size": 3, "studied": "dark"}, 
+ {"name": "AURKA", "size": 4, "studied": "well"}, 
+ {"name": "STK10", "size": 5, "studied": "well"}, 
+ {"name": "TNK1", "size": 4, "studied": "well"}, 
+ {"name": "TEX14", "size": 1, "studied": "well"}]}
 ,
  
  {"name": "subcluster_17", "children": [
 {
-"name": "LATS1", "size": 3}, 
- {"name": "STK3", "size": 3}, 
- {"name": "LATS2", "size": 3}, 
- {"name": "NME7", "size": 1}]}]}
+"name": "LATS1", "size": 4, "studied": "well"}, 
+ {"name": "STK3", "size": 4, "studied": "dark"}, 
+ {"name": "LATS2", "size": 1, "studied": "well"}, 
+ {"name": "NME7", "size": 1, "studied": "well"}]}
+,
+ 
+ {"name": "subcluster_24", "children": [
+{
+"name": "MAPK6", "size": 1, "studied": "well"}, 
+ {"name": "MAPK4", "size": 1, "studied": "dark"}, 
+ {"name": "DDR1", "size": 4, "studied": "well"}, 
+ {"name": "MOK", "size": 1, "studied": "well"}, 
+ {"name": "FASTKD5", "size": 1, "studied": "well"}]}
+,
+ 
+ {"name": "subcluster_23", "children": [
+{
+"name": "BUB1B", "size": 1, "studied": "well"}, 
+ {"name": "BUB1", "size": 3, "studied": "well"}]}
+,
+ 
+ {"name": "subcluster_36", "children": [
+{
+"name": "CSNK1G2", "size": 2, "studied": "dark"}, 
+ {"name": "CSNK1G1", "size": 2, "studied": "dark"}]}
+,
+ 
+ {"name": "subcluster_1", "children": [
+{
+"name": "PHKG1", "size": 1, "studied": "dark"}, 
+ {"name": "PHKG2", "size": 3, "studied": "dark"}]}
+,
+ 
+ {"name": "subcluster_27", "children": [
+{
+"name": "PAK4", "size": 4, "studied": "well"}, 
+ {"name": "PAK6", "size": 2, "studied": "dark"}, 
+ {"name": "MYLK2", "size": 1, "studied": "well"}, 
+ {"name": "PAK5", "size": 1, "studied": "dark"}]}
+,
+ 
+ {"name": "subcluster_14", "children": [
+{
+"name": "TRPM7", "size": 1, "studied": "well"}, 
+ {"name": "TRPM6", "size": 1, "studied": "well"}]}
+,
+ 
+ {"name": "subcluster_15", "children": [
+{
+"name": "MAST2", "size": 1, "studied": "dark"}, 
+ {"name": "STK36", "size": 1, "studied": "dark"}]}
+,
+ 
+ {"name": "subcluster_32", "children": [
+{
+"name": "BRD4", "size": 1, "studied": "well"}, 
+ {"name": "BRD2", "size": 1, "studied": "well"}, 
+ {"name": "CKM", "size": 1, "studied": "well"}, 
+ {"name": "BRD3", "size": 1, "studied": "well"}, 
+ {"name": "AK1", "size": 1, "studied": "well"}]}
+,
+ 
+ {"name": "subcluster_16", "children": [
+{
+"name": "CDK4", "size": 3, "studied": "well"}, 
+ {"name": "CDK6", "size": 3, "studied": "well"}, 
+ {"name": "CDKL3", "size": 1, "studied": "dark"}, 
+ {"name": "EIF2AK1", "size": 3, "studied": "well"}]}
+,
+ 
+ {"name": "subcluster_34", "children": [
+{
+"name": "PRPF4B", "size": 1, "studied": "dark"}, 
+ {"name": "SRPK3", "size": 1, "studied": "dark"}]}
+,
+ 
+ {"name": "subcluster_13", "children": [
+{
+"name": "MARK2", "size": 4, "studied": "well"}, 
+ {"name": "BRSK1", "size": 1, "studied": "dark"}, 
+ {"name": "STK11", "size": 2, "studied": "well"}, 
+ {"name": "EEF2K", "size": 1, "studied": "dark"}, 
+ {"name": "PRKAA2", "size": 1, "studied": "well"}, 
+ {"name": "MARK1", "size": 1, "studied": "dark"}, 
+ {"name": "STRADB", "size": 1, "studied": "well"}, 
+ {"name": "STRADA", "size": 1, "studied": "well"}, 
+ {"name": "PIK3R4", "size": 1, "studied": "well"}, 
+ {"name": "PIK3C3", "size": 1, "studied": "well"}, 
+ {"name": "PRKAA1", "size": 4, "studied": "well"}, 
+ {"name": "CAMKK2", "size": 4, "studied": "dark"}, 
+ {"name": "CAMK4", "size": 3, "studied": "well"}, 
+ {"name": "BRSK2", "size": 1, "studied": "dark"}, 
+ {"name": "NUAK2", "size": 2, "studied": "dark"}, 
+ {"name": "SNRK", "size": 1, "studied": "well"}, 
+ {"name": "PASK", "size": 1, "studied": "well"}, 
+ {"name": "STK16", "size": 4, "studied": "well"}, 
+ {"name": "MELK", "size": 4, "studied": "well"}, 
+ {"name": "SIK3", "size": 4, "studied": "well"}, 
+ {"name": "ULK2", "size": 1, "studied": "well"}, 
+ {"name": "ULK1", "size": 3, "studied": "well"}, 
+ {"name": "MAST3", "size": 1, "studied": "dark"}, 
+ {"name": "NUAK1", "size": 1, "studied": "well"}, 
+ {"name": "SIK2", "size": 4, "studied": "well"}, 
+ {"name": "SIK1", "size": 1, "studied": "well"}, 
+ {"name": "PCK2", "size": 1, "studied": "well"}]}]}
 ,
  
  {"name": "supercluster_5", "children": [
 {
-"name": "subcluster_3", "children": [
+"name": "subcluster_29", "children": [
 {
-"name": "PAK1", "size": 5}, 
- {"name": "MYLK", "size": 3}, 
- {"name": "PAK2", "size": 4}, 
- {"name": "LIMK1", "size": 4}, 
- {"name": "FES", "size": 3}, 
- {"name": "PAK3", "size": 3}, 
- {"name": "RIOK3", "size": 2}, 
- {"name": "HUNK", "size": 1}]}
-,
- 
- {"name": "subcluster_31", "children": [
-{
-"name": "PRKG2", "size": 2}, 
- {"name": "PRKG1", "size": 3}]}
+"name": "CDC42BPA", "size": 2, "studied": "dark"}, 
+ {"name": "CDC42BPB", "size": 3, "studied": "dark"}]}
 ,
  
  {"name": "subcluster_25", "children": [
 {
-"name": "DAPK3", "size": 2}, 
- {"name": "OBSCN", "size": 2}, 
- {"name": "TRIO", "size": 3}, 
- {"name": "ROCK1", "size": 4}, 
- {"name": "LIMK2", "size": 3}, 
- {"name": "KALRN", "size": 3}, 
- {"name": "HIPK3", "size": 1}, 
- {"name": "ROCK2", "size": 4}]}
-,
- 
- {"name": "subcluster_29", "children": [
-{
-"name": "CDC42BPA", "size": 2}, 
- {"name": "CDC42BPB", "size": 2}]}
-,
- 
- {"name": "subcluster_35", "children": [
-{
-"name": "EPHA8", "size": 3}, 
- {"name": "EPHA2", "size": 4}, 
- {"name": "EPHB2", "size": 4}, 
- {"name": "RYK", "size": 3}, 
- {"name": "EPHB3", "size": 4}, 
- {"name": "EPHA4", "size": 4}, 
- {"name": "AGK", "size": 1}, 
- {"name": "EPHA3", "size": 3}, 
- {"name": "EPHB4", "size": 4}, 
- {"name": "EPHA1", "size": 4}, 
- {"name": "PTK7", "size": 1}, 
- {"name": "EPHA7", "size": 4}, 
- {"name": "EPHA6", "size": 3}, 
- {"name": "EPHA10", "size": 3}]}
-,
- 
- {"name": "subcluster_18", "children": [
-{
-"name": "ERBB2", "size": 5}, 
- {"name": "MST1R", "size": 2}, 
- {"name": "YES1", "size": 4}, 
- {"name": "TYRO3", "size": 2}, 
- {"name": "KIT", "size": 4}, 
- {"name": "SRC", "size": 5}, 
- {"name": "MATK", "size": 3}, 
- {"name": "TEC", "size": 3}, 
- {"name": "FGR", "size": 4}, 
- {"name": "PTK2", "size": 5}, 
- {"name": "KDR", "size": 4}, 
- {"name": "PTK2B", "size": 4}, 
- {"name": "PDGFRB", "size": 4}, 
- {"name": "PDGFRA", "size": 4}, 
- {"name": "ABL1", "size": 5}, 
- {"name": "HK2", "size": 1}, 
- {"name": "MET", "size": 4}, 
- {"name": "RET", "size": 3}, 
- {"name": "ITK", "size": 3}, 
- {"name": "BMX", "size": 3}, 
- {"name": "MAP4K5", "size": 2}, 
- {"name": "DDR2", "size": 1}, 
- {"name": "TXK", "size": 2}, 
- {"name": "GUCY2C", "size": 1}, 
- {"name": "ERBB4", "size": 4}, 
- {"name": "ERBB3", "size": 4}, 
- {"name": "PTK6", "size": 3}, 
- {"name": "AXL", "size": 3}, 
- {"name": "TIE1", "size": 1}, 
- {"name": "TEK", "size": 4}, 
- {"name": "EPHB6", "size": 2}, 
- {"name": "EPHB1", "size": 3}, 
- {"name": "MERTK", "size": 2}, 
- {"name": "NEK8", "size": 2}, 
- {"name": "EGFR", "size": 5}, 
- {"name": "FGFR3", "size": 4}, 
- {"name": "FGFR1", "size": 4}, 
- {"name": "FGFR2", "size": 4}, 
- {"name": "FYN", "size": 5}, 
- {"name": "HCK", "size": 4}, 
- {"name": "FGFR4", "size": 4}, 
- {"name": "CSK", "size": 4}, 
- {"name": "PIM1", "size": 2}, 
- {"name": "FER", "size": 3}, 
- {"name": "TNK2", "size": 3}, 
- {"name": "NTRK2", "size": 2}, 
- {"name": "ABL2", "size": 3}, 
- {"name": "UHMK1", "size": 1}, 
- {"name": "CDKL5", "size": 2}, 
- {"name": "GUCY2D", "size": 1}, 
- {"name": "ROR1", "size": 2}, 
- {"name": "BLK", "size": 2}, 
- {"name": "PDK3", "size": 1}, 
- {"name": "ROS1", "size": 3}, 
- {"name": "BMP2K", "size": 1}, 
- {"name": "FRK", "size": 3}, 
- {"name": "EPHA5", "size": 3}, 
- {"name": "FN3KRP", "size": 1}, 
- {"name": "PKN3", "size": 1}, 
- {"name": "SRMS", "size": 1}]}
+"name": "DAPK3", "size": 1, "studied": "well"}, 
+ {"name": "OBSCN", "size": 1, "studied": "dark"}, 
+ {"name": "TRIO", "size": 1, "studied": "well"}, 
+ {"name": "ROCK1", "size": 3, "studied": "well"}, 
+ {"name": "LIMK2", "size": 3, "studied": "well"}, 
+ {"name": "KALRN", "size": 1, "studied": "well"}, 
+ {"name": "HIPK3", "size": 1, "studied": "dark"}, 
+ {"name": "ROCK2", "size": 3, "studied": "well"}]}
 ,
  
  {"name": "subcluster_5", "children": [
 {
-"name": "PRKCA", "size": 4}, 
- {"name": "PRKD1", "size": 3}, 
- {"name": "PRKCG", "size": 3}, 
- {"name": "ADRBK1", "size": 3}, 
- {"name": "PRKD3", "size": 2}, 
- {"name": "PRKD2", "size": 3}, 
- {"name": "ADRBK2", "size": 1}, 
- {"name": "PRKX", "size": 2}]}]}
+"name": "PRKCA", "size": 4, "studied": "well"}, 
+ {"name": "PRKD1", "size": 1, "studied": "well"}, 
+ {"name": "PRKCG", "size": 1, "studied": "well"}, 
+ {"name": "GRK2", "size": 2, "studied": "well"}, 
+ {"name": "PRKD3", "size": 4, "studied": "well"}, 
+ {"name": "PRKD2", "size": 4, "studied": "well"}, 
+ {"name": "GRK3", "size": 1, "studied": "well"}, 
+ {"name": "PRKX", "size": 1, "studied": "well"}]}
+,
+ 
+ {"name": "subcluster_18", "children": [
+{
+"name": "ERBB2", "size": 1, "studied": "well"}, 
+ {"name": "MST1R", "size": 3, "studied": "well"}, 
+ {"name": "YES1", "size": 4, "studied": "well"}, 
+ {"name": "TYRO3", "size": 1, "studied": "well"}, 
+ {"name": "KIT", "size": 1, "studied": "well"}, 
+ {"name": "SRC", "size": 4, "studied": "well"}, 
+ {"name": "MATK", "size": 1, "studied": "well"}, 
+ {"name": "TEC", "size": 3, "studied": "well"}, 
+ {"name": "FGR", "size": 2, "studied": "well"}, 
+ {"name": "PTK2", "size": 4, "studied": "well"}, 
+ {"name": "KDR", "size": 1, "studied": "well"}, 
+ {"name": "PTK2B", "size": 4, "studied": "well"}, 
+ {"name": "PDGFRB", "size": 4, "studied": "well"}, 
+ {"name": "PDGFRA", "size": 1, "studied": "well"}, 
+ {"name": "ABL1", "size": 5, "studied": "well"}, 
+ {"name": "HK2", "size": 1, "studied": "well"}, 
+ {"name": "MET", "size": 4, "studied": "well"}, 
+ {"name": "RET", "size": 5, "studied": "well"}, 
+ {"name": "ITK", "size": 1, "studied": "well"}, 
+ {"name": "BMX", "size": 1, "studied": "well"}, 
+ {"name": "MAP4K5", "size": 4, "studied": "well"}, 
+ {"name": "DDR2", "size": 4, "studied": "well"}, 
+ {"name": "TXK", "size": 1, "studied": "well"}, 
+ {"name": "GUCY2C", "size": 1, "studied": "well"}, 
+ {"name": "ERBB4", "size": 1, "studied": "well"}, 
+ {"name": "ERBB3", "size": 1, "studied": "well"}, 
+ {"name": "PTK6", "size": 4, "studied": "well"}, 
+ {"name": "AXL", "size": 1, "studied": "well"}, 
+ {"name": "TIE1", "size": 1, "studied": "well"}, 
+ {"name": "TEK", "size": 1, "studied": "well"}, 
+ {"name": "EPHB6", "size": 3, "studied": "well"}, 
+ {"name": "EPHB1", "size": 1, "studied": "well"}, 
+ {"name": "MERTK", "size": 1, "studied": "well"}, 
+ {"name": "NEK8", "size": 1, "studied": "dark"}, 
+ {"name": "EGFR", "size": 4, "studied": "well"}, 
+ {"name": "FGFR3", "size": 1, "studied": "well"}, 
+ {"name": "FGFR1", "size": 4, "studied": "well"}, 
+ {"name": "FGFR2", "size": 1, "studied": "well"}, 
+ {"name": "FYN", "size": 4, "studied": "well"}, 
+ {"name": "HCK", "size": 4, "studied": "well"}, 
+ {"name": "FGFR4", "size": 1, "studied": "well"}, 
+ {"name": "CSK", "size": 3, "studied": "well"}, 
+ {"name": "PIM1", "size": 3, "studied": "well"}, 
+ {"name": "FER", "size": 4, "studied": "well"}, 
+ {"name": "TNK2", "size": 4, "studied": "well"}, 
+ {"name": "NTRK2", "size": 1, "studied": "well"}, 
+ {"name": "ABL2", "size": 4, "studied": "well"}, 
+ {"name": "UHMK1", "size": 1, "studied": "well"}, 
+ {"name": "CDKL5", "size": 2, "studied": "dark"}, 
+ {"name": "GUCY2D", "size": 1, "studied": "well"}, 
+ {"name": "ROR1", "size": 1, "studied": "well"}, 
+ {"name": "BLK", "size": 1, "studied": "well"}, 
+ {"name": "PDK3", "size": 1, "studied": "well"}, 
+ {"name": "ROS1", "size": 1, "studied": "well"}, 
+ {"name": "BMP2K", "size": 5, "studied": "well"}, 
+ {"name": "FRK", "size": 4, "studied": "well"}, 
+ {"name": "EPHA5", "size": 3, "studied": "well"}, 
+ {"name": "FN3KRP", "size": 1, "studied": "well"}, 
+ {"name": "PKN3", "size": 1, "studied": "dark"}, 
+ {"name": "SRMS", "size": 1, "studied": "well"}]}
+,
+ 
+ {"name": "subcluster_3", "children": [
+{
+"name": "PAK1", "size": 1, "studied": "well"}, 
+ {"name": "MYLK", "size": 2, "studied": "well"}, 
+ {"name": "PAK2", "size": 1, "studied": "well"}, 
+ {"name": "LIMK1", "size": 4, "studied": "well"}, 
+ {"name": "FES", "size": 3, "studied": "well"}, 
+ {"name": "PAK3", "size": 1, "studied": "dark"}, 
+ {"name": "RIOK3", "size": 1, "studied": "dark"}, 
+ {"name": "HUNK", "size": 1, "studied": "well"}]}
+,
+ 
+ {"name": "subcluster_31", "children": [
+{
+"name": "PRKG2", "size": 1, "studied": "well"}, 
+ {"name": "PRKG1", "size": 2, "studied": "well"}]}
+,
+ 
+ {"name": "subcluster_35", "children": [
+{
+"name": "EPHA8", "size": 1, "studied": "well"}, 
+ {"name": "EPHA2", "size": 4, "studied": "well"}, 
+ {"name": "EPHB2", "size": 3, "studied": "well"}, 
+ {"name": "RYK", "size": 1, "studied": "well"}, 
+ {"name": "EPHB3", "size": 3, "studied": "well"}, 
+ {"name": "EPHA4", "size": 4, "studied": "well"}, 
+ {"name": "AGK", "size": 1, "studied": "well"}, 
+ {"name": "EPHA3", "size": 1, "studied": "well"}, 
+ {"name": "EPHB4", "size": 4, "studied": "well"}, 
+ {"name": "EPHA1", "size": 3, "studied": "well"}, 
+ {"name": "PTK7", "size": 1, "studied": "well"}, 
+ {"name": "EPHA7", "size": 3, "studied": "well"}, 
+ {"name": "EPHA6", "size": 1, "studied": "well"}, 
+ {"name": "EPHA10", "size": 1, "studied": "well"}]}]}
 ,
  
  {"name": "supercluster_6", "children": [
 {
 "name": "subcluster_19", "children": [
 {
-"name": "NME1", "size": 2}, 
- {"name": "NME4", "size": 1}, 
- {"name": "NME3", "size": 2}, 
- {"name": "NME2", "size": 2}, 
- {"name": "AK2", "size": 2}]}]}
+"name": "NME1", "size": 1, "studied": "well"}, 
+ {"name": "NME4", "size": 1, "studied": "well"}, 
+ {"name": "NME3", "size": 1, "studied": "well"}, 
+ {"name": "NME2", "size": 1, "studied": "well"}, 
+ {"name": "AK2", "size": 1, "studied": "well"}]}]}
 ,
  
  {"name": "supercluster_7", "children": [
 {
 "name": "subcluster_33", "children": [
 {
-"name": "NEK2", "size": 3}, 
- {"name": "MARK4", "size": 3}, 
- {"name": "PRKACA", "size": 5}, 
- {"name": "PLK4", "size": 3}, 
- {"name": "CAMKK1", "size": 2}, 
- {"name": "CAMK1", "size": 3}, 
- {"name": "CAMK1D", "size": 2}, 
- {"name": "CSNK1A1", "size": 4}, 
- {"name": "CSNK1D", "size": 4}, 
- {"name": "TTBK1", "size": 1}, 
- {"name": "TTBK2", "size": 3}, 
- {"name": "CSNK1E", "size": 4}, 
- {"name": "PRKACB", "size": 4}, 
- {"name": "NPR1", "size": 1}, 
- {"name": "PRKACG", "size": 3}, 
- {"name": "CAMK1G", "size": 1}, 
- {"name": "GRK7", "size": 1}]}
+"name": "NEK2", "size": 1, "studied": "well"}, 
+ {"name": "MARK4", "size": 3, "studied": "dark"}, 
+ {"name": "PRKACA", "size": 3, "studied": "well"}, 
+ {"name": "PLK4", "size": 4, "studied": "well"}, 
+ {"name": "CAMKK1", "size": 1, "studied": "dark"}, 
+ {"name": "CAMK1", "size": 1, "studied": "well"}, 
+ {"name": "CAMK1D", "size": 1, "studied": "dark"}, 
+ {"name": "CSNK1A1", "size": 3, "studied": "well"}, 
+ {"name": "CSNK1D", "size": 3, "studied": "well"}, 
+ {"name": "TTBK1", "size": 1, "studied": "dark"}, 
+ {"name": "TTBK2", "size": 1, "studied": "dark"}, 
+ {"name": "CSNK1E", "size": 3, "studied": "well"}, 
+ {"name": "PRKACB", "size": 3, "studied": "dark"}, 
+ {"name": "NPR1", "size": 1, "studied": "well"}, 
+ {"name": "PRKACG", "size": 2, "studied": "dark"}, 
+ {"name": "CAMK1G", "size": 1, "studied": "dark"}, 
+ {"name": "GRK7", "size": 1, "studied": "well"}]}
 ,
  
  {"name": "subcluster_2", "children": [
 {
-"name": "MAPK3", "size": 5}, 
- {"name": "MAPK1", "size": 5}, 
- {"name": "MAP2K1", "size": 4}, 
- {"name": "ARAF", "size": 3}, 
- {"name": "RPS6KA2", "size": 4}, 
- {"name": "RPS6KA4", "size": 3}, 
- {"name": "KSR2", "size": 2}, 
- {"name": "PRKCE", "size": 4}, 
- {"name": "NTRK3", "size": 3}, 
- {"name": "RPS6KA3", "size": 4}, 
- {"name": "MAP2K2", "size": 4}, 
- {"name": "RPS6KA1", "size": 4}, 
- {"name": "MKNK2", "size": 3}, 
- {"name": "MKNK1", "size": 2}, 
- {"name": "NTRK1", "size": 3}, 
- {"name": "MARK3", "size": 3}, 
- {"name": "DAPK1", "size": 3}, 
- {"name": "RPS6KA5", "size": 3}, 
- {"name": "MAPK7", "size": 4}, 
- {"name": "PLK3", "size": 2}, 
- {"name": "SGK2", "size": 1}, 
- {"name": "RAF1", "size": 5}, 
- {"name": "INSR", "size": 3}, 
- {"name": "KSR1", "size": 3}, 
- {"name": "INSRR", "size": 1}, 
- {"name": "DMPK", "size": 1}, 
- {"name": "BRAF", "size": 4}, 
- {"name": "RPS6KA6", "size": 3}, 
- {"name": "MASTL", "size": 1}, 
- {"name": "HIPK4", "size": 2}]}
+"name": "MAPK3", "size": 2, "studied": "well"}, 
+ {"name": "MAPK1", "size": 2, "studied": "well"}, 
+ {"name": "MAP2K1", "size": 4, "studied": "well"}, 
+ {"name": "ARAF", "size": 2, "studied": "well"}, 
+ {"name": "RPS6KA2", "size": 1, "studied": "well"}, 
+ {"name": "RPS6KA4", "size": 3, "studied": "well"}, 
+ {"name": "KSR2", "size": 1, "studied": "well"}, 
+ {"name": "PRKCE", "size": 1, "studied": "well"}, 
+ {"name": "NTRK3", "size": 1, "studied": "well"}, 
+ {"name": "RPS6KA3", "size": 3, "studied": "well"}, 
+ {"name": "MAP2K2", "size": 4, "studied": "well"}, 
+ {"name": "RPS6KA1", "size": 3, "studied": "well"}, 
+ {"name": "MKNK2", "size": 1, "studied": "dark"}, 
+ {"name": "MKNK1", "size": 1, "studied": "dark"}, 
+ {"name": "NTRK1", "size": 4, "studied": "well"}, 
+ {"name": "MARK3", "size": 4, "studied": "dark"}, 
+ {"name": "DAPK1", "size": 1, "studied": "well"}, 
+ {"name": "RPS6KA5", "size": 3, "studied": "well"}, 
+ {"name": "MAPK7", "size": 2, "studied": "well"}, 
+ {"name": "PLK3", "size": 1, "studied": "well"}, 
+ {"name": "SGK2", "size": 1, "studied": "well"}, 
+ {"name": "RAF1", "size": 1, "studied": "well"}, 
+ {"name": "INSR", "size": 3, "studied": "well"}, 
+ {"name": "KSR1", "size": 1, "studied": "well"}, 
+ {"name": "INSRR", "size": 1, "studied": "well"}, 
+ {"name": "DMPK", "size": 1, "studied": "well"}, 
+ {"name": "BRAF", "size": 3, "studied": "well"}, 
+ {"name": "RPS6KA6", "size": 4, "studied": "well"}, 
+ {"name": "MASTL", "size": 1, "studied": "well"}, 
+ {"name": "HIPK4", "size": 1, "studied": "dark"}]}
 ,
  
  {"name": "subcluster_22", "children": [
 {
-"name": "CAMK2G", "size": 4}, 
- {"name": "CAMK2A", "size": 4}, 
- {"name": "CAMK2B", "size": 4}, 
- {"name": "CAMK2D", "size": 4}]}]}
+"name": "CAMK2G", "size": 3, "studied": "well"}, 
+ {"name": "CAMK2A", "size": 1, "studied": "well"}, 
+ {"name": "CAMK2B", "size": 1, "studied": "well"}, 
+ {"name": "CAMK2D", "size": 3, "studied": "well"}]}]}
 ,
  
  {"name": "supercluster_8", "children": [
 {
 "name": "subcluster_30", "children": [
 {
-"name": "PFKM", "size": 2}, 
- {"name": "PFKL", "size": 3}, 
- {"name": "TESK1", "size": 1}, 
- {"name": "PFKP", "size": 3}]}]}]}
+"name": "PFKM", "size": 1, "studied": "well"}, 
+ {"name": "PFKL", "size": 1, "studied": "well"}, 
+ {"name": "TESK1", "size": 2, "studied": "dark"}, 
+ {"name": "PFKP", "size": 1, "studied": "well"}]}]}]}
