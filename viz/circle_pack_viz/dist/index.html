@@ -73,8 +73,8 @@ d3.json("viz.json", function(error, root) {
     .data(nodes)
     .enter().append("text")
       .attr("class", "label")
-      .attr("dy", function(d) { return d.parent ? d.children ? d.r/Math.SQRT2 : 0 : 0; })
-      .attr("dx", function(d) { return d.parent ? d.children ? -d.r/Math.SQRT2 : 0 : 0; })
+      .attr("dy", function(d) {return d.depth < 3 && d.depth > 0 ? d.r/Math.SQRT2*(1.5-d.depth)*2 : 0; })
+      .attr("dx", function(d) { return d.depth < 3 && d.depth ? -d.r/Math.SQRT2: 0; })
       .style("fill-opacity", function(d) { return d.parent === root || d.r > thresh ? 1 : 0; })
       .style("display", function(d) { return d.parent === root || d.r > thresh ? "inline" : "none"; })
       .style("font-weight", function(d) { return d.parent ? d.children ? "200" : "400" : "0"; } )
@@ -112,8 +112,8 @@ d3.json("viz.json", function(error, root) {
     var k = diameter / v[2]; view = v;
     node.attr("transform", function(d) { return "translate(" + (d.x - v[0]) * k + "," + (d.y - v[1]) * k + ")"; });
     circle.attr("r", function(d) { return d.r * k; });
-    text.attr("dy", function(d) {return d.parent ? d.children ? d.r/Math.SQRT2*k : 0 : 0; });
-    text.attr("dx", function(d) {return d.parent ? d.children ? -d.r/Math.SQRT2*k : 0 : 0; });
+    text.attr("dy", function(d) {return d.depth < 3 && d.depth > 0 ? d.r/Math.SQRT2*k*(1.5-d.depth)*2 : 0; });
+    text.attr("dx", function(d) {return d.depth < 3 && d.depth > 0 ? -d.r/Math.SQRT2*k : 0; });
     text.style("font-size", function(d) { return d.parent ? d.children ? (7+1.5*k).toString()+"px" : (3+2*k).toString()+"px" : 0 });
   }
 });
