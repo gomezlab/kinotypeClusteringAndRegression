@@ -4,15 +4,15 @@ clear all;
 home;
 
 %load in kinases master list alias data
-file.masteraliases = '/Users/lutzka/Dropbox/GomezLabShare/Kinome/KINASESmasterlist_w_Aliases.xlsx';
+file.masteraliases = '/Users/isrobson/GitHub/KIN_ClusteringWithAnnotations/data/KINASESmasterlist_w_Aliases.xlsx';
 [~,t] = xlsread( char(file.masteraliases) );
 
-
+t
 
 %load in uniprot key data
-%file.uniprotkey = '/Users/lutzka/Dropbox/GomezLabShare/Kinome/NetworkData/uniprot-databaseHPA.tab';
-%key.uniprot.raw = textread(file.uniprotkey,'%s','whitespace','\t');
-load('/Users/lutzka/Dropbox/GomezLabShare/Kinome/NetworkData/uniprot.mat');
+file.uniprotkey = '/Users/isrobson/GitHub/KIN_ClusteringWithAnnotations/data/network/uniprot.mat';
+key.uniprot.raw = textread(file.uniprotkey,'%s','whitespace','\t');
+load('/Users/isrobson/GitHub/KIN_ClusteringWithAnnotations/data/network/uniprot.mat');
 
 uniprot.uniprotid = key.uniprot.raw(2:end,1);
 uniprot.geneentrez = key.uniprot.raw(2:end,3);
@@ -45,9 +45,9 @@ fprintf('loaded key files\n');
 
 %%%load different networks
 %load in hippie data
-%file.hippie = '/Users/lutzka/Dropbox/GomezLabShare/Kinome/NetworkData/hippie_current.txt';
-%data.hippie.raw = textread(file.hippie,'%s','whitespace','\t'); %uniprot name
-load('/Users/lutzka/Dropbox/GomezLabShare/Kinome/NetworkData/hippie.mat');
+file.hippie = '/Users/isrobson/GitHub/KIN_ClusteringWithAnnotations/data/network/hippie_current.txt';
+data.hippie.raw = textread(file.hippie,'%s','whitespace','\t'); %uniprot name
+load('/Users/isrobson/GitHub/KIN_ClusteringWithAnnotations/data/network/hippie.mat');
 
 hippie.node1 = {};
 hippie.node2 = {};
@@ -67,8 +67,8 @@ end
 fprintf('loaded hippie data\n');
 
 %load in hprd data
-file.hprd = '/Users/lutzka/Dropbox/GomezLabShare/Kinome/NetworkData/HPRD_ALL_BINARY_PROTEIN_PROTEIN_INTERACTIONS.xlsx';
-[~,hprd.raw] = xlsread( char(file.hprd) ); %entrez gene name
+file.hprd = '/Users/isrobson/GitHub/KIN_ClusteringWithAnnotations/data/network/HPRD_ALL_BINARY_PROTEIN_PROTEIN_INTERACTIONS.xls';
+[~,hprd.raw] = xlsread( file.hprd ); %entrez gene name
 
 hprd.node1 = {};
 hprd.node2 = {};
@@ -91,9 +91,9 @@ end
 fprintf('loaded hprd data\n');
 
 %load phosphosite data
-%file.phosphosite = '/Users/lutzka/Dropbox/GomezLabShare/Kinome/NetworkData/phosphosite/Kinase_Substrate_Dataset';
-%data.phosphosite.raw = textread(file.phosphosite,'%s'); %uniprot id
-load('/Users/lutzka/Dropbox/GomezLabShare/Kinome/NetworkData/phosphosite.mat');
+file.phosphosite = '/Users/isrobson/GitHub/KIN_ClusteringWithAnnotations/data/network/Kinase_Substrate_Dataset.txt';
+data.phosphosite.raw = textread(file.phosphosite,'%s'); %uniprot id
+load('/Users/isrobson/GitHub/KIN_ClusteringWithAnnotations/data/network/phosphosite.mat');
 
 phosphosite.node1 = {};
 phosphosite.node2 = {};
@@ -111,13 +111,16 @@ end
 fprintf('loaded phosphosite data\n');
 
 %load in reactome data
-file.reactome = '/Users/lutzka/Dropbox/GomezLabShare/Kinome/NetworkData/homo_sapiens.interactions.reactome.txt';
+file.reactome = '/Users/isrobson/GitHub/KIN_ClusteringWithAnnotations/data/network/reactome.homo_sapiens.interactions.tab-delimited.txt';
 fid = fopen(file.reactome);
 fgetl(fid);
 tline = fgetl(fid);
 reactome.raw = {};
 reactome.node1 = {};
 reactome.node2 = {};
+
+%data.i2d.raw = textread(file.i2d,'%s','whitespace','\t');
+
 while ischar(tline)
     x = strsplit(tline,'\t');
     if length(x) <= 6
@@ -174,7 +177,7 @@ while ischar(tline)
             end
         end
     end
-    %data.reactome.raw = [data.reactome.raw; tline]; %uniprot id
+    data.reactome.raw = [data.reactome.raw; tline]; %uniprot id
     
     
     tline = fgetl(fid);
@@ -184,9 +187,9 @@ fclose(fid);
 fprintf('loaded reactome data\n');
 
 %load in i2d data
-%file.i2d = '/Users/lutzka/Dropbox/GomezLabShare/Kinome/NetworkData/i2d.2_9.Public.HUMAN.tab';
-%data.i2d.raw = textread(file.i2d,'%s','whitespace','\t'); %uniprot id
-load('/Users/lutzka/Dropbox/GomezLabShare/Kinome/NetworkData/i2d.mat');
+file.i2d = '/Users/isrobson/GitHub/KIN_ClusteringWithAnnotations/data/network/i2d.2_9.txt';
+data.i2d.raw = textread(file.i2d,'%s','whitespace','\t'); %uniprot id
+load('/Users/isrobson/GitHub/KIN_ClusteringWithAnnotations/data/network/i2d.mat');
 
 i2d.node1 = {};
 i2d.node2 = {};
@@ -218,7 +221,7 @@ network.num_nodes = length(unique([network.node1,network.node2]));
 network.num_edges = length(network.node1);
 network.per_kinome = round((network.num_nodes / 570)*100,2);
 
-fid = fopen('Full_Kinome_Network_Compiled.txt','w');
+fid = fopen('i2d_compiled.txt','w');
 
 fprintf(fid,'Compiled Kinome Network from the Hippie, Reactome, HPRD, I2D, and Phosphosite Databases\n');
 fprintf(fid,'number of unique nodes = %i (percent of entire kinome = %f%%)\n',network.num_nodes,network.per_kinome);
