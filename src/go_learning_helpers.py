@@ -73,15 +73,16 @@ def add_cluster_labels(path_to_file, ser):
     # may be good to add a NaN checker later
     return dat
 
-def get_tts(dat, X_col_name='GO Labels', test_size=0.2, random_state=None):
+def get_tts(dat, X_col_name='GO Labels', Y_col_name='cluster', test_size=0.2, random_state=None):
     ''' Gets the train_test_split on dat
     inputs: dat -- DataFrame of kinases with cluster number and GO Labels attached, as output by add_cluster_labels
             X_col_name -- name of the column(s) to use for the predictor variables
+            Y_col_name -- name of the column to use for the response variable
             test_size -- portion of data to place in the test set
             random_state -- random seed used for train_test_split
     '''
     # split into training & testing
-    X_train, X_test, y_train, y_test = tts(dat[X_col_name], dat['cluster'], test_size=test_size, random_state=random_state)
+    X_train, X_test, y_train, y_test = tts(dat[X_col_name], dat[Y_col_name], test_size=test_size, random_state=random_state)
 
     # convert to sklearn-friendly format (lists of arrays)
     X_train = X_train.values.tolist()
@@ -119,11 +120,12 @@ def score_model(y_true, y_predict, metric='accuracy', kwargs={}):
 
     return score
 
-def validate_learnability(n_run, dat_df, clf, X_col_name='GO Labels', test_size = 0.3, parallel=None, metrics=['accuracy'], scorer_kwargs={}):
+def validate_learnability(n_run, dat_df, clf, X_col_name='GO Labels', Y_col_name='cluster', test_size = 0.3, parallel=None, metrics=['accuracy'], scorer_kwargs={}):
     ''' takes the output of an add_cluster_labels and calls clf.fit(), get_tts, and score_model n_run times
     inputs: dat_df -- the input dat with 'cluster' response and X_col_name predictor
             clf -- a classifier with .fit() and .predict() methods
             X_col_name -- a string (or list of strings) corresponding to the predictors in dat_df
+            Y_col_name -- string for the column of the response variable in dat_df (default = 'cluster')
             test_size -- proportion of dat_df to use in the holdout sets
             parallel -- how many cores to use, default None is sequential operation on a single core
             metric -- the metric to call for score_model
@@ -136,7 +138,7 @@ def validate_learnability(n_run, dat_df, clf, X_col_name='GO Labels', test_size 
         output = []
         for i in range(n_run):
             # split, fit, score, append
-            X_train, X_test, y_train, y_test = get_tts(dat_df, X_col_name=X_col_name, test_size=test_size)
+            X_train, X_test, y_train, y_test = get_tts(dat_df, X_col_name=X_col_name, Y_col_name=Y_col_name, test_size=test_size)
             clf.fit(X_train, y_train)
 
             # loop through the metrics
@@ -158,7 +160,7 @@ def validate_learnability(n_run, dat_df, clf, X_col_name='GO Labels', test_size 
             n_run_array[:overflow] = n_run_array[:overflow] + [1]*overflow
 
         # create a handy kwarg dict --- note that parallel is None, so we run sequentially in parallel
-        kwarg_dict = {'dat_df':dat_df, 'clf':clf, 'X_col_name':X_col_name, 'test_size':test_size, 'parallel':None, 'metrics':metrics, 'scorer_kwargs':scorer_kwargs}
+        kwarg_dict = {'dat_df':dat_df, 'clf':clf, 'X_col_name':X_col_name, 'Y_col_name':Y_col_name, 'test_size':test_size, 'parallel':None, 'metrics':metrics, 'scorer_kwargs':scorer_kwargs}
         val_learn = ft.partial(validate_learnability, **kwarg_dict)
 
         # create a pool, map the run values
