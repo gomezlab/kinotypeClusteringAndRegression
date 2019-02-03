@@ -157,7 +157,7 @@ def validate_learnability(n_run, dat_df, clf, X_col_name='GO Labels', Y_col_name
             for i in range(num_metrics):
                 # check if current metric is confusion
                 if(metrics[i]) == 'confusion':
-                    score_model(y_test, clf.predict(X_test), metric=metrics[i], kwargs=confusion_scorer_kwargs)
+                    scores.append(score_model(y_test, clf.predict(X_test), metric=metrics[i], kwargs=confusion_scorer_kwargs))
                 else:
                     scores.append(score_model(y_test, clf.predict(X_test), metric=metrics[i], kwargs=scorer_kwargs))
 
