@@ -9,6 +9,7 @@ from sklearn.model_selection import train_test_split as tts
 import sklearn.metrics as skm
 from sklearn.base import clone
 import multiprocessing as mp
+from copy import copy
 
 def get_go_annotations_series(path_to_file):
     ''' Reads a csv file of {Kinase: "[Annotations]"} and returns a formatted pd.Series
@@ -136,6 +137,16 @@ def validate_learnability(n_run, dat_df, clf, X_col_name='GO Labels', Y_col_name
     if parallel is None:
         clf_local = clone(clf) # clone original clf for parallel read/write safety
         output = []
+        
+        # make sure we normalize the confusion matrix for any missing classes
+        if 'confusion' in metrics:
+            # find out & sort the classes
+            classes = sorted(list(set(dat_df[Y_col_name])))
+
+            # copy scorer kwargs and add the classes
+            confusion_scorer_kwargs = copy(scorer_kwargs)
+            consufion_scorer_kwargs.update({'labels':classes})
+        
         for i in range(n_run):
             # split, fit, score, append
             X_train, X_test, y_train, y_test = get_tts(dat_df, X_col_name=X_col_name, Y_col_name=Y_col_name, test_size=test_size)
@@ -144,7 +155,11 @@ def validate_learnability(n_run, dat_df, clf, X_col_name='GO Labels', Y_col_name
             # loop through the metrics
             scores = []
             for i in range(num_metrics):
-                scores.append(score_model(y_test, clf.predict(X_test), metric=metrics[i], kwargs=scorer_kwargs))
+                # check if current metric is confusion
+                if(metrics[i]) == 'confusion':
+                    score_model(y_test, clf.predict(X_test), metric=metrics[i], kwargs=confusion_scorer_kwargs)
+                else:
+                    scores.append(score_model(y_test, clf.predict(X_test), metric=metrics[i], kwargs=scorer_kwargs))
 
             # append a tuple if more than one metric, else just a float
             if(num_metrics > 1):
