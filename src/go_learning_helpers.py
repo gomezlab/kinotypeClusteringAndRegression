@@ -145,7 +145,7 @@ def validate_learnability(n_run, dat_df, clf, X_col_name='GO Labels', Y_col_name
 
             # copy scorer kwargs and add the classes
             confusion_scorer_kwargs = copy(scorer_kwargs)
-            consufion_scorer_kwargs.update({'labels':classes})
+            confusion_scorer_kwargs.update({'labels':classes})
         
         for i in range(n_run):
             # split, fit, score, append
