@@ -197,6 +197,15 @@ def get_svm_coeffs_for_cluster(svm, cluster_num):
     
     return np.vstack([svm.coef_[idx_locs_positive,:], -svm.coef_[idx_locs_negative,:]])
 
+def get_cnb_coeffs_for_cluster(cnb, cluster_num):
+    num_classes = len(t.class_count_)
+    probas = np.exp(- cnb.feature_log_prob_)
+    
+    idx_locs_positive = [i for i in range(num_classes) if i != cluster_num]
+    idx_locs_negative = [cluster_num]
+    
+    return np.vstack([probas[idx_locs_positive,:], -probas[idx_locs_negative,:]])
+
 def generate_kinase_labels(path_to_synonyms='../data/go_synonym_data.txt', path_to_kinase_network='../data/KIN_edges_no_weights.txt', path_to_alias_spreadsheet='../data/KINASESmasterlist_w_Aliases.xlsx', path_to_stopwords='./stopwords.csv', path_to_process_list='./go_biological_processes.txt', out_path = 'kinase_go_processes.csv'):
 
     df = pd.read_csv(path_to_synonyms, header=None, sep='\t', low_memory=False,)
