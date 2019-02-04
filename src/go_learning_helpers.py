@@ -190,8 +190,12 @@ def validate_learnability(n_run, dat_df, clf, X_col_name='GO Labels', Y_col_name
 def get_svm_coeffs_for_cluster(svm, cluster_num):
     num_classes = len(svm.classes_)
     combos = list(it.combinations(range(num_classes),2))
-    idx_locs = [x for x, y in enumerate(np.array(list(it.combinations(range(num_classes), 2)))) if cluster_num in y]
-    return svm.coef_[idx_locs,:]
+    
+    # append positive and negative occurrences 
+    idx_locs_positive = [x for x, y in enumerate(np.array(list(it.combinations(range(num_classes), 2)))) if cluster_num == y[0]]
+    idx_locs_negative = [x for x, y in enumerate(np.array(list(it.combinations(range(num_classes), 2)))) if cluster_num == y[1]]
+    
+    return np.vstack([svm.coef_[idx_locs_positive,:], -svm.coef_[idx_locs_negative,:]])
 
 def generate_kinase_labels(path_to_synonyms='../data/go_synonym_data.txt', path_to_kinase_network='../data/KIN_edges_no_weights.txt', path_to_alias_spreadsheet='../data/KINASESmasterlist_w_Aliases.xlsx', path_to_stopwords='./stopwords.csv', path_to_process_list='./go_biological_processes.txt', out_path = 'kinase_go_processes.csv'):
 
