@@ -206,8 +206,17 @@ def get_cnb_coeffs_for_cluster(cnb, cluster_num):
     
     return np.vstack([probas[idx_locs_positive,:], -probas[idx_locs_negative,:]])
 
-def generate_kinase_labels(path_to_synonyms='../data/go_synonym_data.txt', path_to_kinase_network='../data/KIN_edges_no_weights.txt', path_to_alias_spreadsheet='../data/KINASESmasterlist_w_Aliases.xlsx', path_to_stopwords='./stopwords.csv', path_to_process_list='./go_biological_processes.txt', out_path = 'kinase_go_processes.csv'):
-
+def generate_kinase_labels(path_to_synonyms='../data/goData/go_synonym_data.txt',
+                           path_to_kinase_network='../data/KIN_edges_no_weights.txt', 
+                           path_to_alias_spreadsheet='../data/KINASESmasterlist_w_Aliases.xlsx', 
+                           path_to_stopwords='../data/goData/stopwords.csv', 
+                           path_to_process_list='../data/goData/go_biological_processes.txt',
+                           use_go_subset=False,
+                           path_to_go_subset='../data/goData/go_subset.csv',
+                           out_path = '../data/goData/kinase_go_processes.csv'):
+    '''
+    Generates a labeled csv file of {Kinase: [Annotations]} using the inputs provided.
+    '''
     df = pd.read_csv(path_to_synonyms, header=None, sep='\t', low_memory=False,)
     df.columns = ['ID', 'Gene/Product', 'Name', 'GO Class Labels', 'Synonyms']
 
@@ -272,7 +281,6 @@ def generate_kinase_labels(path_to_synonyms='../data/go_synonym_data.txt', path_
         temp['GO Class Labels']='|'.join(list(set(go_dat[x]['GO Class Labels'].iloc[0].split('|')) | set(go_dat[x]['GO Class Labels'].iloc[1].split('|'))))
         go_dat[x] = temp
 
-
     def helper(x):
         try:
             temp = go_dat[x]['GO Class Labels'].values[0].split('|')
@@ -284,7 +292,15 @@ def generate_kinase_labels(path_to_synonyms='../data/go_synonym_data.txt', path_
     agg_labels = [x for y in just_labels.values() for x in y]
 
     stopwords = pd.read_csv(path_to_stopwords).iloc[:,0].tolist()
-    processes = set(pd.read_csv(path_to_process_list, sep='\t', header=None).set_index(0)[1].tolist())
+    processes = pd.read_csv(path_to_process_list, sep='\t', header=None).set_index(0)
+    
+    # apply subset filter if present
+    if use_go_subset:
+        go_subset = set(pd.read_csv(path_to_go_subset, sep ='\t', header=None)[0])
+        indices_to_keep = pd.Series(processes.index.to_list()).isin(go_subset).to_list()
+        processes = processes[indices_to_keep]
+         
+    processes = set(processes[1].tolist())
 
     def stophelper_plus_is_process(x):
         try:
