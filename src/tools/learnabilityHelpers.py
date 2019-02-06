@@ -315,3 +315,64 @@ def generate_kinase_labels(path_to_synonyms='../data/goData/go_synonym_data.txt'
     labeled_kinases.to_csv(out_path)
                            
     return None
+
+def get_go_data_dict(go_file='../data/goData/kinase_go_processes.csv', go_dir='./'):
+    # get the go annotations
+    go_annotations = get_go_annotations_series(go_dir+go_file)
+
+    # filter out any empty kinases
+    go_annotations = go_annotations[map(lambda x: len(x) > 0, [x for x in go_annotations])]
+
+    # generate binarized go_annotations
+    go_lab_binner, bin_go_annotations = convert_go_annotations_to_one_hot(go_annotations,
+                                                       return_binarizer= True)
+
+    # create a frequency chart for every label in the go_annotations 
+    # this allows us to screen out labels with only one occurence (to help reduce noise)
+    frequency = defaultdict(int)
+    for doc in go_annotations:
+        for word in doc:
+            frequency[word] += 1
+    texts = [[word for word in doc if frequency[word] > 1]
+             for doc in go_annotations]
+
+    # generate binarized go_annotations for the intermediate, filtered go_annotations
+    filter_go_annotations = pd.Series(texts)
+    filter_go_annotations.index = go_annotations.index
+    filter_go_annotations.name = go_annotations.name
+
+    # filter out any empty filter_kinases
+    filter_go_annotations = filter_go_annotations[map(lambda x: len(x) > 0, [x for x in filter_go_annotations])]
+
+    freq_go_lab_binner, freq_go_annotations = convert_go_annotations_to_one_hot(filter_go_annotations,
+                                                       return_binarizer= True)
+
+    # create a corpus and dictionary (reference) objects for a tfidf model for the go_annotations
+    dictionary = corpora.Dictionary(texts)
+    corpus = [dictionary.doc2bow(doc) for doc in texts]
+
+    # create a tfidf series for the go_annotations
+    tfidf = TfidfModel(corpus)
+    corpus_tfidf = tfidf[corpus]
+
+    # we have to parse gensim's sparse format back into pd.Series format
+    hold = []
+    rej = []
+    for i in range(len(corpus_tfidf)):
+        if(len(corpus_tfidf[i]) > 1):
+            a, b = map(np.asarray, zip(*corpus_tfidf[i]))
+            row = np.repeat(0, len(a))
+            hold += [sp.csc_matrix((b, (row, a)), shape=(1,len(dictionary)))]
+        else:
+            rej += [go_annotations.index[i]]
+
+
+    tfidf_go_annotations = pd.Series([x for x in sp.vstack(hold).toarray()])
+    tfidf_go_annotations.index = [x for x in go_annotations.index.tolist() if x not in rej]
+    tfidf_go_annotations.name = go_annotations.name
+
+    # create a dictionary with our datasets
+    go_data_dict = {'go':bin_go_annotations,'freq':freq_go_annotations,'tfidf':tfidf_go_annotations}
+    transform_dict = {'freq':freq_go_lab_binner}
+    
+    return go_data_dict, transform_dict
