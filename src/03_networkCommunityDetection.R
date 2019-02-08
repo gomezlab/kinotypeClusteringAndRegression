@@ -1,15 +1,12 @@
 #!/usr/bin/env Rscript
 
-#install.packages("igraph")
-#install.packages('purrr')
-
 library("igraph")
 G <- read.graph("~/Github/KIN_ClusteringWithAnnotations/data/KIN_weighted_edges.txt",format="ncol",names=TRUE,weights="yes",directed=FALSE)
 tmp <- read.table("~/Github/KIN_ClusteringWithAnnotations/data/KIN_weighted_edges.txt")
 W <- tmp$V3
 
-##Algorithms to try:
-###1. fastgreedy.community (deterministic) -- run 1x
+## present algorithms
+### fastgreedy.community (deterministic) -- run 1x
 ###2. spinglass.community (Potts model--statistical) -- run 1000x
 ###3. leading.eigenvector.community (top-down hierarchical) -- run 1000x
 ###4. label.propogation.community (relies on initial random seeds) -- run 1000x
@@ -21,12 +18,12 @@ W <- tmp$V3
 V(G)$comp <- components(G)$membership
 mainG <- induced_subgraph(G,V(G)$comp==1)
 
-###1. fastgreedy.community
+### fastgreedy
 fc <- fastgreedy.community(mainG)
 fg_clusts <- data.frame(names=fc$names, cluster=fc$membership)
 write.table(fg_clusts, '~/GitHub/KIN_ClusteringWithAnnotations/results/fastgreedy_clusters.txt',quote=FALSE,sep="\t",row.names=FALSE)
 
-###2. spinglass.community - knows to use in weights
+### spinglass.community
 sc <- spinglass.community(mainG, spins=100)
 
 # create a votes matrix to store individual cluster tallies
@@ -38,34 +35,6 @@ dim(votes)
 ## do some parallelization
 library('parallel')
 library('purrr')
-
-single_spinglass <- function(numiter, g, numnodes, spins = 100){
-  local_votes <- mat.or.vec(numnodes, numnodes)
-  for (k in 1:numiter){
-    sc <- igraph::spinglass.community(g, spins=100)
-    for (i in 1:numnodes){
-      local_votes[i,] = local_votes[i,] + (sc$membership == sc$membership[i])
-    }
-  }
-  return(local_votes)
-}
-
-para_spinglass <- function(g, numnodes, numiter = 1000, spins = 100, cores=max(detectCores()-1,1)){
-  # create a list of results and a list of parameters for the spinglasses
-  numiter_params = c(rep(numiter %/% cores, cores))
-  
-  # add one to the number of iterations per core if the total number of iterations
-  # is not divisible by the number of cores
-  if(numiter %% cores > 0){
-    numiter_params[1:(numiter%%cores)] = numiter_params[1:(numiter%%cores)] + 1
-  }
-  print(numiter_params)
-  
-  # start up a cluster
-  votes <- Reduce('+', parallel::mclapply(X = numiter_params, FUN = single_spinglass, g=mainG, numnodes=numnodes, mc.cores = cores))
-  
-  return(votes)
-}
 
 print(Sys.time())
 votes <- para_spinglass(g=mainG, numnodes = numnodes, numiter = 1000)
@@ -96,34 +65,6 @@ numnodes <- length(lev$names)
 votes <- mat.or.vec(numnodes,numnodes)
 numiter <- 1000
 
-single_lev <- function(numiter, g, numnodes){
-  local_votes <- mat.or.vec(numnodes, numnodes)
-  for (k in 1:numiter){
-    lev <- igraph::leading.eigenvector.community(g)
-    for (i in 1:numnodes){
-      local_votes[i,] = local_votes[i,] + (lev$membership == lev$membership[i])
-    }
-  }
-  return(local_votes)
-}
-
-para_lev <- function(g, numnodes, numiter = 1000, cores=max(detectCores()-1,1)){
-  # create a list of results and a list of parameters for the spinglasses
-  numiter_params = c(rep(numiter %/% cores, cores))
-  
-  # add one to the number of iterations per core if the total number of iterations
-  # is not divisible by the number of cores
-  if(numiter %% cores > 0){
-    numiter_params[1:(numiter%%cores)] = numiter_params[1:(numiter%%cores)] + 1
-  }
-  print(numiter_params)
-  
-  # start up a cluster
-  votes <- Reduce('+', parallel::mclapply(X = numiter_params, FUN = single_lev, g=mainG, numnodes=numnodes, mc.cores = cores))
-  
-  return(votes)
-}
-
 print(Sys.time())
 votes <- para_lev(g=mainG, numnodes = numnodes, numiter = 1000)
 print(Sys.time())
@@ -151,34 +92,6 @@ numnodes <- length(lp$names)
 votes <- mat.or.vec(numnodes,numnodes)
 numiter <- 1000
 
-single_lp <- function(numiter, g, numnodes){
-  local_votes <- mat.or.vec(numnodes, numnodes)
-  for (k in 1:numiter){
-    lp <- igraph::label.propagation.community(g)
-    for (i in 1:numnodes){
-      local_votes[i,] = local_votes[i,] + (lp$membership == lp$membership[i])
-    }
-  }
-  return(local_votes)
-}
-
-para_lp <- function(g, numnodes, numiter = 1000, cores=max(detectCores()-1,1)){
-  # create a list of results and a list of parameters for the spinglasses
-  numiter_params = c(rep(numiter %/% cores, cores))
-  
-  # add one to the number of iterations per core if the total number of iterations
-  # is not divisible by the number of cores
-  if(numiter %% cores > 0){
-    numiter_params[1:(numiter%%cores)] = numiter_params[1:(numiter%%cores)] + 1
-  }
-  print(numiter_params)
-  
-  # start up a cluster
-  votes <- Reduce('+', parallel::mclapply(X = numiter_params, FUN = single_lp, g=mainG, numnodes=numnodes, mc.cores = cores))
-  
-  return(votes)
-}
-
 print(Sys.time())
 votes <- para_lp(g=mainG, numnodes = numnodes, numiter = 1000)
 print(Sys.time())
@@ -205,33 +118,6 @@ wt <- walktrap.community(mainG, modularity=TRUE)
 numnodes <- length(wt$names)
 votes <- mat.or.vec(numnodes,numnodes)
 numiter <- 1000
-single_wt <- function(numiter, g, numnodes){
-  local_votes <- mat.or.vec(numnodes, numnodes)
-  for (k in 1:numiter){
-    wt <- igraph::walktrap.community(g, modularity=TRUE)
-    for (i in 1:numnodes){
-      local_votes[i,] = local_votes[i,] + (wt$membership == wt$membership[i])
-    }
-  }
-  return(local_votes)
-}
-
-para_wt <- function(g, numnodes, numiter = 1000, cores=max(detectCores()-1,1)){
-  # create a list of results and a list of parameters for the spinglasses
-  numiter_params = c(rep(numiter %/% cores, cores))
-  
-  # add one to the number of iterations per core if the total number of iterations
-  # is not divisible by the number of cores
-  if(numiter %% cores > 0){
-    numiter_params[1:(numiter%%cores)] = numiter_params[1:(numiter%%cores)] + 1
-  }
-  print(numiter_params)
-  
-  # start up a cluster
-  votes <- Reduce('+', parallel::mclapply(X = numiter_params, FUN = single_wt, g=mainG, numnodes=numnodes, mc.cores = cores))
-  
-  return(votes)
-}
 
 print(Sys.time())
 votes <- para_wt(g=mainG, numnodes = numnodes, numiter = 1000)
@@ -268,34 +154,6 @@ numnodes <- length(info$names)
 votes <- mat.or.vec(numnodes,numnodes)
 numiter <- 1000
 
-single_info <- function(numiter, g, numnodes){
-  local_votes <- mat.or.vec(numnodes, numnodes)
-  for (k in 1:numiter){
-    info <- igraph::cluster_infomap(g)
-    for (i in 1:numnodes){
-      local_votes[i,] = local_votes[i,] + (info$membership == info$membership[i])
-    }
-  }
-  return(local_votes)
-}
-
-para_info <- function(g, numnodes, numiter = 1000, cores=max(detectCores()-1,1)){
-  # create a list of results and a list of parameters for the spinglasses
-  numiter_params = c(rep(numiter %/% cores, cores))
-  
-  # add one to the number of iterations per core if the total number of iterations
-  # is not divisible by the number of cores
-  if(numiter %% cores > 0){
-    numiter_params[1:(numiter%%cores)] = numiter_params[1:(numiter%%cores)] + 1
-  }
-  print(numiter_params)
-  
-  # start up a cluster
-  votes <- Reduce('+', parallel::mclapply(X = numiter_params, FUN = single_info, g=mainG, numnodes=numnodes, mc.cores = cores))
-  
-  return(votes)
-}
-
 print(Sys.time())
 votes <- para_info(g=mainG, numnodes = numnodes, numiter = 1000)
 print(Sys.time())
@@ -324,9 +182,11 @@ write.table(eb_clusts, '~/GitHub/KIN_ClusteringWithAnnotations/results/edge_betw
 #### collect modularity data
 mod <- data.frame(row.names = "modularity")
 mod$fast_greedy <- modularity(mainG,fg_clusts$cluster,weights=W)
+
 # modularity function doesn't accept the '0' cluster name, so we shift all 
 # membership values up by one to get the modularity
 mod$spinglass <- modularity(mainG,sc_clusts$cluster+1,weights=W) 
+
 mod$eigen <- modularity(mainG,lev_clusts$cluster,weights=W)
 mod$walktrap <- modularity(mainG,wt_clusts$cluster,weights=W)
 mod$label <- modularity(mainG,lp_clusts$cluster,weights=W)
