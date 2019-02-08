@@ -3,11 +3,11 @@ source("~/GitHub/KIN_ClusteringWithAnnotations/src/tools/communityHelpers.R")
 library("igraph")
 
 # This parameter controls the number of iterations for consensus stochastic algorithms
-numiter <- 1000
+numiter <- 5
 
 # read graph and weights
-G <- read.graph("~/Github/KIN_ClusteringWithAnnotations/data/KIN_weighted_edges.txt",format="ncol",names=TRUE,weights="yes",directed=FALSE)
-W <- read.table("~/Github/KIN_ClusteringWithAnnotations/data/KIN_weighted_edges.txt")$V3
+G <- read.graph("~/Github/KIN_ClusteringWithAnnotations/data/kin_anscombe_weighted.csv",format="ncol",names=TRUE,weights="yes",directed=FALSE)
+#W <- read.table("~/Github/KIN_ClusteringWithAnnotations/data/KIN_weighted_edges.txt")$V3
 
 ## present algorithms
 # fastgreedy.community (deterministic) -- run 1x
@@ -25,7 +25,7 @@ mainG <- induced_subgraph(G,V(G)$comp==1)
 ### fastgreedy
 fc <- fastgreedy.community(mainG)
 fg_clusts <- data.frame(names=fc$names, cluster=fc$membership)
-write.table(fg_clusts, '~/GitHub/KIN_ClusteringWithAnnotations/results/fastgreedy_clusters.txt',quote=FALSE,sep="\t",row.names=FALSE)
+write.table(fg_clusts, '~/GitHub/KIN_ClusteringWithAnnotations/results/weighted/fastgreedy_clusters.txt',quote=FALSE,sep="\t",row.names=FALSE)
 
 ### spinglass.community
 sc <- spinglass.community(mainG, spins=100)
@@ -59,7 +59,7 @@ for (i in 1:numnodes){
 sum()
 
 sc_clusts <- data.frame(names=sc$names, cluster=groups)
-write.table(sc_clusts, '~/Github/KIN_ClusteringWithAnnotations/results/consensus_spinglass.txt',quote=FALSE,sep="\t",row.names=FALSE)
+write.table(sc_clusts, '~/Github/KIN_ClusteringWithAnnotations/results/weighted/consensus_spinglass.txt',quote=FALSE,sep="\t",row.names=FALSE)
 
 ### leading.eigenvector.community
 lev <- leading.eigenvector.community(mainG)
@@ -85,7 +85,7 @@ for (i in 1:numnodes){
 }
 
 lev_clusts <- data.frame(names=lev$names, cluster=groups)
-write.table(lev_clusts, '~/Github/KIN_ClusteringWithAnnotations/results/consensus_eigenvector.txt',quote=FALSE,sep="\t",row.names=FALSE)
+write.table(lev_clusts, '~/Github/KIN_ClusteringWithAnnotations/results/weighted/consensus_eigenvector.txt',quote=FALSE,sep="\t",row.names=FALSE)
 
 ### label.propagation.community
 lp <- label.propagation.community(mainG)
@@ -111,7 +111,7 @@ for (i in 1:numnodes){
 }
 
 lp_clusts <- data.frame(names=lp$names, cluster=groups)
-write.table(lp_clusts, '~/GitHub/KIN_ClusteringWithAnnotations/results/consensus_label_propagation.txt',quote=FALSE,sep="\t",row.names=FALSE)
+write.table(lp_clusts, '~/GitHub/KIN_ClusteringWithAnnotations/results/weighted/consensus_label_propagation.txt',quote=FALSE,sep="\t",row.names=FALSE)
 
 ### walktrap.community
 wt <- walktrap.community(mainG, modularity=TRUE)
@@ -138,14 +138,14 @@ for (i in 1:numnodes){
 }
 
 wt_clusts <- data.frame(names=wt$names, cluster=groups)
-write.table(wt_clusts, '~/Github/KIN_ClusteringWithAnnotations/Results/consensus_walktrap.txt',quote=FALSE,sep="\t",row.names=FALSE)
+write.table(wt_clusts, '~/Github/KIN_ClusteringWithAnnotations/results/weighted/consensus_walktrap.txt',quote=FALSE,sep="\t",row.names=FALSE)
 
 ### cluster_louvain
 louv <- cluster_louvain(mainG)
 louv_clusts <- data.frame(names=louv$names, cluster=louv$memberships[2,])
 louv_small_clusts <- data.frame(names=louv$names, cluster=louv$memberships[1,])
-write.table(louv_clusts, '~/GitHub/KIN_ClusteringWithAnnotations/results/louvain_clusters.txt',quote=FALSE,sep="\t",row.names=FALSE)
-write.table(louv_small_clusts, '~/GitHub/KIN_ClusteringWithAnnotations/results/louvain_small_clusters.txt',quote=FALSE,sep="\t",row.names=FALSE)
+write.table(louv_clusts, '~/GitHub/KIN_ClusteringWithAnnotations/results/weighted/louvain_clusters.txt',quote=FALSE,sep="\t",row.names=FALSE)
+write.table(louv_small_clusts, '~/GitHub/KIN_ClusteringWithAnnotations/results/weighted/louvain_small_clusters.txt',quote=FALSE,sep="\t",row.names=FALSE)
 
 ### cluster_infomap 
 info <- walktrap.community(mainG)
@@ -171,12 +171,12 @@ for (i in 1:numnodes){
 }
 
 info_clusts <- data.frame(names=info$names, cluster=groups)
-write.table(info_clusts, '~/Github/KIN_ClusteringWithAnnotations/Results/consensus_infomap.txt',quote=FALSE,sep="\t",row.names=FALSE)
+write.table(info_clusts, '~/Github/KIN_ClusteringWithAnnotations/results/weighted/consensus_infomap.txt',quote=FALSE,sep="\t",row.names=FALSE)
 
 ### edge.betweenness.community
 eb <- edge.betweenness.community(mainG)
 eb_clusts <- data.frame(names=eb$names, cluster=eb$membership)
-write.table(eb_clusts, '~/GitHub/KIN_ClusteringWithAnnotations/results/edge_betweenness_community_clusters.txt',quote=FALSE,sep="\t",row.names=FALSE)
+write.table(eb_clusts, '~/GitHub/KIN_ClusteringWithAnnotations/results/weighted/edge_betweenness_community_clusters.txt',quote=FALSE,sep="\t",row.names=FALSE)
 
 ###
 
@@ -198,6 +198,6 @@ mod$edge_between <- modularity(mainG,eb_clusts$cluster,weights=W)
 
 ### write modularity data out to a file
 
-outfile="~/Github/KIN_ClusteringWithAnnotations/results/clustering_modularity_results.txt"
+outfile="~/Github/KIN_ClusteringWithAnnotations/results/weighted/clustering_modularity_results.txt"
 write.table(mod,outfile,quote=FALSE,sep="\t",row.names = FALSE)
 
