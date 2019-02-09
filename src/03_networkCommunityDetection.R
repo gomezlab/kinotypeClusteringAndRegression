@@ -3,11 +3,11 @@ source("~/GitHub/KIN_ClusteringWithAnnotations/src/tools/communityHelpers.R")
 library("igraph")
 
 # This parameter controls the number of iterations for consensus stochastic algorithms
-numiter <- 5
+numiter <- 1000
 
 # read graph and weights
 G <- read.graph("~/Github/KIN_ClusteringWithAnnotations/data/kin_anscombe_weighted.csv",format="ncol",names=TRUE,weights="yes",directed=FALSE)
-#W <- read.table("~/Github/KIN_ClusteringWithAnnotations/data/KIN_weighted_edges.txt")$V3
+W <- read.table("~/Github/KIN_ClusteringWithAnnotations/data/kin_anscombe_weighted.csv")$V3
 
 ## present algorithms
 # fastgreedy.community (deterministic) -- run 1x
@@ -55,8 +55,6 @@ for (i in 1:numnodes){
 		k <- k + 1
 	}
 }
-
-sum()
 
 sc_clusts <- data.frame(names=sc$names, cluster=groups)
 write.table(sc_clusts, '~/Github/KIN_ClusteringWithAnnotations/results/weighted/consensus_spinglass.txt',quote=FALSE,sep="\t",row.names=FALSE)
@@ -114,7 +112,7 @@ lp_clusts <- data.frame(names=lp$names, cluster=groups)
 write.table(lp_clusts, '~/GitHub/KIN_ClusteringWithAnnotations/results/weighted/consensus_label_propagation.txt',quote=FALSE,sep="\t",row.names=FALSE)
 
 ### walktrap.community
-wt <- walktrap.community(mainG, modularity=TRUE)
+wt <- walktrap.community(mainG, modularity=TRUE, steps=10)
 
 numnodes <- length(wt$names)
 votes <- mat.or.vec(numnodes,numnodes)
@@ -122,7 +120,6 @@ votes <- mat.or.vec(numnodes,numnodes)
 print(Sys.time())
 votes <- para_wt(g=mainG, numnodes = numnodes, numiter = numiter)
 print(Sys.time())
-
 
 thresh <- 0.9*numiter
 visited <- mat.or.vec(numnodes,1)
@@ -147,7 +144,7 @@ louv_small_clusts <- data.frame(names=louv$names, cluster=louv$memberships[1,])
 write.table(louv_clusts, '~/GitHub/KIN_ClusteringWithAnnotations/results/weighted/louvain_clusters.txt',quote=FALSE,sep="\t",row.names=FALSE)
 write.table(louv_small_clusts, '~/GitHub/KIN_ClusteringWithAnnotations/results/weighted/louvain_small_clusters.txt',quote=FALSE,sep="\t",row.names=FALSE)
 
-### cluster_infomap 
+### cluster_infomap
 info <- walktrap.community(mainG)
 
 numnodes <- length(info$names)
@@ -184,9 +181,9 @@ write.table(eb_clusts, '~/GitHub/KIN_ClusteringWithAnnotations/results/weighted/
 mod <- data.frame(row.names = "modularity")
 mod$fast_greedy <- modularity(mainG,fg_clusts$cluster,weights=W)
 
-# modularity function doesn't accept the '0' cluster name, so we shift all 
+# modularity function doesn't accept the '0' cluster name, so we shift all
 # membership values up by one to get the modularity
-mod$spinglass <- modularity(mainG,sc_clusts$cluster+1,weights=W) 
+mod$spinglass <- modularity(mainG,sc_clusts$cluster+1,weights=W)
 
 mod$eigen <- modularity(mainG,lev_clusts$cluster,weights=W)
 mod$walktrap <- modularity(mainG,wt_clusts$cluster,weights=W)
@@ -200,4 +197,3 @@ mod$edge_between <- modularity(mainG,eb_clusts$cluster,weights=W)
 
 outfile="~/Github/KIN_ClusteringWithAnnotations/results/weighted/clustering_modularity_results.txt"
 write.table(mod,outfile,quote=FALSE,sep="\t",row.names = FALSE)
-
