@@ -145,7 +145,7 @@ write.table(louv_clusts, '~/GitHub/KIN_ClusteringWithAnnotations/results/weighte
 write.table(louv_small_clusts, '~/GitHub/KIN_ClusteringWithAnnotations/results/weighted/louvain_small_clusters.txt',quote=FALSE,sep="\t",row.names=FALSE)
 
 ### cluster_infomap
-info <- walktrap.community(mainG)
+info <- cluster_infomap(mainG)
 
 numnodes <- length(info$names)
 votes <- mat.or.vec(numnodes,numnodes)
