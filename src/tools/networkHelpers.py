@@ -2,7 +2,8 @@ import pandas as pd
 import numpy as np
 from copy import copy
 
-def fetch_hgnc_mapper(path_to_hgnc='../data/hgnc_alias_list.txt'):
+def fetch_hgnc_mapper(path_to_hgnc='../data/hgnc_alias_list.txt',
+                     path_to_kmast='../data/KINASESmasterlist_w_Aliases.xlsx'):
     hgnc = pd.read_csv(path_to_hgnc, sep='\t')
 
     hgnc = hgnc[hgnc['Approved symbol'].apply(lambda x: 'withdrawn' not in x)]
@@ -55,6 +56,27 @@ def fetch_hgnc_mapper(path_to_hgnc='../data/hgnc_alias_list.txt'):
     hgnc_mapper = hgnc_mapper_previous
     hgnc_mapper.update({x:x for x in hgnc_original_keys}) #keep the identify maps
     hgnc_mapper.update(hand_coded) # overwrite the trouble list
+    
+    ### leverage additional known relations from kmast
+    kmast = pd.read_excel(path_to_kmast)
+    for uni,ms,rna in zip(kmast['Uniprot Protein'], kmast['MS Gene'], kmast['RNAseq Gene']):
+        if uni not in hgnc_mapper.keys():
+            if ms in hgnc_mapper.keys():
+                hgnc_mapper[uni] = hgnc_mapper[ms]
+            elif rna in hgnc_mapper.keys():
+                hgnc_mapper[uni] = hgnc_mapper[rna]
+        if ms not in hgnc_mapper.keys():
+            if uni in hgnc_mapper.keys():
+                hgnc_mapper[ms] = hgnc_mapper[uni]
+            elif rna in hgnc_mapper.keys():
+                hgnc_mapper[ms] = hgnc_mapper[rna]
+        if rna not in hgnc_mapper.keys():
+            if ms in hgnc_mapper.keys():
+                hgnc_mapper[rna] = hgnc_mapper[ms]
+            elif uni in hgnc_mapper.keys():
+                hgnc_mapper[rna] = hgnc_mapper[uni]
+
+hgnc_mapper = {x.upper():y.upper() for x,y in hgnc_mapper.items() if x is not np.nan and y is not np.nan}
     
     hgnc_mapper = {x.upper():y.upper() for x,y in hgnc_mapper.items() if x is not np.nan and y is not np.nan}
     
