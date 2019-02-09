@@ -112,13 +112,13 @@ lp_clusts <- data.frame(names=lp$names, cluster=groups)
 write.table(lp_clusts, '~/GitHub/KIN_ClusteringWithAnnotations/results/weighted/consensus_label_propagation.txt',quote=FALSE,sep="\t",row.names=FALSE)
 
 ### walktrap.community
-wt <- walktrap.community(mainG, modularity=TRUE, steps=10)
+wt <- walktrap.community(mainG, modularity=TRUE, steps=gorder(mainG))
 
 numnodes <- length(wt$names)
 votes <- mat.or.vec(numnodes,numnodes)
 
 print(Sys.time())
-votes <- para_wt(g=mainG, numnodes = numnodes, numiter = numiter)
+votes <- para_wt(g=mainG, numnodes = numnodes, numiter = numiter, steps=gorder(mainG))
 print(Sys.time())
 
 thresh <- 0.9*numiter
