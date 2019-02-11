@@ -76,7 +76,7 @@ def fetch_hgnc_mapper(path_to_hgnc='../data/hgnc_alias_list.txt',
             elif uni in hgnc_mapper.keys():
                 hgnc_mapper[rna] = hgnc_mapper[uni]
 
-hgnc_mapper = {x.upper():y.upper() for x,y in hgnc_mapper.items() if x is not np.nan and y is not np.nan}
+    hgnc_mapper = {x.upper():y.upper() for x,y in hgnc_mapper.items() if x is not np.nan and y is not np.nan}
     
     hgnc_mapper = {x.upper():y.upper() for x,y in hgnc_mapper.items() if x is not np.nan and y is not np.nan}
     
