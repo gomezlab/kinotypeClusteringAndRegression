@@ -10,6 +10,12 @@ import sklearn.metrics as skm
 from sklearn.base import clone
 import multiprocessing as mp
 from copy import copy
+from gensim import corpora
+from collections import defaultdict
+from gensim.models import TfidfModel
+from collections import Counter
+import scipy.sparse as sp
+
 
 def get_go_annotations_series(path_to_file):
     ''' Reads a csv file of {Kinase: "[Annotations]"} and returns a formatted pd.Series
