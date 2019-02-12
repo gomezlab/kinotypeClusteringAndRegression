@@ -1,6 +1,15 @@
 #!/usr/bin/env Rscript
+
+# Community Detection (Graph Clustering) Script
+# Created by Kyla Collins
+# Extended and Parallelized by Isaac Robson
+
 library("igraph")
 source("~/GitHub/KIN_ClusteringWithAnnotations/src/tools/communityHelpers.R")
+
+## do some parallelization
+library('parallel')
+library('purrr')
 
 # This parameter controls the number of iterations for consensus stochastic algorithms
 numiter <- 1000
@@ -35,9 +44,6 @@ numnodes <- length(sc$names)
 votes <- mat.or.vec(numnodes,numnodes)
 dim(votes)
 
-## do some parallelization
-library('parallel')
-library('purrr')
 
 print(Sys.time())
 votes <- para_spinglass(g=mainG, numnodes = numnodes, numiter = numiter)
