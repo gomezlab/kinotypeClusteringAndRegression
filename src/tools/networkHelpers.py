@@ -2,8 +2,8 @@ import pandas as pd
 import numpy as np
 from copy import copy
 
-def fetch_hgnc_mapper(path_to_hgnc='../data/hgnc_alias_list.txt',
-                     path_to_kmast='../data/KINASESmasterlist_w_Aliases.xlsx'):
+def fetch_hgnc_mapper(path_to_hgnc='../data/ref/hgnc_alias_list.txt',
+                     path_to_kmast='../data/ref/KINASESmasterlist_w_Aliases.xlsx'):
     hgnc = pd.read_csv(path_to_hgnc, sep='\t')
 
     hgnc = hgnc[hgnc['Approved symbol'].apply(lambda x: 'withdrawn' not in x)]
@@ -49,7 +49,7 @@ def fetch_hgnc_mapper(path_to_hgnc='../data/hgnc_alias_list.txt',
 
     trouble_list = list(filter(lambda x: hgnc_mapper[x] != hgnc_mapper_previous[x], set(hgnc_mapper.keys())&set(hgnc_mapper_previous.keys())))
 
-    hand_coded = {'RAGE':'MOK', 'SGK2':'SGK2', 'SGK196':'SGK196', 'MAPK3':'MAPK3'}
+    hand_coded = {'RAGE':'MOK', 'SGK2':'SGK2', 'SGK196':'SGK196', 'MAPK3':'MAPK3', 'PDPK2':'PDPK2P'}
 
     hgnc_mapper_previous.update(hgnc_mapper) #overwrite the previous symbol conflicts
 
