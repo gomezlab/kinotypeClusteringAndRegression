@@ -1,13 +1,13 @@
 #!/usr/bin/env Rscript
-source("~/GitHub/KIN_ClusteringWithAnnotations/src/tools/communityHelpers.R")
 library("igraph")
+source("~/GitHub/KIN_ClusteringWithAnnotations/src/tools/communityHelpers.R")
 
 # This parameter controls the number of iterations for consensus stochastic algorithms
 numiter <- 1000
 
 # read graph and weights
-G <- read.graph("~/Github/KIN_ClusteringWithAnnotations/data/kin_anscombe_weighted.csv",format="ncol",names=TRUE,weights="yes",directed=FALSE)
-W <- read.table("~/Github/KIN_ClusteringWithAnnotations/data/kin_anscombe_weighted.csv")$V3
+G <- read.graph("~/Github/KIN_ClusteringWithAnnotations/data/kin/kin_anscombe_weighted.csv",format="ncol",names=TRUE,weights="yes",directed=FALSE)
+W <- read.table("~/Github/KIN_ClusteringWithAnnotations/data/kin/kin_anscombe_weighted.csv")$V3
 
 ## present algorithms
 # fastgreedy.community (deterministic) -- run 1x
