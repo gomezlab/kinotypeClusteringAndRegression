@@ -155,7 +155,11 @@ def validate_learnability(n_run, dat_df, clf, X_col_name='GO Labels', Y_col_name
         
         for i in range(n_run):
             # split, fit, score, append
-            X_train, X_test, y_train, y_test = get_tts(dat_df, X_col_name=X_col_name, Y_col_name=Y_col_name, test_size=test_size)
+            X_train, X_test, y_train, y_test = get_tts(dat_df, 
+                                                       X_col_name=X_col_name, 
+                                                       Y_col_name=Y_col_name, 
+                                                       test_size=test_size, 
+                                                       random_state = int(id(mp.current_process())+i)%2**32)
             clf.fit(X_train, y_train)
 
             # loop through the metrics
@@ -213,8 +217,8 @@ def get_cnb_coeffs_for_cluster(cnb, cluster_num):
     return np.vstack([probas[idx_locs_positive,:], -probas[idx_locs_negative,:]])
 
 def generate_kinase_labels(path_to_synonyms='../data/goData/go_synonym_data.txt',
-                           path_to_kinase_network='../data/kin_anscombe_weighted.csv', 
-                           path_to_alias_spreadsheet='../data/KINASESmasterlist_w_Aliases.xlsx', 
+                           path_to_kinase_network='../data/kin/kin_anscombe_weighted.csv', 
+                           path_to_alias_spreadsheet='../data/ref/KINASESmasterlist_w_Aliases.xlsx', 
                            path_to_stopwords='../data/goData/stopwords.csv', 
                            path_to_process_list='../data/goData/go_biological_processes.txt',
                            use_go_subset=False,
