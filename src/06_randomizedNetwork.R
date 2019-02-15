@@ -184,17 +184,17 @@ write.table(eb_clusts, '~/GitHub/KIN_ClusteringWithAnnotations/results/randomize
 
 #### collect modularity data
 mod <- data.frame(row.names = "modularity")
-mod$fast_greedy <- modularity(mainG,fg_clusts$cluster,weights=W)
+mod$fast_greedy <- modularity(mainG,fg_clusts$cluster)
 # modularity function doesn't accept the '0' cluster name, so we shift all
 # membership values up by one to get the modularity
-mod$spinglass <- modularity(mainG,sc_clusts$cluster+1,weights=W)
-mod$eigen <- modularity(mainG,lev_clusts$cluster,weights=W)
-mod$walktrap <- modularity(mainG,wt_clusts$cluster,weights=W)
-mod$label <- modularity(mainG,lp_clusts$cluster,weights=W)
-mod$louvain <- modularity(mainG,louv_clusts$cluster,weights=W)
-mod$small_louvain <- modularity(mainG,louv_small_clusts$cluster,weights=W)
-mod$infomap <- modularity(mainG,info_clusts$cluster,weights=W)
-mod$edge_between <- modularity(mainG,eb_clusts$cluster,weights=W)
+mod$spinglass <- modularity(mainG,sc_clusts$cluster+1)
+mod$eigen <- modularity(mainG,lev_clusts$cluster)
+mod$walktrap <- modularity(mainG,wt_clusts$cluster)
+mod$label <- modularity(mainG,lp_clusts$cluster)
+mod$louvain <- modularity(mainG,louv_clusts$cluster)
+mod$small_louvain <- modularity(mainG,louv_small_clusts$cluster)
+mod$infomap <- modularity(mainG,info_clusts$cluster)
+mod$edge_between <- modularity(mainG,eb_clusts$cluster)
 
 outfile="~/Github/KIN_ClusteringWithAnnotations/results/randomizedResults/clustering_modularity_results.txt"
 write.table(mod,outfile,quote=FALSE,sep="\t",row.names = FALSE)
