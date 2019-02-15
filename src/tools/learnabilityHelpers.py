@@ -111,6 +111,7 @@ def score_model(y_true, y_predict, metric='accuracy', kwargs={}):
                                 'report' - ditto, but whole classification_report -- might take a little while
                                 'f1' - f1_score (can also be weighted/averaged)
                                 'hinge' - hinge_loss (can also be weighted/averaged)
+                                'prf' - precision_recall_fscore_support (per class)
             kwargs -- a kwarg dict needed/for customizability for the scorers
     returns: out -- either a scalar score or an iterable/array with detailed scoring information
     '''
@@ -119,7 +120,7 @@ def score_model(y_true, y_predict, metric='accuracy', kwargs={}):
     score_dict = {'accuracy':skm.accuracy_score, 'matthews':skm.matthews_corrcoef,
                 'cohen':skm.cohen_kappa_score, 'confusion':skm.confusion_matrix,
                 'report':skm.classification_report, 'f1':skm.f1_score,
-                'hinge':skm.hinge_loss}
+                'hinge':skm.hinge_loss, 'prf':skm.precision_recall_fscore_support}
 
     scorer = score_dict[metric]
 
@@ -145,7 +146,7 @@ def validate_learnability(n_run, dat_df, clf, X_col_name='GO Labels', Y_col_name
         output = []
         
         # make sure we normalize the confusion matrix for any missing classes
-        if 'confusion' in metrics:
+        if 'confusion' in metrics or 'prf' in metrics:
             # find out & sort the classes
             classes = sorted(list(set(dat_df[Y_col_name])))
 
@@ -160,13 +161,26 @@ def validate_learnability(n_run, dat_df, clf, X_col_name='GO Labels', Y_col_name
                                                        Y_col_name=Y_col_name, 
                                                        test_size=test_size, 
                                                        random_state = int(id(mp.current_process())+i)%2**32)
+            
+            # it's possible that only one class will show up in the y_train
+            # this will throw an error, so we re-sample in case this happens
+            rerun=2
+            while len(np.unique(y_train)) < 1:
+                X_train, X_test, y_train, y_test = get_tts(dat_df, 
+                                                       X_col_name=X_col_name, 
+                                                       Y_col_name=Y_col_name, 
+                                                       test_size=test_size, 
+                                                       random_state = int(id(mp.current_process())*rerun+i)%2**32)
+                rerun+=1
+            
+            # fit the model
             clf.fit(X_train, y_train)
 
             # loop through the metrics
             scores = []
             for i in range(num_metrics):
                 # check if current metric is confusion
-                if(metrics[i]) == 'confusion':
+                if(metrics[i]) == 'confusion' or (metrics[i]) == 'prf':
                     scores.append(score_model(y_test, clf.predict(X_test), metric=metrics[i], kwargs=confusion_scorer_kwargs))
                 else:
                     scores.append(score_model(y_test, clf.predict(X_test), metric=metrics[i], kwargs=scorer_kwargs))
