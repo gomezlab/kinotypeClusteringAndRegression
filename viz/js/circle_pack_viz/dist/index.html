@@ -42,13 +42,13 @@ var svg = d3.select("svg"),
     g = svg.append("g").attr("transform", "translate(" + diameter / 2 + "," + diameter / 2 + ")");
 
 var color = d3.scaleLinear()
-    .domain([-3, 5])
-    .range(["#fff", "#B693FF"])
+    .domain([-1, 5])
+    .range(["#ffffff", "#566573"])
     .interpolate(d3.interpolateLab);
 
 var fold_color = d3.scaleLinear()
-    .domain([-1, 5])
-    .range(["#0008FF", "#FF0008"])
+    .domain([-3, 0, 5])
+    .range(["#0008FF", '#ffffff', "#FF0008"])
     .interpolate(d3.interpolateLab);
 
 var pack = d3.pack()
@@ -83,7 +83,7 @@ d3.json("viz.json", function(error, root) {
       .style("fill-opacity", function(d) { return d.parent === root || d.r > thresh ? 1 : 0; })
       .style("display", function(d) { return d.parent === root || d.r > thresh ? "inline" : "none"; })
       .style("font-weight", function(d) { return d.parent ? d.children ? "200" : "400" : "0"; } )
-      .style("fill", function(d) { return d.parent ? d.children ? "black" : "white" : "black"; } )
+      .style("fill", function(d) { return d.parent ? d.children ? "black" : "black" : "black"; } )
       .text(function(d) { return d.data.name; });
 
       //.style("font-size", function(d) { return d.parent ? d.children ? "10px" : "6px" : "3px"; })
