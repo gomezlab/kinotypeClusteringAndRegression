@@ -47,8 +47,8 @@ var color = d3.scaleLinear()
     .interpolate(d3.interpolateLab);
 
 var fold_color = d3.scaleLinear()
-    .domain([-3, 0, 5])
-    .range(["#0008FF", '#ffffff', "#FF0008"])
+    .domain([-4, -0.6, -.59999, 0, .59999, .6, 6])
+    .range(["#0008FF", '#eeeeff','#ffffff', '#ffffff','#ffffff','#ffeeee',"#FF0008"])
     .interpolate(d3.interpolateLab);
 
 var pack = d3.pack()
