@@ -14,29 +14,472 @@ require(dplyr)
 require(e1071)
 require(doMC)
 require(gglasso)
+library(abind)
+#install.packages('progress')
+library(progress)
+library(oem)
+#install.packages("RMThreshold")
+library(RMThreshold)
+library(reticulate)
 ```
 #### read in the data
 #### the growth has been interpolated to the Klaeger 2017 (Kuster lab) concentrations to go directly from kinase inhibition -> growth rates 
-
 ```{r}
-dat <- read.csv('~/Github/subnetGRcurves/data/interpolated_conc_df.csv')
-dat <- data.frame(dat)
-dat$Cellline <- as.factor(dat$Cellline)
-head(dat)
-
+# to subset for model building
+subset <- FALSE
 ```
 
-#### extract the resposne variable (y) and the predictor variables (X)
 ```{r}
+dat <- read.csv('~/Github/subnetGRcurves/data/agg_growth.csv')
+dat <- data.frame(dat)
+rownames(dat) <- dat$X
+dat$X <- NULL
 
+if (subset){
+  smp_size <- floor(0.05 * nrow(dat))
+  smp_ind <- sample(seq_len(nrow(dat)), size=smp_size)
+  dat <- dat[smp_ind, ]
+}
+  
+dat
+```
+
+#### extract the response variable (y) and the predictor variables (X)
+```{r}
 y <- dat$Growth
-X <- dat[c(2,5:dim(dat)[2])]
+targ <- dat$Target
+drugs <- dat$Drug
+X <- dat[c(5:dim(dat)[2])]
+
+# convert to matrix
 X <- as.matrix(model.matrix(~., X))
 ```
 
-Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
+```{r}
+louv <- as.data.frame(read.csv("~/Github/KIN_ClusteringWithAnnotations/results/weighted/louvain_small_clusters.txt", sep = "\t"))
+louv
+```
 
-When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file). 
+#### we create some groups for group elasticnet based off of the subnetworks 
 
-The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+```{r}
+grps <- (colnames(X) %in% louv$names)*1
+for (idx in which(grps == 1)){
+  grps[idx] <- subset(louv, names %in% colnames(X)[idx])$cluster
+}
 
+grps
+```
+
+#### group id = 0 is unpenalized from group lasso, so here we don't penalize the cell line indicator variables or the intercept (first column)
+```{r}
+proba_preds <- as.data.frame(read.csv('~/Github/subnetGRcurves/results/best_ap_score_proba.csv'))
+#proba_preds <- as.data.frame(read.csv('~/Github/subnetGRcurves/results/best_roc_auc_proba.csv.csv'))
+rownames(proba_preds) <- proba_preds$X
+proba_preds$X <- NULL
+
+if (subset){
+  proba_preds <- proba_preds[smp_ind, ]
+}
+
+proba_preds
+```
+```{r}
+pred_filter_mask <- function(proba_preds, thresh=0.5){
+  return(which(proba_preds[, 1]<thresh))
+}
+
+pred_positive_mask <- function(proba_preds, thresh=0.5){
+  return(which(proba_preds[, 1]>thresh))
+}
+```
+
+```{r}
+# remove the intercept column (not accepted in oem)
+X <- as.data.frame(X)
+X$'(Intercept)' <- NULL
+X <- as.matrix(X)
+grps <- grps[2:length(grps)]
+```
+
+```{r}
+
+#py_install("pandas")
+#py_install("scikit-learn")
+use_condaenv("r-reticulate")
+```
+
+```{python}
+import pandas as pd
+import numpy as np
+
+from sklearn.ensemble import BaggingClassifier
+from sklearn.linear_model import SGDClassifier
+from sklearn.model_selection import LeaveOneGroupOut
+
+thresh = 0.05
+n_jobs = 10
+
+class pyClfWrapper(object):
+  def __init__(self):
+    self.clf =  BaggingClassifier(base_estimator=SGDClassifier(penalty='elasticnet',
+                                                         loss='modified_huber',
+                                                          learning_rate='optimal',
+                                                          class_weight=None,
+                                                          l1_ratio=0.5,
+                                                          alpha=1e-3,
+                                                          tol=1e-3,
+                                                          random_state=1920),
+                            n_estimators=30,
+                            max_samples=0.632,
+                            n_jobs=n_jobs)
+    
+  def fit(self, X, y):
+    self.clf.fit(X, y)
+    return 
+    
+  def predict_proba(self, X):
+    return self.clf.predict_proba(X)
+```
+
+
+```{r}
+# create the clf
+py_run_string("clf = pyClfWrapper()")
+
+# test the clf
+py$clf$fit(X, (targ>1-0.05)*1.)
+preds <- py$clf$predict_proba(X)
+head(preds)
+```
+
+```{r}
+drug_scores <- c()
+thresholds <- c(0.5)
+lambdas <- 10 ^ c(seq(0, -1.4, -.1), seq(-1.5, -3, -.15), seq(-3.2, -8, -.2))
+alphas <- c(0, 0.1, 0.5, 0.9, 0.99, 1)
+nlambda <- length(lambdas)
+clf_thresh = 0.05
+
+pbar <- progress_bar$new(total = length(unique_drugs))
+pbar$tick(0)
+
+total_mse <- array()
+total_corr <- array()
+total_coeffs <- array()
+
+for (d in unique_drugs){
+  mse <- list()
+  corr <- list()
+  coeffs <- array()
+  
+  # filter to items to fit clf on
+  X_drug <- X[drugs != d, ]
+  y_drug <- y[drugs != d]
+  targ_drug <- targ[drugs != d]
+  
+  X_holdout <- X[drugs == d, ]
+  y_holdout <- y[drugs == d]
+  targ_holdout <- targ[drugs == d]
+  
+  # fit/predict the clf 
+  py$clf$fit(X_drug, (targ_drug > 1 - clf_thresh)*1.0)
+  X_drug_proba <- py$clf$predict_proba(X_drug)
+  X_holdout_proba <- py$clf$predict_proba(X_holdout)
+      
+  for (thresh in thresholds){
+    # extract masks from clf
+    X_drug_mask <- pred_filter_mask(X_drug_proba, thresh)
+    X_drug_positives <- pred_positive_mask(X_drug_proba, thresh)
+    X_holdout_mask <- pred_filter_mask(X_holdout_proba, thresh)
+    X_holdout_positives <- pred_positive_mask(X_holdout_proba, thresh)
+      
+    # get the prediction for all classified positives
+    clf_mean_pred <- mean(targ[X_drug_positives])
+    
+    # determine the regression sets
+    X_train <- X_drug[X_drug_mask, ]
+    y_train <- y_drug[X_drug_mask]
+    targ_train <- targ_drug[X_drug_mask]
+    
+    X_test <- X_holdout[X_holdout_mask, ]
+    y_test <- y_holdout[X_holdout_mask]
+    targ_test <- targ_holdout[X_holdout_mask]
+    
+    # determine the positive predictions
+    y_positives <- y_holdout[X_holdout_positives]
+    predicted_positives <- array(c(rep(clf_mean_pred, length(y_positives))))
+    
+    # convert predicted positives to y value equivalents
+    predicted_positives <- pnorm(predicted_positives) * 2 - 1
+    
+    # sometimes clf will filter outa ll non-zero values for a column
+    # this is to be expected do to sparsity, so we add small gaussian noise to fix
+    # necessary for the SVD solver in oem
+    column_var <- apply(X_train, 2, var)
+    while (min(column_var) == 0) {
+      X_train[, which.min(column_var)] <- rnorm(n = dim(X_train)[1], mean=0, sd=.00001)
+      column_var <- apply(X_train, 2, var)
+    }
+    
+      
+    # start the regression
+    for (alph in alphas){
+      local_mse <- c()
+      local_corr <- c()
+      local_coeffs <- array()
+      preds <- c()
+      
+      # store number present
+      num_present <- rbind(num_present, length(y_test))
+      
+      # check if anything to regress
+      if (length(y_test) == 0){
+        # just create an empty array of zeros
+        local_coeffs <- array(0, dim = c(dim(X)[2], nlambda))
+        
+        for(i in 1:nlambda){
+          # only have predictions from clf
+          local_mse <- rbind(local_mse, mean((predicted_positives - y_positives)^2))
+          local_corr <- rbind(local_corr, cor(predicted_positives, y_positives))
+        }
+      }
+      else {
+        mod <- oem(x = X_train, y = targ_train,
+                 family = "gaussian",
+                 penalty = "grp.lasso.net",
+                 lambda=lambdas,
+                 alpha=alph,
+                 groups=grps,
+                 intercept = TRUE,
+                 ncores = 6)
+        
+        preds <- pnorm(predict(mod, X_test)) * 2 - 1
+        
+        for(i in 1:nlambda){
+          # append the clf positives
+          local_preds <- c(preds[,i], predicted_positives)
+          local_y <- c(y_test, y_positives)
+          
+          # extract mse and correlation
+          local_mse <- rbind(local_mse, mean((local_preds - local_y)^2))
+          local_corr <- rbind(local_corr, cor(local_preds, local_y))
+        }
+        
+        local_coeffs <- array(mod$beta[[1]], dim = dim(mod$beta[[1]]))
+      }
+      
+      # coeffs is two dimensional, so check if na 
+      # being na means not yet initialized
+      if (length(dim(coeffs)) == 1){
+        coeffs <- local_coeffs
+      }
+      else {
+        coeffs <-abind(coeffs, local_coeffs, along = 3)
+      }
+      
+      # mse and corr are one dimensional (in rows) 
+      mse <- cbind(mse, local_mse)
+      corr <- cbind(corr, local_corr)
+    }
+  }
+  
+  corr <- array(as.numeric(unlist(corr)), dim = dim(corr))
+  mse <- array(as.numeric(unlist(mse)), dim = dim(mse))
+  
+  # last dimension of each total is the cross validation
+  # second dim of mse and corr are alphas
+  # first dim of mse and corr are cross-validation drugs
+  if (length(dim((total_corr))) == 1){
+    total_corr <- corr
+    total_mse <- mse
+    total_coeffs <- coeffs
+  }
+  else {
+    total_corr <- abind(total_corr, corr, along = 3)
+    total_mse <- abind(total_mse, mse, along = 3)
+    total_coeffs <- abind(total_coeffs, coeffs, along = 4)
+  }
+  pbar$tick()
+}
+```
+
+
+
+```{r}
+temp <- list()
+
+temp <- append(temp, local_mse)
+length(temp)
+local_corr
+
+abind(array(cbind(local_mse, local_mse), dim = dim(cbind(local_mse, local_mse))), array(cbind(local_mse, local_mse), dim = dim(cbind(local_mse, local_mse))), along=3)
+
+length(mse)
+```
+```{r}
+library(abind)
+```
+
+```{r}
+coeffs
+```
+
+
+```{r}
+# no python
+drug_scores <- c()
+thresholds <- c(0.5)
+lambdas <- 10 ^ c(seq(0, -1.4, -.1), seq(-1.5, -3, -.15), seq(-3.2, -8, -.2))
+alphas <- c(0, 0.1, 0.5, 0.9, 0.99, 1)
+nlambda <- length(lambdas)
+unique_drugs <- unique(drugs)
+
+total_mse <- list()
+total_corr <- list()
+total_num_present <- list()
+
+# does not currently enable multiple thresholds
+for (thresh in thresholds){
+  mask <- pred_filter_mask(proba_preds, thresh)
+
+  #X_filt <- add.Gaussian.noise(X[mask, ], stddev=0.1, symm=FALSE)
+  X_filt <- X[mask, ]
+  targ_filt <- targ[mask]
+  y_filt <- y[mask]
+  drugs_filt <- drugs[mask]
+  unique_drugs <- unique(drugs_filt)
+  
+  for (alph in alphas){
+    mse <- c()
+    corr <- c()
+    num_present <- c()
+    coeffs <- c()
+  
+    pbar <- progress_bar$new(total = length(unique_drugs))
+    pbar$tick(0)
+    
+    for (d in unique_drugs){
+      X_train <- X_filt[drugs_filt != d, ]
+      y_train <- y_filt[drugs_filt != d]
+      targ_train <- targ_filt[drugs_filt != d]
+      
+      X_test <- X_filt[drugs_filt == d, ]
+      y_test <- y_filt[drugs_filt == d]
+      targ_test <- targ_filt[drugs == d]
+      
+      num_present <- rbind(num_present, length(targ_test))
+      
+      # wayyyyy too slow
+      #mod <- gglasso(x = X_filt, y=targ_filt, nlambda = nlambda)
+      mod <- oem(x = X_filt, y = targ_filt,
+                 family = "gaussian",
+                 penalty = "grp.lasso.net",
+                 lambda=lambdas,
+                 alpha=alph,
+                 groups=grps,
+                 intercept = TRUE,
+                 ncores = 6)
+      #groups=c(rep(0, length(grps)))
+      
+      # save models
+      coeffs <- append(coeffs, coef(mod))
+      
+      preds <- pnorm(predict(mod, X_test))*2 - 1
+      
+      local_mse <- c() 
+      local_corr <- c()
+      
+      # compute mse and correlation on held out drug
+      for(i in 1:nlambda){
+        local_mse <- rbind(local_mse, mean((preds[,i] - y_test)^2))
+        local_corr <- rbind(local_corr, cor(preds[,i], y_test))
+      }
+      
+      # save mse and corr
+      mse <- cbind(mse, local_mse)
+      corr <- cbind(corr, local_corr)
+      
+      pbar$tick()
+    }
+    total_mse <- append(total_mse, mse)
+    total_corr <- append(total_corr, corr)
+    total_num_present <- append(total_num_present, num_present)
+  }
+}
+```
+```{r}
+temp <- list()
+temp2 <- c()
+temp2 <- cbind(temp2, local_mse)
+temp2
+```
+
+```{r}
+dim(predicted_positives)
+```
+
+temp <- append(temp, temp2)
+dim(temp2)
+length(temp)
+```
+
+```{r}
+total_mse <- array(total_mse, dim = c(nlambda, length(unique_drugs), length(alphas)))
+total_corr <- array(total_corr, dim = c(nlambda, length(unique_drugs), length(alphas)))
+total_num_present <- array(num_present)
+```
+
+```{r}
+#save(total_mse, file="~/Github/subnetGRcurves/results/group_elasticnet_mse.RData")
+#save(total_corr, file="~/Github/subnetGRcurves/results/group_elasticnet_corr.RData")
+#save(total_num_present, file="~/Github/subnetGRcurves/results/group_elasticnet_num_present.RData")
+
+#save(total_mse, file="~/Github/subnetGRcurves/results/elasticnet_mse.RData")
+#save(total_corr, file="~/Github/subnetGRcurves/results/elasticnet_corr.RData")
+#save(total_num_present, file="~/Github/subnetGRcurves/results/elasticnet_num_present.RData")
+
+#load("~/Github/subnetGRcurves/results/group_elasticnet_mse.RData")
+#load("~/Github/subnetGRcurves/results/group_elasticnet_corr.RData")
+#load("~/Github/subnetGRcurves/results/group_elasticnet_num_present.RData")
+
+```
+```{r}
+#install.packages('reticulate')
+library(reticulate)
+```
+
+```{r}
+agg_mse <- apply(total_mse, c(1,3),sum)
+which(agg_mse == min(agg_mse), arr.ind = TRUE)
+```
+
+```{r}
+for(i in 1:length(alphas)){
+  # this weights by total num points -- biased for more abundant drugs
+  # plot(log10(lambdas), colSums(t(total_mse[,,i]) * c(total_num_present))/sum(total_num_present))
+  
+  # this weights each drug equally
+  plot(log10(lambdas), rowSums(total_mse[,,i])/ncol(total_mse)) 
+}
+```
+```{r}
+plot(log10(lambdas), rowSums(total_mse[,,1])/ncol(vanilla_mse), col="tomato") 
+points(log10(lambdas*2), rowSums(total_mse[,,3])/ncol(total_mse), col="blue") 
+```
+
+```{r}
+# alphas = rows, cv folds = columns
+length(total_mse)
+num_present
+#mse_cv
+t(mse)*c(num_present)
+
+plot(log10(lambdas), colSums(t(mse) * c(num_present))/sum(num_present))
+plot(log10(lambdas), rowSums(mse)/ncol(mse))
+length(unique_drugs)
+```
+```{r}
+plot(log10(lambdas), colSums(t(corr) * c(num_present))/sum(num_present))
+plot(log10(lambdas), rowSums(corr)/ncol(corr))
+```
