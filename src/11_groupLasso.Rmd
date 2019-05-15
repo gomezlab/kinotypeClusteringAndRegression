@@ -156,22 +156,30 @@ head(preds)
 ```{r}
 drug_scores <- c()
 thresholds <- c(0.5)
-lambdas <- 10 ^ c(seq(0, -1.4, -.1), seq(-1.5, -3, -.15), seq(-3.2, -8, -.2))
-alphas <- c(0, 0.1, 0.5, 0.9, 0.99, 1)
+lambdas <- 10 ^ c(seq(0, -10, -1)) # quick version
+#lambdas <- 10 ^ c(seq(0, -1.4, -.1), seq(-1.5, -3, -.15), seq(-3.2, -8, -.2))
+alphas <- c(0, 0.5) # quick version 
+#alphas <- c(0, 0.1, 0.5, 0.9, 0.99, 1) 
 nlambda <- length(lambdas)
 clf_thresh = 0.05
 
 pbar <- progress_bar$new(total = length(unique_drugs))
 pbar$tick(0)
 
-total_mse <- array()
-total_corr <- array()
-total_coeffs <- array()
+total_joint_mse <- array()
+total_clf_acc <- array()
+total_reg_mse <- array()
+total_reg_corr <- array()
+total_residual_interval <- array()
+total_reg_coeffs <- array()
 
 for (d in unique_drugs){
-  mse <- list()
-  corr <- list()
-  coeffs <- array()
+  joint_mse <- list()
+  clf_acc <- list()
+  reg_mse <- list()
+  reg_corr <- list()
+  residual_interval <- list()
+  reg_coeffs <- array()
   
   # filter to items to fit clf on
   X_drug <- X[drugs != d, ]
@@ -195,7 +203,7 @@ for (d in unique_drugs){
     X_holdout_positives <- pred_positive_mask(X_holdout_proba, thresh)
       
     # get the prediction for all classified positives
-    clf_mean_pred <- mean(targ[X_drug_positives])
+    clf_mean_pred <- mean(y_drug[X_drug_positives])
     
     # determine the regression sets
     X_train <- X_drug[X_drug_mask, ]
@@ -210,9 +218,6 @@ for (d in unique_drugs){
     y_positives <- y_holdout[X_holdout_positives]
     predicted_positives <- array(c(rep(clf_mean_pred, length(y_positives))))
     
-    # convert predicted positives to y value equivalents
-    predicted_positives <- pnorm(predicted_positives) * 2 - 1
-    
     # sometimes clf will filter outa ll non-zero values for a column
     # this is to be expected do to sparsity, so we add small gaussian noise to fix
     # necessary for the SVD solver in oem
@@ -222,12 +227,14 @@ for (d in unique_drugs){
       column_var <- apply(X_train, 2, var)
     }
     
-      
     # start the regression
     for (alph in alphas){
-      local_mse <- c()
-      local_corr <- c()
-      local_coeffs <- array()
+      local_joint_mse <- c()
+      local_reg_mse <- c()
+      local_reg_corr <- c()
+      local_residual_interval <- array()
+      local_reg_coeffs <- array()
+      
       preds <- c()
       
       # store number present
@@ -236,12 +243,18 @@ for (d in unique_drugs){
       # check if anything to regress
       if (length(y_test) == 0){
         # just create an empty array of zeros
-        local_coeffs <- array(0, dim = c(dim(X)[2], nlambda))
+        local_reg_coeffs <- array(0, dim = c(dim(X)[2], nlambda))
         
         for(i in 1:nlambda){
           # only have predictions from clf
-          local_mse <- rbind(local_mse, mean((predicted_positives - y_positives)^2))
-          local_corr <- rbind(local_corr, cor(predicted_positives, y_positives))
+          local_joint_mse <- rbind(localjoint_mse, mean((predicted_positives - y_positives)^2))
+          local_reg_mse <- rbind(local_reg_mse, 0 * predicted_positives)
+          local_reg_corr <- rbind(local_corr, cor(predicted_positives, y_positives))
+          
+          sorted_residuals <- order(c(y_positives - predicted_positives))
+          resid <- cbind(c(sorted_residuals[floor(0.05 * length(y_positives)) ]), c(sorted_residuals[floor(0.95 * length(y_positives)) ]))
+          
+          local_residual_interval <- rbind(local_residual_interval, resid)
         }
       }
       else {
@@ -261,47 +274,84 @@ for (d in unique_drugs){
           local_preds <- c(preds[,i], predicted_positives)
           local_y <- c(y_test, y_positives)
           
-          # extract mse and correlation
-          local_mse <- rbind(local_mse, mean((local_preds - local_y)^2))
-          local_corr <- rbind(local_corr, cor(local_preds, local_y))
+          # separately calculate the classification and regression correlation
+          local_reg_corr <- rbind(local_reg_corr, cor(preds, y_test))
+          
+          # extract mse from combined predictions
+          local_joint_mse <- rbind(local_mse, mean((local_preds - local_y)^2))
+          local_reg_mse <- rbind(local_mse, mean((preds - y_test)^2))
+          
+          # residual = y - \hat{y}
+          sorted_residuals <- order(c(local_y - local_preds))
+          resid <- cbind(c(sorted_residuals[floor(0.05 * length(local_y)) ]), c(sorted_residuals[floor(0.95 * length(local_y))]))
+          
+          local_residual_interval <- rbind(local_residual_interval, resid)
         }
         
-        local_coeffs <- array(mod$beta[[1]], dim = dim(mod$beta[[1]]))
+        # extract model coeffs if exists
+        local_reg_coeffs <- array(mod$beta[[1]], dim = dim(mod$beta[[1]]))
       }
       
       # coeffs is two dimensional, so check if na 
       # being na means not yet initialized
-      if (length(dim(coeffs)) == 1){
-        coeffs <- local_coeffs
+      if (length(dim(reg_coeffs)) == 1){
+        reg_coeffs <- local_reg_coeffs
       }
       else {
-        coeffs <-abind(coeffs, local_coeffs, along = 3)
+        reg_coeffs <-abind(trg_coeffs, local_reg_coeffs, along = 3)
       }
       
+      # residual is two dimensional, ditto as coeffs
+      local_residual_interval <- array(as.numeric(unlist(local_residual_interval)), dim = dim(local_residual_interval))
+      if (length(dim(residual_interval)) == 1){
+        residual_interval <- local_residual_interval
+      }
+      else {
+        residual_interval <- abind(residual_interval, local_residual_interval, along = 3)
+      }
+      
+      
       # mse and corr are one dimensional (in rows) 
-      mse <- cbind(mse, local_mse)
-      corr <- cbind(corr, local_corr)
+      reg_mse <- cbind(reg_mse, local_reg_mse)
+      joint_mse <- cbind(joint_mse, local_joint_mse)
+      reg_corr <- cbind(reg_corr, local_reg_corr)
     }
   }
   
-  corr <- array(as.numeric(unlist(corr)), dim = dim(corr))
-  mse <- array(as.numeric(unlist(mse)), dim = dim(mse))
+  reg_corr <- array(as.numeric(unlist(reg_corr)), dim = dim(reg_corr))
+  reg_mse <- array(as.numeric(unlist(reg_mse)), dim = dim(reg_mse))
+  joint_mse <- array(as.numeric(unlist(joint_mse)), dim = dim(joint_mse))
+  
+  total_clf_acc <- rbind(total_clf_acc, sum(X_holdout_positives[,1]> thresh == (targ_drug > 1 - clf_thresh)*1.0)) 
   
   # last dimension of each total is the cross validation
   # second dim of mse and corr are alphas
   # first dim of mse and corr are cross-validation drugs
-  if (length(dim((total_corr))) == 1){
-    total_corr <- corr
-    total_mse <- mse
-    total_coeffs <- coeffs
+  if (length(dim((total_reg_corr))) == 1){
+    total_reg_corr <- reg_corr
+    total_reg_mse <- reg_mse
+    total_joint_mse <- joint_mse
+    total_reg_coeffs <- reg_coeffs
+    total_residual_interval <- residual_interval
   }
   else {
-    total_corr <- abind(total_corr, corr, along = 3)
-    total_mse <- abind(total_mse, mse, along = 3)
-    total_coeffs <- abind(total_coeffs, coeffs, along = 4)
+    total_reg_corr <- abind(total_reg_corr, reg_corr, along = 3)
+    total_reg_mse <- abind(total_reg_mse, reg_mse, along = 3)
+    total_joint_mse <- abind(total_joint_mse, joint_mse, along = 3)
+    total_reg_coeffs <- abind(total_reg_coeffs, reg_coeffs, along = 4)
+    total_residual_interval <- abind(total_residual_interval, residual_interval, along = 4)
   }
   pbar$tick()
 }
+```
+```{r}
+pnorm(clf_mean_pred)*2 - 1
+```
+```{r}
+dim(coeffs)
+```
+```{r}
+dim(array(0, dim = c(dim(X)[2], nlambda)))
 ```
 
 
@@ -317,97 +367,21 @@ abind(array(cbind(local_mse, local_mse), dim = dim(cbind(local_mse, local_mse)))
 
 length(mse)
 ```
+
 ```{r}
-library(abind)
+plot(log10(lambdas), rowSums(total_mse, dims = 2)[,1]/78)
+```
+```{r}
+#which(is.na(total_corr), arr.ind = TRUE)
+# drug 78 failed
+plot(log10(lambdas), rowSums(total_corr[, , 1:77], dims = 2)[,1]/77)
+
 ```
 
 ```{r}
-coeffs
+plot(log10(lambdas), rowSums(total_corr, dims = 2)[,1]/78)
 ```
 
-
-```{r}
-# no python
-drug_scores <- c()
-thresholds <- c(0.5)
-lambdas <- 10 ^ c(seq(0, -1.4, -.1), seq(-1.5, -3, -.15), seq(-3.2, -8, -.2))
-alphas <- c(0, 0.1, 0.5, 0.9, 0.99, 1)
-nlambda <- length(lambdas)
-unique_drugs <- unique(drugs)
-
-total_mse <- list()
-total_corr <- list()
-total_num_present <- list()
-
-# does not currently enable multiple thresholds
-for (thresh in thresholds){
-  mask <- pred_filter_mask(proba_preds, thresh)
-
-  #X_filt <- add.Gaussian.noise(X[mask, ], stddev=0.1, symm=FALSE)
-  X_filt <- X[mask, ]
-  targ_filt <- targ[mask]
-  y_filt <- y[mask]
-  drugs_filt <- drugs[mask]
-  unique_drugs <- unique(drugs_filt)
-  
-  for (alph in alphas){
-    mse <- c()
-    corr <- c()
-    num_present <- c()
-    coeffs <- c()
-  
-    pbar <- progress_bar$new(total = length(unique_drugs))
-    pbar$tick(0)
-    
-    for (d in unique_drugs){
-      X_train <- X_filt[drugs_filt != d, ]
-      y_train <- y_filt[drugs_filt != d]
-      targ_train <- targ_filt[drugs_filt != d]
-      
-      X_test <- X_filt[drugs_filt == d, ]
-      y_test <- y_filt[drugs_filt == d]
-      targ_test <- targ_filt[drugs == d]
-      
-      num_present <- rbind(num_present, length(targ_test))
-      
-      # wayyyyy too slow
-      #mod <- gglasso(x = X_filt, y=targ_filt, nlambda = nlambda)
-      mod <- oem(x = X_filt, y = targ_filt,
-                 family = "gaussian",
-                 penalty = "grp.lasso.net",
-                 lambda=lambdas,
-                 alpha=alph,
-                 groups=grps,
-                 intercept = TRUE,
-                 ncores = 6)
-      #groups=c(rep(0, length(grps)))
-      
-      # save models
-      coeffs <- append(coeffs, coef(mod))
-      
-      preds <- pnorm(predict(mod, X_test))*2 - 1
-      
-      local_mse <- c() 
-      local_corr <- c()
-      
-      # compute mse and correlation on held out drug
-      for(i in 1:nlambda){
-        local_mse <- rbind(local_mse, mean((preds[,i] - y_test)^2))
-        local_corr <- rbind(local_corr, cor(preds[,i], y_test))
-      }
-      
-      # save mse and corr
-      mse <- cbind(mse, local_mse)
-      corr <- cbind(corr, local_corr)
-      
-      pbar$tick()
-    }
-    total_mse <- append(total_mse, mse)
-    total_corr <- append(total_corr, corr)
-    total_num_present <- append(total_num_present, num_present)
-  }
-}
-```
 ```{r}
 temp <- list()
 temp2 <- c()
@@ -419,6 +393,7 @@ temp2
 dim(predicted_positives)
 ```
 
+```{r}
 temp <- append(temp, temp2)
 dim(temp2)
 length(temp)
@@ -431,10 +406,10 @@ total_num_present <- array(num_present)
 ```
 
 ```{r}
-#save(total_mse, file="~/Github/subnetGRcurves/results/group_elasticnet_mse.RData")
-#save(total_corr, file="~/Github/subnetGRcurves/results/group_elasticnet_corr.RData")
-#save(total_num_present, file="~/Github/subnetGRcurves/results/group_elasticnet_num_present.RData")
-
+save(total_mse, file="~/Github/subnetGRcurves/results/joint_mse.RData")
+save(total_corr, file="~/Github/subnetGRcurves/results/joint_corr.RData")
+save(total_num_present, file="~/Github/subnetGRcurves/results/joint_num_present.RData")
+save(total_coeffs, file="~/Github/subnetGRcurves/results/joint_reg_coeffs.RData")
 #save(total_mse, file="~/Github/subnetGRcurves/results/elasticnet_mse.RData")
 #save(total_corr, file="~/Github/subnetGRcurves/results/elasticnet_corr.RData")
 #save(total_num_present, file="~/Github/subnetGRcurves/results/elasticnet_num_present.RData")
@@ -444,9 +419,15 @@ total_num_present <- array(num_present)
 #load("~/Github/subnetGRcurves/results/group_elasticnet_num_present.RData")
 
 ```
+
 ```{r}
 #install.packages('reticulate')
 library(reticulate)
+```
+
+
+```{r}
+temp <- array(num_present, dim = c(length(unique_drugs), length(alphas)))
 ```
 
 ```{r}
