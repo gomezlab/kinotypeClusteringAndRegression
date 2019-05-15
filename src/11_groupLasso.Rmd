@@ -249,7 +249,7 @@ for (d in unique_drugs){
           # only have predictions from clf
           local_joint_mse <- rbind(localjoint_mse, mean((predicted_positives - y_positives)^2))
           local_reg_mse <- rbind(local_reg_mse, 0 * predicted_positives)
-          local_reg_corr <- rbind(local_corr, cor(predicted_positives, y_positives))
+          local_reg_corr <- rbind(local_reg_corr, cor(predicted_positives, y_positives))
           
           sorted_residuals <- c(y_positives - predicted_positives)[order(c(y_positives - predicted_positives))]
           resid <- cbind(c(sorted_residuals[floor(0.05 * length(y_positives)) ]), c(sorted_residuals[floor(0.95 * length(y_positives)) ]))
@@ -278,8 +278,8 @@ for (d in unique_drugs){
           local_reg_corr <- rbind(local_reg_corr, cor(preds[,i], y_test))
           
           # extract mse from combined predictions
-          local_joint_mse <- rbind(local_mse, mean((local_preds - local_y)^2))
-          local_reg_mse <- rbind(local_mse, mean((preds - y_test)^2))
+          local_joint_mse <- rbind(local_joint_mse, mean((local_preds - local_y)^2))
+          local_reg_mse <- rbind(local_reg_mse, mean((preds - y_test)^2))
           
           # residual = y - \hat{y}
           sorted_residuals <- c(local_y - local_preds)[order(c(local_y - local_preds))]
@@ -346,9 +346,11 @@ for (d in unique_drugs){
 ```
 ```{r}
 length(local_reg_corr)
+length(local_reg_mse)
+local_reg_corr
+local_reg_mse
 dim(total_reg_corr)
 dim(total_reg_mse)
-dim(total_joint_mse)
 dim(total_joint_mse)
 dim(total_reg_coeffs)
 ```
