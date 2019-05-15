@@ -156,10 +156,10 @@ head(preds)
 ```{r}
 drug_scores <- c()
 thresholds <- c(0.5)
-lambdas <- 10 ^ c(seq(0, -10, -1)) # quick version
-#lambdas <- 10 ^ c(seq(0, -1.4, -.1), seq(-1.5, -3, -.15), seq(-3.2, -8, -.2))
-alphas <- c(0, 0.5) # quick version 
-#alphas <- c(0, 0.1, 0.5, 0.9, 0.99, 1) 
+#lambdas <- 10 ^ c(seq(0, -10, -1)) # quick version
+lambdas <- 10 ^ c(seq(0, -1.4, -.1), seq(-1.5, -3, -.15), seq(-3.2, -8, -.2))
+#alphas <- c(0, 0.5) # quick version 
+alphas <- c(0, 0.1, 0.5, 0.9, 0.99, 1) 
 nlambda <- length(lambdas)
 clf_thresh = 0.05
 
@@ -251,7 +251,7 @@ for (d in unique_drugs){
           local_reg_mse <- rbind(local_reg_mse, 0 * predicted_positives)
           local_reg_corr <- rbind(local_corr, cor(predicted_positives, y_positives))
           
-          sorted_residuals <- order(c(y_positives - predicted_positives))
+          sorted_residuals <- c(y_positives - predicted_positives)[order(c(y_positives - predicted_positives))]
           resid <- cbind(c(sorted_residuals[floor(0.05 * length(y_positives)) ]), c(sorted_residuals[floor(0.95 * length(y_positives)) ]))
           
           local_residual_interval <- rbind(local_residual_interval, resid)
@@ -275,14 +275,14 @@ for (d in unique_drugs){
           local_y <- c(y_test, y_positives)
           
           # separately calculate the classification and regression correlation
-          local_reg_corr <- rbind(local_reg_corr, cor(preds, y_test))
+          local_reg_corr <- rbind(local_reg_corr, cor(preds[,i], y_test))
           
           # extract mse from combined predictions
           local_joint_mse <- rbind(local_mse, mean((local_preds - local_y)^2))
           local_reg_mse <- rbind(local_mse, mean((preds - y_test)^2))
           
           # residual = y - \hat{y}
-          sorted_residuals <- order(c(local_y - local_preds))
+          sorted_residuals <- c(local_y - local_preds)[order(c(local_y - local_preds))]
           resid <- cbind(c(sorted_residuals[floor(0.05 * length(local_y)) ]), c(sorted_residuals[floor(0.95 * length(local_y))]))
           
           local_residual_interval <- rbind(local_residual_interval, resid)
@@ -294,16 +294,16 @@ for (d in unique_drugs){
       
       # coeffs is two dimensional, so check if na 
       # being na means not yet initialized
-      if (length(dim(reg_coeffs)) == 1){
+      if (length(dim(reg_coeffs)) <= 1){
         reg_coeffs <- local_reg_coeffs
       }
       else {
-        reg_coeffs <-abind(trg_coeffs, local_reg_coeffs, along = 3)
+        reg_coeffs <-abind(reg_coeffs, local_reg_coeffs, along = 3)
       }
       
       # residual is two dimensional, ditto as coeffs
       local_residual_interval <- array(as.numeric(unlist(local_residual_interval)), dim = dim(local_residual_interval))
-      if (length(dim(residual_interval)) == 1){
+      if (length(dim(residual_interval)) <= 1){
         residual_interval <- local_residual_interval
       }
       else {
@@ -322,12 +322,12 @@ for (d in unique_drugs){
   reg_mse <- array(as.numeric(unlist(reg_mse)), dim = dim(reg_mse))
   joint_mse <- array(as.numeric(unlist(joint_mse)), dim = dim(joint_mse))
   
-  total_clf_acc <- rbind(total_clf_acc, sum(X_holdout_positives[,1]> thresh == (targ_drug > 1 - clf_thresh)*1.0)) 
+  total_clf_acc <- rbind(total_clf_acc, sum((X_holdout_proba[,1] > thresh) == (targ_drug > 1 - clf_thresh)*1.0)) 
   
   # last dimension of each total is the cross validation
   # second dim of mse and corr are alphas
   # first dim of mse and corr are cross-validation drugs
-  if (length(dim((total_reg_corr))) == 1){
+  if (length(dim((total_reg_corr))) >= 1){
     total_reg_corr <- reg_corr
     total_reg_mse <- reg_mse
     total_joint_mse <- joint_mse
@@ -345,13 +345,19 @@ for (d in unique_drugs){
 }
 ```
 ```{r}
-pnorm(clf_mean_pred)*2 - 1
+length(local_reg_corr)
+dim(total_reg_corr)
+dim(total_reg_mse)
+dim(total_joint_mse)
+dim(total_joint_mse)
+dim(total_reg_coeffs)
 ```
+
+
 ```{r}
-dim(coeffs)
-```
-```{r}
-dim(array(0, dim = c(dim(X)[2], nlambda)))
+length(preds)
+length(y_test)
+dim(local_reg_corr)
 ```
 
 
