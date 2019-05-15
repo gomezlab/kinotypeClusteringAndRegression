@@ -247,7 +247,7 @@ for (d in unique_drugs){
         
         for(i in 1:nlambda){
           # only have predictions from clf
-          local_joint_mse <- rbind(localjoint_mse, mean((predicted_positives - y_positives)^2))
+          local_joint_mse <- rbind(local_joint_mse, mean((predicted_positives - y_positives)^2))
           local_reg_mse <- rbind(local_reg_mse, 0 * predicted_positives)
           local_reg_corr <- rbind(local_reg_corr, cor(predicted_positives, y_positives))
           
@@ -279,7 +279,7 @@ for (d in unique_drugs){
           
           # extract mse from combined predictions
           local_joint_mse <- rbind(local_joint_mse, mean((local_preds - local_y)^2))
-          local_reg_mse <- rbind(local_reg_mse, mean((preds - y_test)^2))
+          local_reg_mse <- rbind(local_reg_mse, mean((preds[,i] - y_test)^2))
           
           # residual = y - \hat{y}
           sorted_residuals <- c(local_y - local_preds)[order(c(local_y - local_preds))]
@@ -327,7 +327,7 @@ for (d in unique_drugs){
   # last dimension of each total is the cross validation
   # second dim of mse and corr are alphas
   # first dim of mse and corr are cross-validation drugs
-  if (length(dim((total_reg_corr))) >= 1){
+  if (length(dim((total_reg_corr))) <= 1){
     total_reg_corr <- reg_corr
     total_reg_mse <- reg_mse
     total_joint_mse <- joint_mse
@@ -349,10 +349,17 @@ length(local_reg_corr)
 length(local_reg_mse)
 local_reg_corr
 local_reg_mse
+local_joint_mse
 dim(total_reg_corr)
 dim(total_reg_mse)
 dim(total_joint_mse)
 dim(total_reg_coeffs)
+```
+```{r}
+unique_drugs
+d
+dim(total_reg_mse)
+cor(predict(mod, X_test), y_test)
 ```
 
 
