@@ -167,7 +167,7 @@ pbar <- progress_bar$new(total = length(unique_drugs))
 pbar$tick(0)
 
 total_joint_mse <- array()
-total_clf_acc <- array()
+total_clf_acc <- c()
 total_reg_mse <- array()
 total_reg_corr <- array()
 total_residual_interval <- array()
@@ -194,7 +194,8 @@ for (d in unique_drugs){
   py$clf$fit(X_drug, (targ_drug > 1 - clf_thresh)*1.0)
   X_drug_proba <- py$clf$predict_proba(X_drug)
   X_holdout_proba <- py$clf$predict_proba(X_holdout)
-      
+    
+  
   for (thresh in thresholds){
     # extract masks from clf
     X_drug_mask <- pred_filter_mask(X_drug_proba, thresh)
@@ -240,12 +241,14 @@ for (d in unique_drugs){
       # store number present
       num_present <- rbind(num_present, length(y_test))
       
+      
       # check if anything to regress
       if (length(y_test) == 0){
         # just create an empty array of zeros
         local_reg_coeffs <- array(0, dim = c(dim(X)[2], nlambda))
         
         for(i in 1:nlambda){
+          
           # only have predictions from clf
           local_joint_mse <- rbind(local_joint_mse, mean((predicted_positives - y_positives)^2))
           local_reg_mse <- rbind(local_reg_mse, 0 * predicted_positives)
@@ -255,9 +258,11 @@ for (d in unique_drugs){
           resid <- cbind(c(sorted_residuals[floor(0.05 * length(y_positives)) ]), c(sorted_residuals[floor(0.95 * length(y_positives)) ]))
           
           local_residual_interval <- rbind(local_residual_interval, resid)
+          
         }
       }
       else {
+        
         mod <- oem(x = X_train, y = targ_train,
                  family = "gaussian",
                  penalty = "grp.lasso.net",
@@ -270,6 +275,7 @@ for (d in unique_drugs){
         preds <- pnorm(predict(mod, X_test)) * 2 - 1
         
         for(i in 1:nlambda){
+          
           # append the clf positives
           local_preds <- c(preds[,i], predicted_positives)
           local_y <- c(y_test, y_positives)
@@ -285,9 +291,13 @@ for (d in unique_drugs){
           sorted_residuals <- c(local_y - local_preds)[order(c(local_y - local_preds))]
           resid <- cbind(c(sorted_residuals[floor(0.05 * length(local_y)) ]), c(sorted_residuals[floor(0.95 * length(local_y))]))
           
-          local_residual_interval <- rbind(local_residual_interval, resid)
+          if (length(dim(local_residual_interval)) <= 1){
+            local_residual_interval <- array(resid)
+          }
+          else {
+            local_residual_interval <- rbind(local_residual_interval, array(resid))  
+          }
         }
-        
         # extract model coeffs if exists
         local_reg_coeffs <- array(mod$beta[[1]], dim = dim(mod$beta[[1]]))
       }
@@ -300,7 +310,6 @@ for (d in unique_drugs){
       else {
         reg_coeffs <-abind(reg_coeffs, local_reg_coeffs, along = 3)
       }
-      
       # residual is two dimensional, ditto as coeffs
       local_residual_interval <- array(as.numeric(unlist(local_residual_interval)), dim = dim(local_residual_interval))
       if (length(dim(residual_interval)) <= 1){
@@ -310,19 +319,18 @@ for (d in unique_drugs){
         residual_interval <- abind(residual_interval, local_residual_interval, along = 3)
       }
       
-      
       # mse and corr are one dimensional (in rows) 
       reg_mse <- cbind(reg_mse, local_reg_mse)
       joint_mse <- cbind(joint_mse, local_joint_mse)
       reg_corr <- cbind(reg_corr, local_reg_corr)
     }
   }
-  
+
   reg_corr <- array(as.numeric(unlist(reg_corr)), dim = dim(reg_corr))
   reg_mse <- array(as.numeric(unlist(reg_mse)), dim = dim(reg_mse))
   joint_mse <- array(as.numeric(unlist(joint_mse)), dim = dim(joint_mse))
   
-  total_clf_acc <- rbind(total_clf_acc, sum((X_holdout_proba[,1] > thresh) == (targ_drug > 1 - clf_thresh)*1.0)) 
+  total_clf_acc <- rbind(total_clf_acc, sum((X_holdout_proba[,1] > thresh) == (y_holdout > 1 - clf_thresh)*1.0)/length(y_holdout)) 
   
   # last dimension of each total is the cross validation
   # second dim of mse and corr are alphas
@@ -352,18 +360,27 @@ local_reg_mse
 local_joint_mse
 dim(total_reg_corr)
 dim(total_reg_mse)
+dim(total_residual_interval)
+total_clf_acc
+dim(X_holdout_proba)
+length(targ_drug)
+local_residual_interval[1, ,]
+dim(total_reg_mse)
 dim(total_joint_mse)
 dim(total_reg_coeffs)
 ```
 ```{r}
 unique_drugs
-d
+dim(X_holdout)
+length(y_holdout)
 dim(total_reg_mse)
 cor(predict(mod, X_test), y_test)
 ```
 
 
 ```{r}
+array(resid)
+
 length(preds)
 length(y_test)
 dim(local_reg_corr)
