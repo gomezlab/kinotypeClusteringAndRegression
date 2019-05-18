@@ -25,7 +25,7 @@ CV_JOBS = 24
 N_JOBS = 1
 
 # import the data file
-agg_data = pd.read_csv('../data/agg_growth.csv.gz', index_col=0, compression='gzip')
+agg_data = pd.read_csv('~/Github/subnetGRcurves/data/agg_growth.csv.gz', index_col=0, compression='gzip')
 
 ### Slice relevant data ###
 conc = agg_data.Concentration
@@ -78,7 +78,8 @@ scorer_dict = {x:make_scorer(y) for x,y in scorer_dict.items()}
 for thresh in threshes:
     base_clf = BaggingClassifier(base_estimator=SGDClassifier(penalty='elasticnet',
                                                               learning_rate='optimal',
-                                                              random_state=1920),
+                                                              random_state=1920,
+                                                              tol=1e-3),
                                  n_estimators=30,
                                  max_samples=0.632,
                                  n_jobs=N_JOBS)
