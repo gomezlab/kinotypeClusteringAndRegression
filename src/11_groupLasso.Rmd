@@ -509,16 +509,14 @@ for (d in unique_drugs){
       preds <- tanh(yeo.johnson(predict(mod, X_local), 0.49, inverse=TRUE))
     
       # it's not infrequent that the predictions are all -1 or +1
-      # this will throw a warning for corr, so we turn off the warnings briefly
-      options(warn=-1)
+      # this will throw a warning for corr, so we suppress it
       regression_results <- add_row(regression_results, 
               alpha = alph,
               drug = d,
               train = session,
               lambda=lambdas,
               mse = apply((y_local - preds)^2, 2, mean),
-              corr = cor(preds, y_local)[,1])
-      options(warn=0)
+              corr = suppressWarnings(cor(preds, y_local)[,1]))
     }
   }
   pbar$tick()
@@ -573,7 +571,7 @@ nlambda <- length(lambdas)
 pbar <- progress_bar$new(total = length(unique_drugs))
 pbar$tick(0)
 
-sparse_regression_results <- tibble(taus=double(), drug=character(), train=logical(), lambda=double(), mse = double(), corr=double())
+sparse_regression_results <- tibble(tau=double(), drug=character(), train=logical(), lambda=double(), mse = double(), corr=double())
 
 for (d in unique_drugs){
   # filter to items to fit clf on
@@ -619,16 +617,14 @@ for (d in unique_drugs){
       preds <- tanh(yeo.johnson(predict(mod, X_local), 0.49, inverse=TRUE))
     
       # it's not infrequent that the predictions are all -1 or +1
-      # this will throw a warning for corr, so we turn off the warnings briefly
-      options(warn=-1)
+      # this will throw a warning for corr, so we suppress it
       sparse_regression_results <- add_row(sparse_regression_results, 
               tau = t,
               drug = d,
               train = session,
               lambda=lambdas,
               mse = apply((y_local - preds)^2, 2, mean),
-              corr = cor(preds, y_local)[,1])
-      options(warn=0)
+              corr = suppressWarnings(cor(preds, y_local)[,1]))
     }
   }
   pbar$tick()
@@ -636,9 +632,11 @@ for (d in unique_drugs){
 ```
 
 ```{r}
-regression_results %>% 
-    filter(alpha == 1) %>% 
-    group_by(lambda)
+sparse_regression_results
+```
+```{r}
+options(warn=0)
+suppressWarnings(cor(preds, y_local)[,1])
 ```
 
 
