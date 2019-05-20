@@ -46,14 +46,97 @@ dat
 
 #### extract the response variable (y) and the predictor variables (X)
 ```{r}
+drugs <- dat$Drug
+drug_counts <- as.data.frame(table(drugs))
+
+## filter out any drug with < 50 observations
+high_count_drug_list <- drug_counts$drugs[drug_counts$Freq > 50]
+high_count_filter <- drugs %in% high_count_drug_list
+
+drugs <- drugs[high_count_filter]
+dat <- dat[high_count_filter, ]
+
 y <- dat$Growth
 targ <- dat$Target
-drugs <- dat$Drug
 X <- dat[c(5:dim(dat)[2])]
 
 # convert to matrix
 X <- as.matrix(model.matrix(~., X))
+
+# extract unique
+unique_drugs <- unique(drugs)
+length(unique_drugs)
 ```
+
+
+```{r}
+column_var <- apply(X_train, 2, var)
+sum(column_var == 0)
+# no columns have zero variance -- didn't lose any cell lines
+```
+
+
+```{r}
+#library(ggplot2)
+ggplot(dat, aes(x=Growth)) + geom_histogram()
+```
+
+```{r}
+#install.packages('EnvStats')
+library('EnvStats')
+p <- (y+1)/2
+hist(log(p/(1-p)), breaks = 30)
+#q <- boxcox(abs(atanh(y)))
+q <- sign(y) * abs(atanh(y))**.8
+q[y == 1] <- atanh(1 - 1e-12)
+hist(q, breaks=30)
+```
+```{r}
+library(parallel)
+
+checkYJShapiroWilks <- function(lam){
+  # setup a cluster for parallelization
+  cl <- makeCluster(detectCores()-1)
+  
+  # ensure necessary packages are present
+  clusterEvalQ(cl,library(stats))
+  clusterEvalQ(cl,library(VGAM))
+  
+  # export the fixed q value and lam
+  clusterExport(cl,c("q"))
+  clusterExport(cl,c("lam"))
+  
+  # ensure reproducible random RNGs
+  clusterSetRNGStream(cl)
+  
+  # collect shapiro-wilks results
+  res <- parSapply(cl, 1:1000, function(i,...) {  r<- shapiro.test(sample(yeo.johnson(q, lam), size=500))$p.value } )
+  
+  stopCluster(cl)
+  
+  # fill na's with 0
+  res[is.na(res)] <- 0 
+
+  # return
+  return(mean(res))
+}
+```
+
+```{r}
+library(stats)
+o <- optimize(checkYJShapiroWilks, interval = c(-.2, 1.5), maximum = TRUE)
+o
+```
+
+```{r}
+#install.packages('VGAM')
+#library(VGAM)
+#min(yeo.johnson(q, .8))
+hist(yeo.johnson(q, .49), breaks=50)
+new_y <- yeo.johnson(q, .49)
+```
+
+
 
 ```{r}
 louv <- as.data.frame(read.csv("~/Github/KIN_ClusteringWithAnnotations/results/weighted/louvain_small_clusters.txt", sep = "\t"))
@@ -69,29 +152,6 @@ for (idx in which(grps == 1)){
 }
 
 grps
-```
-
-#### group id = 0 is unpenalized from group lasso, so here we don't penalize the cell line indicator variables or the intercept (first column)
-```{r}
-proba_preds <- as.data.frame(read.csv('~/Github/subnetGRcurves/results/best_ap_score_proba.csv'))
-#proba_preds <- as.data.frame(read.csv('~/Github/subnetGRcurves/results/best_roc_auc_proba.csv.csv'))
-rownames(proba_preds) <- proba_preds$X
-proba_preds$X <- NULL
-
-if (subset){
-  proba_preds <- proba_preds[smp_ind, ]
-}
-
-proba_preds
-```
-```{r}
-pred_filter_mask <- function(proba_preds, thresh=0.5){
-  return(which(proba_preds[, 1]<thresh))
-}
-
-pred_positive_mask <- function(proba_preds, thresh=0.5){
-  return(which(proba_preds[, 1]>thresh))
-}
 ```
 
 ```{r}
@@ -155,7 +215,7 @@ head(preds)
 
 ```{r}
 drug_scores <- c()
-thresholds <- c(0.5)
+thresholds <- c(0.7)
 #lambdas <- 10 ^ c(seq(0, -10, -1)) # quick version
 lambdas <- 10 ^ c(seq(0, -1.4, -.1), seq(-1.5, -3, -.15), seq(-3.2, -8, -.2))
 #alphas <- c(0, 0.5) # quick version 
@@ -233,7 +293,7 @@ for (d in unique_drugs){
       local_joint_mse <- c()
       local_reg_mse <- c()
       local_reg_corr <- c()
-      local_residual_interval <- array()
+      local_residual_interval <- c()
       local_reg_coeffs <- array()
       
       preds <- c()
@@ -255,14 +315,13 @@ for (d in unique_drugs){
           local_reg_corr <- rbind(local_reg_corr, cor(predicted_positives, y_positives))
           
           sorted_residuals <- c(y_positives - predicted_positives)[order(c(y_positives - predicted_positives))]
-          resid <- cbind(c(sorted_residuals[floor(0.05 * length(y_positives)) ]), c(sorted_residuals[floor(0.95 * length(y_positives)) ]))
+          resid <- cbind(c(sorted_residuals[floor(0.1 * length(y_positives)) ]), c(sorted_residuals[floor(0.9 * length(y_positives)) ]))
           
           local_residual_interval <- rbind(local_residual_interval, resid)
           
         }
       }
       else {
-        
         mod <- oem(x = X_train, y = targ_train,
                  family = "gaussian",
                  penalty = "grp.lasso.net",
@@ -289,13 +348,16 @@ for (d in unique_drugs){
           
           # residual = y - \hat{y}
           sorted_residuals <- c(local_y - local_preds)[order(c(local_y - local_preds))]
-          resid <- cbind(c(sorted_residuals[floor(0.05 * length(local_y)) ]), c(sorted_residuals[floor(0.95 * length(local_y))]))
+          lower_resid <- min(c(floor(0.1 * length(local_y)), 1)) # never zero
+          upper_resid <- floor(0.9 * length(local_y))
+          
+          resid <- cbind(c(sorted_residuals[lower_resid]), c(sorted_residuals[upper_resid]))
           
           if (length(dim(local_residual_interval)) <= 1){
-            local_residual_interval <- array(resid)
+            local_residual_interval <- resid
           }
           else {
-            local_residual_interval <- rbind(local_residual_interval, array(resid))  
+            local_residual_interval <- rbind(local_residual_interval, resid)  
           }
         }
         # extract model coeffs if exists
@@ -353,6 +415,233 @@ for (d in unique_drugs){
 }
 ```
 ```{r}
+min(c(5,9))
+```
+```{r}
+install.packages('broom')
+library('broom')
+mod
+```
+```{r}
+hist(new_y_train)
+```
+
+```{r}
+lmod <- lm(new_y_train ~ X_train)
+sum(is.infinite(new_y_train))
+
+mod <- oem(x = X_train, y = new_y_train,
+               family = "gaussian",
+               penalty = "grp.lasso.net",
+               lambda=.001,
+               alpha=.5,
+               groups=grps,
+               intercept = TRUE,
+               ncores = 6)
+```
+```{r}
+
+```
+```{r}
+unique_drugs <- unique(drugs)
+length(drugs)
+length(unique_drugs)
+```
+```{r}
+library(doParallel)
+```
+
+```{r}
+drug_scores <- c()
+thresholds <- c(0.5)
+#lambdas <- 10 ^ c(seq(0, -10, -1)) # quick version
+lambdas <- 10 ^ c(seq(-.1, -3, -.1), seq(-3.2, -8, -.2))
+#alphas <- c(0, 0.5) # quick version 
+alphas <- c(0, 0.1, 0.5, 0.9, 0.99, 1) 
+nlambda <- length(lambdas)
+
+#pbar <- progress_bar$new(total = length(unique_drugs))
+#pbar$tick(0)
+
+#registerDoMC(cores=6)
+cl <- makeForkCluster(10)
+registerDoParallel(cl)
+
+foreach(i = 1:length(unique_drugs), .combine='rbind') %dopar% {
+  d = unique_drugs[i]
+  
+  regression_results <- tibble(penalty=character(), alpha=double(), drug=character(), train=logical(), lambda=double(), mse = double(), corr=double())
+  
+  # filter to items to fit clf on
+  X_train <- X[drugs != d, ]
+  y_train <- y[drugs != d]
+  new_y_train <- new_y[drugs != d]
+  
+  X_test <- X[drugs == d, ]
+  y_test <- y[drugs == d]
+  new_y_test <- new_y[drugs == d]
+  
+  # sometimes clf will filter outa ll non-zero values for a column
+  # this is to be expected do to sparsity, so we add small gaussian noise to fix
+  # necessary for the SVD solver in oem
+  column_var <- apply(X_train, 2, var)
+  while (min(column_var) == 0) {
+    X_train[, which.min(column_var)] <- rnorm(n = dim(X_train)[1], mean=0, sd=.00001)
+    column_var <- apply(X_train, 2, var)
+  }
+  
+  # start the regression
+  for (alph in alphas){
+    mod <- oem(x = X_train, y = new_y_train,
+             family = "gaussian",
+             penalty = "grp.lasso.net",# "sparse.grp.lasso", "lasso", ""),
+             lambda=lambdas,
+             alpha=alph,
+             groups=grps,
+             standardize = FALSE,
+             intercept = TRUE,
+             accelerate = TRUE,
+             ncores = 1)
+    
+    for (session in c('train', 'test')){
+      if (session == 'train'){
+        X_local <- X_train
+        y_local <- y_train
+      }
+      else {
+        X_local <- X_test
+        y_local <- y_test
+      }
+      
+      preds <- tanh(yeo.johnson(predict(mod, X_local), 0.49, inverse=TRUE))
+    
+      # it's not infrequent that the predictions are all -1 or +1
+      # this will throw a warning for corr, so we turn off the warnings briefly
+      options(warn=-1)
+      regression_results <- add_row(regression_results, 
+              alpha = alph,
+              drug = d,
+              train = session,
+              lambda=lambdas,
+              mse = apply((y_local - preds)^2, 2, mean),
+              corr = cor(preds, y_local)[,1])
+      options(warn=0)
+    }
+  }
+  
+  return(regression_results)
+}
+
+stopCluster(cl)
+```
+```{r}
+regression_results
+```
+```{r}
+for(i in 1:6){
+  alpha_slice <- alphas[i]
+
+  viz <- regression_results %>% 
+    filter(alpha == alpha_slice) %>% 
+    group_by(lambda) %>%
+    summarize(mse = mean(mse), corr = mean(corr))   
+
+  #print(viz)
+  plot(log10(viz$lambda), viz$mse)
+  #plot(log10(viz$lambda), viz$corr) 
+}
+```
+```{r}
+for(i in 1:6){
+  alpha_slice <- alphas[i]
+
+  viz <- regression_results %>% 
+    filter(alpha == alpha_slice) %>% 
+    group_by(lambda) %>%
+    summarize(mse = mean(mse), corr = mean(corr))   
+
+  #print(viz)
+  loc <- which.min(viz$mse)
+  print(log10(viz$lambda)[loc])
+  print( min(viz$mse))
+  #plot(log10(viz$lambda), viz$corr) 
+}
+```
+
+```{r}
+stopCluster(cl)
+```
+
+```{r}
+regression_results %>% 
+    filter(alpha == 1) %>% 
+    group_by(lambda)
+```
+
+
+```{r}
+hist(tanh(yeo.johnson(preds, 0.49, inverse = TRUE)))
+```
+```{r}
+mod <- oem(x = X_train, y = new_y_train,
+               family = "gaussian",
+               penalty = "grp.lasso.net",
+               lambda=lambdas,
+               alpha=alph,
+               groups=grps,
+               intercept = TRUE,
+               ncores = 6)
+```
+```{r}
+preds <- predict(mod, X_test)
+apply((y_test - tanh(yeo.johnson(preds, 0.49, inverse = TRUE)))^2, 2, mean)
+```
+```{r}
+dim(preds)
+cor(preds, y_test)
+```
+```{r}
+regression_results
+```
+```{r}
+t <- predict(mod, X_test)
+hist(yeo.johnson(t, 0.49, inverse = TRUE))
+tanh(yeo.johnson(t, 0.49, inverse = TRUE))
+hist(preds)
+hist(y_test)
+#dim(preds)
+```
+
+
+```{r}
+dim(total_reg_mse)
+dim(total_reg_corr)
+t <- total_reg_corr
+
+sum(is.na(total_reg_corr[,6,]))
+rowSums(total_reg_corr, dims=2)
+```
+```{r}
+
+```
+```{r}
+for(i in 1:6){
+  plot(log10(lambdas), rowSums(total_reg_mse[,i,])/length(unique_drugs))  
+}
+
+length(unique_drugs)
+updated_drug_counts <- as.data.frame(table(drugs))
+updated_drug_counts = updated_drug_counts[updated_drug_counts$Freq >0,]
+
+for(i in 1:6){
+  plot(log10(lambdas), rowSums(total_reg_mse[,i,])/length(unique_drugs))  
+}
+```
+
+```{r}
+sorted_residuals
+floor(.05*6)
+resid
 length(local_reg_corr)
 length(local_reg_mse)
 local_reg_corr
@@ -370,20 +659,19 @@ dim(total_joint_mse)
 dim(total_reg_coeffs)
 ```
 ```{r}
-unique_drugs
-dim(X_holdout)
-length(y_holdout)
-dim(total_reg_mse)
-cor(predict(mod, X_test), y_test)
+dim(X_test)
+length(preds[, 1])
+length(X_holdout)
+dim(local_residual_interval)
+dim(residual_interval)
+dim(total_residual_interval)
 ```
 
-
 ```{r}
-array(resid)
-
-length(preds)
-length(y_test)
-dim(local_reg_corr)
+typeof(local_residual_interval)
+rbind(residual_interval, residual_interval)
+residual_interval <- abind(rbind(residual_interval, residual_interval), rbind(residual_interval, residual_interval), along = 3)
+residual_interval
 ```
 
 
@@ -401,12 +689,31 @@ length(mse)
 ```
 
 ```{r}
-plot(log10(lambdas), rowSums(total_mse, dims = 2)[,1]/78)
+lambdas
+rowSums(total_reg_mse, dims = 2)
 ```
+```{r}
+ t <- total_reg_corr
+t[is.na(t)] <- 0
+```
+
+
+```{r}
+dim(t)
+drug_counts <- as.data.frame(table(drugs))
+drug_counts
+```
+
+```{r}
+lambdas[5:length(lambdas)]
+plot(log10(lambdas[5:length(lambdas)]), rowSums(t[5:length(lambdas),,], dims = 2)[,6]/82)
+plot(log10(lambdas[5:length(lambdas)]), rowSums(total_reg_mse[5:length(lambdas),,], dims = 2)[,6]/82)
+```
+
 ```{r}
 #which(is.na(total_corr), arr.ind = TRUE)
 # drug 78 failed
-plot(log10(lambdas), rowSums(total_corr[, , 1:77], dims = 2)[,1]/77)
+plot(log10(lambdas), rowSums(total_corr[, , 1:42], dims = 2)[,4]/77)
 
 ```
 
