@@ -632,11 +632,123 @@ for (d in unique_drugs){
 ```
 
 ```{r}
-sparse_regression_results
+for(i in 1:6){
+ tau_slice <- taus[i]
+ 
+  viz <- sparse_regression_results %>% 
+      filter(tau == tau_slice) %>%
+      filter(train == 'test') %>% 
+      group_by(tau, lambda) %>%
+      summarize(nan = sum(is.na(corr)))  
+  
+  plot(log10(viz$lambda), viz$nan)
+}
 ```
 ```{r}
-options(warn=0)
-suppressWarnings(cor(preds, y_local)[,1])
+for(i in 1:6){
+ tau_slice <- taus[i]
+
+  viz <- sparse_regression_results %>% 
+    filter(tau == tau_slice) %>% 
+    filter(train == 'test') %>% 
+    group_by(lambda) %>%
+    summarize(mse = mean(mse), corr = mean(corr))   
+
+  #print(viz)
+  #plot(log10(viz$lambda), viz$mse)
+  plot(log10(viz$lambda), viz$corr) 
+}
+```
+```{r}
+for(i in 1:6){
+ tau_slice <- taus[i]
+
+  viz <- sparse_regression_results %>% 
+    filter(tau == tau_slice) %>% 
+    filter(train == 'test') %>% 
+    group_by(lambda) %>%
+    summarize(mse = mean(mse), corr = mean(corr))   
+
+  loc <- which.min(viz$mse)
+  print(log10(viz$lambda)[loc])
+  print( min(viz$mse))
+}
+```
+```{r}
+drug_scores <- c()
+thresholds <- c(0.5)
+#lambdas <- 10 ^ c(seq(0, -10, -1)) # quick version
+lambdas <- 10 ^ c(seq(-.1, -3, -.1), seq(-3.2, -8, -.2))
+#alphas <- c(0, 0.5) # quick version 
+taus <- c(.1, .25, 0.5, 0.75, 0.9, 1)
+nlambda <- length(lambdas)
+
+pbar <- progress_bar$new(total = length(unique_drugs))
+pbar$tick(0)
+
+lmod_regression_results <- tibble(drug=character(), train=logical(), mse = double(), corr=double())
+
+for (d in unique_drugs){
+  # filter to items to fit clf on
+  X_train <- X[drugs != d, ]
+  y_train <- y[drugs != d]
+  new_y_train <- new_y[drugs != d]
+  
+  X_test <- X[drugs == d, ]
+  y_test <- y[drugs == d]
+  new_y_test <- new_y[drugs == d]
+  
+  # sometimes clf will filter outa ll non-zero values for a column
+  # this is to be expected do to sparsity, so we add small gaussian noise to fix
+  # necessary for the SVD solver in oem
+  column_var <- apply(X_train, 2, var)
+  while (min(column_var) == 0) {
+    X_train[, which.min(column_var)] <- rnorm(n = dim(X_train)[1], mean=0, sd=.00001)
+    column_var <- apply(X_train, 2, var)
+  }
+  
+  mod <- oem(x = X_train, y = new_y_train,
+           family = "gaussian",
+           penalty = "ols",
+           standardize = FALSE,
+           intercept = TRUE,
+           accelerate = TRUE)
+  
+  for (session in c('train', 'test')){
+    if (session == 'train'){
+      X_local <- X_train
+      y_local <- y_train
+    }
+    else {
+      X_local <- X_test
+      y_local <- y_test
+    }
+    
+    preds <- tanh(yeo.johnson(predict(mod, X_local), 0.49, inverse=TRUE))
+  
+    # it's not infrequent that the predictions are all -1 or +1
+    # this will throw a warning for corr, so we suppress it
+    lmod_regression_results <- add_row(lmod_regression_results, 
+            drug = d,
+            train = session,
+            mse = apply((y_local - preds)^2, 2, mean),
+            corr = suppressWarnings(cor(preds, y_local)[,1]))
+  }
+  
+  pbar$tick()
+}
+```
+```{r}
+lmod_regression_results
+```
+
+
+```{r}
+viz <- lmod_regression_results %>% 
+    filter(train == 'test') %>% 
+    summarize(mse = mean(mse), corr = mean(corr))   
+
+viz
 ```
 
 
