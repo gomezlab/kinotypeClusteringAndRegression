@@ -448,7 +448,7 @@ length(drugs)
 length(unique_drugs)
 ```
 ```{r}
-library(doParallel)
+double()
 ```
 
 ```{r}
@@ -460,18 +460,12 @@ lambdas <- 10 ^ c(seq(-.1, -3, -.1), seq(-3.2, -8, -.2))
 alphas <- c(0, 0.1, 0.5, 0.9, 0.99, 1) 
 nlambda <- length(lambdas)
 
-#pbar <- progress_bar$new(total = length(unique_drugs))
-#pbar$tick(0)
+pbar <- progress_bar$new(total = length(unique_drugs))
+pbar$tick(0)
 
-#registerDoMC(cores=6)
-cl <- makeForkCluster(10)
-registerDoParallel(cl)
+regression_results <- tibble(penalty=character(), alpha=double(), drug=character(), train=logical(), lambda=double(), mse = double(), corr=double())
 
-foreach(i = 1:length(unique_drugs), .combine='rbind') %dopar% {
-  d = unique_drugs[i]
-  
-  regression_results <- tibble(penalty=character(), alpha=double(), drug=character(), train=logical(), lambda=double(), mse = double(), corr=double())
-  
+for (d in unique_drugs){
   # filter to items to fit clf on
   X_train <- X[drugs != d, ]
   y_train <- y[drugs != d]
@@ -494,14 +488,14 @@ foreach(i = 1:length(unique_drugs), .combine='rbind') %dopar% {
   for (alph in alphas){
     mod <- oem(x = X_train, y = new_y_train,
              family = "gaussian",
-             penalty = "grp.lasso.net",# "sparse.grp.lasso", "lasso", ""),
+             penalty = c("grp.lasso.net", "sparse.grp.lasso", "lasso", ""),
              lambda=lambdas,
              alpha=alph,
              groups=grps,
              standardize = FALSE,
              intercept = TRUE,
              accelerate = TRUE,
-             ncores = 1)
+             ncores = 6)
     
     for (session in c('train', 'test')){
       if (session == 'train'){
@@ -528,11 +522,8 @@ foreach(i = 1:length(unique_drugs), .combine='rbind') %dopar% {
       options(warn=0)
     }
   }
-  
-  return(regression_results)
+  pbar$tick()
 }
-
-stopCluster(cl)
 ```
 ```{r}
 regression_results
@@ -569,7 +560,7 @@ for(i in 1:6){
 ```
 
 ```{r}
-stopCluster(cl)
+
 ```
 
 ```{r}
