@@ -457,13 +457,13 @@ thresholds <- c(0.5)
 #lambdas <- 10 ^ c(seq(0, -10, -1)) # quick version
 lambdas <- 10 ^ c(seq(-.1, -3, -.1), seq(-3.2, -8, -.2))
 #alphas <- c(0, 0.5) # quick version 
-alphas <- c(0, 0.1, 0.5, 0.9, 0.99, 1) 
+alphas <- c(0, 0.1, 0.5, 0.9, 0.99, 1)
 nlambda <- length(lambdas)
 
 pbar <- progress_bar$new(total = length(unique_drugs))
 pbar$tick(0)
 
-regression_results <- tibble(penalty=character(), alpha=double(), drug=character(), train=logical(), lambda=double(), mse = double(), corr=double())
+regression_results <- tibble(alpha=double(), drug=character(), train=logical(), lambda=double(), mse = double(), corr=double())
 
 for (d in unique_drugs){
   # filter to items to fit clf on
@@ -488,14 +488,13 @@ for (d in unique_drugs){
   for (alph in alphas){
     mod <- oem(x = X_train, y = new_y_train,
              family = "gaussian",
-             penalty = c("grp.lasso.net", "sparse.grp.lasso", "lasso", ""),
+             penalty = "grp.lasso.net",
              lambda=lambdas,
              alpha=alph,
              groups=grps,
              standardize = FALSE,
              intercept = TRUE,
-             accelerate = TRUE,
-             ncores = 6)
+             accelerate = TRUE)
     
     for (session in c('train', 'test')){
       if (session == 'train'){
@@ -525,6 +524,7 @@ for (d in unique_drugs){
   pbar$tick()
 }
 ```
+
 ```{r}
 regression_results
 ```
@@ -542,12 +542,14 @@ for(i in 1:6){
   #plot(log10(viz$lambda), viz$corr) 
 }
 ```
+
 ```{r}
 for(i in 1:6){
   alpha_slice <- alphas[i]
 
   viz <- regression_results %>% 
     filter(alpha == alpha_slice) %>% 
+    filter(train == 'test') %>% 
     group_by(lambda) %>%
     summarize(mse = mean(mse), corr = mean(corr))   
 
@@ -560,7 +562,77 @@ for(i in 1:6){
 ```
 
 ```{r}
+drug_scores <- c()
+thresholds <- c(0.5)
+#lambdas <- 10 ^ c(seq(0, -10, -1)) # quick version
+lambdas <- 10 ^ c(seq(-.1, -3, -.1), seq(-3.2, -8, -.2))
+#alphas <- c(0, 0.5) # quick version 
+taus <- c(.1, .25, 0.5, 0.75, 0.9, 1)
+nlambda <- length(lambdas)
 
+pbar <- progress_bar$new(total = length(unique_drugs))
+pbar$tick(0)
+
+sparse_regression_results <- tibble(taus=double(), drug=character(), train=logical(), lambda=double(), mse = double(), corr=double())
+
+for (d in unique_drugs){
+  # filter to items to fit clf on
+  X_train <- X[drugs != d, ]
+  y_train <- y[drugs != d]
+  new_y_train <- new_y[drugs != d]
+  
+  X_test <- X[drugs == d, ]
+  y_test <- y[drugs == d]
+  new_y_test <- new_y[drugs == d]
+  
+  # sometimes clf will filter outa ll non-zero values for a column
+  # this is to be expected do to sparsity, so we add small gaussian noise to fix
+  # necessary for the SVD solver in oem
+  column_var <- apply(X_train, 2, var)
+  while (min(column_var) == 0) {
+    X_train[, which.min(column_var)] <- rnorm(n = dim(X_train)[1], mean=0, sd=.00001)
+    column_var <- apply(X_train, 2, var)
+  }
+  
+  # start the regression
+  for (t in taus){
+    mod <- oem(x = X_train, y = new_y_train,
+             family = "gaussian",
+             penalty = "sparse.grp.lasso",
+             lambda=lambdas,
+             tau=t,
+             groups=grps,
+             standardize = FALSE,
+             intercept = TRUE,
+             accelerate = TRUE)
+    
+    for (session in c('train', 'test')){
+      if (session == 'train'){
+        X_local <- X_train
+        y_local <- y_train
+      }
+      else {
+        X_local <- X_test
+        y_local <- y_test
+      }
+      
+      preds <- tanh(yeo.johnson(predict(mod, X_local), 0.49, inverse=TRUE))
+    
+      # it's not infrequent that the predictions are all -1 or +1
+      # this will throw a warning for corr, so we turn off the warnings briefly
+      options(warn=-1)
+      sparse_regression_results <- add_row(sparse_regression_results, 
+              tau = t,
+              drug = d,
+              train = session,
+              lambda=lambdas,
+              mse = apply((y_local - preds)^2, 2, mean),
+              corr = cor(preds, y_local)[,1])
+      options(warn=0)
+    }
+  }
+  pbar$tick()
+}
 ```
 
 ```{r}
