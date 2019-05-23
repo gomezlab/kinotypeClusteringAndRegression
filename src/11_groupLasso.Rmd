@@ -43,6 +43,21 @@ if (subset){
   
 dat
 ```
+```{r}
+per_drug <- dat[colnames(dat)[5:238]] %>%
+  group_by(dat$Drug, dat$Concentration) %>%
+  mutate_all(function(x) x==0) %>%
+  summarize_all(list(mean))
+
+
+```
+```{r}
+#per_drug$Sparsity <- rowSums(per_drug[,3:dim(per_drug)[2]])/dim(per_drug)[2]
+per_drug = per_drug[c(colnames(per_drug)[1:2], 'Sparsity', colnames(per_drug)[4:dim(per_drug)[2]-1])]
+1 - max(per_drug$Sparsity)
+```
+
+
 
 #### extract the response variable (y) and the predictor variables (X)
 ```{r}
@@ -557,6 +572,60 @@ for(i in 1:6){
   print( min(viz$mse))
   #plot(log10(viz$lambda), viz$corr) 
 }
+```
+```{r}
+tight_lambdas = 10 ^ seq(0, -4, by = -.002)
+mod <- oem(x = X, y = new_y,
+             family = "gaussian",
+             penalty = "grp.lasso.net",
+             alpha=1,
+             lambda = tight_lambdas,
+             groups=grps,
+             standardize = FALSE,
+             intercept = TRUE,
+             accelerate = TRUE)
+```
+
+```{r}
+mod$nzero[[1]]
+round(mod$lambda[[1]], 3)
+
+grp_lasso_coeffs <- as.data.frame(round(mod$beta$grp.lasso.net, 4))
+colnames(grp_lasso_coeffs) <- round(mod$lambda[[1]], 3)
+
+first_nonzero <- apply(grp_lasso_coeffs, 1, function(x) first(which(x!=0)))
+first_nonzero <- as.data.frame(first_nonzero[2:234])
+colnames(first_nonzero) <- c('FirstNonZero')
+first_nonzero$Subcluster <- louv[rownames(first_nonzero), 2]
+first_nonzero %>%
+  filter(FirstNonZero != 0) %>%
+  group_by(Subcluster) %>%
+  summarize(FirstNonZero = min(FirstNonZero))
+
+first_nonzero
+
+grp_lasso_coeffs['BRD3', ]
+
+which(grp_lasso_coeffs[2:234,] != 0, arr.ind = TRUE)
+#rownames(nonzero)[rownames(nm)]
+nonzero
+nwhich(grp_lasso_coeffs[2:234,] != 0, arr.ind = TRUE)
+
+colSums(abs(grp_lasso_coeffs) <= 0.01)
+rownames(grp_lasso_coeffs)[2:234]
+
+grp_lasso_coeffs$Kinase <- rownames(grp_lasso_coeffs)
+grp_lasso_coeffs <- grp_lasso_coeffs[sort.list(grp_lasso_coeffs$V1),]
+grp_lasso_coeffs$Kinase <- NULL
+grp_lasso_coeffs
+```
+```{r}
+sparsity_level <- 1 - colSums(dat[5:dim(dat)[2]] == 0)/dim(dat)[1]
+cor(sparsity_level, mod$beta$grp.lasso.net[,1][2:663], method='kendall')
+
+hist(dat$MARK2)
+plot(dat$MARK2, dat$Growth)
+cor(dat$MARK2, dat$Growth)
 ```
 
 ```{r}
