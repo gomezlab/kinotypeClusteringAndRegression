@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+.node {
+  cursor: pointer;
+}
+
+.node:hover {
+  stroke: #000;
+  stroke-width: 1.5px;
+}
+
+.node--leaf {
+  fill: #9E6EFF;
+}
+
+.label {
+  font: 11px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-anchor: middle;
+
+}
+
+.label,
+.node--root,
+.node--leaf {
+  pointer-events: none;
+}
+
+</style>
+<svg width="1020" height="1020"></svg>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+
+// modify this to display more/fewer nodes permanently
+// set to large to ignore size
+var thresh =0
+
+var svg = d3.select("svg"),
+    margin = 20,
+    diameter = +svg.attr("width"),
+    g = svg.append("g").attr("transform", "translate(" + diameter / 2 + "," + diameter / 2 + ")");
+
+var color = d3.scaleLinear()
+    .domain([-1, 5])
+    .range(["#fff", "#B693FF"])
+    .interpolate(d3.interpolateLab);
+
+var pack = d3.pack()
+    .size([diameter - margin, diameter - margin])
+    .padding(2);
+
+d3.json("viz.json", function(error, root) {
+  if (error) throw error;
+
+  root = d3.hierarchy(root)
+      .sum(function(d) { return d.size; })
+      .sort(function(a, b) { return b.value - a.value; });
+
+  var focus = root,
+      nodes = pack(root).descendants(),
+      view;
+
+  var circle = g.selectAll("circle")
+    .data(nodes)
+    .enter().append("circle")
+      .attr("class", function(d) { return d.parent ? d.children ? "node" : "node node--leaf" : "node node--root"; })
+      .style("fill", function(d) { return !(d.children) ? d.data['studied'] == 'dark' ? 'green' : null : color(d.depth); })
+      .on("click", function(d) { if (focus !== d) zoom(d), d3.event.stopPropagation(); });
+      //.style("fill", function(d) { console.log(d.parent ? d.children ? "node " + color(d.depth).toString() : "node node--leaf "+ color(d.depth).toString() : "node node--root " + color(d.depth).toString()); console.log(d.data['studied'] == 'dark'); return d.parent ? d.children ? color(d.depth) : color(d.depth) : null; })
+
+  var text = g.selectAll("text")
+    .data(nodes)
+    .enter().append("text")
+      .attr("class", "label")
+      .attr("dy", function(d) {return d.depth < 3 && d.depth > 0 ? d.r/Math.SQRT2*(1.5-d.depth)*2 : 0; })
+      .attr("dx", function(d) { return d.depth < 3 && d.depth ? -d.r/Math.SQRT2: 0; })
+      .style("fill-opacity", function(d) { return d.parent === root || d.r > thresh ? 1 : 0; })
+      .style("display", function(d) { return d.parent === root || d.r > thresh ? "inline" : "none"; })
+      .style("font-weight", function(d) { return d.parent ? d.children ? "200" : "400" : "0"; } )
+      .style("fill", function(d) { return d.parent ? d.children ? "black" : "white" : "black"; } )
+      .text(function(d) { return d.data.name; });
+
+      //.style("font-size", function(d) { return d.parent ? d.children ? "10px" : "6px" : "3px"; })
+
+  var node = g.selectAll("circle,text");
+
+  svg
+      .style("background", color(-1))
+      .on("click", function() { zoom(root); });
+
+  zoomTo([root.x, root.y, root.r * 2 + margin]);
+
+  function zoom(d) {
+    var focus0 = focus; focus = d;
+
+    var transition = d3.transition()
+        .duration(d3.event.altKey ? 3000 : 1500)
+        .tween("zoom", function(d) {
+          var i = d3.interpolateZoom(view, [focus.x, focus.y, focus.r * 2 + margin]);
+          return function(t) { zoomTo(i(t)); };
+        });
+
+    transition.selectAll("text")
+      .filter(function(d) { return d.parent === focus || this.style.display === "inline"; })
+        .style("fill-opacity", function(d) { return d.parent === focus || d.r > thresh ? 1 : 0; })
+        .on("start", function(d) { if (d.parent === focus || d.r > thresh ) this.style.display = "inline"; })
+        .on("end", function(d) { if (d.parent !== focus && d.r <= thresh ) this.style.display = "none"; });
+  }
+
+  function zoomTo(v) {
+    var k = diameter / v[2]; view = v;
+    node.attr("transform", function(d) { return "translate(" + (d.x - v[0]) * k + "," + (d.y - v[1]) * k + ")"; });
+    circle.attr("r", function(d) { return d.r * k; });
+    text.attr("dy", function(d) {return d.depth < 3 && d.depth > 0 ? d.r/Math.SQRT2*k*(1.5-d.depth)*2 : 0; });
+    text.attr("dx", function(d) {return d.depth < 3 && d.depth > 0 ? -d.r/Math.SQRT2*k : 0; });
+    text.style("font-size", function(d) { return d.parent ? d.children ? (7+1.5*k).toString()+"px" : (3+2*k).toString()+"px" : 0 });
+  }
+});
+
+</script>
