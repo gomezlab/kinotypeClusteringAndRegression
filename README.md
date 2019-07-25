@@ -1,5 +1,9 @@
-# KIN_ClusteringWithAnnotations
+# kinotypeClusteringAndRegression
+Joint Repository of GR Metrics Regression and Kinase Interaction Network (KIN) Clustering
 
-Examining a Kinase Interaction Network with pathway weightings and Gene Ontology data
+# subnetGRcurves
+Growth Response curve prediction leveraging cell line, KIN, subnetwork, and other datasets
 
-#### Code Freeze
+GR50, a measure of potency, is the concentration of drug that reduces cell proliferation rate by one-half;  
+GRmax, a measure of efficacy, is the maximum effect of a drug at the highest tested concentration; and   
+GRAOC combines these in an integrated ‘area over the curve’ value.
