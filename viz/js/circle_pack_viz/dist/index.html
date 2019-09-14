@@ -43,12 +43,7 @@ var svg = d3.select("svg"),
 
 var color = d3.scaleLinear()
     .domain([-1, 5])
-    .range(["#ffffff", "#566573"])
-    .interpolate(d3.interpolateLab);
-
-var fold_color = d3.scaleLinear()
-    .domain([-4, -0.6, -.59999, 0, .59999, .6, 6])
-    .range(["#0008FF", '#eeeeff','#ffffff', '#ffffff','#ffffff','#ffeeee',"#FF0008"])
+    .range(["#fff", "#B693FF"])
     .interpolate(d3.interpolateLab);
 
 var pack = d3.pack()
@@ -70,7 +65,7 @@ d3.json("viz.json", function(error, root) {
     .data(nodes)
     .enter().append("circle")
       .attr("class", function(d) { return d.parent ? d.children ? "node" : "node node--leaf" : "node node--root"; })
-      .style("fill", function(d) { return !(d.children) ? fold_color(d.data['fold']) : color(d.depth); })
+      .style("fill", function(d) { return !(d.children) ? d.data['studied'] == 'dark' ? 'green' : null : color(d.depth); })
       .on("click", function(d) { if (focus !== d) zoom(d), d3.event.stopPropagation(); });
       //.style("fill", function(d) { console.log(d.parent ? d.children ? "node " + color(d.depth).toString() : "node node--leaf "+ color(d.depth).toString() : "node node--root " + color(d.depth).toString()); console.log(d.data['studied'] == 'dark'); return d.parent ? d.children ? color(d.depth) : color(d.depth) : null; })
 
@@ -83,7 +78,7 @@ d3.json("viz.json", function(error, root) {
       .style("fill-opacity", function(d) { return d.parent === root || d.r > thresh ? 1 : 0; })
       .style("display", function(d) { return d.parent === root || d.r > thresh ? "inline" : "none"; })
       .style("font-weight", function(d) { return d.parent ? d.children ? "200" : "400" : "0"; } )
-      .style("fill", function(d) { return d.parent ? d.children ? "black" : "black" : "black"; } )
+      .style("fill", function(d) { return d.parent ? d.children ? "black" : "white" : "black"; } )
       .text(function(d) { return d.data.name; });
 
       //.style("font-size", function(d) { return d.parent ? d.children ? "10px" : "6px" : "3px"; })
