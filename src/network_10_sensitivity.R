@@ -51,8 +51,14 @@ para_rand_compare_louv <- function(g, numnodes, new_weight, refclust, cores=max(
   
   # convert to upper triangular
   out <- mat.or.vec(numnodes, numnodes)
-  out[upper.tri(out)] <- unlist(res)
-  
+  res <- unlist(res)
+  print(res)
+  # unusual combn order does not align with upper triangular
+  counter <- 1
+  for (i in 1:(numnodes-1)){
+    out[i, (i+1):numnodes] <- res[counter:(counter + numnodes - i - 1)]
+    counter <- counter + numnodes - i - 1
+  }
   return(out)
 }
 
@@ -66,5 +72,37 @@ hist(out[1,], breaks = 100)
 hist(out[133,], breaks = 100)
 
 outfile="~/Github/kinotypeClusteringAndRegression/results/sensitivityNetworkClusters/sensitivity_randscores.tsv"
-write.table(mod,outfile,quote=FALSE,sep="\t",row.names = FALSE)
+# write.table(out,outfile,quote=FALSE,sep="\t",row.names = FALSE)
 
+# Rand Sensitivity Analysis
+G_insrr <- G
+G_insrr <- add_edges(G_insrr, c("INSRR", ""))
+
+G_eif2ak2_amhr2 <- mainG
+G_eif2ak2_amhr2 <- add_edges(G_eif2ak2_amhr2, c("MST1R", "FGR"), weight=mean_weight)
+cluster_eif2ak2_amhr2 <- cluster_louvain(G_eif2ak2_amhr2)
+eif2ak2_amhr2_clusts <- data.frame(names=cluster_eif2ak2_amhr2$names, cluster=cluster_eif2ak2_amhr2$memberships[2,])
+eif2ak2_amhr2_small_clusts <- data.frame(names=cluster_eif2ak2_amhr2$names, cluster=cluster_eif2ak2_amhr2$memberships[1,])
+E(G_eif2ak2_amhr2)[E(G_eif2ak2_amhr2)]
+a <- E(G_eif2ak2_amhr2)[1]
+
+V(mainG)
+library(clues)
+new_edges[[1]][[1]]
+new_edges <- combn(numnodes, 2, simplify = FALSE)
+for (i in 517:530){
+  t<- single_rand_compare_louv(c(new_edges[[i]][[1]], new_edges[[i]][[2]]), mainG, mean_weight, louv_small_clusts$cluster)
+  print(t)
+}
+
+new_edges[1:5]
+
+adjustedRand(eif2ak2_amhr2_small_clusts$cluster, louv_small_clusts$cluster)
+
+which(V(mainG)$name == "TYRO3")
+E(mainG)[ from("TYRO3") ]
+E(G_eif2ak2_amhr2)[ from("TYRO3") ]
+V(mainG)[17]
+louv_clusts
+
+eif2ak2_amhr2_small_clusts$cluster == louv_small_clusts$cluster
