@@ -52,17 +52,16 @@ para_rand_compare_louv <- function(g, numnodes, new_weight, refclust, cores=max(
   # convert to upper triangular
   out <- mat.or.vec(numnodes, numnodes)
   res <- unlist(res)
-  print(res)
+
   # unusual combn order does not align with upper triangular
-  counter <- 1
-  for (i in 1:(numnodes-1)){
-    out[i, (i+1):numnodes] <- res[counter:(counter + numnodes - i - 1)]
-    counter <- counter + numnodes - i - 1
+  for (i in 1:length(new_edges)){
+    out[new_edges[[i]][[1]], new_edges[[i]][[2]]] <- res[i]
   }
   return(out)
 }
 
 out <- para_rand_compare_louv(mainG, numnodes = length(V(mainG)), new_weight = mean_weight, refclust = louv_small_clusts$cluster)
+# out <- para_rand_compare_louv(mainG, numnodes = 7, new_weight = mean_weight, refclust = louv_small_clusts$cluster)
 which(V(mainG)$name == "TLK1")
 ## symmetrize
 out[lower.tri(out)] <- t(out)[lower.tri(out)]
@@ -79,25 +78,13 @@ G_insrr <- G
 G_insrr <- add_edges(G_insrr, c("INSRR", ""))
 
 G_eif2ak2_amhr2 <- mainG
-G_eif2ak2_amhr2 <- add_edges(G_eif2ak2_amhr2, c("MST1R", "FGR"), weight=mean_weight)
+G_eif2ak2_amhr2 <- add_edges(G_eif2ak2_amhr2, c("FGR", "BCKDK"), weight=mean_weight)
 cluster_eif2ak2_amhr2 <- cluster_louvain(G_eif2ak2_amhr2)
 eif2ak2_amhr2_clusts <- data.frame(names=cluster_eif2ak2_amhr2$names, cluster=cluster_eif2ak2_amhr2$memberships[2,])
 eif2ak2_amhr2_small_clusts <- data.frame(names=cluster_eif2ak2_amhr2$names, cluster=cluster_eif2ak2_amhr2$memberships[1,])
-E(G_eif2ak2_amhr2)[E(G_eif2ak2_amhr2)]
-a <- E(G_eif2ak2_amhr2)[1]
 
-V(mainG)
-library(clues)
-new_edges[[1]][[1]]
-new_edges <- combn(numnodes, 2, simplify = FALSE)
-for (i in 517:530){
-  t<- single_rand_compare_louv(c(new_edges[[i]][[1]], new_edges[[i]][[2]]), mainG, mean_weight, louv_small_clusts$cluster)
-  print(t)
-}
 
-new_edges[1:5]
-
-adjustedRand(eif2ak2_amhr2_small_clusts$cluster, louv_small_clusts$cluster)
+adj.rand.index(eif2ak2_amhr2_small_clusts$cluster, louv_small_clusts$cluster)
 
 which(V(mainG)$name == "TYRO3")
 E(mainG)[ from("TYRO3") ]
