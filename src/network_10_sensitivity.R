@@ -74,22 +74,20 @@ outfile="~/Github/kinotypeClusteringAndRegression/results/sensitivityNetworkClus
 # write.table(out,outfile,quote=FALSE,sep="\t",row.names = FALSE)
 
 # Rand Sensitivity Analysis
-G_insrr <- G
-G_insrr <- add_edges(G_insrr, c("INSRR", ""))
+G_riok3 <- G
+G_riok3 <- add_edges(G_riok3, c("riok3", ""))
 
-G_eif2ak2_amhr2 <- mainG
-G_eif2ak2_amhr2 <- add_edges(G_eif2ak2_amhr2, c("FGR", "BCKDK"), weight=mean_weight)
-cluster_eif2ak2_amhr2 <- cluster_louvain(G_eif2ak2_amhr2)
-eif2ak2_amhr2_clusts <- data.frame(names=cluster_eif2ak2_amhr2$names, cluster=cluster_eif2ak2_amhr2$memberships[2,])
-eif2ak2_amhr2_small_clusts <- data.frame(names=cluster_eif2ak2_amhr2$names, cluster=cluster_eif2ak2_amhr2$memberships[1,])
+G_fgr_mapk11 <- mainG
+G_fgr_mapk11 <- add_edges(G_fgr_mapk11, c("FGR", "MAPK11"), weight=mean_weight)
+cluster_fgr_mapk11 <- cluster_louvain(G_fgr_mapk11)
+fgr_mapk11_clusts <- data.frame(names=cluster_fgr_mapk11$names, cluster=cluster_fgr_mapk11$memberships[2,])
+fgr_mapk11_small_clusts <- data.frame(names=cluster_fgr_mapk11$names, cluster=cluster_fgr_mapk11$memberships[1,])
 
+# sanity check 
+adj.rand.index(fgr_mapk11_small_clusts$cluster, louv_small_clusts$cluster)
 
-adj.rand.index(eif2ak2_amhr2_small_clusts$cluster, louv_small_clusts$cluster)
+fgr_mapk11_clusts <- data.frame(names=fgr_mapk11_clusts$names, cluster=cluster_fgr_mapk11$memberships[2,])
+fgr_mapk11_small_clusts <- data.frame(names=fgr_mapk11_small_clusts$names, cluster=cluster_fgr_mapk11$memberships[1,])
 
-which(V(mainG)$name == "TYRO3")
-E(mainG)[ from("TYRO3") ]
-E(G_eif2ak2_amhr2)[ from("TYRO3") ]
-V(mainG)[17]
-louv_clusts
-
-eif2ak2_amhr2_small_clusts$cluster == louv_small_clusts$cluster
+write.table(fgr_mapk11_clusts, '~/GitHub/kinotypeClusteringAndRegression/results/sensitivityNetworkClusters/fgr_mapk11_clusts.txt',quote=FALSE,sep="\t",row.names=FALSE)
+write.table(fgr_mapk11_small_clusts, '~/GitHub/kinotypeClusteringAndRegression/results/sensitivityNetworkClusters/fgr_mapk11_small_clusts.txt',quote=FALSE,sep="\t",row.names=FALSE)
