@@ -321,7 +321,7 @@ def generate_kinase_labels(path_to_synonyms='../data/GeneOntology/go_synonym_dat
     # apply subset filter if present
     if use_go_subset:
         go_subset = set(pd.read_csv(path_to_go_subset, sep ='\t', header=None)[0])
-        indices_to_keep = pd.Series(processes.index.to_list()).isin(go_subset).to_list()
+        indices_to_keep = pd.Series(processes.index).isin(go_subset).tolist()
         processes = processes[indices_to_keep]
          
     processes = set(processes[1].tolist())

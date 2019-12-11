@@ -1,517 +1,517 @@
-MKNK1,[]
-CDKL4,['regulation of cell cycle']
-BTK,"['mesoderm development', 'Fc-epsilon receptor signaling pathway', 'apoptotic signaling pathway', 'positive regulation of NF-kappaB transcription factor activity', 'MyD88-dependent toll-like receptor signaling pathway', 'negative regulation of B cell proliferation', 'T cell receptor signaling pathway', 'transcription, DNA-templated', 'cell maturation', 'positive regulation of B cell differentiation']"
-BUB1B,"['cell proliferation', 'mitotic spindle assembly checkpoint', 'apoptotic process', 'protein localization to kinetochore', 'metaphase/anaphase transition of mitotic cell cycle']"
-WNK4,"['protein localization', 'chloride transport']"
-FRK,"['negative regulation of cell proliferation', 'negative regulation of transcription by RNA polymerase II', 'cell differentiation']"
-NME4,['nucleobase-containing small molecule interconversion']
-WEE1,[]
-GUCY2C,['regulation of cell proliferation']
-CDK8,['positive regulation of transcription by RNA polymerase II']
-STRADA,"['cell cycle arrest', 'MAPK cascade']"
-SIK1,[]
-NUAK2,"['negative regulation of apoptotic process', 'apoptotic process', 'actin cytoskeleton organization']"
-WNK2,['negative regulation of cell proliferation']
-STK3,"['positive regulation of protein binding', 'negative regulation of cell proliferation', 'positive regulation of fat cell differentiation', 'positive regulation of DNA-binding transcription factor activity', 'apoptotic process', 'positive regulation of apoptotic process', 'protein stabilization', 'positive regulation of protein kinase B signaling']"
-PI4KA,[]
-BMP2K,[]
-STK16,"['transcription by RNA polymerase II', 'positive regulation of transcription by RNA polymerase II']"
-CAMKV,[]
-RNASEL,"['fat cell differentiation', 'positive regulation of transcription by RNA polymerase II', 'defense response to virus', 'negative regulation of viral genome replication']"
-HCK,"['regulation of cell shape', 'positive regulation of cell proliferation', 'mesoderm development', 'cell adhesion', 'inflammatory response', 'cytokine-mediated signaling pathway', 'negative regulation of apoptotic process', 'cell differentiation']"
-ROR1,"['positive regulation of I-kappaB kinase/NF-kappaB signaling', 'positive regulation of NF-kappaB transcription factor activity', 'sensory perception of sound', 'negative regulation of signal transduction', 'negative regulation of apoptotic process', 'cell differentiation']"
-AKT1,"['positive regulation of DNA-binding transcription factor activity', 'inflammatory response', 'positive regulation of transcription, DNA-templated', 'excitatory postsynaptic potential', 'positive regulation of protein localization to cell surface', 'positive regulation of organ growth', 'cellular response to DNA damage stimulus', 'cellular response to granulocyte macrophage colony-stimulating factor stimulus', 'negative regulation of protein kinase B signaling', 'cell proliferation', 'positive regulation of nitric oxide biosynthetic process', 'positive regulation of cell proliferation', 'positive regulation of transcription by RNA polymerase II', 'response to heat', 'cytokine-mediated signaling pathway', 'osteoblast differentiation', 'negative regulation of extrinsic apoptotic signaling pathway in absence of ligand', 'positive regulation of protein phosphorylation', 'positive regulation of endothelial cell proliferation', 'epidermal growth factor receptor signaling pathway', 'positive regulation of fat cell differentiation', 'negative regulation of protein binding', 'negative regulation of cysteine-type endopeptidase activity involved in apoptotic process', 'regulation of apoptotic process', 'translation', 'negative regulation of gene expression', 'positive regulation of gene expression', 'glucose homeostasis', 'nitric oxide biosynthetic process', 'protein ubiquitination', 'cellular protein modification process', 'negative regulation of protein kinase activity', 'cellular response to insulin stimulus', 'apoptotic mitochondrial changes', 'negative regulation of JNK cascade', 'negative regulation of apoptotic process', 'positive regulation of apoptotic process', 'cell differentiation']"
-DYRK1A,"['nervous system development', 'regulation of alternative mRNA splicing, via spliceosome', 'negative regulation of microtubule polymerization', 'negative regulation of DNA damage response, signal transduction by p53 class mediator']"
-PIP5K1A,"['activation of GTPase activity', 'cell migration', 'actin cytoskeleton reorganization']"
-CSNK1D,"['Wnt signaling pathway', 'positive regulation of protein phosphorylation']"
-TEK,"['negative regulation of angiogenesis', 'positive regulation of phosphatidylinositol 3-kinase signaling', 'sprouting angiogenesis', 'positive regulation of angiogenesis', 'response to hypoxia', 'cell-cell signaling', 'protein complex oligomerization', 'positive regulation of protein kinase B signaling', 'MAPK cascade', 'heart development', 'negative regulation of signal transduction', 'angiogenesis', 'negative regulation of apoptotic process', 'positive regulation of protein phosphorylation', 'cell differentiation', 'positive regulation of endothelial cell proliferation']"
-ADCK1,[]
-PLK2,"['negative regulation of angiogenesis', 'positive regulation of protein binding', 'positive regulation of I-kappaB kinase/NF-kappaB signaling', 'long-term synaptic depression', 'positive regulation of autophagy', 'negative regulation of apoptotic process']"
-NME2,"['nucleobase-containing small molecule interconversion', 'protein complex oligomerization', 'peptidyl-histidine phosphorylation', 'cell adhesion', 'positive regulation of transcription by RNA polymerase II', 'transcription, DNA-templated', 'regulation of transcription, DNA-templated', 'negative regulation of apoptotic process']"
-PFKP,"['canonical glycolysis', 'protein complex oligomerization']"
-TLK1,"['intracellular protein transport', 'cellular response to DNA damage stimulus']"
-ERN1,"['cell cycle arrest', 'activation of JUN kinase activity', 'mRNA catabolic process', 'transcription, DNA-templated', 'regulation of transcription, DNA-templated']"
-TEC,"['Fc-epsilon receptor signaling pathway', 'cytokine-mediated signaling pathway', 'positive regulation of peptidyl-tyrosine phosphorylation', 'T cell receptor signaling pathway']"
-ILK,"['cell cycle arrest', 'positive regulation of NIK/NF-kappaB signaling', 'positive regulation of transcription, DNA-templated', 'positive regulation of axon extension', 'positive regulation of cell-matrix adhesion', 'positive regulation of protein kinase B signaling', 'cell proliferation', 'positive regulation of MAP kinase activity', 'positive regulation of cell proliferation', 'positive regulation of myoblast differentiation', 'negative regulation of protein kinase activity', 'MAPK cascade', 'cell-matrix adhesion', 'positive regulation of phosphorylation', 'positive regulation of protein phosphorylation']"
-IP6K1,[]
-PIM2,"['cell proliferation', 'positive regulation of macroautophagy', 'negative regulation of cell proliferation', 'positive regulation of I-kappaB kinase/NF-kappaB signaling', 'negative regulation of protein binding', 'positive regulation of autophagy', 'apoptotic mitochondrial changes', 'positive regulation of transcription, DNA-templated', 'negative regulation of apoptotic process', 'protein stabilization']"
-CKMT2,['muscle contraction']
-TRIB3,"['positive regulation of protein binding', 'negative regulation of protein kinase activity', 'negative regulation of transcription by RNA polymerase II', 'cellular response to insulin stimulus', 'negative regulation of transcription, DNA-templated', 'transcription, DNA-templated', 'regulation of lipid metabolic process', 'negative regulation of protein kinase B signaling']"
-PRKCH,['positive regulation of NF-kappaB transcription factor activity']
-PAK1,"['branching morphogenesis of an epithelial tube', 'wound healing', 'response to hypoxia', 'apoptotic process', 'positive regulation of axon extension', 'regulation of MAPK cascade', 'positive regulation of cell proliferation', 'Fc-epsilon receptor signaling pathway', 'cellular response to insulin stimulus', 'actin cytoskeleton reorganization', 'T cell receptor signaling pathway', 'positive regulation of protein phosphorylation']"
-AK1,['nucleobase-containing small molecule interconversion']
-DCK,[]
-EPHA6,"['negative regulation of signal transduction', 'negative regulation of apoptotic process', 'cell differentiation']"
-EPHB3,"['axon guidance', 'negative regulation of signal transduction', 'angiogenesis', 'cell migration', 'negative regulation of apoptotic process', 'cell differentiation']"
-MAP4K1,"['cell proliferation', 'activation of JUN kinase activity']"
-LMTK2,"['negative regulation of signal transduction', 'negative regulation of apoptotic process', 'cell differentiation']"
-MELK,"['cell proliferation', 'intrinsic apoptotic signaling pathway in response to oxidative stress', 'apoptotic process', 'positive regulation of apoptotic process']"
-PIK3R4,[]
-CAMK1G,[]
-STK4,"['positive regulation of protein binding', 'negative regulation of cell proliferation', 'positive regulation of fat cell differentiation', 'branching involved in blood vessel morphogenesis', 'apoptotic process', 'cell morphogenesis', 'positive regulation of protein phosphorylation', 'positive regulation of apoptotic process', 'protein stabilization']"
-LATS1,['positive regulation of apoptotic process']
-ABL2,"['cellular protein modification process', 'cell adhesion', 'regulation of cell proliferation', 'cellular response to retinoic acid', 'cell differentiation', 'regulation of actin cytoskeleton reorganization']"
-BRSK1,"['neuron differentiation', 'cellular response to DNA damage stimulus', 'neurotransmitter secretion', 'centrosome duplication']"
-IRAK2,"['positive regulation of NF-kappaB transcription factor activity', 'inflammatory response', 'MyD88-dependent toll-like receptor signaling pathway', 'cytokine-mediated signaling pathway', 'interleukin-1-mediated signaling pathway']"
-BUB1,"['cell proliferation', 'mitotic spindle assembly checkpoint', 'apoptotic process']"
-AURKC,"['spermatogenesis', 'attachment of spindle microtubules to kinetochore']"
-MAP3K14,"['positive regulation of I-kappaB kinase/NF-kappaB signaling', 'MAPK cascade', 'immune response', 'defense response to virus']"
-BRSK2,"['regulation of insulin secretion involved in cellular response to glucose stimulus', 'actin cytoskeleton reorganization', 'neuron differentiation']"
-HIPK4,[]
-TGFBR2,"['transforming growth factor beta receptor signaling pathway', 'positive regulation of angiogenesis', 'wound healing', 'response to hypoxia', 'in utero embryonic development', 'apoptotic process', 'smoothened signaling pathway', 'positive regulation of mesenchymal cell proliferation', 'regulation of gene expression', 'positive regulation of NK T cell differentiation', 'positive regulation of CD4-positive, alpha-beta T cell proliferation', 'positive regulation of cell proliferation', 'heart development', 'branching involved in blood vessel morphogenesis', 'regulation of cell proliferation', 'response to drug', 'negative regulation of transforming growth factor beta receptor signaling pathway']"
-ZAP70,"['immune response', 'T cell receptor signaling pathway']"
-NEK3,[]
+MAP3K20,"['cell cycle arrest', 'cell proliferation', 'activation of JUN kinase activity', 'embryonic digit morphogenesis', 'positive regulation of apoptotic process', 'cell differentiation']"
+PKM,"['cellular response to insulin stimulus', 'response to hypoxia', 'protein homotetramerization', 'canonical glycolysis', 'programmed cell death']"
+CDK15,['regulation of cell cycle']
+ARAF,"['cellular protein modification process', 'MAPK cascade', 'negative regulation of apoptotic process']"
 HIPK1,"['positive regulation of cell proliferation', 'anterior/posterior pattern specification', 'positive regulation of angiogenesis', 'transcription, DNA-templated', 'neuron differentiation', 'regulation of transcription, DNA-templated', 'smoothened signaling pathway', 'adherens junction assembly']"
-PKMYT1,['regulation of cyclin-dependent protein serine/threonine kinase activity']
-CDK10,['negative regulation of cell proliferation']
-MLKL,"['activation of JUN kinase activity', 'cell surface receptor signaling pathway', 'MAPK cascade', 'protein homotrimerization']"
-PTK2,"['positive regulation of phosphatidylinositol 3-kinase signaling', 'epidermal growth factor receptor signaling pathway', 'transforming growth factor beta receptor signaling pathway', 'axon guidance', 'vascular endothelial growth factor receptor signaling pathway', 'positive regulation of protein kinase B signaling', 'regulation of cell shape', 'positive regulation of cell proliferation', 'regulation of osteoblast differentiation', 'MAPK cascade', 'angiogenesis', 'regulation of cell proliferation', 'negative regulation of apoptotic process', 'positive regulation of protein phosphorylation', 'extracellular matrix organization', 'cell differentiation']"
-PGK1,"['negative regulation of angiogenesis', 'myoblast fusion', 'chemical synaptic transmission', 'canonical glycolysis']"
-SIK3,[]
-RIOK3,"['chromosome segregation', 'negative regulation of I-kappaB kinase/NF-kappaB signaling', 'positive regulation of innate immune response', 'defense response to virus']"
-IP6K3,[]
-PRKX,"['cell adhesion', 'angiogenesis', 'cell-substrate adhesion']"
-CAMKK2,"['MAPK cascade', 'positive regulation of transcription, DNA-templated', 'positive regulation of protein phosphorylation']"
-CSF1R,"['positive regulation of protein tyrosine kinase activity', 'axon guidance', 'inflammatory response', 'regulation of actin cytoskeleton reorganization', 'cell proliferation', 'regulation of cell shape', 'multicellular organism development', 'negative regulation of cell proliferation', 'positive regulation of cell proliferation', 'negative regulation of signal transduction', 'cytokine-mediated signaling pathway', 'negative regulation of apoptotic process', 'positive regulation of protein phosphorylation', 'cell differentiation']"
-SBK1,[]
-PASK,['energy homeostasis']
-PRKCA,"['axon guidance', 'positive regulation of angiogenesis', 'apoptotic signaling pathway', 'cell adhesion', 'angiogenesis', 'positive regulation of endothelial cell proliferation']"
-MAPK9,"['Fc-epsilon receptor signaling pathway', 'positive regulation of gene expression', 'positive regulation of apoptotic process', 'regulation of gene expression', 'positive regulation of apoptotic signaling pathway']"
-DYRK4,[]
-CLK2,['response to retinoic acid']
-RPS6KA6,[]
-ICK,"['cilium assembly', 'multicellular organism development', 'regulation of gene expression']"
-STK40,"['regulation of MAPK cascade', 'negative regulation of apoptotic process', 'regulation of gene expression']"
-RIOK2,[]
-STK39,"['negative regulation of potassium ion transmembrane transport', 'regulation of blood pressure', 'negative regulation of protein phosphorylation']"
-SRMS,"['negative regulation of signal transduction', 'cell differentiation']"
-PDGFRB,"['positive regulation of phosphatidylinositol 3-kinase signaling', 'male gonad development', 'response to retinoic acid', 'wound healing', 'response to hydrogen peroxide', 'positive regulation of protein kinase B signaling', 'positive regulation of MAP kinase activity', 'positive regulation of cell proliferation', 'MAPK cascade', 'negative regulation of signal transduction', 'cell migration', 'negative regulation of apoptotic process', 'positive regulation of apoptotic process', 'cell differentiation']"
-NME1,"['negative regulation of cell proliferation', 'nervous system development', 'positive regulation of DNA binding', 'nucleobase-containing small molecule interconversion', 'regulation of apoptotic process', 'endocytosis', 'cell differentiation']"
-GRK7,[]
-MARK3,"['positive regulation of protein binding', 'MAPK cascade']"
-HASPIN,"['protein localization to chromosome, centromeric region']"
-FGFR2,"['in utero embryonic development', 'cell-cell signaling', 'positive regulation of protein kinase B signaling', 'positive regulation of cell proliferation', 'positive regulation of transcription by RNA polymerase II', 'regulation of osteoblast differentiation', 'MAPK cascade', 'angiogenesis', 'ureteric bud development', 'cellular response to retinoic acid', 'cell fate commitment', 'midbrain development', 'wound healing', 'apoptotic process', 'positive regulation of mesenchymal cell proliferation', 'animal organ morphogenesis', 'inner ear morphogenesis', 'bone development', 'negative regulation of transcription by RNA polymerase II', 'negative regulation of signal transduction', 'lung development', 'negative regulation of apoptotic process', 'cell differentiation']"
-PRKD3,['sphingolipid biosynthetic process']
-GALK1,[]
-TESK2,"['spermatogenesis', 'actin cytoskeleton organization']"
-GRK3,[]
-PRKCB,"['positive regulation of I-kappaB kinase/NF-kappaB signaling', 'positive regulation of NF-kappaB transcription factor activity', 'positive regulation of angiogenesis', 'lipoprotein transport', 'apoptotic process', 'transcription, DNA-templated', 'negative regulation of insulin receptor signaling pathway', 'regulation of transcription by RNA polymerase II']"
-CSNK1G3,"['cellular protein modification process', 'endocytosis']"
-NME3,"['apoptotic process', 'nucleobase-containing small molecule interconversion']"
-EPHB4,"['cell adhesion', 'negative regulation of signal transduction', 'angiogenesis', 'negative regulation of apoptotic process', 'cell differentiation']"
-CLK1,['cell proliferation']
-MAP3K9,"['transcription, DNA-templated', 'regulation of transcription, DNA-templated', 'activation of JUN kinase activity', 'MAPK cascade', 'apoptotic process', 'positive regulation of apoptotic process']"
-TNIK,"['MAPK cascade', 'Wnt signaling pathway', 'actin cytoskeleton reorganization', 'positive regulation of protein phosphorylation']"
-MST1R,"['positive regulation of MAP kinase activity', 'positive regulation of cell proliferation', 'negative regulation of signal transduction', 'Wnt signaling pathway', 'defense response', 'negative regulation of apoptotic process', 'cell differentiation', 'positive regulation of protein kinase B signaling']"
-GRK6,['Wnt signaling pathway']
-GRK2,"['viral entry into host cell', 'heart development', 'viral genome replication']"
-NEK5,[]
+HK1,['canonical glycolysis']
+BMPR1B,"['retina development in camera-type eye', 'transforming growth factor beta receptor signaling pathway', 'positive regulation of transcription by RNA polymerase II', 'inflammatory response', 'skeletal system development', 'cartilage condensation', 'BMP signaling pathway', 'positive regulation of cell differentiation', 'limb morphogenesis']"
+STK38L,[]
+MAP3K8,['interleukin-1-mediated signaling pathway']
+FGFR4,"['positive regulation of cell proliferation', 'MAPK cascade', 'negative regulation of signal transduction', 'angiogenesis', 'cell migration', 'positive regulation of gene expression', 'negative regulation of apoptotic process', 'glucose homeostasis', 'cell differentiation', 'regulation of lipid metabolic process', 'positive regulation of protein kinase B signaling']"
+TNK1,"['regulation of cell proliferation', 'negative regulation of cell growth', 'cell differentiation']"
+EPHB1,"['axon guidance', 'neurogenesis', 'cell-substrate adhesion', 'immunological synapse formation', 'negative regulation of signal transduction', 'angiogenesis', 'negative regulation of apoptotic process', 'cell differentiation']"
+RPS6KA4,"['regulation of transcription, DNA-templated', 'positive regulation of transcription by RNA polymerase II', 'positive regulation of NF-kappaB transcription factor activity', 'inflammatory response', 'interleukin-1-mediated signaling pathway']"
+CDK2,"['DNA repair', 'positive regulation of transcription, DNA-templated', 'centrosome duplication', 'positive regulation of cell proliferation', 'negative regulation of transcription by RNA polymerase II', 'potassium ion transport']"
+NME2,"['nucleobase-containing small molecule interconversion', 'protein complex oligomerization', 'peptidyl-histidine phosphorylation', 'cell adhesion', 'positive regulation of transcription by RNA polymerase II', 'transcription, DNA-templated', 'regulation of transcription, DNA-templated', 'negative regulation of apoptotic process']"
+EPHA5,"['regulation of insulin secretion involved in cellular response to glucose stimulus', 'axon guidance', 'negative regulation of signal transduction', 'negative regulation of apoptotic process', 'cell differentiation']"
+IRAK3,"['positive regulation of NF-kappaB transcription factor activity', 'MyD88-dependent toll-like receptor signaling pathway', 'cytokine-mediated signaling pathway', 'negative regulation of toll-like receptor signaling pathway', 'interleukin-1-mediated signaling pathway']"
+DYRK1A,"['nervous system development', 'regulation of alternative mRNA splicing, via spliceosome', 'negative regulation of microtubule polymerization', 'negative regulation of DNA damage response, signal transduction by p53 class mediator']"
 STK10,[]
-ROCK1,"['negative regulation of angiogenesis', 'negative regulation of amyloid-beta formation', 'negative regulation of protein binding', 'apoptotic process', 'regulation of amyloid-beta formation', 'Rho protein signal transduction', 'positive regulation of autophagy', 'vascular endothelial growth factor receptor signaling pathway', 'positive regulation of gene expression', 'neuron projection development', 'actin cytoskeleton organization']"
-STYK1,['regulation of cell proliferation']
-EPHA4,"['positive regulation of protein tyrosine kinase activity', 'motor neuron axon guidance', 'cell adhesion', 'negative regulation of signal transduction', 'negative regulation of apoptotic process', 'cell differentiation', 'protein stabilization']"
-RIOK1,[]
-DCLK2,[]
-BRAF,"['animal organ morphogenesis', 'MAPK cascade', 'positive regulation of gene expression', 'negative regulation of apoptotic process']"
-RPS6KB1,"['apoptotic process', 'negative regulation of insulin receptor signaling pathway', 'cellular response to insulin stimulus', 'response to heat', 'cell migration', 'negative regulation of apoptotic process', 'negative regulation of extrinsic apoptotic signaling pathway', 'cellular response to interferon-gamma']"
-ITK,"['Fc-epsilon receptor signaling pathway', 'T cell receptor signaling pathway']"
-EEF2K,"['cellular response to insulin stimulus', 'negative regulation of apoptotic process']"
-TGFBR1,"['cell cycle arrest', 'male gonad development', 'transforming growth factor beta receptor signaling pathway', 'anterior/posterior pattern specification', 'activin receptor signaling pathway', 'wound healing', 'skeletal system development', 'in utero embryonic development', 'kidney development', 'positive regulation of transcription, DNA-templated', 'apoptotic process', 'positive regulation of gene expression', 'positive regulation of protein kinase B signaling', 'positive regulation of cell proliferation', 'heart development', 'regulation of transcription, DNA-templated', 'negative regulation of extrinsic apoptotic signaling pathway', 'positive regulation of endothelial cell proliferation', 'collagen fibril organization', 'negative regulation of transforming growth factor beta receptor signaling pathway', 'positive regulation of apoptotic signaling pathway']"
-MOK,"['regulation of gene expression', 'regulation of cell cycle']"
-RIPK1,"['activation of JUN kinase activity', 'positive regulation of NF-kappaB transcription factor activity', 'MyD88-independent toll-like receptor signaling pathway', 'apoptotic process', 'negative regulation of extrinsic apoptotic signaling pathway via death domain receptors', 'protein homooligomerization', 'T cell apoptotic process', 'toll-like receptor 3 signaling pathway', 'positive regulation of I-kappaB kinase/NF-kappaB signaling', 'apoptotic signaling pathway', 'negative regulation of I-kappaB kinase/NF-kappaB signaling', 'positive regulation of transcription by RNA polymerase II', 'MAPK cascade', 'negative regulation of extrinsic apoptotic signaling pathway in absence of ligand', 'positive regulation of protein phosphorylation', 'positive regulation of apoptotic process', 'negative regulation of extrinsic apoptotic signaling pathway']"
-LATS2,['positive regulation of apoptotic process']
-JAK3,"['MAPK cascade', 'cytokine-mediated signaling pathway', 'positive regulation of T cell proliferation']"
-CAMKK1,[]
+TESK1,"['spermatogenesis', 'actin cytoskeleton organization']"
+NEK11,[]
+EPHB2,"['axon guidance', 'learning or memory', 'positive regulation of gene expression', 'inner ear morphogenesis', 'nervous system development', 'negative regulation of signal transduction', 'angiogenesis', 'commissural neuron axon guidance', 'negative regulation of protein phosphorylation', 'negative regulation of apoptotic process', 'cell differentiation']"
+TNIK,"['MAPK cascade', 'Wnt signaling pathway', 'actin cytoskeleton reorganization', 'positive regulation of protein phosphorylation']"
+CDKL5,"['regulation of cell cycle', 'positive regulation of dendritic spine development', 'positive regulation of axon extension']"
+DAPK3,"['regulation of cell shape', 'apoptotic signaling pathway', 'apoptotic process', 'negative regulation of translation', 'positive regulation of extrinsic apoptotic signaling pathway in absence of ligand', 'transcription, DNA-templated', 'neuron differentiation', 'regulation of apoptotic process', 'positive regulation of apoptotic process', 'cellular response to interferon-gamma', 'regulation of actin cytoskeleton reorganization']"
+CSNK2A2,"['apoptotic process', 'Wnt signaling pathway', 'transcription, DNA-templated', 'spermatogenesis', 'regulation of transcription, DNA-templated', 'negative regulation of apoptotic signaling pathway']"
+NTRK1,"['axon guidance', 'positive regulation of NF-kappaB transcription factor activity', 'learning or memory', 'detection of mechanical stimulus involved in sensory perception of pain', 'negative regulation of cell proliferation', 'negative regulation of signal transduction', 'negative regulation of apoptotic process', 'positive regulation of protein phosphorylation', 'cell differentiation']"
+TAOK2,"['regulation of cell shape', 'apoptotic process', 'cell migration', 'cellular response to DNA damage stimulus', 'actin cytoskeleton organization']"
+AK1,['nucleobase-containing small molecule interconversion']
+AURKB,"['negative regulation of protein binding', 'protein localization to kinetochore', 'cell proliferation', 'negative regulation of transcription by RNA polymerase II', 'spindle checkpoint', 'attachment of spindle microtubules to kinetochore']"
+PIP5K1B,[]
+TEK,"['negative regulation of angiogenesis', 'positive regulation of phosphatidylinositol 3-kinase signaling', 'sprouting angiogenesis', 'positive regulation of angiogenesis', 'response to hypoxia', 'cell-cell signaling', 'protein complex oligomerization', 'positive regulation of protein kinase B signaling', 'MAPK cascade', 'heart development', 'negative regulation of signal transduction', 'angiogenesis', 'negative regulation of apoptotic process', 'positive regulation of protein phosphorylation', 'cell differentiation', 'positive regulation of endothelial cell proliferation']"
+STK4,"['positive regulation of protein binding', 'negative regulation of cell proliferation', 'positive regulation of fat cell differentiation', 'branching involved in blood vessel morphogenesis', 'apoptotic process', 'cell morphogenesis', 'positive regulation of protein phosphorylation', 'positive regulation of apoptotic process', 'protein stabilization']"
+NLK,"['transforming growth factor beta receptor signaling pathway', 'MAPK cascade', 'transcription, DNA-templated', 'regulation of transcription, DNA-templated', 'regulation of gene expression', 'negative regulation of Wnt signaling pathway', 'protein stabilization']"
+IKBKE,"['positive regulation of I-kappaB kinase/NF-kappaB signaling', 'immune response', 'response to type I interferon', 'protein homooligomerization', 'intrinsic apoptotic signaling pathway in response to DNA damage']"
+TRPM6,['protein tetramerization']
+CAMK2G,"['insulin secretion', 'MAPK cascade', 'protein complex oligomerization']"
+MAST4,[]
+MAPK15,"['positive regulation of cell proliferation', 'MAPK cascade', 'cellular response to DNA damage stimulus', 'regulation of gene expression', 'negative regulation of cell migration']"
+NTRK2,"['positive regulation of phosphatidylinositol 3-kinase signaling', 'retina development in camera-type eye', 'neuromuscular junction development', 'neuron differentiation', 'retinal rod cell development', 'positive regulation of gene expression', 'positive regulation of cell proliferation', 'negative regulation of signal transduction', 'oligodendrocyte differentiation', 'negative regulation of apoptotic process', 'positive regulation of protein phosphorylation', 'cell differentiation']"
 GUCY2D,[]
-LYN,"['cellular response to DNA damage stimulus', 'negative regulation of cell proliferation', 'positive regulation of cell proliferation', 'Fc-epsilon receptor signaling pathway', 'blood coagulation', 'negative regulation of B cell proliferation', 'neuron projection development', 'regulation of release of sequestered calcium ion into cytosol', 'cellular response to retinoic acid', 'negative regulation of protein phosphorylation', 'positive regulation of protein phosphorylation', 'negative regulation of toll-like receptor 4 signaling pathway', 'positive regulation of stress-activated protein kinase signaling cascade', 'response to drug', 'cell differentiation']"
-ACVR1B,"['transforming growth factor beta receptor signaling pathway', 'transmembrane receptor protein serine/threonine kinase signaling pathway', 'positive regulation of transcription by RNA polymerase II', 'activin receptor signaling pathway', 'in utero embryonic development', 'negative regulation of cell growth', 'regulation of transcription, DNA-templated', 'negative regulation of gene expression']"
-NEK6,"['positive regulation of I-kappaB kinase/NF-kappaB signaling', 'chromosome segregation', 'apoptotic process']"
+PRKCH,['positive regulation of NF-kappaB transcription factor activity']
+LATS2,['positive regulation of apoptotic process']
+KIT,"['positive regulation of phosphatidylinositol 3-kinase signaling', 'male gonad development', 'negative regulation of programmed cell death', 'positive regulation of DNA-binding transcription factor activity', 'inflammatory response', 'positive regulation of protein kinase B signaling', 'positive regulation of cell proliferation', 'MAPK cascade', 'cytokine-mediated signaling pathway', 'ovarian follicle development', 'visual learning', 'positive regulation of gene expression', 'regulation of cell shape', 'negative regulation of signal transduction', 'actin cytoskeleton reorganization', 'spermatid development', 'spermatogenesis', 'regulation of cell proliferation', 'regulation of transcription by RNA polymerase II', 'negative regulation of apoptotic process', 'cell differentiation', 'lamellipodium assembly']"
+HK2,"['positive regulation of angiogenesis', 'apoptotic mitochondrial changes', 'canonical glycolysis']"
+CDK16,"['regulation of insulin secretion involved in cellular response to glucose stimulus', 'neuron projection development', 'spermatogenesis', 'regulation of cell cycle']"
+TSSK4,"['multicellular organism development', 'spermatogenesis', 'cell differentiation']"
+MINK1,"['multicellular organism development', 'dendrite morphogenesis', 'MAPK cascade', 'actin cytoskeleton reorganization', 'chemical synaptic transmission']"
+IP6K2,"['negative regulation of cell growth', 'positive regulation of apoptotic process']"
+NEK7,[]
+CAMK1,"['positive regulation of syncytium formation by plasma membrane fusion', 'positive regulation of transcription by RNA polymerase II', 'negative regulation of protein binding', 'positive regulation of muscle cell differentiation', 'positive regulation of protein export from nucleus', 'positive regulation of dendritic spine development']"
+HASPIN,"['protein localization to chromosome, centromeric region']"
+PDGFRB,"['positive regulation of phosphatidylinositol 3-kinase signaling', 'male gonad development', 'response to retinoic acid', 'wound healing', 'response to hydrogen peroxide', 'positive regulation of protein kinase B signaling', 'positive regulation of MAP kinase activity', 'positive regulation of cell proliferation', 'MAPK cascade', 'negative regulation of signal transduction', 'cell migration', 'negative regulation of apoptotic process', 'positive regulation of apoptotic process', 'cell differentiation']"
+CAMK1G,[]
+INSR,"['male gonad development', 'epidermis development', 'positive regulation of transcription, DNA-templated', 'glucose homeostasis', 'positive regulation of protein kinase B signaling', 'positive regulation of nitric oxide biosynthetic process', 'positive regulation of cell proliferation', 'cellular response to insulin stimulus', 'negative regulation of signal transduction', 'regulation of transcription, DNA-templated', 'negative regulation of apoptotic process', 'positive regulation of protein phosphorylation', 'cell differentiation']"
+RIOK2,[]
+BRD4,"['positive regulation of I-kappaB kinase/NF-kappaB signaling', 'positive regulation of transcription by RNA polymerase II', 'positive regulation of transcription, DNA-templated', 'transcription, DNA-templated', 'cellular response to DNA damage stimulus']"
+MAP3K6,['activation of JUN kinase activity']
+MAP3K21,['activation of JUN kinase activity']
+PEAK1,['cell migration']
+TYRO3,"['viral entry into host cell', 'cell adhesion', 'negative regulation of signal transduction', 'Wnt signaling pathway', 'negative regulation of toll-like receptor signaling pathway', 'spermatogenesis', 'natural killer cell differentiation', 'negative regulation of apoptotic process', 'cell differentiation']"
+MOK,"['regulation of gene expression', 'regulation of cell cycle']"
+CDK17,['regulation of cell cycle']
+GRK1,['rhodopsin mediated signaling pathway']
+RNASEL,"['fat cell differentiation', 'positive regulation of transcription by RNA polymerase II', 'defense response to virus', 'negative regulation of viral genome replication']"
+RIOK1,[]
+CSNK1D,"['Wnt signaling pathway', 'positive regulation of protein phosphorylation']"
+EPHA8,"['axon guidance', 'cell adhesion', 'negative regulation of signal transduction', 'neuron projection development', 'negative regulation of apoptotic process', 'cell differentiation']"
+FN3KRP,[]
+FGFR2,"['in utero embryonic development', 'cell-cell signaling', 'positive regulation of protein kinase B signaling', 'positive regulation of cell proliferation', 'positive regulation of transcription by RNA polymerase II', 'regulation of osteoblast differentiation', 'MAPK cascade', 'angiogenesis', 'ureteric bud development', 'cellular response to retinoic acid', 'cell fate commitment', 'midbrain development', 'wound healing', 'apoptotic process', 'positive regulation of mesenchymal cell proliferation', 'animal organ morphogenesis', 'inner ear morphogenesis', 'bone development', 'negative regulation of transcription by RNA polymerase II', 'negative regulation of signal transduction', 'lung development', 'negative regulation of apoptotic process', 'cell differentiation']"
+ICK,"['cilium assembly', 'multicellular organism development', 'regulation of gene expression']"
+MYLK2,"['skeletal muscle cell differentiation', 'positive regulation of gene expression']"
+AK2,['nucleobase-containing small molecule interconversion']
+IPMK,[]
+EIF2AK1,"['iron ion homeostasis', 'negative regulation of cell proliferation']"
+FRK,"['negative regulation of cell proliferation', 'negative regulation of transcription by RNA polymerase II', 'cell differentiation']"
+AKT2,"['activation of GTPase activity', 'positive regulation of cell proliferation', 'cellular protein modification process', 'fat cell differentiation', 'cellular response to insulin stimulus', 'negative regulation of apoptotic process', 'positive regulation of protein phosphorylation']"
+LRRK2,"['neuromuscular junction development', 'excitatory postsynaptic potential', 'regulation of membrane potential', 'positive regulation of MAP kinase activity', 'MAPK cascade', 'mitochondrion organization', 'negative regulation of protein phosphorylation', 'positive regulation of protein phosphorylation', 'positive regulation of protein binding', 'negative regulation of protein binding', 'endocytosis', 'positive regulation of autophagy', 'canonical Wnt signaling pathway', 'spermatogenesis']"
+DSTYK,"['negative regulation of apoptotic process', 'positive regulation of kinase activity']"
+TLK2,"['chromosome segregation', 'cellular response to DNA damage stimulus']"
+CDK10,['negative regulation of cell proliferation']
+ITK,"['Fc-epsilon receptor signaling pathway', 'T cell receptor signaling pathway']"
+MAP2K6,"['cell cycle arrest', 'MAPK cascade', 'apoptotic process', 'transcription, DNA-templated', 'regulation of transcription, DNA-templated', 'DNA damage induced protein phosphorylation', 'response to drug', 'positive regulation of apoptotic process']"
+PAK5,"['cell proliferation', 'regulation of MAPK cascade', 'locomotory behavior', 'apoptotic process', 'negative regulation of extrinsic apoptotic signaling pathway', 'cell migration']"
+STK33,[]
+TTBK1,"['negative regulation of protein binding', 'learning or memory', 'negative regulation of gene expression', 'positive regulation of gene expression']"
 CDKL2,"['sex differentiation', 'regulation of cell cycle']"
-BLK,['cell differentiation']
-PRKCE,"['regulation of insulin secretion involved in cellular response to glucose stimulus', 'apoptotic process', 'response to morphine', 'positive regulation of I-kappaB kinase/NF-kappaB signaling', 'cell adhesion', 'regulation of release of sequestered calcium ion into cytosol']"
-MAP2K3,"['inflammatory response', 'positive regulation of transcription, DNA-templated']"
-PDXK,['cell proliferation']
-RPS6KA2,"['negative regulation of cell proliferation', 'positive regulation of apoptotic process']"
-CDC42BPG,['actin cytoskeleton reorganization']
-SMG1,[]
-PFKL,"['protein homotetramerization', 'canonical glycolysis', 'protein complex oligomerization']"
-MAP3K12,"['activation of JUN kinase activity', 'MAPK cascade']"
-ERBB2,"['neuromuscular junction development', 'wound healing', 'positive regulation of protein kinase B signaling', 'cell proliferation', 'positive regulation of MAP kinase activity', 'motor neuron axon guidance', 'myelination', 'MAPK cascade', 'heart development', 'negative regulation of signal transduction', 'oligodendrocyte differentiation', 'transcription, DNA-templated', 'cell surface receptor signaling pathway', 'regulation of transcription by RNA polymerase II', 'negative regulation of apoptotic process', 'positive regulation of protein phosphorylation', 'cell differentiation']"
-MUSK,"['multicellular organism development', 'neuromuscular junction development', 'negative regulation of signal transduction', 'positive regulation of gene expression', 'negative regulation of apoptotic process', 'positive regulation of protein phosphorylation', 'cell differentiation']"
-SCYL1,"['transcription, DNA-templated', 'regulation of transcription, DNA-templated']"
+PRKCZ,"['transforming growth factor beta receptor signaling pathway', 'positive regulation of NF-kappaB transcription factor activity', 'inflammatory response', 'negative regulation of insulin receptor signaling pathway', 'positive regulation of cell-matrix adhesion', 'positive regulation of cell proliferation', 'cellular response to insulin stimulus', 'negative regulation of protein complex assembly', 'cell migration', 'negative regulation of apoptotic process']"
+IP6K3,[]
+MATK,"['cell proliferation', 'positive regulation of cell proliferation', 'mesoderm development', 'regulation of cell proliferation']"
+INSRR,"['negative regulation of signal transduction', 'negative regulation of apoptotic process', 'glucose homeostasis', 'cell differentiation', 'actin cytoskeleton reorganization']"
+PDK2,['glucose homeostasis']
+CDKL1,"['heart development', 'regulation of cell cycle']"
+SIK1,[]
+SRC,"['positive regulation of phosphatidylinositol 3-kinase signaling', 'axon guidance', 'negative regulation of transcription, DNA-templated', 'positive regulation of transcription, DNA-templated', 'response to hydrogen peroxide', 'vascular endothelial growth factor receptor signaling pathway', 'positive regulation of protein kinase B signaling', 'cell proliferation', 'positive regulation of MAP kinase activity', 'positive regulation of peptidyl-tyrosine phosphorylation', 'negative regulation of extrinsic apoptotic signaling pathway', 'epidermal growth factor receptor signaling pathway', 'transforming growth factor beta receptor signaling pathway', 'forebrain development', 'negative regulation of cysteine-type endopeptidase activity involved in apoptotic process', 'cellular response to insulin stimulus', 'negative regulation of apoptotic process', 'positive regulation of apoptotic process', 'cell differentiation']"
+DAPK1,"['apoptotic signaling pathway', 'apoptotic process', 'negative regulation of translation', 'negative regulation of extrinsic apoptotic signaling pathway via death domain receptors', 'regulation of apoptotic process', 'positive regulation of cysteine-type endopeptidase activity involved in apoptotic process', 'positive regulation of autophagy', 'cellular response to interferon-gamma']"
+GSK3A,"['dopamine receptor signaling pathway', 'Wnt signaling pathway', 'excitatory postsynaptic potential', 'negative regulation of insulin receptor signaling pathway', 'positive regulation of gene expression', 'nervous system development', 'cellular response to insulin stimulus', 'negative regulation of glucose import']"
+ERN1,"['cell cycle arrest', 'activation of JUN kinase activity', 'mRNA catabolic process', 'transcription, DNA-templated', 'regulation of transcription, DNA-templated']"
+VRK1,[]
+MAPK13,"['transcription, DNA-templated', 'response to osmotic stress', 'regulation of transcription, DNA-templated', 'regulation of gene expression']"
+PTK2B,"['positive regulation of angiogenesis', 'response to hypoxia', 'response to osmotic stress', 'response to hydrogen peroxide', 'vascular endothelial growth factor receptor signaling pathway', 'positive regulation of cell-matrix adhesion', 'regulation of actin cytoskeleton reorganization', 'positive regulation of nitric oxide biosynthetic process', 'negative regulation of cell proliferation', 'positive regulation of cell proliferation', 'MAPK cascade', 'angiogenesis', 'positive regulation of peptidyl-tyrosine phosphorylation', 'neuron projection development', 'regulation of release of sequestered calcium ion into cytosol', 'cellular response to retinoic acid', 'epidermal growth factor receptor signaling pathway', 'sprouting angiogenesis', 'negative regulation of potassium ion transport', 'apoptotic process', 'long-term synaptic depression', 'response to cocaine', 'regulation of cell shape', 'activation of GTPase activity', 'cell surface receptor signaling pathway', 'regulation of cell proliferation', 'negative regulation of apoptotic process', 'chemokine-mediated signaling pathway', 'cell differentiation']"
+KSR1,"['regulation of cell proliferation', 'MAPK cascade']"
+CLK3,[]
+LIMK1,"['nervous system development', 'negative regulation of ubiquitin-protein transferase activity', 'positive regulation of axon extension', 'Rho protein signal transduction', 'actin cytoskeleton organization']"
+PRKACG,"['male gonad development', 'spermatogenesis', 'blood coagulation']"
+CAMKK1,[]
+MAP4K3,[]
+CAMK2B,['MAPK cascade']
+BMX,"['mesoderm development', 'cell adhesion', 'apoptotic process']"
+PBK,[]
+MAPK8,"['negative regulation of protein binding', 'positive regulation of gene expression', 'regulation of gene expression', 'Fc-epsilon receptor signaling pathway', 'negative regulation of apoptotic process', 'positive regulation of apoptotic process']"
+PFKP,"['canonical glycolysis', 'protein complex oligomerization']"
+RIOK3,"['chromosome segregation', 'negative regulation of I-kappaB kinase/NF-kappaB signaling', 'positive regulation of innate immune response', 'defense response to virus']"
+CAMKK2,"['MAPK cascade', 'positive regulation of transcription, DNA-templated', 'positive regulation of protein phosphorylation']"
+NEK10,['positive regulation of MAP kinase activity']
 CAMK1D,"['inflammatory response', 'negative regulation of apoptotic process', 'positive regulation of apoptotic process']"
+PDK4,['glucose homeostasis']
+NEK5,[]
+PTK2,"['positive regulation of phosphatidylinositol 3-kinase signaling', 'epidermal growth factor receptor signaling pathway', 'transforming growth factor beta receptor signaling pathway', 'axon guidance', 'vascular endothelial growth factor receptor signaling pathway', 'positive regulation of protein kinase B signaling', 'regulation of cell shape', 'positive regulation of cell proliferation', 'regulation of osteoblast differentiation', 'MAPK cascade', 'angiogenesis', 'regulation of cell proliferation', 'negative regulation of apoptotic process', 'positive regulation of protein phosphorylation', 'extracellular matrix organization', 'cell differentiation']"
+MARK1,['Wnt signaling pathway']
+PAN3,['protein targeting']
+PRKD3,['sphingolipid biosynthetic process']
+STRADA,"['cell cycle arrest', 'MAPK cascade']"
+CDK20,['multicellular organism development']
+MAPKAPK2,"['MAPK cascade', 'inflammatory response', 'cellular response to DNA damage stimulus', 'vascular endothelial growth factor receptor signaling pathway']"
+CAMKV,[]
+FLT4,"['positive regulation of cell proliferation', 'sprouting angiogenesis', 'negative regulation of signal transduction', 'vascular endothelial growth factor receptor signaling pathway', 'negative regulation of apoptotic process', 'positive regulation of protein phosphorylation', 'cell differentiation', 'positive regulation of endothelial cell proliferation']"
+EIF2AK3,"['skeletal system development', 'ossification', 'negative regulation of translation', 'protein homooligomerization', 'positive regulation of gene expression', 'angiogenesis']"
+RYK,"['axon guidance', 'neurogenesis', 'negative regulation of signal transduction', 'Wnt signaling pathway', 'canonical Wnt signaling pathway', 'commissural neuron axon guidance', 'neuron differentiation', 'neuron projection development', 'negative regulation of apoptotic process', 'cell differentiation']"
+BLK,['cell differentiation']
+PIK3CA,"['epidermal growth factor receptor signaling pathway', 'axon guidance', 'energy homeostasis', 'vascular endothelial growth factor receptor signaling pathway', 'regulation of gene expression', 'positive regulation of protein kinase B signaling', 'Fc-epsilon receptor signaling pathway', 'angiogenesis', 'cytokine-mediated signaling pathway', 'cell migration', 'T cell receptor signaling pathway']"
+ROR1,"['positive regulation of I-kappaB kinase/NF-kappaB signaling', 'positive regulation of NF-kappaB transcription factor activity', 'sensory perception of sound', 'negative regulation of signal transduction', 'negative regulation of apoptotic process', 'cell differentiation']"
+ACVR2A,"['mesoderm development', 'anterior/posterior pattern specification', 'transforming growth factor beta receptor signaling pathway', 'transmembrane receptor protein serine/threonine kinase signaling pathway', 'activin receptor signaling pathway', 'BMP signaling pathway', 'positive regulation of transcription by RNA polymerase II', 'spermatogenesis', 'determination of left/right symmetry', 'positive regulation of protein phosphorylation', 'regulation of BMP signaling pathway']"
+PRKD1,"['positive regulation of NF-kappaB transcription factor activity', 'positive regulation of angiogenesis', 'inflammatory response', 'apoptotic process', 'sphingolipid biosynthetic process', 'positive regulation of autophagy', 'vascular endothelial growth factor receptor signaling pathway', 'cell proliferation', 'positive regulation of I-kappaB kinase/NF-kappaB signaling', 'positive regulation of transcription by RNA polymerase II', 'angiogenesis', 'regulation of protein stability', 'positive regulation of endothelial cell proliferation']"
+GRK5,"['positive regulation of cell proliferation', 'fat cell differentiation', 'negative regulation of apoptotic process', 'apoptotic process', 'Wnt signaling pathway', 'regulation of cell cycle']"
+PRKACA,"['blood coagulation', 'regulation of osteoblast differentiation', 'cytokine-mediated signaling pathway', 'regulation of heart rate']"
+DAPK2,"['regulation of apoptotic process', 'apoptotic process']"
+CSNK2A1,"['positive regulation of cell proliferation', 'negative regulation of cysteine-type endopeptidase activity involved in apoptotic process', 'apoptotic process', 'Wnt signaling pathway', 'transcription, DNA-templated', 'regulation of transcription, DNA-templated', 'negative regulation of apoptotic signaling pathway']"
+NME3,"['apoptotic process', 'nucleobase-containing small molecule interconversion']"
+RPS6KA3,"['positive regulation of transcription by RNA polymerase II', 'skeletal system development', 'negative regulation of cysteine-type endopeptidase activity involved in apoptotic process', 'apoptotic process', 'positive regulation of cell differentiation', 'negative regulation of apoptotic process']"
+EPHA4,"['positive regulation of protein tyrosine kinase activity', 'motor neuron axon guidance', 'cell adhesion', 'negative regulation of signal transduction', 'negative regulation of apoptotic process', 'cell differentiation', 'protein stabilization']"
+PRKCA,"['axon guidance', 'positive regulation of angiogenesis', 'apoptotic signaling pathway', 'cell adhesion', 'angiogenesis', 'positive regulation of endothelial cell proliferation']"
+CDK18,['regulation of cell cycle']
+DDR2,"['cell adhesion', 'positive regulation of DNA-binding transcription factor activity', 'negative regulation of signal transduction', 'ossification', 'negative regulation of apoptotic process', 'extracellular matrix organization', 'cell differentiation', 'collagen fibril organization']"
+MAP2K1,"['cell cycle arrest', 'positive regulation of transcription, DNA-templated', 'neuron differentiation', 'negative regulation of gene expression', 'positive regulation of gene expression', 'negative regulation of cell proliferation', 'MAPK cascade', 'chemotaxis', 'heart development', 'ERK1 and ERK2 cascade']"
+MTOR,"['positive regulation of dendritic spine development', 'positive regulation of protein kinase B signaling', 'positive regulation of nitric oxide biosynthetic process', 'positive regulation of peptidyl-tyrosine phosphorylation', 'negative regulation of protein phosphorylation', 'positive regulation of protein phosphorylation', 'positive regulation of endothelial cell proliferation', 'cell cycle arrest', 'visual learning', 'wound healing', 'negative regulation of calcineurin-NFAT signaling cascade', 'response to cocaine', 'response to morphine', 'positive regulation of gene expression', 'positive regulation of myotube differentiation']"
+CSNK1G3,"['cellular protein modification process', 'endocytosis']"
+CKM,[]
+NEK1,"['cilium assembly', 'cellular response to DNA damage stimulus']"
+SLK,"['regulation of apoptotic process', 'apoptotic process']"
+STK3,"['positive regulation of protein binding', 'negative regulation of cell proliferation', 'positive regulation of fat cell differentiation', 'positive regulation of DNA-binding transcription factor activity', 'apoptotic process', 'positive regulation of apoptotic process', 'protein stabilization', 'positive regulation of protein kinase B signaling']"
+KALRN,"['nervous system development', 'adult locomotory behavior', 'neuromuscular junction development', 'Rho protein signal transduction', 'positive regulation of apoptotic process']"
+MKNK2,['cell surface receptor signaling pathway']
+CDC7,['positive regulation of cell proliferation']
+ABL1,"['negative regulation of mitotic cell cycle', 'intrinsic apoptotic signaling pathway in response to DNA damage', 'positive regulation of substrate adhesion-dependent cell spreading', 'cellular response to DNA damage stimulus', 'DNA damage induced protein phosphorylation', 'regulation of actin cytoskeleton reorganization', 'positive regulation of I-kappaB kinase/NF-kappaB signaling', 'negative regulation of I-kappaB kinase/NF-kappaB signaling', 'positive regulation of peptidyl-tyrosine phosphorylation', 'positive regulation of muscle cell differentiation', 'negative regulation of BMP signaling pathway', 'positive regulation of protein phosphorylation', 'cell cycle arrest', 'epidermal growth factor receptor signaling pathway', 'negative regulation of ubiquitin-protein transferase activity', 'cellular protein modification process', 'regulation of transcription, DNA-templated', 'regulation of cell proliferation', 'positive regulation of apoptotic process', 'cell differentiation', 'actin cytoskeleton organization']"
+STK40,"['regulation of MAPK cascade', 'negative regulation of apoptotic process', 'regulation of gene expression']"
+PIKFYVE,"['retrograde transport, endosome to Golgi', 'protein localization to nucleus']"
+PKN3,['epithelial cell migration']
+NEK9,[]
+MAP2K5,"['positive regulation of transcription by RNA polymerase II', 'negative regulation of transcription by RNA polymerase II', 'heart development', 'negative regulation of cysteine-type endopeptidase activity involved in apoptotic process', 'negative regulation of extrinsic apoptotic signaling pathway in absence of ligand']"
+MAPK7,"['axon guidance', 'positive regulation of transcription by RNA polymerase II', 'MAPK cascade', 'negative regulation of calcineurin-NFAT signaling cascade', 'negative regulation of extrinsic apoptotic signaling pathway in absence of ligand', 'regulation of gene expression']"
+RIPK3,"['cellular protein modification process', 'apoptotic signaling pathway', 'positive regulation of NF-kappaB transcription factor activity', 'protein homooligomerization']"
+FES,"['cell proliferation', 'regulation of cell shape', 'multicellular organism development', 'cell adhesion', 'chemotaxis', 'regulation of cell proliferation']"
+MYLK3,[]
+ACVR2B,"['insulin secretion', 'mesoderm development', 'anterior/posterior pattern specification', 'transforming growth factor beta receptor signaling pathway', 'transmembrane receptor protein serine/threonine kinase signaling pathway', 'activin receptor signaling pathway', 'kidney development', 'BMP signaling pathway', 'odontogenesis of dentin-containing tooth', 'negative regulation of transcription by RNA polymerase II', 'heart development', 'lung development', 'regulation of transcription, DNA-templated', 'determination of left/right symmetry']"
+CSK,"['positive regulation of MAP kinase activity', 'negative regulation of cell proliferation', 'negative regulation of kinase activity', 'T cell receptor signaling pathway', 'oligodendrocyte differentiation']"
+DYRK4,[]
+SGK2,['regulation of cell proliferation']
+PKMYT1,['regulation of cyclin-dependent protein serine/threonine kinase activity']
+TRIM24,"['negative regulation of cell proliferation', 'transcription by RNA polymerase II', 'negative regulation of transcription, DNA-templated', 'positive regulation of transcription, DNA-templated', 'regulation of apoptotic process', 'regulation of protein stability', 'protein ubiquitination']"
+PIP4K2C,[]
+NME4,['nucleobase-containing small molecule interconversion']
+LIMK2,"['spermatogenesis', 'actin cytoskeleton organization']"
+SYK,"['activation of JUN kinase activity', 'defense response to bacterium', 'positive regulation of B cell differentiation', 'animal organ morphogenesis', 'protein import into nucleus', 'cell proliferation', 'Fc-epsilon receptor signaling pathway', 'angiogenesis']"
+HIPK4,[]
+TXK,"['transcription by RNA polymerase II', 'positive regulation of transcription by RNA polymerase II', 'regulation of transcription by RNA polymerase II', 'T cell receptor signaling pathway']"
+MAP4K5,['activation of JUN kinase activity']
+COQ8A,[]
+MAP3K14,"['positive regulation of I-kappaB kinase/NF-kappaB signaling', 'MAPK cascade', 'immune response', 'defense response to virus']"
+HIPK3,"['regulation of transcription, DNA-templated', 'negative regulation of apoptotic process', 'apoptotic process']"
+MAP2K4,"['activation of JUN kinase activity', 'positive regulation of neuron apoptotic process', 'apoptotic process']"
+HCK,"['regulation of cell shape', 'positive regulation of cell proliferation', 'mesoderm development', 'cell adhesion', 'inflammatory response', 'cytokine-mediated signaling pathway', 'negative regulation of apoptotic process', 'cell differentiation']"
+CSNK1A1,"['Wnt signaling pathway', 'cell morphogenesis', 'cell surface receptor signaling pathway']"
+TYK2,['cytokine-mediated signaling pathway']
+MAP3K4,"['MAPK cascade', 'regulation of gene expression']"
+CAMK2D,"['protein complex oligomerization', 'MAPK cascade', 'regulation of heart contraction', 'regulation of transcription by RNA polymerase II']"
+SIK3,[]
+CDK12,"['positive regulation of transcription by RNA polymerase II', 'regulation of cell cycle']"
+NEK2,"['chromosome segregation', 'centrosome separation']"
+PLK4,[]
+PFKL,"['protein homotetramerization', 'canonical glycolysis', 'protein complex oligomerization']"
+DDR1,"['negative regulation of cell proliferation', 'cell adhesion', 'negative regulation of signal transduction', 'negative regulation of apoptotic process', 'extracellular matrix organization', 'cell differentiation']"
+PASK,['energy homeostasis']
+TRIB3,"['positive regulation of protein binding', 'negative regulation of protein kinase activity', 'negative regulation of transcription by RNA polymerase II', 'cellular response to insulin stimulus', 'negative regulation of transcription, DNA-templated', 'transcription, DNA-templated', 'regulation of lipid metabolic process', 'negative regulation of protein kinase B signaling']"
+RPS6KA6,[]
+GRK6,['Wnt signaling pathway']
+CDK6,"['cell cycle arrest', 'negative regulation of cell proliferation', 'positive regulation of cell-matrix adhesion', 'regulation of gene expression']"
+MAP4K4,"['MAPK cascade', 'negative regulation of apoptotic process']"
+MAP3K7,"['transforming growth factor beta receptor signaling pathway', 'Fc-epsilon receptor signaling pathway', 'positive regulation of I-kappaB kinase/NF-kappaB signaling', 'positive regulation of NF-kappaB transcription factor activity', 'MyD88-dependent toll-like receptor signaling pathway', 'T cell receptor signaling pathway', 'positive regulation of macroautophagy', 'transcription, DNA-templated', 'interleukin-1-mediated signaling pathway']"
+PI4KA,[]
+FYN,"['positive regulation of phosphatidylinositol 3-kinase signaling', 'axon guidance', 'response to hydrogen peroxide', 'vascular endothelial growth factor receptor signaling pathway', 'detection of mechanical stimulus involved in sensory perception of pain', 'positive regulation of protein kinase B signaling', 'positive regulation of I-kappaB kinase/NF-kappaB signaling', 'blood coagulation', 'dendrite morphogenesis', 'MAPK cascade', 'cytokine-mediated signaling pathway', 'calcium ion transport', 'T cell receptor signaling pathway', 'negative regulation of extrinsic apoptotic signaling pathway in absence of ligand', 'forebrain development', 'negative regulation of gene expression', 'regulation of cell shape', 'cell differentiation']"
+MAPK1,"['axon guidance', 'positive regulation of transcription, DNA-templated', 'chemical synaptic transmission', 'cellular response to DNA damage stimulus', 'cellular response to granulocyte macrophage colony-stimulating factor stimulus', 'positive regulation of cell proliferation', 'Fc-epsilon receptor signaling pathway', 'MAPK cascade', 'chemotaxis', 'T cell receptor signaling pathway', 'learning or memory', 'apoptotic process', 'positive regulation of gene expression', 'regulation of gene expression', 'transcription, DNA-templated', 'ERK1 and ERK2 cascade', 'regulation of protein stability', 'regulation of ossification']"
+JAK2,"['positive regulation of phosphatidylinositol 3-kinase signaling', 'mesoderm development', 'positive regulation of DNA-binding transcription factor activity', 'intrinsic apoptotic signaling pathway in response to oxidative stress', 'positive regulation of nitric oxide biosynthetic process', 'negative regulation of cell proliferation', 'blood coagulation', 'MAPK cascade', 'cytokine-mediated signaling pathway', 'interleukin-6-mediated signaling pathway', 'positive regulation of peptidyl-tyrosine phosphorylation', 'positive regulation of DNA binding', 'apoptotic process', 'positive regulation of cell differentiation', 'cell differentiation']"
+BMPR1A,"['transforming growth factor beta receptor signaling pathway', 'embryonic digit morphogenesis', 'immune response', 'in utero embryonic development', 'BMP signaling pathway', 'positive regulation of mesenchymal cell proliferation', 'Mullerian duct regression', 'odontogenesis of dentin-containing tooth', 'ectoderm development', 'positive regulation of transcription by RNA polymerase II', 'lung development']"
+PRKAA2,"['cell cycle arrest', 'energy homeostasis', 'Wnt signaling pathway', 'positive regulation of macroautophagy', 'positive regulation of autophagy', 'negative regulation of gene expression', 'glucose homeostasis', 'transcription, DNA-templated', 'regulation of transcription, DNA-templated', 'negative regulation of apoptotic process']"
+FLT3,"['positive regulation of phosphatidylinositol 3-kinase signaling', 'regulation of apoptotic process', 'positive regulation of MAP kinase activity', 'positive regulation of cell proliferation', 'MAPK cascade', 'negative regulation of signal transduction', 'cytokine-mediated signaling pathway', 'negative regulation of apoptotic process', 'cell differentiation']"
+ZAP70,"['immune response', 'T cell receptor signaling pathway']"
+PDK3,[]
+MYO3A,['sensory perception of sound']
+CDK3,"['cell proliferation', 'cellular response to DNA damage stimulus']"
+CDK13,"['multicellular organism development', 'positive regulation of cell proliferation', 'positive regulation of transcription by RNA polymerase II']"
+PLK2,"['negative regulation of angiogenesis', 'positive regulation of protein binding', 'positive regulation of I-kappaB kinase/NF-kappaB signaling', 'long-term synaptic depression', 'positive regulation of autophagy', 'negative regulation of apoptotic process']"
+MAP2K3,"['inflammatory response', 'positive regulation of transcription, DNA-templated']"
+TAOK3,"['DNA repair', 'cellular response to DNA damage stimulus', 'negative regulation of JNK cascade', 'negative regulation of protein kinase activity', 'MAPK cascade']"
+ULK1,"['protein localization', 'negative regulation of protein complex assembly', 'neuron projection development']"
+MET,"['branching morphogenesis of an epithelial tube', 'Wnt signaling pathway', 'positive regulation of protein kinase B signaling', 'cell proliferation', 'negative regulation of Rho protein signal transduction', 'positive regulation of transcription by RNA polymerase II', 'establishment of skin barrier', 'MAPK cascade', 'negative regulation of signal transduction', 'cell surface receptor signaling pathway', 'negative regulation of apoptotic process', 'cell differentiation']"
+MARK3,"['positive regulation of protein binding', 'MAPK cascade']"
+BTK,"['mesoderm development', 'Fc-epsilon receptor signaling pathway', 'apoptotic signaling pathway', 'positive regulation of NF-kappaB transcription factor activity', 'MyD88-dependent toll-like receptor signaling pathway', 'negative regulation of B cell proliferation', 'T cell receptor signaling pathway', 'transcription, DNA-templated', 'cell maturation', 'positive regulation of B cell differentiation']"
+CDK19,['positive regulation of apoptotic process']
+MAP2K7,"['activation of JUN kinase activity', 'response to heat', 'apoptotic process', 'response to osmotic stress']"
+MAPK11,"['transcription, DNA-templated', 'regulation of transcription, DNA-templated', 'positive regulation of gene expression', 'regulation of gene expression', 'positive regulation of muscle cell differentiation']"
+PRKCE,"['regulation of insulin secretion involved in cellular response to glucose stimulus', 'apoptotic process', 'response to morphine', 'positive regulation of I-kappaB kinase/NF-kappaB signaling', 'cell adhesion', 'regulation of release of sequestered calcium ion into cytosol']"
+VRK3,[]
+TIE1,"['negative regulation of angiogenesis', 'mesoderm development', 'response to retinoic acid', 'negative regulation of signal transduction', 'angiogenesis', 'in utero embryonic development', 'negative regulation of apoptotic process', 'cell differentiation', 'negative regulation of cell migration']"
+MAPK6,"['positive regulation of dendritic spine development', 'MAPK cascade', 'regulation of gene expression']"
+WNK3,['negative regulation of apoptotic process']
+MAPKAPK3,"['MAPK cascade', 'vascular endothelial growth factor receptor signaling pathway']"
+AAK1,"['endocytosis', 'protein stabilization']"
+UHMK1,"['cell cycle arrest', 'neuron projection development']"
+CSF1R,"['positive regulation of protein tyrosine kinase activity', 'axon guidance', 'inflammatory response', 'regulation of actin cytoskeleton reorganization', 'cell proliferation', 'regulation of cell shape', 'multicellular organism development', 'negative regulation of cell proliferation', 'positive regulation of cell proliferation', 'negative regulation of signal transduction', 'cytokine-mediated signaling pathway', 'negative regulation of apoptotic process', 'positive regulation of protein phosphorylation', 'cell differentiation']"
+WNK2,['negative regulation of cell proliferation']
+STK35,[]
+TTN,"['muscle contraction', 'positive regulation of protein secretion', 'positive regulation of gene expression']"
+CHKA,['lipid metabolic process']
+WEE1,[]
+NRBP1,[]
+MLKL,"['activation of JUN kinase activity', 'cell surface receptor signaling pathway', 'MAPK cascade', 'protein homotrimerization']"
+DCLK2,[]
+AGK,['ceramide biosynthetic process']
+TGFBR1,"['cell cycle arrest', 'male gonad development', 'transforming growth factor beta receptor signaling pathway', 'anterior/posterior pattern specification', 'activin receptor signaling pathway', 'wound healing', 'skeletal system development', 'in utero embryonic development', 'kidney development', 'positive regulation of transcription, DNA-templated', 'apoptotic process', 'positive regulation of gene expression', 'positive regulation of protein kinase B signaling', 'positive regulation of cell proliferation', 'heart development', 'regulation of transcription, DNA-templated', 'negative regulation of extrinsic apoptotic signaling pathway', 'positive regulation of endothelial cell proliferation', 'collagen fibril organization', 'negative regulation of transforming growth factor beta receptor signaling pathway', 'positive regulation of apoptotic signaling pathway']"
+SRPK1,"['chromosome segregation', 'negative regulation of viral genome replication', 'regulation of gene expression']"
+DMPK,['regulation of heart contraction']
+ACVR1C,"['transforming growth factor beta receptor signaling pathway', 'activin receptor signaling pathway', 'positive regulation of cysteine-type endopeptidase activity involved in apoptotic process', 'cell differentiation']"
+MAPK12,"['cell cycle arrest', 'transcription, DNA-templated', 'myoblast differentiation', 'regulation of transcription, DNA-templated', 'DNA damage induced protein phosphorylation', 'muscle organ development', 'MAPK cascade', 'regulation of gene expression', 'positive regulation of muscle cell differentiation']"
+PRKX,"['cell adhesion', 'angiogenesis', 'cell-substrate adhesion']"
+PINK1,"['positive regulation of DNA-binding transcription factor activity', 'positive regulation of macroautophagy', 'positive regulation of protein kinase B signaling', 'positive regulation of I-kappaB kinase/NF-kappaB signaling', 'mitochondrion organization', 'positive regulation of protein phosphorylation', 'negative regulation of gene expression', 'protein ubiquitination', 'negative regulation of intrinsic apoptotic signaling pathway in response to hydrogen peroxide', 'negative regulation of JNK cascade', 'ubiquitin-dependent protein catabolic process', 'protein stabilization']"
+STK36,['cilium assembly']
+CLK4,[]
+EPHB3,"['axon guidance', 'negative regulation of signal transduction', 'angiogenesis', 'cell migration', 'negative regulation of apoptotic process', 'cell differentiation']"
+MAP3K1,"['Fc-epsilon receptor signaling pathway', 'MAPK cascade', 'MyD88-dependent toll-like receptor signaling pathway']"
+PRKCG,"['learning or memory', 'response to pain', 'chemical synaptic transmission', 'response to morphine']"
+ACVRL1,"['transforming growth factor beta receptor signaling pathway', 'positive regulation of angiogenesis', 'activin receptor signaling pathway', 'response to hypoxia', 'in utero embryonic development', 'negative regulation of cell growth', 'positive regulation of transcription, DNA-templated', 'BMP signaling pathway', 'negative regulation of gene expression', 'negative regulation of cell migration', 'negative regulation of cell proliferation', 'positive regulation of transcription by RNA polymerase II', 'angiogenesis', 'regulation of transcription, DNA-templated', 'blood circulation', 'regulation of blood pressure', 'positive regulation of endothelial cell proliferation']"
+CDKL3,"['negative regulation of axon extension', 'cellular protein modification process', 'regulation of cell cycle']"
+MARK4,['nervous system development']
+PTK6,"['negative regulation of signal transduction', 'cell migration', 'cellular response to retinoic acid', 'cell differentiation']"
+NME7,[]
 PIK3CG,"['inflammatory response', 'endocytosis', 'positive regulation of protein kinase B signaling', 'positive regulation of MAP kinase activity', 'angiogenesis', 'cell migration']"
 SNRK,[]
-KALRN,"['nervous system development', 'adult locomotory behavior', 'neuromuscular junction development', 'Rho protein signal transduction', 'positive regulation of apoptotic process']"
-MARK2,['Wnt signaling pathway']
-STK24,"['MAPK cascade', 'intrinsic apoptotic signaling pathway in response to oxidative stress', 'response to hydrogen peroxide', 'negative regulation of cell migration']"
-NEK2,"['chromosome segregation', 'centrosome separation']"
-CDK18,['regulation of cell cycle']
-MAP2K7,"['activation of JUN kinase activity', 'response to heat', 'apoptotic process', 'response to osmotic stress']"
-COQ8A,[]
-MAP3K8,['interleukin-1-mediated signaling pathway']
-ERBB3,"['positive regulation of phosphatidylinositol 3-kinase signaling', 'positive regulation of protein tyrosine kinase activity', 'wound healing', 'positive regulation of calcineurin-NFAT signaling cascade', 'neuron apoptotic process', 'Schwann cell differentiation', 'positive regulation of gene expression', 'positive regulation of protein kinase B signaling', 'MAPK cascade', 'heart development', 'negative regulation of signal transduction', 'regulation of cell proliferation', 'negative regulation of apoptotic process', 'cell differentiation']"
-MAPK3,"['axon guidance', 'BMP signaling pathway', 'apoptotic process', 'DNA damage induced protein phosphorylation', 'positive regulation of gene expression', 'regulation of gene expression', 'Fc-epsilon receptor signaling pathway', 'positive regulation of transcription by RNA polymerase II', 'MAPK cascade', 'ERK1 and ERK2 cascade', 'positive regulation of protein phosphorylation', 'interleukin-1-mediated signaling pathway', 'regulation of ossification']"
-CAMK2B,['MAPK cascade']
-PIK3CD,"['axon guidance', 'inflammatory response', 'negative regulation of gene expression', 'positive regulation of gene expression', 'positive regulation of protein kinase B signaling', 'cytokine-mediated signaling pathway', 'cell migration', 'T cell receptor signaling pathway', 'natural killer cell differentiation']"
-ADK,[]
-PRKCG,"['learning or memory', 'response to pain', 'chemical synaptic transmission', 'response to morphine']"
-FYN,"['positive regulation of phosphatidylinositol 3-kinase signaling', 'axon guidance', 'response to hydrogen peroxide', 'vascular endothelial growth factor receptor signaling pathway', 'detection of mechanical stimulus involved in sensory perception of pain', 'positive regulation of protein kinase B signaling', 'positive regulation of I-kappaB kinase/NF-kappaB signaling', 'blood coagulation', 'dendrite morphogenesis', 'MAPK cascade', 'cytokine-mediated signaling pathway', 'calcium ion transport', 'T cell receptor signaling pathway', 'negative regulation of extrinsic apoptotic signaling pathway in absence of ligand', 'forebrain development', 'negative regulation of gene expression', 'regulation of cell shape', 'cell differentiation']"
-ABL1,"['negative regulation of mitotic cell cycle', 'intrinsic apoptotic signaling pathway in response to DNA damage', 'positive regulation of substrate adhesion-dependent cell spreading', 'cellular response to DNA damage stimulus', 'DNA damage induced protein phosphorylation', 'regulation of actin cytoskeleton reorganization', 'positive regulation of I-kappaB kinase/NF-kappaB signaling', 'negative regulation of I-kappaB kinase/NF-kappaB signaling', 'positive regulation of peptidyl-tyrosine phosphorylation', 'positive regulation of muscle cell differentiation', 'negative regulation of BMP signaling pathway', 'positive regulation of protein phosphorylation', 'cell cycle arrest', 'epidermal growth factor receptor signaling pathway', 'negative regulation of ubiquitin-protein transferase activity', 'cellular protein modification process', 'regulation of transcription, DNA-templated', 'regulation of cell proliferation', 'positive regulation of apoptotic process', 'cell differentiation', 'actin cytoskeleton organization']"
-TSSK1B,"['multicellular organism development', 'spermatid development']"
-PDK1,"['cell proliferation', 'intrinsic apoptotic signaling pathway in response to oxidative stress']"
-STK35,[]
-PKM,"['cellular response to insulin stimulus', 'response to hypoxia', 'protein homotetramerization', 'canonical glycolysis', 'programmed cell death']"
-ARAF,"['cellular protein modification process', 'MAPK cascade', 'negative regulation of apoptotic process']"
-CDK14,"['Wnt signaling pathway', 'regulation of cell cycle']"
-IKBKB,"['Fc-epsilon receptor signaling pathway', 'positive regulation of I-kappaB kinase/NF-kappaB signaling', 'positive regulation of transcription by RNA polymerase II', 'positive regulation of NF-kappaB transcription factor activity', 'inflammatory response', 'MyD88-independent toll-like receptor signaling pathway', 'positive regulation of transcription, DNA-templated', 'T cell receptor signaling pathway', 'negative regulation of apoptotic process', 'interleukin-1-mediated signaling pathway']"
-KIT,"['positive regulation of phosphatidylinositol 3-kinase signaling', 'male gonad development', 'negative regulation of programmed cell death', 'positive regulation of DNA-binding transcription factor activity', 'inflammatory response', 'positive regulation of protein kinase B signaling', 'positive regulation of cell proliferation', 'MAPK cascade', 'cytokine-mediated signaling pathway', 'ovarian follicle development', 'visual learning', 'positive regulation of gene expression', 'regulation of cell shape', 'negative regulation of signal transduction', 'actin cytoskeleton reorganization', 'spermatid development', 'spermatogenesis', 'regulation of cell proliferation', 'regulation of transcription by RNA polymerase II', 'negative regulation of apoptotic process', 'cell differentiation', 'lamellipodium assembly']"
-KHK,[]
-WNK1,[]
-BRD2,"['transcription, DNA-templated', 'spermatogenesis', 'regulation of transcription by RNA polymerase II']"
-PFKM,"['positive regulation of transcription by RNA polymerase II', 'canonical glycolysis', 'glucose homeostasis', 'protein complex oligomerization']"
-HUNK,['multicellular organism development']
-STK36,['cilium assembly']
-PIP4K2A,[]
-STRADB,"['cell cycle arrest', 'negative regulation of extrinsic apoptotic signaling pathway in absence of ligand', 'cell morphogenesis', 'MAPK cascade']"
-IRAK3,"['positive regulation of NF-kappaB transcription factor activity', 'MyD88-dependent toll-like receptor signaling pathway', 'cytokine-mediated signaling pathway', 'negative regulation of toll-like receptor signaling pathway', 'interleukin-1-mediated signaling pathway']"
-GRK1,['rhodopsin mediated signaling pathway']
-PKN3,['epithelial cell migration']
-MAP4K4,"['MAPK cascade', 'negative regulation of apoptotic process']"
-MAST1,[]
-HIPK2,"['positive regulation of protein binding', 'transforming growth factor beta receptor signaling pathway', 'anterior/posterior pattern specification', 'positive regulation of DNA binding', 'positive regulation of DNA-binding transcription factor activity', 'positive regulation of angiogenesis', 'positive regulation of transcription, DNA-templated', 'regulation of cell cycle', 'neuron differentiation', 'smoothened signaling pathway', 'PML body organization', 'positive regulation of cell proliferation', 'intrinsic apoptotic signaling pathway', 'positive regulation of transcription by RNA polymerase II', 'negative regulation of transcription by RNA polymerase II', 'transcription, DNA-templated', 'negative regulation of BMP signaling pathway', 'positive regulation of transforming growth factor beta receptor signaling pathway']"
-TP53RK,[]
-IKBKE,"['positive regulation of I-kappaB kinase/NF-kappaB signaling', 'immune response', 'response to type I interferon', 'protein homooligomerization', 'intrinsic apoptotic signaling pathway in response to DNA damage']"
-PRKAA1,"['cell cycle arrest', 'response to hypoxia', 'energy homeostasis', 'Wnt signaling pathway', 'positive regulation of autophagy', 'negative regulation of gene expression', 'positive regulation of gene expression', 'glucose homeostasis', 'positive regulation of cell proliferation', 'transcription, DNA-templated', 'negative regulation of apoptotic process']"
-TRIB2,['negative regulation of protein kinase activity']
-PIM1,"['cell proliferation', 'multicellular organism development', 'cytokine-mediated signaling pathway', 'apoptotic process', 'negative regulation of DNA-binding transcription factor activity', 'negative regulation of apoptotic process']"
-PIK3CA,"['epidermal growth factor receptor signaling pathway', 'axon guidance', 'energy homeostasis', 'vascular endothelial growth factor receptor signaling pathway', 'regulation of gene expression', 'positive regulation of protein kinase B signaling', 'Fc-epsilon receptor signaling pathway', 'angiogenesis', 'cytokine-mediated signaling pathway', 'cell migration', 'T cell receptor signaling pathway']"
-MAP3K3,"['positive regulation of I-kappaB kinase/NF-kappaB signaling', 'MAPK cascade', 'interleukin-1-mediated signaling pathway']"
-TRIB1,"['negative regulation of DNA-binding transcription factor activity', 'negative regulation of protein kinase activity', 'negative regulation of lipopolysaccharide-mediated signaling pathway']"
-PINK1,"['positive regulation of DNA-binding transcription factor activity', 'positive regulation of macroautophagy', 'positive regulation of protein kinase B signaling', 'positive regulation of I-kappaB kinase/NF-kappaB signaling', 'mitochondrion organization', 'positive regulation of protein phosphorylation', 'negative regulation of gene expression', 'protein ubiquitination', 'negative regulation of intrinsic apoptotic signaling pathway in response to hydrogen peroxide', 'negative regulation of JNK cascade', 'ubiquitin-dependent protein catabolic process', 'protein stabilization']"
-PRKAA2,"['cell cycle arrest', 'energy homeostasis', 'Wnt signaling pathway', 'positive regulation of macroautophagy', 'positive regulation of autophagy', 'negative regulation of gene expression', 'glucose homeostasis', 'transcription, DNA-templated', 'regulation of transcription, DNA-templated', 'negative regulation of apoptotic process']"
-KDR,"['positive regulation of phosphatidylinositol 3-kinase signaling', 'positive regulation of angiogenesis', 'positive regulation of macroautophagy', 'negative regulation of gene expression', 'vascular endothelial growth factor receptor signaling pathway', 'regulation of cell shape', 'positive regulation of cell proliferation', 'negative regulation of signal transduction', 'angiogenesis', 'ERK1 and ERK2 cascade', 'negative regulation of apoptotic process', 'positive regulation of protein phosphorylation', 'extracellular matrix organization', 'cell differentiation', 'positive regulation of endothelial cell proliferation']"
-CSNK2A2,"['apoptotic process', 'Wnt signaling pathway', 'transcription, DNA-templated', 'spermatogenesis', 'regulation of transcription, DNA-templated', 'negative regulation of apoptotic signaling pathway']"
-CDK20,['multicellular organism development']
-EPHA8,"['axon guidance', 'cell adhesion', 'negative regulation of signal transduction', 'neuron projection development', 'negative regulation of apoptotic process', 'cell differentiation']"
-MAK,"['multicellular organism development', 'cilium assembly', 'transcription, DNA-templated', 'spermatogenesis', 'regulation of transcription, DNA-templated', 'cell differentiation', 'regulation of gene expression']"
-CAMK2D,"['protein complex oligomerization', 'MAPK cascade', 'regulation of heart contraction', 'regulation of transcription by RNA polymerase II']"
-PGK2,"['myoblast fusion', 'chemical synaptic transmission', 'flagellated sperm motility']"
-AK2,['nucleobase-containing small molecule interconversion']
-CAMK2G,"['insulin secretion', 'MAPK cascade', 'protein complex oligomerization']"
-PAK3,"['regulation of MAPK cascade', 'positive regulation of neuron apoptotic process', 'MAPK cascade', 'T cell receptor signaling pathway']"
-UHMK1,"['cell cycle arrest', 'neuron projection development']"
-CDC7,['positive regulation of cell proliferation']
-WNK3,['negative regulation of apoptotic process']
-MKNK2,['cell surface receptor signaling pathway']
-MAPK10,"['Fc-epsilon receptor signaling pathway', 'regulation of gene expression']"
-CIT,['neuron apoptotic process']
-DYRK2,"['smoothened signaling pathway', 'cellular response to DNA damage stimulus', 'negative regulation of calcineurin-NFAT signaling cascade']"
-MAP3K13,"['activation of JUN kinase activity', 'positive regulation of NF-kappaB transcription factor activity', 'MAPK cascade']"
-PKN2,"['cell adhesion', 'apoptotic process', 'epithelial cell migration', 'transcription, DNA-templated', 'regulation of transcription, DNA-templated']"
-PRKCQ,"['Fc-epsilon receptor signaling pathway', 'axon guidance', 'positive regulation of NF-kappaB transcription factor activity', 'inflammatory response', 'T cell receptor signaling pathway', 'regulation of transcription, DNA-templated', 'positive regulation of T cell proliferation', 'negative regulation of insulin receptor signaling pathway']"
-CSNK1E,"['DNA repair', 'negative regulation of protein binding', 'canonical Wnt signaling pathway', 'endocytosis']"
-TSSK4,"['multicellular organism development', 'spermatogenesis', 'cell differentiation']"
-ULK2,[]
-PIP4K2C,[]
-MAP3K20,"['cell cycle arrest', 'cell proliferation', 'activation of JUN kinase activity', 'embryonic digit morphogenesis', 'positive regulation of apoptotic process', 'cell differentiation']"
-AAK1,"['endocytosis', 'protein stabilization']"
-IPMK,[]
-ULK1,"['protein localization', 'negative regulation of protein complex assembly', 'neuron projection development']"
-CAMK2A,"['positive regulation of NF-kappaB transcription factor activity', 'dendrite morphogenesis', 'MAPK cascade', 'calcium ion transport']"
-MINK1,"['multicellular organism development', 'dendrite morphogenesis', 'MAPK cascade', 'actin cytoskeleton reorganization', 'chemical synaptic transmission']"
-PPIP5K1,[]
-PIK3CB,"['axon guidance', 'positive regulation of autophagy', 'vascular endothelial growth factor receptor signaling pathway', 'positive regulation of gene expression', 'positive regulation of protein kinase B signaling', 'Fc-epsilon receptor signaling pathway', 'homophilic cell adhesion via plasma membrane adhesion molecules', 'chemotaxis', 'cytokine-mediated signaling pathway', 'cell migration', 'T cell receptor signaling pathway', 'angiogenesis involved in wound healing']"
-FLT1,"['positive regulation of MAP kinase activity', 'positive regulation of phosphatidylinositol 3-kinase signaling', 'positive regulation of cell proliferation', 'positive regulation of angiogenesis', 'negative regulation of signal transduction', 'angiogenesis', 'cell migration', 'vascular endothelial growth factor receptor signaling pathway', 'negative regulation of apoptotic process', 'cell differentiation']"
-FLT3,"['positive regulation of phosphatidylinositol 3-kinase signaling', 'regulation of apoptotic process', 'positive regulation of MAP kinase activity', 'positive regulation of cell proliferation', 'MAPK cascade', 'negative regulation of signal transduction', 'cytokine-mediated signaling pathway', 'negative regulation of apoptotic process', 'cell differentiation']"
-ALK,"['cell proliferation', 'positive regulation of NF-kappaB transcription factor activity', 'negative regulation of signal transduction', 'regulation of apoptotic process', 'regulation of cell proliferation', 'negative regulation of apoptotic process', 'cell differentiation']"
-HK2,"['positive regulation of angiogenesis', 'apoptotic mitochondrial changes', 'canonical glycolysis']"
-EIF2AK2,"['negative regulation of cell proliferation', 'positive regulation of NIK/NF-kappaB signaling', 'positive regulation of NF-kappaB transcription factor activity', 'defense response to virus', 'negative regulation of translation', 'negative regulation of viral genome replication', 'transcription, DNA-templated', 'translation', 'negative regulation of apoptotic process']"
-MAP4K2,"['activation of JUN kinase activity', 'immune response']"
-MAPKAPK3,"['MAPK cascade', 'vascular endothelial growth factor receptor signaling pathway']"
-PEAK1,['cell migration']
-TAOK2,"['regulation of cell shape', 'apoptotic process', 'cell migration', 'cellular response to DNA damage stimulus', 'actin cytoskeleton organization']"
-CDK9,"['DNA repair', 'transcription by RNA polymerase II', 'cell proliferation', 'positive regulation of transcription by RNA polymerase II', 'response to drug']"
-SGK1,"['sodium ion transport', 'apoptotic process', 'regulation of apoptotic process', 'cellular response to DNA damage stimulus', 'regulation of blood pressure', 'regulation of cell proliferation']"
-MAP3K11,"['cell proliferation', 'activation of JUN kinase activity', 'positive regulation of neuron apoptotic process', 'MAPK cascade', 'positive regulation of apoptotic process']"
-PKN1,"['activation of JUN kinase activity', 'negative regulation of protein kinase activity', 'negative regulation of B cell proliferation', 'epithelial cell migration', 'transcription, DNA-templated', 'regulation of transcription by RNA polymerase II']"
-MAP3K2,"['activation of JUN kinase activity', 'positive regulation of transcription, DNA-templated']"
-ROS1,"['cell proliferation', 'negative regulation of signal transduction', 'spermatogenesis', 'negative regulation of gene expression', 'negative regulation of apoptotic process', 'cell differentiation']"
-CAMK1,"['positive regulation of syncytium formation by plasma membrane fusion', 'positive regulation of transcription by RNA polymerase II', 'negative regulation of protein binding', 'positive regulation of muscle cell differentiation', 'positive regulation of protein export from nucleus', 'positive regulation of dendritic spine development']"
-TRIO,['positive regulation of apoptotic process']
-DDR1,"['negative regulation of cell proliferation', 'cell adhesion', 'negative regulation of signal transduction', 'negative regulation of apoptotic process', 'extracellular matrix organization', 'cell differentiation']"
-EIF2AK4,"['cell cycle arrest', 'negative regulation of translational initiation', 'negative regulation of neuron differentiation', 'defense response to virus', 'negative regulation by host of viral genome replication', 'positive regulation of defense response to virus by host']"
-ROCK2,"['negative regulation of angiogenesis', 'Rho protein signal transduction', 'vascular endothelial growth factor receptor signaling pathway', 'centrosome duplication', 'positive regulation of gene expression', 'positive regulation of protein phosphorylation']"
-PPIP5K2,[]
-MAPK11,"['transcription, DNA-templated', 'regulation of transcription, DNA-templated', 'positive regulation of gene expression', 'regulation of gene expression', 'positive regulation of muscle cell differentiation']"
-CDK15,['regulation of cell cycle']
-OXSR1,[]
-MAP3K10,"['smoothened signaling pathway', 'activation of JUN kinase activity', 'negative regulation of DNA-binding transcription factor activity', 'MAPK cascade', 'negative regulation of transcription, DNA-templated', 'apoptotic process', 'positive regulation of apoptotic process']"
-MAPK12,"['cell cycle arrest', 'transcription, DNA-templated', 'myoblast differentiation', 'regulation of transcription, DNA-templated', 'DNA damage induced protein phosphorylation', 'muscle organ development', 'MAPK cascade', 'regulation of gene expression', 'positive regulation of muscle cell differentiation']"
-TBK1,"['positive regulation of I-kappaB kinase/NF-kappaB signaling', 'positive regulation of transcription by RNA polymerase II', 'inflammatory response', 'defense response to virus', 'positive regulation of macroautophagy', 'negative regulation of gene expression']"
-PDGFRA,"['positive regulation of phosphatidylinositol 3-kinase signaling', 'wound healing', 'regulation of actin cytoskeleton reorganization', 'positive regulation of protein kinase B signaling', 'positive regulation of cell proliferation', 'MAPK cascade', 'negative regulation of signal transduction', 'negative regulation of apoptotic process', 'cell differentiation']"
-PAK6,"['regulation of MAPK cascade', 'regulation of transcription, DNA-templated', 'apoptotic process']"
-MOS,['MAPK cascade']
-PHKG1,[]
-CDK2,"['DNA repair', 'positive regulation of transcription, DNA-templated', 'centrosome duplication', 'positive regulation of cell proliferation', 'negative regulation of transcription by RNA polymerase II', 'potassium ion transport']"
-MAP3K6,['activation of JUN kinase activity']
-MAPK14,"['transmembrane receptor protein serine/threonine kinase signaling pathway', 'cartilage condensation', 'apoptotic process', 'cell morphogenesis', 'vascular endothelial growth factor receptor signaling pathway', 'positive regulation of gene expression', 'regulation of gene expression', 'positive regulation of myoblast differentiation', 'positive regulation of transcription by RNA polymerase II', 'chemotaxis', 'angiogenesis', 'positive regulation of myotube differentiation', 'myoblast differentiation involved in skeletal muscle regeneration', 'positive regulation of muscle cell differentiation', 'transcription, DNA-templated', 'cell surface receptor signaling pathway', 'regulation of transcription by RNA polymerase II', 'skeletal muscle tissue development', 'regulation of ossification']"
-RYK,"['axon guidance', 'neurogenesis', 'negative regulation of signal transduction', 'Wnt signaling pathway', 'canonical Wnt signaling pathway', 'commissural neuron axon guidance', 'neuron differentiation', 'neuron projection development', 'negative regulation of apoptotic process', 'cell differentiation']"
-TLK2,"['chromosome segregation', 'cellular response to DNA damage stimulus']"
-ACVR2A,"['mesoderm development', 'anterior/posterior pattern specification', 'transforming growth factor beta receptor signaling pathway', 'transmembrane receptor protein serine/threonine kinase signaling pathway', 'activin receptor signaling pathway', 'BMP signaling pathway', 'positive regulation of transcription by RNA polymerase II', 'spermatogenesis', 'determination of left/right symmetry', 'positive regulation of protein phosphorylation', 'regulation of BMP signaling pathway']"
-STK26,"['MAPK cascade', 'apoptotic process', 'regulation of apoptotic process', 'response to hydrogen peroxide', 'negative regulation of cell migration']"
-JAK1,"['MAPK cascade', 'cytokine-mediated signaling pathway', 'interleukin-6-mediated signaling pathway']"
-CDK17,['regulation of cell cycle']
-PAK4,"['cell proliferation', 'regulation of MAPK cascade', 'positive regulation of angiogenesis', 'apoptotic process', 'cell migration']"
-MAPK1,"['axon guidance', 'positive regulation of transcription, DNA-templated', 'chemical synaptic transmission', 'cellular response to DNA damage stimulus', 'cellular response to granulocyte macrophage colony-stimulating factor stimulus', 'positive regulation of cell proliferation', 'Fc-epsilon receptor signaling pathway', 'MAPK cascade', 'chemotaxis', 'T cell receptor signaling pathway', 'learning or memory', 'apoptotic process', 'positive regulation of gene expression', 'regulation of gene expression', 'transcription, DNA-templated', 'ERK1 and ERK2 cascade', 'regulation of protein stability', 'regulation of ossification']"
-MAP3K5,"['activation of JUN kinase activity', 'apoptotic signaling pathway', 'positive regulation of myoblast differentiation', 'MAPK cascade', 'wound healing', 'positive regulation of transcription, DNA-templated', 'intrinsic apoptotic signaling pathway in response to oxidative stress', 'positive regulation of cysteine-type endopeptidase activity involved in apoptotic process', 'positive regulation of apoptotic process']"
-MAST2,[]
-PRKACA,"['blood coagulation', 'regulation of osteoblast differentiation', 'cytokine-mediated signaling pathway', 'regulation of heart rate']"
-PDK4,['glucose homeostasis']
-RPS6KA1,"['positive regulation of cell differentiation', 'positive regulation of transcription by RNA polymerase II', 'negative regulation of apoptotic process', 'negative regulation of cysteine-type endopeptidase activity involved in apoptotic process', 'apoptotic process']"
-SRPK3,"['skeletal muscle tissue development', 'cell differentiation', 'regulation of gene expression']"
-TEX14,"['mitotic spindle assembly checkpoint', 'negative regulation of protein binding', 'attachment of spindle microtubules to kinetochore', 'mitotic sister chromatid separation']"
-PIKFYVE,"['retrograde transport, endosome to Golgi', 'protein localization to nucleus']"
-AURKB,"['negative regulation of protein binding', 'protein localization to kinetochore', 'cell proliferation', 'negative regulation of transcription by RNA polymerase II', 'spindle checkpoint', 'attachment of spindle microtubules to kinetochore']"
-PIK3C3,"['protein lipidation', 'endocytosis', 'protein processing']"
-FASTKD5,[]
-ACVRL1,"['transforming growth factor beta receptor signaling pathway', 'positive regulation of angiogenesis', 'activin receptor signaling pathway', 'response to hypoxia', 'in utero embryonic development', 'negative regulation of cell growth', 'positive regulation of transcription, DNA-templated', 'BMP signaling pathway', 'negative regulation of gene expression', 'negative regulation of cell migration', 'negative regulation of cell proliferation', 'positive regulation of transcription by RNA polymerase II', 'angiogenesis', 'regulation of transcription, DNA-templated', 'blood circulation', 'regulation of blood pressure', 'positive regulation of endothelial cell proliferation']"
-RAF1,"['wound healing', 'response to hypoxia', 'negative regulation of cysteine-type endopeptidase activity involved in apoptotic process', 'apoptotic process', 'negative regulation of extrinsic apoptotic signaling pathway via death domain receptors', 'regulation of apoptotic process', 'cell proliferation', 'negative regulation of cell proliferation', 'positive regulation of transcription by RNA polymerase II', 'MAPK cascade', 'heart development', 'negative regulation of protein complex assembly', 'negative regulation of apoptotic process', 'cell differentiation']"
-RET,"['retina development in camera-type eye', 'axon guidance', 'positive regulation of transcription, DNA-templated', 'embryonic epithelial tube formation', 'positive regulation of protein kinase B signaling', 'homophilic cell adhesion via plasma membrane adhesion molecules', 'response to pain', 'MAPK cascade', 'negative regulation of signal transduction', 'positive regulation of extrinsic apoptotic signaling pathway in absence of ligand', 'ureteric bud development', 'cellular response to retinoic acid', 'response to drug', 'negative regulation of apoptotic process', 'cell differentiation']"
-FGFR3,"['skeletal system development', 'negative regulation of developmental growth', 'cell-cell signaling', 'positive regulation of protein kinase B signaling', 'positive regulation of cell proliferation', 'MAPK cascade', 'negative regulation of signal transduction', 'negative regulation of apoptotic process', 'cell differentiation']"
-DSTYK,"['negative regulation of apoptotic process', 'positive regulation of kinase activity']"
-ATR,"['DNA repair', 'multicellular organism development', 'cellular response to DNA damage stimulus', 'response to drug']"
-FGFR1,"['positive regulation of phosphatidylinositol 3-kinase signaling', 'sensory perception of sound', 'midbrain development', 'skeletal system development', 'in utero embryonic development', 'positive regulation of mesenchymal cell proliferation', 'inner ear morphogenesis', 'positive regulation of protein kinase B signaling', 'positive regulation of MAP kinase activity', 'positive regulation of cell proliferation', 'negative regulation of transcription by RNA polymerase II', 'MAPK cascade', 'embryonic limb morphogenesis', 'negative regulation of signal transduction', 'angiogenesis', 'cell migration', 'transcription, DNA-templated', 'cell maturation', 'ureteric bud development', 'negative regulation of apoptotic process', 'cell differentiation']"
-EIF2AK1,"['iron ion homeostasis', 'negative regulation of cell proliferation']"
-SRPK1,"['chromosome segregation', 'negative regulation of viral genome replication', 'regulation of gene expression']"
-CDKL1,"['heart development', 'regulation of cell cycle']"
-CDK6,"['cell cycle arrest', 'negative regulation of cell proliferation', 'positive regulation of cell-matrix adhesion', 'regulation of gene expression']"
-PRKACB,['blood coagulation']
-STK31,[]
-SRC,"['positive regulation of phosphatidylinositol 3-kinase signaling', 'axon guidance', 'negative regulation of transcription, DNA-templated', 'positive regulation of transcription, DNA-templated', 'response to hydrogen peroxide', 'vascular endothelial growth factor receptor signaling pathway', 'positive regulation of protein kinase B signaling', 'cell proliferation', 'positive regulation of MAP kinase activity', 'positive regulation of peptidyl-tyrosine phosphorylation', 'negative regulation of extrinsic apoptotic signaling pathway', 'epidermal growth factor receptor signaling pathway', 'transforming growth factor beta receptor signaling pathway', 'forebrain development', 'negative regulation of cysteine-type endopeptidase activity involved in apoptotic process', 'cellular response to insulin stimulus', 'negative regulation of apoptotic process', 'positive regulation of apoptotic process', 'cell differentiation']"
-DDR2,"['cell adhesion', 'positive regulation of DNA-binding transcription factor activity', 'negative regulation of signal transduction', 'ossification', 'negative regulation of apoptotic process', 'extracellular matrix organization', 'cell differentiation', 'collagen fibril organization']"
-STK25,"['MAPK cascade', 'response to hydrogen peroxide']"
-CDK5,"['negative regulation of transcription, DNA-templated', 'neuron apoptotic process', 'excitatory postsynaptic potential', 'chemical synaptic transmission', 'receptor clustering', 'cell proliferation', 'motor neuron axon guidance', 'positive regulation of neuron apoptotic process', 'dendrite morphogenesis', 'oligodendrocyte differentiation', 'neuron projection development', 'mitochondrion organization', 'negative regulation of axon extension', 'skeletal muscle tissue development', 'positive regulation of protein binding', 'visual learning', 'intracellular protein transport', 'neuron differentiation', 'regulation of apoptotic process', 'cell-matrix adhesion']"
-RPS6KA4,"['regulation of transcription, DNA-templated', 'positive regulation of transcription by RNA polymerase II', 'positive regulation of NF-kappaB transcription factor activity', 'inflammatory response', 'interleukin-1-mediated signaling pathway']"
-MARK4,['nervous system development']
-PBK,[]
-COQ8B,[]
-TXK,"['transcription by RNA polymerase II', 'positive regulation of transcription by RNA polymerase II', 'regulation of transcription by RNA polymerase II', 'T cell receptor signaling pathway']"
-MAST4,[]
-MAST3,[]
-TSSK2,"['multicellular organism development', 'spermatid development']"
-ATM,"['cell cycle arrest', 'mitotic spindle assembly checkpoint', 'response to hypoxia', 'apoptotic process', 'regulation of apoptotic process', 'intrinsic apoptotic signaling pathway in response to DNA damage', 'cellular response to DNA damage stimulus', 'DNA damage induced protein phosphorylation', 'positive regulation of neuron apoptotic process', 'negative regulation of B cell proliferation', 'positive regulation of apoptotic process']"
-MAP3K7,"['transforming growth factor beta receptor signaling pathway', 'Fc-epsilon receptor signaling pathway', 'positive regulation of I-kappaB kinase/NF-kappaB signaling', 'positive regulation of NF-kappaB transcription factor activity', 'MyD88-dependent toll-like receptor signaling pathway', 'T cell receptor signaling pathway', 'positive regulation of macroautophagy', 'transcription, DNA-templated', 'interleukin-1-mediated signaling pathway']"
-PDIK1L,[]
-DAPK2,"['regulation of apoptotic process', 'apoptotic process']"
-RIPK4,['positive regulation of NF-kappaB transcription factor activity']
-PDK2,['glucose homeostasis']
-CDK19,['positive regulation of apoptotic process']
-EPHA2,"['negative regulation of angiogenesis', 'inflammatory response', 'skeletal system development', 'regulation of lamellipodium assembly', 'neuron differentiation', 'intrinsic apoptotic signaling pathway in response to DNA damage', 'negative regulation of protein kinase B signaling', 'viral entry into host cell', 'activation of GTPase activity', 'multicellular organism development', 'cell adhesion', 'negative regulation of signal transduction', 'osteoblast differentiation', 'cell migration', 'negative regulation of apoptotic process', 'cell differentiation']"
-MYLK2,"['skeletal muscle cell differentiation', 'positive regulation of gene expression']"
-MAPK8,"['negative regulation of protein binding', 'positive regulation of gene expression', 'regulation of gene expression', 'Fc-epsilon receptor signaling pathway', 'negative regulation of apoptotic process', 'positive regulation of apoptotic process']"
-INSRR,"['negative regulation of signal transduction', 'negative regulation of apoptotic process', 'glucose homeostasis', 'cell differentiation', 'actin cytoskeleton reorganization']"
-PRKACG,"['male gonad development', 'spermatogenesis', 'blood coagulation']"
-MTOR,"['positive regulation of dendritic spine development', 'positive regulation of protein kinase B signaling', 'positive regulation of nitric oxide biosynthetic process', 'positive regulation of peptidyl-tyrosine phosphorylation', 'negative regulation of protein phosphorylation', 'positive regulation of protein phosphorylation', 'positive regulation of endothelial cell proliferation', 'cell cycle arrest', 'visual learning', 'wound healing', 'negative regulation of calcineurin-NFAT signaling cascade', 'response to cocaine', 'response to morphine', 'positive regulation of gene expression', 'positive regulation of myotube differentiation']"
-CLK4,[]
-SYK,"['activation of JUN kinase activity', 'defense response to bacterium', 'positive regulation of B cell differentiation', 'animal organ morphogenesis', 'protein import into nucleus', 'cell proliferation', 'Fc-epsilon receptor signaling pathway', 'angiogenesis']"
-ACVR1,"['transforming growth factor beta receptor signaling pathway', 'activin receptor signaling pathway', 'in utero embryonic development', 'positive regulation of transcription, DNA-templated', 'BMP signaling pathway', 'negative regulation of activin receptor signaling pathway', 'positive regulation of transcription by RNA polymerase II', 'heart development', 'negative regulation of signal transduction', 'branching involved in blood vessel morphogenesis', 'determination of left/right symmetry', 'negative regulation of extrinsic apoptotic signaling pathway', 'regulation of ossification']"
-PRKD1,"['positive regulation of NF-kappaB transcription factor activity', 'positive regulation of angiogenesis', 'inflammatory response', 'apoptotic process', 'sphingolipid biosynthetic process', 'positive regulation of autophagy', 'vascular endothelial growth factor receptor signaling pathway', 'cell proliferation', 'positive regulation of I-kappaB kinase/NF-kappaB signaling', 'positive regulation of transcription by RNA polymerase II', 'angiogenesis', 'regulation of protein stability', 'positive regulation of endothelial cell proliferation']"
-MAP3K1,"['Fc-epsilon receptor signaling pathway', 'MAPK cascade', 'MyD88-dependent toll-like receptor signaling pathway']"
-GAK,[]
-PRKG2,[]
-CHKB,[]
-KSR2,[]
-CASK,"['cell adhesion', 'neurotransmitter secretion']"
-EPHB6,"['negative regulation of signal transduction', 'negative regulation of apoptotic process', 'cell differentiation']"
-PRKCD,"['negative regulation of protein binding', 'apoptotic process', 'intrinsic apoptotic signaling pathway in response to oxidative stress', 'defense response to bacterium', 'negative regulation of insulin receptor signaling pathway', 'negative regulation of actin filament polymerization', 'protein stabilization', 'positive regulation of apoptotic signaling pathway']"
-CAMK4,"['inflammatory response', 'positive regulation of transcription, DNA-templated']"
-NEK11,[]
-FER,"['positive regulation of NF-kappaB transcription factor activity', 'regulation of lamellipodium assembly', 'cell proliferation', 'positive regulation of cell proliferation', 'Fc-epsilon receptor signaling pathway', 'cell adhesion', 'cellular response to insulin stimulus', 'chemotaxis', 'cytokine-mediated signaling pathway', 'interleukin-6-mediated signaling pathway', 'actin cytoskeleton reorganization', 'regulation of cell proliferation']"
-YES1,"['cellular protein modification process', 'positive regulation of transcription by RNA polymerase II', 'positive regulation of peptidyl-tyrosine phosphorylation', 'cellular response to retinoic acid', 'cell differentiation']"
-VRK2,['regulation of MAPK cascade']
-CDKL5,"['regulation of cell cycle', 'positive regulation of dendritic spine development', 'positive regulation of axon extension']"
-NTRK1,"['axon guidance', 'positive regulation of NF-kappaB transcription factor activity', 'learning or memory', 'detection of mechanical stimulus involved in sensory perception of pain', 'negative regulation of cell proliferation', 'negative regulation of signal transduction', 'negative regulation of apoptotic process', 'positive regulation of protein phosphorylation', 'cell differentiation']"
-TIE1,"['negative regulation of angiogenesis', 'mesoderm development', 'response to retinoic acid', 'negative regulation of signal transduction', 'angiogenesis', 'in utero embryonic development', 'negative regulation of apoptotic process', 'cell differentiation', 'negative regulation of cell migration']"
-TAOK3,"['DNA repair', 'cellular response to DNA damage stimulus', 'negative regulation of JNK cascade', 'negative regulation of protein kinase activity', 'MAPK cascade']"
-CDK11B,"['cell proliferation', 'regulation of transcription, DNA-templated', 'apoptotic process']"
-FGR,"['regulation of cell shape', 'positive regulation of phosphatidylinositol 3-kinase signaling', 'cell differentiation']"
-FES,"['cell proliferation', 'regulation of cell shape', 'multicellular organism development', 'cell adhesion', 'chemotaxis', 'regulation of cell proliferation']"
-NEK10,['positive regulation of MAP kinase activity']
-DAPK3,"['regulation of cell shape', 'apoptotic signaling pathway', 'apoptotic process', 'negative regulation of translation', 'positive regulation of extrinsic apoptotic signaling pathway in absence of ligand', 'transcription, DNA-templated', 'neuron differentiation', 'regulation of apoptotic process', 'positive regulation of apoptotic process', 'cellular response to interferon-gamma', 'regulation of actin cytoskeleton reorganization']"
-PRKD2,"['positive regulation of DNA-binding transcription factor activity', 'positive regulation of NF-kappaB transcription factor activity', 'positive regulation of angiogenesis', 'sphingolipid biosynthetic process', 'vascular endothelial growth factor receptor signaling pathway', 'cell adhesion', 'positive regulation of transcription by RNA polymerase II', 'angiogenesis', 'T cell receptor signaling pathway', 'positive regulation of endothelial cell proliferation']"
-OBSCN,"['multicellular organism development', 'positive regulation of apoptotic process']"
-AKT3,['positive regulation of endothelial cell proliferation']
-NTRK3,"['positive regulation of phosphatidylinositol 3-kinase signaling', 'positive regulation of gene expression', 'activation of GTPase activity', 'positive regulation of cell proliferation', 'heart development', 'negative regulation of signal transduction', 'cellular response to retinoic acid', 'negative regulation of protein phosphorylation', 'negative regulation of apoptotic process', 'positive regulation of protein phosphorylation', 'positive regulation of apoptotic process', 'cell differentiation']"
-PRKG1,"['forebrain development', 'actin cytoskeleton organization']"
-WEE2,[]
-PRKCI,"['positive regulation of NF-kappaB transcription factor activity', 'cellular response to insulin stimulus', 'cell migration', 'negative regulation of apoptotic process']"
-PRKY,[]
-BMX,"['mesoderm development', 'cell adhesion', 'apoptotic process']"
-TRIM28,"['DNA repair', 'protein sumoylation', 'positive regulation of DNA binding', 'negative regulation of transcription by RNA polymerase II', 'negative regulation of transcription, DNA-templated', 'positive regulation of transcription, DNA-templated', 'protein complex oligomerization', 'protein ubiquitination']"
-AGK,['ceramide biosynthetic process']
-LIMK2,"['spermatogenesis', 'actin cytoskeleton organization']"
-MASTL,"['cellular response to DNA damage stimulus', 'regulation of cell cycle']"
-RPS6KA5,"['epidermal growth factor receptor signaling pathway', 'axon guidance', 'positive regulation of transcription by RNA polymerase II', 'positive regulation of NF-kappaB transcription factor activity', 'inflammatory response', 'negative regulation of transcription, DNA-templated', 'regulation of transcription, DNA-templated', 'interleukin-1-mediated signaling pathway']"
-NEK7,[]
-NEK1,"['cilium assembly', 'cellular response to DNA damage stimulus']"
-NEK9,[]
-CSNK1A1,"['Wnt signaling pathway', 'cell morphogenesis', 'cell surface receptor signaling pathway']"
-KSR1,"['regulation of cell proliferation', 'MAPK cascade']"
-MAP2K1,"['cell cycle arrest', 'positive regulation of transcription, DNA-templated', 'neuron differentiation', 'negative regulation of gene expression', 'positive regulation of gene expression', 'negative regulation of cell proliferation', 'MAPK cascade', 'chemotaxis', 'heart development', 'ERK1 and ERK2 cascade']"
-VRK1,[]
-HIPK3,"['regulation of transcription, DNA-templated', 'negative regulation of apoptotic process', 'apoptotic process']"
-PLK4,[]
-STK33,[]
-MARK1,['Wnt signaling pathway']
-GSK3B,"['positive regulation of protein binding', 'dopamine receptor signaling pathway', 'negative regulation of protein binding', 'negative regulation of calcineurin-NFAT signaling cascade', 'Wnt signaling pathway', 'excitatory postsynaptic potential', 'positive regulation of protein export from nucleus', 'positive regulation of cell-matrix adhesion', 'positive regulation of gene expression', 'negative regulation of protein complex assembly', 'canonical Wnt signaling pathway', 'neuron projection development', 'negative regulation of apoptotic process']"
-AATK,[]
-NLK,"['transforming growth factor beta receptor signaling pathway', 'MAPK cascade', 'transcription, DNA-templated', 'regulation of transcription, DNA-templated', 'regulation of gene expression', 'negative regulation of Wnt signaling pathway', 'protein stabilization']"
-MET,"['branching morphogenesis of an epithelial tube', 'Wnt signaling pathway', 'positive regulation of protein kinase B signaling', 'cell proliferation', 'negative regulation of Rho protein signal transduction', 'positive regulation of transcription by RNA polymerase II', 'establishment of skin barrier', 'MAPK cascade', 'negative regulation of signal transduction', 'cell surface receptor signaling pathway', 'negative regulation of apoptotic process', 'cell differentiation']"
-INSR,"['male gonad development', 'epidermis development', 'positive regulation of transcription, DNA-templated', 'glucose homeostasis', 'positive regulation of protein kinase B signaling', 'positive regulation of nitric oxide biosynthetic process', 'positive regulation of cell proliferation', 'cellular response to insulin stimulus', 'negative regulation of signal transduction', 'regulation of transcription, DNA-templated', 'negative regulation of apoptotic process', 'positive regulation of protein phosphorylation', 'cell differentiation']"
-TTBK1,"['negative regulation of protein binding', 'learning or memory', 'negative regulation of gene expression', 'positive regulation of gene expression']"
-PTK7,"['cell adhesion', 'wound healing', 'cell migration', 'actin cytoskeleton reorganization', 'cellular response to retinoic acid']"
-TRIM24,"['negative regulation of cell proliferation', 'transcription by RNA polymerase II', 'negative regulation of transcription, DNA-templated', 'positive regulation of transcription, DNA-templated', 'regulation of apoptotic process', 'regulation of protein stability', 'protein ubiquitination']"
-LRRK2,"['neuromuscular junction development', 'excitatory postsynaptic potential', 'regulation of membrane potential', 'positive regulation of MAP kinase activity', 'MAPK cascade', 'mitochondrion organization', 'negative regulation of protein phosphorylation', 'positive regulation of protein phosphorylation', 'positive regulation of protein binding', 'negative regulation of protein binding', 'endocytosis', 'positive regulation of autophagy', 'canonical Wnt signaling pathway', 'spermatogenesis']"
-NRK,"['negative regulation of cell proliferation', 'MAPK cascade', 'actin cytoskeleton reorganization']"
-PAK5,"['cell proliferation', 'regulation of MAPK cascade', 'locomotory behavior', 'apoptotic process', 'negative regulation of extrinsic apoptotic signaling pathway', 'cell migration']"
-CKM,[]
-CDK4,"['regulation of gene expression', 'positive regulation of cell proliferation', 'cellular response to insulin stimulus', 'response to drug', 'positive regulation of apoptotic process']"
-GSK3A,"['dopamine receptor signaling pathway', 'Wnt signaling pathway', 'excitatory postsynaptic potential', 'negative regulation of insulin receptor signaling pathway', 'positive regulation of gene expression', 'nervous system development', 'cellular response to insulin stimulus', 'negative regulation of glucose import']"
-MYLK3,[]
-MYLK,['muscle contraction']
-BMPR1B,"['retina development in camera-type eye', 'transforming growth factor beta receptor signaling pathway', 'positive regulation of transcription by RNA polymerase II', 'inflammatory response', 'skeletal system development', 'cartilage condensation', 'BMP signaling pathway', 'positive regulation of cell differentiation', 'limb morphogenesis']"
-CSNK1G2,"['endocytosis', 'sphingolipid biosynthetic process']"
-MERTK,"['retina development in camera-type eye', 'negative regulation of signal transduction', 'Wnt signaling pathway', 'spermatogenesis', 'cell-cell signaling', 'cell surface receptor signaling pathway', 'natural killer cell differentiation', 'negative regulation of apoptotic process', 'cell differentiation']"
-PTK2B,"['positive regulation of angiogenesis', 'response to hypoxia', 'response to osmotic stress', 'response to hydrogen peroxide', 'vascular endothelial growth factor receptor signaling pathway', 'positive regulation of cell-matrix adhesion', 'regulation of actin cytoskeleton reorganization', 'positive regulation of nitric oxide biosynthetic process', 'negative regulation of cell proliferation', 'positive regulation of cell proliferation', 'MAPK cascade', 'angiogenesis', 'positive regulation of peptidyl-tyrosine phosphorylation', 'neuron projection development', 'regulation of release of sequestered calcium ion into cytosol', 'cellular response to retinoic acid', 'epidermal growth factor receptor signaling pathway', 'sprouting angiogenesis', 'negative regulation of potassium ion transport', 'apoptotic process', 'long-term synaptic depression', 'response to cocaine', 'regulation of cell shape', 'activation of GTPase activity', 'cell surface receptor signaling pathway', 'regulation of cell proliferation', 'negative regulation of apoptotic process', 'chemokine-mediated signaling pathway', 'cell differentiation']"
-NUAK1,"['cell adhesion', 'cellular response to DNA damage stimulus', 'regulation of cell proliferation']"
-ADCK2,[]
-MAP4K3,[]
-AXL,"['inflammatory response', 'Wnt signaling pathway', 'vascular endothelial growth factor receptor signaling pathway', 'positive regulation of protein kinase B signaling', 'viral entry into host cell', 'negative regulation of signal transduction', 'spermatogenesis', 'cell maturation', 'natural killer cell differentiation', 'negative regulation of apoptotic process', 'cell differentiation']"
-CSNK2A1,"['positive regulation of cell proliferation', 'negative regulation of cysteine-type endopeptidase activity involved in apoptotic process', 'apoptotic process', 'Wnt signaling pathway', 'transcription, DNA-templated', 'regulation of transcription, DNA-templated', 'negative regulation of apoptotic signaling pathway']"
-NTRK2,"['positive regulation of phosphatidylinositol 3-kinase signaling', 'retina development in camera-type eye', 'neuromuscular junction development', 'neuron differentiation', 'retinal rod cell development', 'positive regulation of gene expression', 'positive regulation of cell proliferation', 'negative regulation of signal transduction', 'oligodendrocyte differentiation', 'negative regulation of apoptotic process', 'positive regulation of protein phosphorylation', 'cell differentiation']"
-LCK,"['cellular zinc ion homeostasis', 'positive regulation of protein kinase B signaling', 'T cell receptor signaling pathway', 'response to drug', 'cell differentiation']"
-PRKDC,"['intrinsic apoptotic signaling pathway in response to DNA damage', 'cellular response to DNA damage stimulus', 'protein ubiquitination', 'cell proliferation', 'cellular protein modification process', 'positive regulation of transcription by RNA polymerase II', 'cellular response to insulin stimulus', 'heart development', 'negative regulation of protein phosphorylation', 'negative regulation of apoptotic process', 'positive regulation of apoptotic process']"
-BMPR2,"['anterior/posterior pattern specification', 'transforming growth factor beta receptor signaling pathway', 'transcription by RNA polymerase II', 'transmembrane receptor protein serine/threonine kinase signaling pathway', 'activin receptor signaling pathway', 'negative regulation of cell growth', 'BMP signaling pathway', 'positive regulation of ossification', 'positive regulation of transcription by RNA polymerase II', 'regulation of cell proliferation', 'positive regulation of endothelial cell proliferation']"
-EPHA5,"['regulation of insulin secretion involved in cellular response to glucose stimulus', 'axon guidance', 'negative regulation of signal transduction', 'negative regulation of apoptotic process', 'cell differentiation']"
-IGF1R,"['positive regulation of cell proliferation', 'immune response', 'negative regulation of signal transduction', 'protein tetramerization', 'negative regulation of apoptotic process', 'glucose homeostasis', 'cell differentiation']"
-AURKA,"['negative regulation of protein binding', 'anterior/posterior axis specification', 'regulation of protein stability', 'negative regulation of apoptotic process']"
-MYO3A,['sensory perception of sound']
-PRKCZ,"['transforming growth factor beta receptor signaling pathway', 'positive regulation of NF-kappaB transcription factor activity', 'inflammatory response', 'negative regulation of insulin receptor signaling pathway', 'positive regulation of cell-matrix adhesion', 'positive regulation of cell proliferation', 'cellular response to insulin stimulus', 'negative regulation of protein complex assembly', 'cell migration', 'negative regulation of apoptotic process']"
-DYRK3,"['negative regulation of DNA damage response, signal transduction by p53 class mediator', 'negative regulation of apoptotic process']"
-CHKA,['lipid metabolic process']
-SLK,"['regulation of apoptotic process', 'apoptotic process']"
-PAK2,"['regulation of MAPK cascade', 'positive regulation of protein tyrosine kinase activity', 'Fc-epsilon receptor signaling pathway', 'negative regulation of protein kinase activity', 'apoptotic process', 'positive regulation of peptidyl-tyrosine phosphorylation', 'T cell receptor signaling pathway', 'vascular endothelial growth factor receptor signaling pathway', 'negative regulation of apoptotic process']"
-DAPK1,"['apoptotic signaling pathway', 'apoptotic process', 'negative regulation of translation', 'negative regulation of extrinsic apoptotic signaling pathway via death domain receptors', 'regulation of apoptotic process', 'positive regulation of cysteine-type endopeptidase activity involved in apoptotic process', 'positive regulation of autophagy', 'cellular response to interferon-gamma']"
-RPS6KA3,"['positive regulation of transcription by RNA polymerase II', 'skeletal system development', 'negative regulation of cysteine-type endopeptidase activity involved in apoptotic process', 'apoptotic process', 'positive regulation of cell differentiation', 'negative regulation of apoptotic process']"
-IP6K2,"['negative regulation of cell growth', 'positive regulation of apoptotic process']"
-SCYL2,[]
-MATK,"['cell proliferation', 'positive regulation of cell proliferation', 'mesoderm development', 'regulation of cell proliferation']"
-EIF2AK3,"['skeletal system development', 'ossification', 'negative regulation of translation', 'protein homooligomerization', 'positive regulation of gene expression', 'angiogenesis']"
-EPHB2,"['axon guidance', 'learning or memory', 'positive regulation of gene expression', 'inner ear morphogenesis', 'nervous system development', 'negative regulation of signal transduction', 'angiogenesis', 'commissural neuron axon guidance', 'negative regulation of protein phosphorylation', 'negative regulation of apoptotic process', 'cell differentiation']"
-CSNK1G1,['endocytosis']
-STK17B,['apoptotic process']
-MAPK7,"['axon guidance', 'positive regulation of transcription by RNA polymerase II', 'MAPK cascade', 'negative regulation of calcineurin-NFAT signaling cascade', 'negative regulation of extrinsic apoptotic signaling pathway in absence of ligand', 'regulation of gene expression']"
-MAPKAPK5,['MAPK cascade']
-LRRK1,['positive regulation of peptidyl-tyrosine phosphorylation']
-RPS6KB2,['translation']
-SGK196,['learning or memory']
-LIMK1,"['nervous system development', 'negative regulation of ubiquitin-protein transferase activity', 'positive regulation of axon extension', 'Rho protein signal transduction', 'actin cytoskeleton organization']"
-MAPK4,"['MAPK cascade', 'regulation of gene expression']"
-ROR2,"['embryonic digit morphogenesis', 'cartilage condensation', 'positive regulation of transcription, DNA-templated', 'BMP signaling pathway', 'smoothened signaling pathway', 'inner ear morphogenesis', 'multicellular organism development', 'negative regulation of cell proliferation', 'negative regulation of signal transduction', 'negative regulation of apoptotic process', 'cell fate commitment', 'cell differentiation']"
-IRAK4,"['positive regulation of I-kappaB kinase/NF-kappaB signaling', 'positive regulation of NF-kappaB transcription factor activity', 'MyD88-dependent toll-like receptor signaling pathway', 'cytokine-mediated signaling pathway', 'interleukin-1-mediated signaling pathway']"
-CSK,"['positive regulation of MAP kinase activity', 'negative regulation of cell proliferation', 'negative regulation of kinase activity', 'T cell receptor signaling pathway', 'oligodendrocyte differentiation']"
-CHUK,"['positive regulation of NF-kappaB transcription factor activity', 'inflammatory response', 'immune response', 'MyD88-independent toll-like receptor signaling pathway', 'positive regulation of transcription, DNA-templated', 'Rho protein signal transduction', 'Fc-epsilon receptor signaling pathway', 'positive regulation of I-kappaB kinase/NF-kappaB signaling', 'positive regulation of transcription by RNA polymerase II', 'T cell receptor signaling pathway', 'response to drug', 'interleukin-1-mediated signaling pathway']"
-PIP5K1C,"['adherens junction assembly', 'actin cytoskeleton organization']"
-CDK16,"['regulation of insulin secretion involved in cellular response to glucose stimulus', 'neuron projection development', 'spermatogenesis', 'regulation of cell cycle']"
-EPHA1,"['activation of GTPase activity', 'positive regulation of cell proliferation', 'negative regulation of protein kinase activity', 'positive regulation of angiogenesis', 'negative regulation of signal transduction', 'angiogenesis', 'cell surface receptor signaling pathway', 'positive regulation of cell-matrix adhesion', 'negative regulation of apoptotic process', 'cell differentiation', 'negative regulation of cell migration']"
-MAP2K5,"['positive regulation of transcription by RNA polymerase II', 'negative regulation of transcription by RNA polymerase II', 'heart development', 'negative regulation of cysteine-type endopeptidase activity involved in apoptotic process', 'negative regulation of extrinsic apoptotic signaling pathway in absence of ligand']"
-CDK1,"['DNA repair', 'apoptotic process', 'protein localization to kinetochore', 'positive regulation of gene expression', 'cell proliferation', 'viral entry into host cell', 'cell migration', 'negative regulation of apoptotic process']"
-CDK12,"['positive regulation of transcription by RNA polymerase II', 'regulation of cell cycle']"
-FN3KRP,[]
-PI4K2B,[]
-CDK3,"['cell proliferation', 'cellular response to DNA damage stimulus']"
-CDC42BPA,"['cell migration', 'actin cytoskeleton reorganization']"
-EPHA10,"['negative regulation of signal transduction', 'negative regulation of apoptotic process', 'cell differentiation']"
-DCLK1,"['nervous system development', 'dendrite morphogenesis', 'forebrain development']"
-BMPR1A,"['transforming growth factor beta receptor signaling pathway', 'embryonic digit morphogenesis', 'immune response', 'in utero embryonic development', 'BMP signaling pathway', 'positive regulation of mesenchymal cell proliferation', 'Mullerian duct regression', 'odontogenesis of dentin-containing tooth', 'ectoderm development', 'positive regulation of transcription by RNA polymerase II', 'lung development']"
-NME7,[]
-TTBK2,"['cilium assembly', 'smoothened signaling pathway']"
-MAPK6,"['positive regulation of dendritic spine development', 'MAPK cascade', 'regulation of gene expression']"
-RIPK2,"['positive regulation of protein binding', 'activation of JUN kinase activity', 'positive regulation of NF-kappaB transcription factor activity', 'inflammatory response', 'apoptotic process', 'toll-like receptor 4 signaling pathway', 'positive regulation of cell death', 'positive regulation of I-kappaB kinase/NF-kappaB signaling', 'positive regulation of transcription by RNA polymerase II', 'MAPK cascade', 'positive regulation of peptidyl-tyrosine phosphorylation', 'T cell receptor signaling pathway', 'negative regulation of apoptotic process', 'positive regulation of apoptotic process', 'interleukin-1-mediated signaling pathway']"
-MAP3K4,"['MAPK cascade', 'regulation of gene expression']"
-TAOK1,"['DNA repair', 'activation of JUN kinase activity', 'cellular response to DNA damage stimulus']"
-PAN3,['protein targeting']
-CHEK2,"['positive regulation of transcription, DNA-templated', 'transcription, DNA-templated', 'regulation of transcription, DNA-templated', 'intrinsic apoptotic signaling pathway in response to DNA damage', 'cellular response to DNA damage stimulus', 'DNA damage induced protein phosphorylation', 'positive regulation of protein phosphorylation', 'protein stabilization']"
-PRAG1,"['regulation of cell shape', 'cell migration']"
-STK11,"['cell cycle arrest', 'negative regulation of cell growth', 'cellular response to DNA damage stimulus', 'positive regulation of autophagy', 'glucose homeostasis', 'TCR signalosome assembly', 'negative regulation of cell proliferation', 'canonical Wnt signaling pathway', 'positive regulation of peptidyl-tyrosine phosphorylation', 'T cell receptor signaling pathway', 'spermatogenesis', 'positive regulation of transforming growth factor beta receptor signaling pathway']"
-VRK3,[]
-TRPM7,['protein tetramerization']
-PRPF4B,['regulation of cell cycle']
-EGFR,"['positive regulation of NIK/NF-kappaB signaling', 'cerebral cortex cell migration', 'positive regulation of transcription, DNA-templated', 'response to osmotic stress', 'negative regulation of mitotic cell cycle', 'positive regulation of protein kinase B signaling', 'cell proliferation', 'positive regulation of MAP kinase activity', 'positive regulation of cell proliferation', 'positive regulation of transcription by RNA polymerase II', 'MAPK cascade', 'positive regulation of phosphorylation', 'positive regulation of protein phosphorylation', 'epidermal growth factor receptor signaling pathway', 'learning or memory', 'wound healing', 'ossification', 'translation', 'viral entry into host cell', 'salivary gland morphogenesis', 'negative regulation of signal transduction', 'lung development', 'cell surface receptor signaling pathway', 'regulation of transcription by RNA polymerase II', 'negative regulation of apoptotic process', 'cell differentiation']"
-STK38,['cellular protein modification process']
-TTN,"['muscle contraction', 'positive regulation of protein secretion', 'positive regulation of gene expression']"
-TNK1,"['regulation of cell proliferation', 'negative regulation of cell growth', 'cell differentiation']"
-HK1,['canonical glycolysis']
-PIK3C2A,"['epidermal growth factor receptor signaling pathway', 'cell migration', 'endocytosis']"
-SGK2,['regulation of cell proliferation']
-SGK3,"['negative regulation of extrinsic apoptotic signaling pathway in absence of ligand', 'regulation of cell proliferation']"
-MAP4K5,['activation of JUN kinase activity']
-BRD3,"['transcription, DNA-templated', 'regulation of transcription by RNA polymerase II']"
-JAK2,"['positive regulation of phosphatidylinositol 3-kinase signaling', 'mesoderm development', 'positive regulation of DNA-binding transcription factor activity', 'intrinsic apoptotic signaling pathway in response to oxidative stress', 'positive regulation of nitric oxide biosynthetic process', 'negative regulation of cell proliferation', 'blood coagulation', 'MAPK cascade', 'cytokine-mediated signaling pathway', 'interleukin-6-mediated signaling pathway', 'positive regulation of peptidyl-tyrosine phosphorylation', 'positive regulation of DNA binding', 'apoptotic process', 'positive regulation of cell differentiation', 'cell differentiation']"
-MAP2K4,"['activation of JUN kinase activity', 'positive regulation of neuron apoptotic process', 'apoptotic process']"
-TTK,"['mitotic spindle assembly checkpoint', 'positive regulation of cell proliferation', 'protein localization to kinetochore']"
-MAPK15,"['positive regulation of cell proliferation', 'MAPK cascade', 'cellular response to DNA damage stimulus', 'regulation of gene expression', 'negative regulation of cell migration']"
-MAP2K6,"['cell cycle arrest', 'MAPK cascade', 'apoptotic process', 'transcription, DNA-templated', 'regulation of transcription, DNA-templated', 'DNA damage induced protein phosphorylation', 'response to drug', 'positive regulation of apoptotic process']"
-CDK11A,"['apoptotic process', 'regulation of transcription, DNA-templated']"
-ERBB4,"['positive regulation of phosphatidylinositol 3-kinase signaling', 'positive regulation of transcription, DNA-templated', 'positive regulation of protein localization to cell surface', 'positive regulation of protein kinase B signaling', 'cell proliferation', 'negative regulation of cell proliferation', 'positive regulation of cell proliferation', 'nervous system development', 'MAPK cascade', 'heart development', 'negative regulation of signal transduction', 'cell migration', 'negative regulation of neuron migration', 'transcription, DNA-templated', 'negative regulation of apoptotic process', 'positive regulation of protein phosphorylation', 'positive regulation of apoptotic process', 'cell fate commitment', 'cell differentiation']"
-MAP3K21,['activation of JUN kinase activity']
-BRD4,"['positive regulation of I-kappaB kinase/NF-kappaB signaling', 'positive regulation of transcription by RNA polymerase II', 'positive regulation of transcription, DNA-templated', 'transcription, DNA-templated', 'cellular response to DNA damage stimulus']"
-PTK6,"['negative regulation of signal transduction', 'cell migration', 'cellular response to retinoic acid', 'cell differentiation']"
 EPHA3,"['cell adhesion', 'negative regulation of signal transduction', 'cell migration', 'cellular response to retinoic acid', 'negative regulation of apoptotic process', 'cell differentiation']"
-TRPM6,['protein tetramerization']
-DYRK1B,"['myoblast fusion', 'positive regulation of transcription, DNA-templated']"
-MAPK13,"['transcription, DNA-templated', 'response to osmotic stress', 'regulation of transcription, DNA-templated', 'regulation of gene expression']"
-PDK3,[]
-DMPK,['regulation of heart contraction']
-CDK13,"['multicellular organism development', 'positive regulation of cell proliferation', 'positive regulation of transcription by RNA polymerase II']"
-CHEK1,"['DNA repair', 'apoptotic process', 'negative regulation of mitotic nuclear division', 'cellular response to DNA damage stimulus', 'DNA damage induced protein phosphorylation']"
-CLK3,[]
-CDC42BPB,"['cell migration', 'actin cytoskeleton reorganization']"
-NPR1,"['negative regulation of angiogenesis', 'dopamine metabolic process', 'negative regulation of cell growth', 'cell surface receptor signaling pathway', 'regulation of blood pressure']"
-DCLK3,[]
-TYK2,['cytokine-mediated signaling pathway']
-PCK2,"['cellular response to insulin stimulus', 'pyruvate metabolic process']"
 NEK8,"['determination of left/right symmetry', 'animal organ morphogenesis', 'heart development']"
-ACVR2B,"['insulin secretion', 'mesoderm development', 'anterior/posterior pattern specification', 'transforming growth factor beta receptor signaling pathway', 'transmembrane receptor protein serine/threonine kinase signaling pathway', 'activin receptor signaling pathway', 'kidney development', 'BMP signaling pathway', 'odontogenesis of dentin-containing tooth', 'negative regulation of transcription by RNA polymerase II', 'heart development', 'lung development', 'regulation of transcription, DNA-templated', 'determination of left/right symmetry']"
-NRBP1,[]
-SIK2,[]
-NRBP2,['neuron differentiation']
-EPHA7,"['positive regulation of neuron apoptotic process', 'negative regulation of signal transduction', 'apoptotic process', 'negative regulation of apoptotic process', 'positive regulation of protein phosphorylation', 'cell differentiation']"
-PIP5K1B,[]
-PLK1,"['mitotic spindle assembly checkpoint', 'regulation of cell cycle', 'sister chromatid cohesion', 'homologous chromosome segregation', 'protein ubiquitination', 'cell proliferation', 'negative regulation of transcription by RNA polymerase II', 'negative regulation of apoptotic process']"
-PDPK1,"['epidermal growth factor receptor signaling pathway', 'positive regulation of angiogenesis', 'Fc-epsilon receptor signaling pathway', 'negative regulation of protein kinase activity', 'cellular response to insulin stimulus', 'cell migration', 'T cell receptor signaling pathway', 'transcription, DNA-templated', 'negative regulation of toll-like receptor signaling pathway', 'regulation of transcription, DNA-templated', 'actin cytoskeleton organization', 'negative regulation of transforming growth factor beta receptor signaling pathway']"
-ACVR1C,"['transforming growth factor beta receptor signaling pathway', 'activin receptor signaling pathway', 'positive regulation of cysteine-type endopeptidase activity involved in apoptotic process', 'cell differentiation']"
-STK38L,[]
-PHKG2,[]
+PIK3CD,"['axon guidance', 'inflammatory response', 'negative regulation of gene expression', 'positive regulation of gene expression', 'positive regulation of protein kinase B signaling', 'cytokine-mediated signaling pathway', 'cell migration', 'T cell receptor signaling pathway', 'natural killer cell differentiation']"
+ROR2,"['embryonic digit morphogenesis', 'cartilage condensation', 'positive regulation of transcription, DNA-templated', 'BMP signaling pathway', 'smoothened signaling pathway', 'inner ear morphogenesis', 'multicellular organism development', 'negative regulation of cell proliferation', 'negative regulation of signal transduction', 'negative regulation of apoptotic process', 'cell fate commitment', 'cell differentiation']"
+MAP3K11,"['cell proliferation', 'activation of JUN kinase activity', 'positive regulation of neuron apoptotic process', 'MAPK cascade', 'positive regulation of apoptotic process']"
+DCLK3,[]
+GALK1,[]
+FGFR3,"['skeletal system development', 'negative regulation of developmental growth', 'cell-cell signaling', 'positive regulation of protein kinase B signaling', 'positive regulation of cell proliferation', 'MAPK cascade', 'negative regulation of signal transduction', 'negative regulation of apoptotic process', 'cell differentiation']"
+TTBK2,"['cilium assembly', 'smoothened signaling pathway']"
 MAP2K2,"['MAPK cascade', 'positive regulation of transcription, DNA-templated', 'ERK1 and ERK2 cascade', 'negative regulation of gene expression']"
-CDKL3,"['negative regulation of axon extension', 'cellular protein modification process', 'regulation of cell cycle']"
-MAPKAPK2,"['MAPK cascade', 'inflammatory response', 'cellular response to DNA damage stimulus', 'vascular endothelial growth factor receptor signaling pathway']"
-EPHB1,"['axon guidance', 'neurogenesis', 'cell-substrate adhesion', 'immunological synapse formation', 'negative regulation of signal transduction', 'angiogenesis', 'negative regulation of apoptotic process', 'cell differentiation']"
-IRAK1,"['transmembrane receptor protein serine/threonine kinase signaling pathway', 'positive regulation of NF-kappaB transcription factor activity', 'MyD88-dependent toll-like receptor signaling pathway', 'positive regulation of transcription, DNA-templated', 'toll-like receptor 4 signaling pathway', 'protein complex oligomerization', 'positive regulation of MAP kinase activity', 'positive regulation of I-kappaB kinase/NF-kappaB signaling', 'cytokine-mediated signaling pathway', 'negative regulation of apoptotic process', 'interleukin-1-mediated signaling pathway']"
-CDK7,"['cell cycle arrest', 'cell proliferation', 'transcription by RNA polymerase II', 'positive regulation of transcription by RNA polymerase II', 'regulation of cyclin-dependent protein serine/threonine kinase activity', 'positive regulation of transcription, DNA-templated', 'protein stabilization']"
-AKT2,"['activation of GTPase activity', 'positive regulation of cell proliferation', 'cellular protein modification process', 'fat cell differentiation', 'cellular response to insulin stimulus', 'negative regulation of apoptotic process', 'positive regulation of protein phosphorylation']"
-PIP4K2B,['cell surface receptor signaling pathway']
-GRK5,"['positive regulation of cell proliferation', 'fat cell differentiation', 'negative regulation of apoptotic process', 'apoptotic process', 'Wnt signaling pathway', 'regulation of cell cycle']"
-RIPK3,"['cellular protein modification process', 'apoptotic signaling pathway', 'positive regulation of NF-kappaB transcription factor activity', 'protein homooligomerization']"
-LTK,"['cell proliferation', 'negative regulation of signal transduction', 'cellular response to retinoic acid', 'negative regulation of apoptotic process', 'cell differentiation']"
-FLT4,"['positive regulation of cell proliferation', 'sprouting angiogenesis', 'negative regulation of signal transduction', 'vascular endothelial growth factor receptor signaling pathway', 'negative regulation of apoptotic process', 'positive regulation of protein phosphorylation', 'cell differentiation', 'positive regulation of endothelial cell proliferation']"
-FGFR4,"['positive regulation of cell proliferation', 'MAPK cascade', 'negative regulation of signal transduction', 'angiogenesis', 'cell migration', 'positive regulation of gene expression', 'negative regulation of apoptotic process', 'glucose homeostasis', 'cell differentiation', 'regulation of lipid metabolic process', 'positive regulation of protein kinase B signaling']"
+ACVR1,"['transforming growth factor beta receptor signaling pathway', 'activin receptor signaling pathway', 'in utero embryonic development', 'positive regulation of transcription, DNA-templated', 'BMP signaling pathway', 'negative regulation of activin receptor signaling pathway', 'positive regulation of transcription by RNA polymerase II', 'heart development', 'negative regulation of signal transduction', 'branching involved in blood vessel morphogenesis', 'determination of left/right symmetry', 'negative regulation of extrinsic apoptotic signaling pathway', 'regulation of ossification']"
+HUNK,['multicellular organism development']
 TSSK3,"['multicellular organism development', 'spermatogenesis', 'cell differentiation']"
-SRPK2,"['positive regulation of cell proliferation', 'positive regulation of neuron apoptotic process', 'angiogenesis', 'negative regulation of viral genome replication', 'positive regulation of gene expression', 'cell differentiation', 'regulation of gene expression']"
-TESK1,"['spermatogenesis', 'actin cytoskeleton organization']"
-TYRO3,"['viral entry into host cell', 'cell adhesion', 'negative regulation of signal transduction', 'Wnt signaling pathway', 'negative regulation of toll-like receptor signaling pathway', 'spermatogenesis', 'natural killer cell differentiation', 'negative regulation of apoptotic process', 'cell differentiation']"
-AMHR2,"['male gonad development', 'transforming growth factor beta receptor signaling pathway', 'Mullerian duct regression', 'anti-Mullerian hormone signaling pathway', 'negative regulation of anti-Mullerian hormone signaling pathway', 'sex differentiation', 'BMP signaling pathway']"
-PLK3,"['negative regulation of transcription by RNA polymerase II', 'apoptotic process', 'response to osmotic stress', 'cellular response to DNA damage stimulus', 'negative regulation of apoptotic process']"
+CHKB,[]
+STK31,[]
+ABL2,"['cellular protein modification process', 'cell adhesion', 'regulation of cell proliferation', 'cellular response to retinoic acid', 'cell differentiation', 'regulation of actin cytoskeleton reorganization']"
+PRKCB,"['positive regulation of I-kappaB kinase/NF-kappaB signaling', 'positive regulation of NF-kappaB transcription factor activity', 'positive regulation of angiogenesis', 'lipoprotein transport', 'apoptotic process', 'transcription, DNA-templated', 'negative regulation of insulin receptor signaling pathway', 'regulation of transcription by RNA polymerase II']"
+PCK2,"['cellular response to insulin stimulus', 'pyruvate metabolic process']"
+PPIP5K1,[]
+FGR,"['regulation of cell shape', 'positive regulation of phosphatidylinositol 3-kinase signaling', 'cell differentiation']"
+FGFR1,"['positive regulation of phosphatidylinositol 3-kinase signaling', 'sensory perception of sound', 'midbrain development', 'skeletal system development', 'in utero embryonic development', 'positive regulation of mesenchymal cell proliferation', 'inner ear morphogenesis', 'positive regulation of protein kinase B signaling', 'positive regulation of MAP kinase activity', 'positive regulation of cell proliferation', 'negative regulation of transcription by RNA polymerase II', 'MAPK cascade', 'embryonic limb morphogenesis', 'negative regulation of signal transduction', 'angiogenesis', 'cell migration', 'transcription, DNA-templated', 'cell maturation', 'ureteric bud development', 'negative regulation of apoptotic process', 'cell differentiation']"
+CDC42BPA,"['cell migration', 'actin cytoskeleton reorganization']"
+FASTKD5,[]
+RPS6KA2,"['negative regulation of cell proliferation', 'positive regulation of apoptotic process']"
+MAP3K2,"['activation of JUN kinase activity', 'positive regulation of transcription, DNA-templated']"
+STK17B,['apoptotic process']
+DYRK2,"['smoothened signaling pathway', 'cellular response to DNA damage stimulus', 'negative regulation of calcineurin-NFAT signaling cascade']"
+PDPK1,"['epidermal growth factor receptor signaling pathway', 'positive regulation of angiogenesis', 'Fc-epsilon receptor signaling pathway', 'negative regulation of protein kinase activity', 'cellular response to insulin stimulus', 'cell migration', 'T cell receptor signaling pathway', 'transcription, DNA-templated', 'negative regulation of toll-like receptor signaling pathway', 'regulation of transcription, DNA-templated', 'actin cytoskeleton organization', 'negative regulation of transforming growth factor beta receptor signaling pathway']"
+MAPK14,"['transmembrane receptor protein serine/threonine kinase signaling pathway', 'cartilage condensation', 'apoptotic process', 'cell morphogenesis', 'vascular endothelial growth factor receptor signaling pathway', 'positive regulation of gene expression', 'regulation of gene expression', 'positive regulation of myoblast differentiation', 'positive regulation of transcription by RNA polymerase II', 'chemotaxis', 'angiogenesis', 'positive regulation of myotube differentiation', 'myoblast differentiation involved in skeletal muscle regeneration', 'positive regulation of muscle cell differentiation', 'transcription, DNA-templated', 'cell surface receptor signaling pathway', 'regulation of transcription by RNA polymerase II', 'skeletal muscle tissue development', 'regulation of ossification']"
+ACVR1B,"['transforming growth factor beta receptor signaling pathway', 'transmembrane receptor protein serine/threonine kinase signaling pathway', 'positive regulation of transcription by RNA polymerase II', 'activin receptor signaling pathway', 'in utero embryonic development', 'negative regulation of cell growth', 'regulation of transcription, DNA-templated', 'negative regulation of gene expression']"
+GRK2,"['viral entry into host cell', 'heart development', 'viral genome replication']"
+JAK1,"['MAPK cascade', 'cytokine-mediated signaling pathway', 'interleukin-6-mediated signaling pathway']"
+MAP3K13,"['activation of JUN kinase activity', 'positive regulation of NF-kappaB transcription factor activity', 'MAPK cascade']"
+PIK3C3,"['protein lipidation', 'endocytosis', 'protein processing']"
+RPS6KB1,"['apoptotic process', 'negative regulation of insulin receptor signaling pathway', 'cellular response to insulin stimulus', 'response to heat', 'cell migration', 'negative regulation of apoptotic process', 'negative regulation of extrinsic apoptotic signaling pathway', 'cellular response to interferon-gamma']"
+CDK11B,"['cell proliferation', 'regulation of transcription, DNA-templated', 'apoptotic process']"
+ADCK2,[]
+ROS1,"['cell proliferation', 'negative regulation of signal transduction', 'spermatogenesis', 'negative regulation of gene expression', 'negative regulation of apoptotic process', 'cell differentiation']"
+EPHA7,"['positive regulation of neuron apoptotic process', 'negative regulation of signal transduction', 'apoptotic process', 'negative regulation of apoptotic process', 'positive regulation of protein phosphorylation', 'cell differentiation']"
+PIP5K1A,"['activation of GTPase activity', 'cell migration', 'actin cytoskeleton reorganization']"
+BUB1,"['cell proliferation', 'mitotic spindle assembly checkpoint', 'apoptotic process']"
+COQ8B,[]
+TEX14,"['mitotic spindle assembly checkpoint', 'negative regulation of protein binding', 'attachment of spindle microtubules to kinetochore', 'mitotic sister chromatid separation']"
+MYLK,['muscle contraction']
+BRSK1,"['neuron differentiation', 'cellular response to DNA damage stimulus', 'neurotransmitter secretion', 'centrosome duplication']"
+EPHA6,"['negative regulation of signal transduction', 'negative regulation of apoptotic process', 'cell differentiation']"
+MAPK9,"['Fc-epsilon receptor signaling pathway', 'positive regulation of gene expression', 'positive regulation of apoptotic process', 'regulation of gene expression', 'positive regulation of apoptotic signaling pathway']"
+OBSCN,"['multicellular organism development', 'positive regulation of apoptotic process']"
+AKT1,"['positive regulation of DNA-binding transcription factor activity', 'inflammatory response', 'positive regulation of transcription, DNA-templated', 'excitatory postsynaptic potential', 'positive regulation of protein localization to cell surface', 'positive regulation of organ growth', 'cellular response to DNA damage stimulus', 'cellular response to granulocyte macrophage colony-stimulating factor stimulus', 'negative regulation of protein kinase B signaling', 'cell proliferation', 'positive regulation of nitric oxide biosynthetic process', 'positive regulation of cell proliferation', 'positive regulation of transcription by RNA polymerase II', 'response to heat', 'cytokine-mediated signaling pathway', 'osteoblast differentiation', 'negative regulation of extrinsic apoptotic signaling pathway in absence of ligand', 'positive regulation of protein phosphorylation', 'positive regulation of endothelial cell proliferation', 'epidermal growth factor receptor signaling pathway', 'positive regulation of fat cell differentiation', 'negative regulation of protein binding', 'negative regulation of cysteine-type endopeptidase activity involved in apoptotic process', 'regulation of apoptotic process', 'translation', 'negative regulation of gene expression', 'positive regulation of gene expression', 'glucose homeostasis', 'nitric oxide biosynthetic process', 'protein ubiquitination', 'cellular protein modification process', 'negative regulation of protein kinase activity', 'cellular response to insulin stimulus', 'apoptotic mitochondrial changes', 'negative regulation of JNK cascade', 'negative regulation of apoptotic process', 'positive regulation of apoptotic process', 'cell differentiation']"
+EPHB4,"['cell adhesion', 'negative regulation of signal transduction', 'angiogenesis', 'negative regulation of apoptotic process', 'cell differentiation']"
+TBK1,"['positive regulation of I-kappaB kinase/NF-kappaB signaling', 'positive regulation of transcription by RNA polymerase II', 'inflammatory response', 'defense response to virus', 'positive regulation of macroautophagy', 'negative regulation of gene expression']"
+PIK3CB,"['axon guidance', 'positive regulation of autophagy', 'vascular endothelial growth factor receptor signaling pathway', 'positive regulation of gene expression', 'positive regulation of protein kinase B signaling', 'Fc-epsilon receptor signaling pathway', 'homophilic cell adhesion via plasma membrane adhesion molecules', 'chemotaxis', 'cytokine-mediated signaling pathway', 'cell migration', 'T cell receptor signaling pathway', 'angiogenesis involved in wound healing']"
+GSK3B,"['positive regulation of protein binding', 'dopamine receptor signaling pathway', 'negative regulation of protein binding', 'negative regulation of calcineurin-NFAT signaling cascade', 'Wnt signaling pathway', 'excitatory postsynaptic potential', 'positive regulation of protein export from nucleus', 'positive regulation of cell-matrix adhesion', 'positive regulation of gene expression', 'negative regulation of protein complex assembly', 'canonical Wnt signaling pathway', 'neuron projection development', 'negative regulation of apoptotic process']"
+PHKG2,[]
+PAK1,"['branching morphogenesis of an epithelial tube', 'wound healing', 'response to hypoxia', 'apoptotic process', 'positive regulation of axon extension', 'regulation of MAPK cascade', 'positive regulation of cell proliferation', 'Fc-epsilon receptor signaling pathway', 'cellular response to insulin stimulus', 'actin cytoskeleton reorganization', 'T cell receptor signaling pathway', 'positive regulation of protein phosphorylation']"
+PRKCI,"['positive regulation of NF-kappaB transcription factor activity', 'cellular response to insulin stimulus', 'cell migration', 'negative regulation of apoptotic process']"
+JAK3,"['MAPK cascade', 'cytokine-mediated signaling pathway', 'positive regulation of T cell proliferation']"
+RIPK4,['positive regulation of NF-kappaB transcription factor activity']
+BRD3,"['transcription, DNA-templated', 'regulation of transcription by RNA polymerase II']"
+MAP3K10,"['smoothened signaling pathway', 'activation of JUN kinase activity', 'negative regulation of DNA-binding transcription factor activity', 'MAPK cascade', 'negative regulation of transcription, DNA-templated', 'apoptotic process', 'positive regulation of apoptotic process']"
+PRKAA1,"['cell cycle arrest', 'response to hypoxia', 'energy homeostasis', 'Wnt signaling pathway', 'positive regulation of autophagy', 'negative regulation of gene expression', 'positive regulation of gene expression', 'glucose homeostasis', 'positive regulation of cell proliferation', 'transcription, DNA-templated', 'negative regulation of apoptotic process']"
+DCLK1,"['nervous system development', 'dendrite morphogenesis', 'forebrain development']"
+ALK,"['cell proliferation', 'positive regulation of NF-kappaB transcription factor activity', 'negative regulation of signal transduction', 'regulation of apoptotic process', 'regulation of cell proliferation', 'negative regulation of apoptotic process', 'cell differentiation']"
+MOS,['MAPK cascade']
+MAK,"['multicellular organism development', 'cilium assembly', 'transcription, DNA-templated', 'spermatogenesis', 'regulation of transcription, DNA-templated', 'cell differentiation', 'regulation of gene expression']"
+RAF1,"['wound healing', 'response to hypoxia', 'negative regulation of cysteine-type endopeptidase activity involved in apoptotic process', 'apoptotic process', 'negative regulation of extrinsic apoptotic signaling pathway via death domain receptors', 'regulation of apoptotic process', 'cell proliferation', 'negative regulation of cell proliferation', 'positive regulation of transcription by RNA polymerase II', 'MAPK cascade', 'heart development', 'negative regulation of protein complex assembly', 'negative regulation of apoptotic process', 'cell differentiation']"
+ROCK2,"['negative regulation of angiogenesis', 'Rho protein signal transduction', 'vascular endothelial growth factor receptor signaling pathway', 'centrosome duplication', 'positive regulation of gene expression', 'positive regulation of protein phosphorylation']"
+KDR,"['positive regulation of phosphatidylinositol 3-kinase signaling', 'positive regulation of angiogenesis', 'positive regulation of macroautophagy', 'negative regulation of gene expression', 'vascular endothelial growth factor receptor signaling pathway', 'regulation of cell shape', 'positive regulation of cell proliferation', 'negative regulation of signal transduction', 'angiogenesis', 'ERK1 and ERK2 cascade', 'negative regulation of apoptotic process', 'positive regulation of protein phosphorylation', 'extracellular matrix organization', 'cell differentiation', 'positive regulation of endothelial cell proliferation']"
+CDK11A,"['apoptotic process', 'regulation of transcription, DNA-templated']"
+ROCK1,"['negative regulation of angiogenesis', 'negative regulation of amyloid-beta formation', 'negative regulation of protein binding', 'apoptotic process', 'regulation of amyloid-beta formation', 'Rho protein signal transduction', 'positive regulation of autophagy', 'vascular endothelial growth factor receptor signaling pathway', 'positive regulation of gene expression', 'neuron projection development', 'actin cytoskeleton organization']"
+CDK9,"['DNA repair', 'transcription by RNA polymerase II', 'cell proliferation', 'positive regulation of transcription by RNA polymerase II', 'response to drug']"
+NUAK2,"['negative regulation of apoptotic process', 'apoptotic process', 'actin cytoskeleton organization']"
+NRBP2,['neuron differentiation']
+CLK1,['cell proliferation']
+LMTK2,"['negative regulation of signal transduction', 'negative regulation of apoptotic process', 'cell differentiation']"
+SCYL2,[]
+CDK1,"['DNA repair', 'apoptotic process', 'protein localization to kinetochore', 'positive regulation of gene expression', 'cell proliferation', 'viral entry into host cell', 'cell migration', 'negative regulation of apoptotic process']"
+NME1,"['negative regulation of cell proliferation', 'nervous system development', 'positive regulation of DNA binding', 'nucleobase-containing small molecule interconversion', 'regulation of apoptotic process', 'endocytosis', 'cell differentiation']"
+DYRK3,"['negative regulation of DNA damage response, signal transduction by p53 class mediator', 'negative regulation of apoptotic process']"
+LRRK1,['positive regulation of peptidyl-tyrosine phosphorylation']
+SCYL1,"['transcription, DNA-templated', 'regulation of transcription, DNA-templated']"
+IRAK1,"['transmembrane receptor protein serine/threonine kinase signaling pathway', 'positive regulation of NF-kappaB transcription factor activity', 'MyD88-dependent toll-like receptor signaling pathway', 'positive regulation of transcription, DNA-templated', 'toll-like receptor 4 signaling pathway', 'protein complex oligomerization', 'positive regulation of MAP kinase activity', 'positive regulation of I-kappaB kinase/NF-kappaB signaling', 'cytokine-mediated signaling pathway', 'negative regulation of apoptotic process', 'interleukin-1-mediated signaling pathway']"
+AXL,"['inflammatory response', 'Wnt signaling pathway', 'vascular endothelial growth factor receptor signaling pathway', 'positive regulation of protein kinase B signaling', 'viral entry into host cell', 'negative regulation of signal transduction', 'spermatogenesis', 'cell maturation', 'natural killer cell differentiation', 'negative regulation of apoptotic process', 'cell differentiation']"
+CHUK,"['positive regulation of NF-kappaB transcription factor activity', 'inflammatory response', 'immune response', 'MyD88-independent toll-like receptor signaling pathway', 'positive regulation of transcription, DNA-templated', 'Rho protein signal transduction', 'Fc-epsilon receptor signaling pathway', 'positive regulation of I-kappaB kinase/NF-kappaB signaling', 'positive regulation of transcription by RNA polymerase II', 'T cell receptor signaling pathway', 'response to drug', 'interleukin-1-mediated signaling pathway']"
+CHEK1,"['DNA repair', 'apoptotic process', 'negative regulation of mitotic nuclear division', 'cellular response to DNA damage stimulus', 'DNA damage induced protein phosphorylation']"
+CASK,"['cell adhesion', 'neurotransmitter secretion']"
+CDK7,"['cell cycle arrest', 'cell proliferation', 'transcription by RNA polymerase II', 'positive regulation of transcription by RNA polymerase II', 'regulation of cyclin-dependent protein serine/threonine kinase activity', 'positive regulation of transcription, DNA-templated', 'protein stabilization']"
+PIM2,"['cell proliferation', 'positive regulation of macroautophagy', 'negative regulation of cell proliferation', 'positive regulation of I-kappaB kinase/NF-kappaB signaling', 'negative regulation of protein binding', 'positive regulation of autophagy', 'apoptotic mitochondrial changes', 'positive regulation of transcription, DNA-templated', 'negative regulation of apoptotic process', 'protein stabilization']"
+TRIB2,['negative regulation of protein kinase activity']
+TRIM28,"['DNA repair', 'protein sumoylation', 'positive regulation of DNA binding', 'negative regulation of transcription by RNA polymerase II', 'negative regulation of transcription, DNA-templated', 'positive regulation of transcription, DNA-templated', 'protein complex oligomerization', 'protein ubiquitination']"
+WNK4,"['protein localization', 'chloride transport']"
+PIM1,"['cell proliferation', 'multicellular organism development', 'cytokine-mediated signaling pathway', 'apoptotic process', 'negative regulation of DNA-binding transcription factor activity', 'negative regulation of apoptotic process']"
+IGF1R,"['positive regulation of cell proliferation', 'immune response', 'negative regulation of signal transduction', 'protein tetramerization', 'negative regulation of apoptotic process', 'glucose homeostasis', 'cell differentiation']"
+MAP3K9,"['transcription, DNA-templated', 'regulation of transcription, DNA-templated', 'activation of JUN kinase activity', 'MAPK cascade', 'apoptotic process', 'positive regulation of apoptotic process']"
+NRK,"['negative regulation of cell proliferation', 'MAPK cascade', 'actin cytoskeleton reorganization']"
+ATR,"['DNA repair', 'multicellular organism development', 'cellular response to DNA damage stimulus', 'response to drug']"
+CAMK2A,"['positive regulation of NF-kappaB transcription factor activity', 'dendrite morphogenesis', 'MAPK cascade', 'calcium ion transport']"
+GRK7,[]
+PIP4K2B,['cell surface receptor signaling pathway']
+STK38,['cellular protein modification process']
+TGFBR2,"['transforming growth factor beta receptor signaling pathway', 'positive regulation of angiogenesis', 'wound healing', 'response to hypoxia', 'in utero embryonic development', 'apoptotic process', 'smoothened signaling pathway', 'positive regulation of mesenchymal cell proliferation', 'regulation of gene expression', 'positive regulation of NK T cell differentiation', 'positive regulation of CD4-positive, alpha-beta T cell proliferation', 'positive regulation of cell proliferation', 'heart development', 'branching involved in blood vessel morphogenesis', 'regulation of cell proliferation', 'response to drug', 'negative regulation of transforming growth factor beta receptor signaling pathway']"
+AURKA,"['negative regulation of protein binding', 'anterior/posterior axis specification', 'regulation of protein stability', 'negative regulation of apoptotic process']"
+MAP4K2,"['activation of JUN kinase activity', 'immune response']"
+BMP2K,[]
+KHK,[]
+PTK7,"['cell adhesion', 'wound healing', 'cell migration', 'actin cytoskeleton reorganization', 'cellular response to retinoic acid']"
 BCKDK,[]
+PLK3,"['negative regulation of transcription by RNA polymerase II', 'apoptotic process', 'response to osmotic stress', 'cellular response to DNA damage stimulus', 'negative regulation of apoptotic process']"
+ADK,[]
+MASTL,"['cellular response to DNA damage stimulus', 'regulation of cell cycle']"
+CDK8,['positive regulation of transcription by RNA polymerase II']
+CDK5,"['negative regulation of transcription, DNA-templated', 'neuron apoptotic process', 'excitatory postsynaptic potential', 'chemical synaptic transmission', 'receptor clustering', 'cell proliferation', 'motor neuron axon guidance', 'positive regulation of neuron apoptotic process', 'dendrite morphogenesis', 'oligodendrocyte differentiation', 'neuron projection development', 'mitochondrion organization', 'negative regulation of axon extension', 'skeletal muscle tissue development', 'positive regulation of protein binding', 'visual learning', 'intracellular protein transport', 'neuron differentiation', 'regulation of apoptotic process', 'cell-matrix adhesion']"
+MAST2,[]
+CKMT2,['muscle contraction']
+PDK1,"['cell proliferation', 'intrinsic apoptotic signaling pathway in response to oxidative stress']"
+MAST3,[]
+NEK3,[]
+PDGFRA,"['positive regulation of phosphatidylinositol 3-kinase signaling', 'wound healing', 'regulation of actin cytoskeleton reorganization', 'positive regulation of protein kinase B signaling', 'positive regulation of cell proliferation', 'MAPK cascade', 'negative regulation of signal transduction', 'negative regulation of apoptotic process', 'cell differentiation']"
+STK25,"['MAPK cascade', 'response to hydrogen peroxide']"
+PRKCQ,"['Fc-epsilon receptor signaling pathway', 'axon guidance', 'positive regulation of NF-kappaB transcription factor activity', 'inflammatory response', 'T cell receptor signaling pathway', 'regulation of transcription, DNA-templated', 'positive regulation of T cell proliferation', 'negative regulation of insulin receptor signaling pathway']"
+PRKD2,"['positive regulation of DNA-binding transcription factor activity', 'positive regulation of NF-kappaB transcription factor activity', 'positive regulation of angiogenesis', 'sphingolipid biosynthetic process', 'vascular endothelial growth factor receptor signaling pathway', 'cell adhesion', 'positive regulation of transcription by RNA polymerase II', 'angiogenesis', 'T cell receptor signaling pathway', 'positive regulation of endothelial cell proliferation']"
+LATS1,['positive regulation of apoptotic process']
+STYK1,['regulation of cell proliferation']
+CSNK1G1,['endocytosis']
+EIF2AK4,"['cell cycle arrest', 'negative regulation of translational initiation', 'negative regulation of neuron differentiation', 'defense response to virus', 'negative regulation by host of viral genome replication', 'positive regulation of defense response to virus by host']"
+STK26,"['MAPK cascade', 'apoptotic process', 'regulation of apoptotic process', 'response to hydrogen peroxide', 'negative regulation of cell migration']"
+MAP3K3,"['positive regulation of I-kappaB kinase/NF-kappaB signaling', 'MAPK cascade', 'interleukin-1-mediated signaling pathway']"
+NTRK3,"['positive regulation of phosphatidylinositol 3-kinase signaling', 'positive regulation of gene expression', 'activation of GTPase activity', 'positive regulation of cell proliferation', 'heart development', 'negative regulation of signal transduction', 'cellular response to retinoic acid', 'negative regulation of protein phosphorylation', 'negative regulation of apoptotic process', 'positive regulation of protein phosphorylation', 'positive regulation of apoptotic process', 'cell differentiation']"
+IRAK2,"['positive regulation of NF-kappaB transcription factor activity', 'inflammatory response', 'MyD88-dependent toll-like receptor signaling pathway', 'cytokine-mediated signaling pathway', 'interleukin-1-mediated signaling pathway']"
+ERBB2,"['neuromuscular junction development', 'wound healing', 'positive regulation of protein kinase B signaling', 'cell proliferation', 'positive regulation of MAP kinase activity', 'motor neuron axon guidance', 'myelination', 'MAPK cascade', 'heart development', 'negative regulation of signal transduction', 'oligodendrocyte differentiation', 'transcription, DNA-templated', 'cell surface receptor signaling pathway', 'regulation of transcription by RNA polymerase II', 'negative regulation of apoptotic process', 'positive regulation of protein phosphorylation', 'cell differentiation']"
+KSR2,[]
+CDKL4,['regulation of cell cycle']
+CDC42BPG,['actin cytoskeleton reorganization']
+MELK,"['cell proliferation', 'intrinsic apoptotic signaling pathway in response to oxidative stress', 'apoptotic process', 'positive regulation of apoptotic process']"
+PFKM,"['positive regulation of transcription by RNA polymerase II', 'canonical glycolysis', 'glucose homeostasis', 'protein complex oligomerization']"
+GUCY2C,['regulation of cell proliferation']
+AMHR2,"['male gonad development', 'transforming growth factor beta receptor signaling pathway', 'Mullerian duct regression', 'anti-Mullerian hormone signaling pathway', 'negative regulation of anti-Mullerian hormone signaling pathway', 'sex differentiation', 'BMP signaling pathway']"
+PKN2,"['cell adhesion', 'apoptotic process', 'epithelial cell migration', 'transcription, DNA-templated', 'regulation of transcription, DNA-templated']"
+EEF2K,"['cellular response to insulin stimulus', 'negative regulation of apoptotic process']"
+AKT3,['positive regulation of endothelial cell proliferation']
+RIPK1,"['activation of JUN kinase activity', 'positive regulation of NF-kappaB transcription factor activity', 'MyD88-independent toll-like receptor signaling pathway', 'apoptotic process', 'negative regulation of extrinsic apoptotic signaling pathway via death domain receptors', 'protein homooligomerization', 'T cell apoptotic process', 'toll-like receptor 3 signaling pathway', 'positive regulation of I-kappaB kinase/NF-kappaB signaling', 'apoptotic signaling pathway', 'negative regulation of I-kappaB kinase/NF-kappaB signaling', 'positive regulation of transcription by RNA polymerase II', 'MAPK cascade', 'negative regulation of extrinsic apoptotic signaling pathway in absence of ligand', 'positive regulation of protein phosphorylation', 'positive regulation of apoptotic process', 'negative regulation of extrinsic apoptotic signaling pathway']"
+TLK1,"['intracellular protein transport', 'cellular response to DNA damage stimulus']"
+PAK6,"['regulation of MAPK cascade', 'regulation of transcription, DNA-templated', 'apoptotic process']"
+PRKG1,"['forebrain development', 'actin cytoskeleton organization']"
+PKN1,"['activation of JUN kinase activity', 'negative regulation of protein kinase activity', 'negative regulation of B cell proliferation', 'epithelial cell migration', 'transcription, DNA-templated', 'regulation of transcription by RNA polymerase II']"
+TAOK1,"['DNA repair', 'activation of JUN kinase activity', 'cellular response to DNA damage stimulus']"
+CDC42BPB,"['cell migration', 'actin cytoskeleton reorganization']"
+TESK2,"['spermatogenesis', 'actin cytoskeleton organization']"
+BUB1B,"['cell proliferation', 'mitotic spindle assembly checkpoint', 'apoptotic process', 'protein localization to kinetochore', 'metaphase/anaphase transition of mitotic cell cycle']"
+EPHA2,"['negative regulation of angiogenesis', 'inflammatory response', 'skeletal system development', 'regulation of lamellipodium assembly', 'neuron differentiation', 'intrinsic apoptotic signaling pathway in response to DNA damage', 'negative regulation of protein kinase B signaling', 'viral entry into host cell', 'activation of GTPase activity', 'multicellular organism development', 'cell adhesion', 'negative regulation of signal transduction', 'osteoblast differentiation', 'cell migration', 'negative regulation of apoptotic process', 'cell differentiation']"
+CIT,['neuron apoptotic process']
+DYRK1B,"['myoblast fusion', 'positive regulation of transcription, DNA-templated']"
+SBK1,[]
+ATM,"['cell cycle arrest', 'mitotic spindle assembly checkpoint', 'response to hypoxia', 'apoptotic process', 'regulation of apoptotic process', 'intrinsic apoptotic signaling pathway in response to DNA damage', 'cellular response to DNA damage stimulus', 'DNA damage induced protein phosphorylation', 'positive regulation of neuron apoptotic process', 'negative regulation of B cell proliferation', 'positive regulation of apoptotic process']"
+PAK2,"['regulation of MAPK cascade', 'positive regulation of protein tyrosine kinase activity', 'Fc-epsilon receptor signaling pathway', 'negative regulation of protein kinase activity', 'apoptotic process', 'positive regulation of peptidyl-tyrosine phosphorylation', 'T cell receptor signaling pathway', 'vascular endothelial growth factor receptor signaling pathway', 'negative regulation of apoptotic process']"
+EPHA10,"['negative regulation of signal transduction', 'negative regulation of apoptotic process', 'cell differentiation']"
+FER,"['positive regulation of NF-kappaB transcription factor activity', 'regulation of lamellipodium assembly', 'cell proliferation', 'positive regulation of cell proliferation', 'Fc-epsilon receptor signaling pathway', 'cell adhesion', 'cellular response to insulin stimulus', 'chemotaxis', 'cytokine-mediated signaling pathway', 'interleukin-6-mediated signaling pathway', 'actin cytoskeleton reorganization', 'regulation of cell proliferation']"
+ERBB4,"['positive regulation of phosphatidylinositol 3-kinase signaling', 'positive regulation of transcription, DNA-templated', 'positive regulation of protein localization to cell surface', 'positive regulation of protein kinase B signaling', 'cell proliferation', 'negative regulation of cell proliferation', 'positive regulation of cell proliferation', 'nervous system development', 'MAPK cascade', 'heart development', 'negative regulation of signal transduction', 'cell migration', 'negative regulation of neuron migration', 'transcription, DNA-templated', 'negative regulation of apoptotic process', 'positive regulation of protein phosphorylation', 'positive regulation of apoptotic process', 'cell fate commitment', 'cell differentiation']"
+PPIP5K2,[]
+TRPM7,['protein tetramerization']
+SRPK3,"['skeletal muscle tissue development', 'cell differentiation', 'regulation of gene expression']"
+OXSR1,[]
+LTK,"['cell proliferation', 'negative regulation of signal transduction', 'cellular response to retinoic acid', 'negative regulation of apoptotic process', 'cell differentiation']"
+NPR1,"['negative regulation of angiogenesis', 'dopamine metabolic process', 'negative regulation of cell growth', 'cell surface receptor signaling pathway', 'regulation of blood pressure']"
+PGK1,"['negative regulation of angiogenesis', 'myoblast fusion', 'chemical synaptic transmission', 'canonical glycolysis']"
+EPHA1,"['activation of GTPase activity', 'positive regulation of cell proliferation', 'negative regulation of protein kinase activity', 'positive regulation of angiogenesis', 'negative regulation of signal transduction', 'angiogenesis', 'cell surface receptor signaling pathway', 'positive regulation of cell-matrix adhesion', 'negative regulation of apoptotic process', 'cell differentiation', 'negative regulation of cell migration']"
+TP53RK,[]
+TRIB1,"['negative regulation of DNA-binding transcription factor activity', 'negative regulation of protein kinase activity', 'negative regulation of lipopolysaccharide-mediated signaling pathway']"
+BRD2,"['transcription, DNA-templated', 'spermatogenesis', 'regulation of transcription by RNA polymerase II']"
+PIK3C2A,"['epidermal growth factor receptor signaling pathway', 'cell migration', 'endocytosis']"
+MAPK4,"['MAPK cascade', 'regulation of gene expression']"
+MERTK,"['retina development in camera-type eye', 'negative regulation of signal transduction', 'Wnt signaling pathway', 'spermatogenesis', 'cell-cell signaling', 'cell surface receptor signaling pathway', 'natural killer cell differentiation', 'negative regulation of apoptotic process', 'cell differentiation']"
+PHKG1,[]
+MAP3K5,"['activation of JUN kinase activity', 'apoptotic signaling pathway', 'positive regulation of myoblast differentiation', 'MAPK cascade', 'wound healing', 'positive regulation of transcription, DNA-templated', 'intrinsic apoptotic signaling pathway in response to oxidative stress', 'positive regulation of cysteine-type endopeptidase activity involved in apoptotic process', 'positive regulation of apoptotic process']"
+SGK3,"['negative regulation of extrinsic apoptotic signaling pathway in absence of ligand', 'regulation of cell proliferation']"
+CSNK1E,"['DNA repair', 'negative regulation of protein binding', 'canonical Wnt signaling pathway', 'endocytosis']"
+STK39,"['negative regulation of potassium ion transmembrane transport', 'regulation of blood pressure', 'negative regulation of protein phosphorylation']"
+RPS6KA1,"['positive regulation of cell differentiation', 'positive regulation of transcription by RNA polymerase II', 'negative regulation of apoptotic process', 'negative regulation of cysteine-type endopeptidase activity involved in apoptotic process', 'apoptotic process']"
+RET,"['retina development in camera-type eye', 'axon guidance', 'positive regulation of transcription, DNA-templated', 'embryonic epithelial tube formation', 'positive regulation of protein kinase B signaling', 'homophilic cell adhesion via plasma membrane adhesion molecules', 'response to pain', 'MAPK cascade', 'negative regulation of signal transduction', 'positive regulation of extrinsic apoptotic signaling pathway in absence of ligand', 'ureteric bud development', 'cellular response to retinoic acid', 'response to drug', 'negative regulation of apoptotic process', 'cell differentiation']"
+BRSK2,"['regulation of insulin secretion involved in cellular response to glucose stimulus', 'actin cytoskeleton reorganization', 'neuron differentiation']"
+CAMK4,"['inflammatory response', 'positive regulation of transcription, DNA-templated']"
+SGK1,"['sodium ion transport', 'apoptotic process', 'regulation of apoptotic process', 'cellular response to DNA damage stimulus', 'regulation of blood pressure', 'regulation of cell proliferation']"
+IRAK4,"['positive regulation of I-kappaB kinase/NF-kappaB signaling', 'positive regulation of NF-kappaB transcription factor activity', 'MyD88-dependent toll-like receptor signaling pathway', 'cytokine-mediated signaling pathway', 'interleukin-1-mediated signaling pathway']"
+TTK,"['mitotic spindle assembly checkpoint', 'positive regulation of cell proliferation', 'protein localization to kinetochore']"
+STRADB,"['cell cycle arrest', 'negative regulation of extrinsic apoptotic signaling pathway in absence of ligand', 'cell morphogenesis', 'MAPK cascade']"
+MKNK1,[]
+RPS6KA5,"['epidermal growth factor receptor signaling pathway', 'axon guidance', 'positive regulation of transcription by RNA polymerase II', 'positive regulation of NF-kappaB transcription factor activity', 'inflammatory response', 'negative regulation of transcription, DNA-templated', 'regulation of transcription, DNA-templated', 'interleukin-1-mediated signaling pathway']"
+STK11,"['cell cycle arrest', 'negative regulation of cell growth', 'cellular response to DNA damage stimulus', 'positive regulation of autophagy', 'glucose homeostasis', 'TCR signalosome assembly', 'negative regulation of cell proliferation', 'canonical Wnt signaling pathway', 'positive regulation of peptidyl-tyrosine phosphorylation', 'T cell receptor signaling pathway', 'spermatogenesis', 'positive regulation of transforming growth factor beta receptor signaling pathway']"
+CSNK1G2,"['endocytosis', 'sphingolipid biosynthetic process']"
+CDK14,"['Wnt signaling pathway', 'regulation of cell cycle']"
+SGK196,['learning or memory']
 TNK2,"['positive regulation of peptidyl-tyrosine phosphorylation', 'small GTPase mediated signal transduction', 'cell surface receptor signaling pathway', 'endocytosis', 'regulation of cell proliferation', 'cell differentiation']"
+ILK,"['cell cycle arrest', 'positive regulation of NIK/NF-kappaB signaling', 'positive regulation of transcription, DNA-templated', 'positive regulation of axon extension', 'positive regulation of cell-matrix adhesion', 'positive regulation of protein kinase B signaling', 'cell proliferation', 'positive regulation of MAP kinase activity', 'positive regulation of cell proliferation', 'positive regulation of myoblast differentiation', 'negative regulation of protein kinase activity', 'MAPK cascade', 'cell-matrix adhesion', 'positive regulation of phosphorylation', 'positive regulation of protein phosphorylation']"
+CHEK2,"['positive regulation of transcription, DNA-templated', 'transcription, DNA-templated', 'regulation of transcription, DNA-templated', 'intrinsic apoptotic signaling pathway in response to DNA damage', 'cellular response to DNA damage stimulus', 'DNA damage induced protein phosphorylation', 'positive regulation of protein phosphorylation', 'protein stabilization']"
+ERBB3,"['positive regulation of phosphatidylinositol 3-kinase signaling', 'positive regulation of protein tyrosine kinase activity', 'wound healing', 'positive regulation of calcineurin-NFAT signaling cascade', 'neuron apoptotic process', 'Schwann cell differentiation', 'positive regulation of gene expression', 'positive regulation of protein kinase B signaling', 'MAPK cascade', 'heart development', 'negative regulation of signal transduction', 'regulation of cell proliferation', 'negative regulation of apoptotic process', 'cell differentiation']"
+SIK2,[]
+NUAK1,"['cell adhesion', 'cellular response to DNA damage stimulus', 'regulation of cell proliferation']"
+PLK1,"['mitotic spindle assembly checkpoint', 'regulation of cell cycle', 'sister chromatid cohesion', 'homologous chromosome segregation', 'protein ubiquitination', 'cell proliferation', 'negative regulation of transcription by RNA polymerase II', 'negative regulation of apoptotic process']"
+MUSK,"['multicellular organism development', 'neuromuscular junction development', 'negative regulation of signal transduction', 'positive regulation of gene expression', 'negative regulation of apoptotic process', 'positive regulation of protein phosphorylation', 'cell differentiation']"
+CLK2,['response to retinoic acid']
+SRPK2,"['positive regulation of cell proliferation', 'positive regulation of neuron apoptotic process', 'angiogenesis', 'negative regulation of viral genome replication', 'positive regulation of gene expression', 'cell differentiation', 'regulation of gene expression']"
+RPS6KB2,['translation']
+PI4K2B,[]
+HIPK2,"['positive regulation of protein binding', 'transforming growth factor beta receptor signaling pathway', 'anterior/posterior pattern specification', 'positive regulation of DNA binding', 'positive regulation of DNA-binding transcription factor activity', 'positive regulation of angiogenesis', 'positive regulation of transcription, DNA-templated', 'regulation of cell cycle', 'neuron differentiation', 'smoothened signaling pathway', 'PML body organization', 'positive regulation of cell proliferation', 'intrinsic apoptotic signaling pathway', 'positive regulation of transcription by RNA polymerase II', 'negative regulation of transcription by RNA polymerase II', 'transcription, DNA-templated', 'negative regulation of BMP signaling pathway', 'positive regulation of transforming growth factor beta receptor signaling pathway']"
+RIPK2,"['positive regulation of protein binding', 'activation of JUN kinase activity', 'positive regulation of NF-kappaB transcription factor activity', 'inflammatory response', 'apoptotic process', 'toll-like receptor 4 signaling pathway', 'positive regulation of cell death', 'positive regulation of I-kappaB kinase/NF-kappaB signaling', 'positive regulation of transcription by RNA polymerase II', 'MAPK cascade', 'positive regulation of peptidyl-tyrosine phosphorylation', 'T cell receptor signaling pathway', 'negative regulation of apoptotic process', 'positive regulation of apoptotic process', 'interleukin-1-mediated signaling pathway']"
+FLT1,"['positive regulation of MAP kinase activity', 'positive regulation of phosphatidylinositol 3-kinase signaling', 'positive regulation of cell proliferation', 'positive regulation of angiogenesis', 'negative regulation of signal transduction', 'angiogenesis', 'cell migration', 'vascular endothelial growth factor receptor signaling pathway', 'negative regulation of apoptotic process', 'cell differentiation']"
+DCK,[]
+SRMS,"['negative regulation of signal transduction', 'cell differentiation']"
+PAK4,"['cell proliferation', 'regulation of MAPK cascade', 'positive regulation of angiogenesis', 'apoptotic process', 'cell migration']"
+MAST1,[]
+AATK,[]
+LCK,"['cellular zinc ion homeostasis', 'positive regulation of protein kinase B signaling', 'T cell receptor signaling pathway', 'response to drug', 'cell differentiation']"
+PAK3,"['regulation of MAPK cascade', 'positive regulation of neuron apoptotic process', 'MAPK cascade', 'T cell receptor signaling pathway']"
+PRKCD,"['negative regulation of protein binding', 'apoptotic process', 'intrinsic apoptotic signaling pathway in response to oxidative stress', 'defense response to bacterium', 'negative regulation of insulin receptor signaling pathway', 'negative regulation of actin filament polymerization', 'protein stabilization', 'positive regulation of apoptotic signaling pathway']"
+SMG1,[]
+YES1,"['cellular protein modification process', 'positive regulation of transcription by RNA polymerase II', 'positive regulation of peptidyl-tyrosine phosphorylation', 'cellular response to retinoic acid', 'cell differentiation']"
+MAPK3,"['axon guidance', 'BMP signaling pathway', 'apoptotic process', 'DNA damage induced protein phosphorylation', 'positive regulation of gene expression', 'regulation of gene expression', 'Fc-epsilon receptor signaling pathway', 'positive regulation of transcription by RNA polymerase II', 'MAPK cascade', 'ERK1 and ERK2 cascade', 'positive regulation of protein phosphorylation', 'interleukin-1-mediated signaling pathway', 'regulation of ossification']"
+NEK6,"['positive regulation of I-kappaB kinase/NF-kappaB signaling', 'chromosome segregation', 'apoptotic process']"
+PIP4K2A,[]
+ADCK1,[]
+ULK2,[]
+BRAF,"['animal organ morphogenesis', 'MAPK cascade', 'positive regulation of gene expression', 'negative regulation of apoptotic process']"
+LYN,"['cellular response to DNA damage stimulus', 'negative regulation of cell proliferation', 'positive regulation of cell proliferation', 'Fc-epsilon receptor signaling pathway', 'blood coagulation', 'negative regulation of B cell proliferation', 'neuron projection development', 'regulation of release of sequestered calcium ion into cytosol', 'cellular response to retinoic acid', 'negative regulation of protein phosphorylation', 'positive regulation of protein phosphorylation', 'negative regulation of toll-like receptor 4 signaling pathway', 'positive regulation of stress-activated protein kinase signaling cascade', 'response to drug', 'cell differentiation']"
+PRKACB,['blood coagulation']
+EIF2AK2,"['negative regulation of cell proliferation', 'positive regulation of NIK/NF-kappaB signaling', 'positive regulation of NF-kappaB transcription factor activity', 'defense response to virus', 'negative regulation of translation', 'negative regulation of viral genome replication', 'transcription, DNA-templated', 'translation', 'negative regulation of apoptotic process']"
+WEE2,[]
+GAK,[]
+PDIK1L,[]
+MAP3K12,"['activation of JUN kinase activity', 'MAPK cascade']"
+GRK3,[]
+IP6K1,[]
+TSSK1B,"['multicellular organism development', 'spermatid development']"
+EGFR,"['positive regulation of NIK/NF-kappaB signaling', 'cerebral cortex cell migration', 'positive regulation of transcription, DNA-templated', 'response to osmotic stress', 'negative regulation of mitotic cell cycle', 'positive regulation of protein kinase B signaling', 'cell proliferation', 'positive regulation of MAP kinase activity', 'positive regulation of cell proliferation', 'positive regulation of transcription by RNA polymerase II', 'MAPK cascade', 'positive regulation of phosphorylation', 'positive regulation of protein phosphorylation', 'epidermal growth factor receptor signaling pathway', 'learning or memory', 'wound healing', 'ossification', 'translation', 'viral entry into host cell', 'salivary gland morphogenesis', 'negative regulation of signal transduction', 'lung development', 'cell surface receptor signaling pathway', 'regulation of transcription by RNA polymerase II', 'negative regulation of apoptotic process', 'cell differentiation']"
+VRK2,['regulation of MAPK cascade']
+WNK1,[]
+PIP5K1C,"['adherens junction assembly', 'actin cytoskeleton organization']"
+MARK2,['Wnt signaling pathway']
+TRIO,['positive regulation of apoptotic process']
+PRAG1,"['regulation of cell shape', 'cell migration']"
+PRKDC,"['intrinsic apoptotic signaling pathway in response to DNA damage', 'cellular response to DNA damage stimulus', 'protein ubiquitination', 'cell proliferation', 'cellular protein modification process', 'positive regulation of transcription by RNA polymerase II', 'cellular response to insulin stimulus', 'heart development', 'negative regulation of protein phosphorylation', 'negative regulation of apoptotic process', 'positive regulation of apoptotic process']"
+IKBKB,"['Fc-epsilon receptor signaling pathway', 'positive regulation of I-kappaB kinase/NF-kappaB signaling', 'positive regulation of transcription by RNA polymerase II', 'positive regulation of NF-kappaB transcription factor activity', 'inflammatory response', 'MyD88-independent toll-like receptor signaling pathway', 'positive regulation of transcription, DNA-templated', 'T cell receptor signaling pathway', 'negative regulation of apoptotic process', 'interleukin-1-mediated signaling pathway']"
+TEC,"['Fc-epsilon receptor signaling pathway', 'cytokine-mediated signaling pathway', 'positive regulation of peptidyl-tyrosine phosphorylation', 'T cell receptor signaling pathway']"
+PRKY,[]
+MAP4K1,"['cell proliferation', 'activation of JUN kinase activity']"
+MST1R,"['positive regulation of MAP kinase activity', 'positive regulation of cell proliferation', 'negative regulation of signal transduction', 'Wnt signaling pathway', 'defense response', 'negative regulation of apoptotic process', 'cell differentiation', 'positive regulation of protein kinase B signaling']"
+PGK2,"['myoblast fusion', 'chemical synaptic transmission', 'flagellated sperm motility']"
+EPHB6,"['negative regulation of signal transduction', 'negative regulation of apoptotic process', 'cell differentiation']"
+CDK4,"['regulation of gene expression', 'positive regulation of cell proliferation', 'cellular response to insulin stimulus', 'response to drug', 'positive regulation of apoptotic process']"
+TSSK2,"['multicellular organism development', 'spermatid development']"
+PRPF4B,['regulation of cell cycle']
+PRKG2,[]
+MAPKAPK5,['MAPK cascade']
+STK24,"['MAPK cascade', 'intrinsic apoptotic signaling pathway in response to oxidative stress', 'response to hydrogen peroxide', 'negative regulation of cell migration']"
+AURKC,"['spermatogenesis', 'attachment of spindle microtubules to kinetochore']"
+STK16,"['transcription by RNA polymerase II', 'positive regulation of transcription by RNA polymerase II']"
+PIK3R4,[]
+MAPK10,"['Fc-epsilon receptor signaling pathway', 'regulation of gene expression']"
+PDXK,['cell proliferation']
+BMPR2,"['anterior/posterior pattern specification', 'transforming growth factor beta receptor signaling pathway', 'transcription by RNA polymerase II', 'transmembrane receptor protein serine/threonine kinase signaling pathway', 'activin receptor signaling pathway', 'negative regulation of cell growth', 'BMP signaling pathway', 'positive regulation of ossification', 'positive regulation of transcription by RNA polymerase II', 'regulation of cell proliferation', 'positive regulation of endothelial cell proliferation']"
