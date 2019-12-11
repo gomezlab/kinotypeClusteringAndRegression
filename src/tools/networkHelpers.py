@@ -2,8 +2,8 @@ import pandas as pd
 import numpy as np
 from copy import copy
 
-def fetch_hgnc_mapper(path_to_hgnc='../data/ref/hgnc_alias_list.txt',
-                     path_to_kmast='../data/ref/KINASESmasterlist_w_Aliases.xlsx'):
+def fetch_hgnc_mapper(path_to_hgnc='../data/miscReference/hgnc_alias_list.txt',
+                     path_to_kmast='../data/miscReference/KINASESmasterlist_w_Aliases.xlsx'):
     hgnc = pd.read_csv(path_to_hgnc, sep='\t')
 
     hgnc = hgnc[hgnc['Approved symbol'].apply(lambda x: 'withdrawn' not in x)]
