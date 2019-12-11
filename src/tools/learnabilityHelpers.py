@@ -230,14 +230,14 @@ def get_cnb_coeffs_for_cluster(cnb, cluster_num):
     
     return np.vstack([probas[idx_locs_positive,:], -probas[idx_locs_negative,:]])
 
-def generate_kinase_labels(path_to_synonyms='../data/goData/go_synonym_data.txt',
-                           path_to_kinase_network='../data/kin/kin_anscombe_weighted.csv', 
-                           path_to_alias_spreadsheet='../data/ref/KINASESmasterlist_w_Aliases.xlsx', 
-                           path_to_stopwords='../data/goData/stopwords.csv', 
-                           path_to_process_list='../data/goData/go_biological_processes.txt',
+def generate_kinase_labels(path_to_synonyms='../data/GeneOntology/go_synonym_data.txt',
+                           path_to_kinase_network='../data/interactionNetworks/kin_anscombe_weighted.csv', 
+                           path_to_alias_spreadsheet='../data/miscReference/KINASESmasterlist_w_Aliases.xlsx', 
+                           path_to_stopwords='../data/GeneOntology/stopwords.csv', 
+                           path_to_process_list='../data/GeneOntology/go_biological_processes.txt',
                            use_go_subset=False,
-                           path_to_go_subset='../data/goData/go_subset.csv',
-                           out_path = '../data/goData/kinase_go_processes.csv'):
+                           path_to_go_subset='../data/GeneOntology/go_subset.csv',
+                           out_path = '../data/GeneOntology/kinase_go_processes.csv'):
     '''
     Generates a labeled csv file of {Kinase: [Annotations]} using the inputs provided.
     '''
@@ -397,6 +397,6 @@ def get_go_data_dict(go_file='../data/goData/kinase_go_processes.csv', go_dir='.
 
     # create a dictionary with our datasets
     go_data_dict = {'go':bin_go_annotations,'freq':freq_go_annotations,'tfidf':tfidf_go_annotations}
-    transform_dict = {'freq':freq_go_lab_binner}
+    transform_dict = {'go':go_lab_binner, 'freq':freq_go_lab_binner}
     
     return go_data_dict, transform_dict
