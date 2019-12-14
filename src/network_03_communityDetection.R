@@ -210,7 +210,8 @@ for (network_config in c("weighted", "unweighted")){
   write.table(info_clusts, paste(dir_path, results_dir, info_file, sep=""),quote=FALSE,sep="\t",row.names=FALSE)
   
   ### edge.betweenness.community
-  eb <- edge.betweenness.community(mainG)
+  # edge betweenness treats weights as distance, but membership corrects for this
+  eb <- edge.betweenness.community(mainG, weights = W, membership=TRUE) 
   eb_clusts <- data.frame(names=eb$names, cluster=eb$membership)
   write.table(eb_clusts, paste(dir_path, results_dir, eb_file, sep=""),quote=FALSE,sep="\t",row.names=FALSE)
   
@@ -220,19 +221,24 @@ for (network_config in c("weighted", "unweighted")){
   mod <- data.frame(row.names = "modularity")
   mod$fast_greedy <- modularity(mainG,fg_clusts$cluster,weights=W)
   
-  # modularity function doesn't accept the '0' cluster name, so we shift all
-  # membership values up by one to get the modularity
-  mod$spinglass <- modularity(mainG,sc_clusts$cluster+1,weights=W)
-  
+  # modularity function doesn't accept the '0' cluster name, so we check if we
+  # need to shift membership values up by one to get the modularity
+  if (min(sc_clusts$cluster) == 0){
+    sc_clusts$cluster = sc_clusts$cluster + 1
+  }
+  mod$spinglass <- modularity(mainG,sc_clusts$cluster,weights=W)
   mod$eigen <- modularity(mainG,lev_clusts$cluster,weights=W)
   mod$walktrap <- modularity(mainG,wt_clusts$cluster,weights=W)
   mod$label <- modularity(mainG,lp_clusts$cluster,weights=W)
   mod$louvain <- modularity(mainG,louv_clusts$cluster,weights=W)
   mod$small_louvain <- modularity(mainG,louv_small_clusts$cluster,weights=W)
+  if (min(info_clusts$cluster) == 0){
+    info_clusts$cluster = info_clusts$cluster + 1
+  }
   mod$infomap <- modularity(mainG,info_clusts$cluster,weights=W)
   mod$edge_between <- modularity(mainG,eb_clusts$cluster,weights=W)
   
   ### write modularity data out to a file
   
-  write.table(mod,paste(dir_path, results_dir, mod_file,),quote=FALSE,sep="\t",row.names = FALSE)
+  write.table(mod,paste(dir_path, results_dir, mod_file, sep=""),quote=FALSE,sep="\t",row.names = FALSE)
 }
