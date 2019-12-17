@@ -112,10 +112,10 @@ para_wt <- function(g, numnodes, numiter = 1000, cores=max(detectCores()-1,1), s
   return(votes)
 }
 
-single_info <- function(numiter, g, numnodes){
+single_info <- function(numiter, g, numnodes, e.weights=NULL){
   local_votes <- mat.or.vec(numnodes, numnodes)
   for (k in 1:numiter){
-    info <- igraph::cluster_infomap(g)
+    info <- igraph::cluster_infomap(g, e.weights=e.weights)
     for (i in 1:numnodes){
       local_votes[i,] = local_votes[i,] + (info$membership == info$membership[i])
     }
@@ -123,7 +123,7 @@ single_info <- function(numiter, g, numnodes){
   return(local_votes)
 }
 
-para_info <- function(g, numnodes, numiter = 1000, cores=max(detectCores()-1,1)){
+para_info <- function(g, numnodes, e.weights=NULL, numiter = 1000, cores=max(detectCores()-1,1)){
   # create a list of results and a list of parameters for the spinglasses
   numiter_params = c(rep(numiter %/% cores, cores))
 
@@ -135,7 +135,7 @@ para_info <- function(g, numnodes, numiter = 1000, cores=max(detectCores()-1,1))
   print(numiter_params)
 
   # start up a cluster
-  votes <- Reduce('+', parallel::mclapply(X = numiter_params, FUN = single_info, g=mainG, numnodes=numnodes, mc.cores = cores))
+  votes <- Reduce('+', parallel::mclapply(X = numiter_params, FUN = single_info, g=mainG, e.weights=e.weights, numnodes=numnodes, mc.cores = cores))
 
   return(votes)
 }

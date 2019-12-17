@@ -60,13 +60,14 @@ for (network_config in c("weighted", "unweighted")){
   }
   else {
     mainG <- read.graph(paste(dir_path, graph_file, sep=""),format="ncol",names=TRUE,weights="yes",directed=FALSE)
+    E(mainG)$weight <- 1
     W = E(mainG)$weight
     results_dir = "results/unweightedNetworkClusters/"
   }
 
   
   ### fastgreedy
-  fc <- fastgreedy.community(mainG)
+  fc <- fastgreedy.community(mainG, weights=W)
   fg_clusts <- data.frame(names=fc$names, cluster=fc$membership)
   write.table(fg_clusts, paste(dir_path, results_dir, fastgreedy_file, sep=""),quote=FALSE,sep="\t",row.names=FALSE)
 
@@ -177,7 +178,7 @@ for (network_config in c("weighted", "unweighted")){
   write.table(wt_clusts, paste(dir_path, results_dir, wt_file, sep=""),quote=FALSE,sep="\t",row.names=FALSE)
   
   ### cluster_louvain
-  louv <- cluster_louvain(mainG)
+  louv <- cluster_louvain(mainG, weights = W)
   louv_clusts <- data.frame(names=louv$names, cluster=louv$memberships[2,])
   louv_small_clusts <- data.frame(names=louv$names, cluster=louv$memberships[1,])
   write.table(louv_clusts,  paste(dir_path, results_dir, louv_file, sep=""),quote=FALSE,sep="\t",row.names=FALSE)
