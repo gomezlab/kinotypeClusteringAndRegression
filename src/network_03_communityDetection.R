@@ -13,7 +13,7 @@ library("igraph")
 ### Important Stuff ### 
 dir_path = "/Users/isrobson/Github/kinotypeClusteringAndRegression/"
 helper_file = "src/tools/communityHelpers.R"
-graph_file = "data/interactionNetworks/kin_anscombe_weighted.csv"
+graph_dir = "data/interactionNetworks/"
 
 # clustering results filenames
 fastgreedy_file = "fastgreedy_clusters.txt"
@@ -47,57 +47,66 @@ numiter <- 1000
 # cluster_infomap (random walks) -- run 1000x
 # edge.betweenness.community  -- this will take a long time
 
-for (network_config in c("weighted", "unweighted")){
+for (network_config in c("anscombe_weighted", "unweighted", "both_weighted", "coals_weighted", "raw_weighted")){
+  
+  results_dir = "results/networkClusters/"
   
   # read in the graph and set results path
-  if (network_config == "weighted"){
-    mainG <- read.graph(paste(dir_path, graph_file, sep=""),format="ncol",names=TRUE,weights="yes",directed=FALSE)
-    V(mainG)$comp <- components(mainG)$membership
-    mainG <- induced_subgraph(mainG,V(mainG)$comp==1)
-    
-    W = E(mainG)$weight
-    results_dir = "results/networkClusters/"
+  if (network_config == "unweighted"){
+    mainG <- read.graph(paste(dir_path, graph_dir, "kin_", network_config, ".csv", sep=""),format="ncol",names=TRUE,directed=FALSE)
+    W = NULL
   }
   else {
-    mainG <- read.graph(paste(dir_path, graph_file, sep=""),format="ncol",names=TRUE,weights="yes",directed=FALSE)
-    E(mainG)$weight <- 1
+    mainG <- read.graph(paste(dir_path, graph_dir, "kin_", network_config, ".csv", sep=""),format="ncol",names=TRUE,weights="yes",directed=FALSE)
+    
+    V(mainG)$comp <- components(mainG)$membership
+    mainG <- induced_subgraph(mainG,V(mainG)$comp==1)
     W = E(mainG)$weight
-    results_dir = "results/unweightedNetworkClusters/"
   }
 
+  # reconfigure results dir for subdir
+  results_dir = paste(results_dir, network_config, "/", sep="")
   
   ### fastgreedy
   fc <- fastgreedy.community(mainG, weights=W)
   fg_clusts <- data.frame(names=fc$names, cluster=fc$membership)
   write.table(fg_clusts, paste(dir_path, results_dir, fastgreedy_file, sep=""),quote=FALSE,sep="\t",row.names=FALSE)
 
-  ### spinglass.community
-  sc <- spinglass.community(mainG, spins=100)
-  
-  # create a votes matrix to store individual cluster tallies
-  numnodes <- length(sc$names)
-  votes <- mat.or.vec(numnodes,numnodes)
-  dim(votes)
-  
-  print(Sys.time())
-  votes <- para_spinglass(g=mainG, numnodes = numnodes, numiter = numiter)
-  print(Sys.time())
-  
-  thresh <- 0.9*numiter
-  visited <- mat.or.vec(numnodes,1)
-  groups <- mat.or.vec(numnodes,1)
-  k <- 1
-  for (i in 1:numnodes){
-  	x <- which(votes[i,] > thresh)
-  	if (visited[x[1]] == 0){
-  		visited[x] <- 1
-  		groups[x] <- k
-  		k <- k + 1
-  	}
+  # spinglass doesn't work well without asymmetric weights
+  if (network_config != "unweighted"){
+    ### spinglass.community
+    sc <- spinglass.community(mainG, spins=100)
+    
+    # create a votes matrix to store individual cluster tallies
+    numnodes <- length(sc$names)
+    votes <- mat.or.vec(numnodes,numnodes)
+    dim(votes)
+    
+    print(Sys.time())
+    votes <- para_spinglass(g=mainG, numnodes = numnodes, numiter = numiter)
+    print(Sys.time())
+    
+    thresh <- 0.9*numiter
+    visited <- mat.or.vec(numnodes,1)
+    groups <- mat.or.vec(numnodes,1)
+    k <- 1
+    for (i in 1:numnodes){
+    	x <- which(votes[i,] > thresh)
+    	if (visited[x[1]] == 0){
+    		visited[x] <- 1
+    		groups[x] <- k
+    		k <- k + 1
+    	}
+    }
+    
+    sc_clusts <- data.frame(names=sc$names, cluster=groups)
+    
+    if (min(sc_clusts$cluster) == 0){
+      sc_clusts$cluster = sc_clusts$cluster + 1
+    }
+    
+    write.table(sc_clusts, paste(dir_path, results_dir, spinglass_file, sep=""),quote=FALSE,sep="\t",row.names=FALSE)
   }
-  
-  sc_clusts <- data.frame(names=sc$names, cluster=groups)
-  write.table(sc_clusts, paste(dir_path, results_dir, spinglass_file, sep=""),quote=FALSE,sep="\t",row.names=FALSE)
   
   ### leading.eigenvector.community
   lev <- leading.eigenvector.community(mainG)
@@ -212,10 +221,14 @@ for (network_config in c("weighted", "unweighted")){
   
   ### edge.betweenness.community
   # edge betweenness treats weights as distance, but membership corrects for this
-  eb <- edge.betweenness.community(mainG, weights = W, membership=TRUE) 
-  eb_clusts <- data.frame(names=eb$names, cluster=eb$membership)
-  write.table(eb_clusts, paste(dir_path, results_dir, eb_file, sep=""),quote=FALSE,sep="\t",row.names=FALSE)
-  
+  # note - EB fails for zero weights -- skip if a zero present
+  if (!is.null(W)){
+    if (min(W) > 0){
+      eb <- edge.betweenness.community(mainG, weights = W, membership=TRUE) 
+      eb_clusts <- data.frame(names=eb$names, cluster=eb$membership)
+      write.table(eb_clusts, paste(dir_path, results_dir, eb_file, sep=""),quote=FALSE,sep="\t",row.names=FALSE)
+    }
+  }
   ###
   
   #### collect modularity data
@@ -224,12 +237,14 @@ for (network_config in c("weighted", "unweighted")){
   
   # modularity function doesn't accept the '0' cluster name, so we check if we
   # need to shift membership values up by one to get the modularity
-  if (min(sc_clusts$cluster) == 0){
-    sc_clusts$cluster = sc_clusts$cluster + 1
+  if (network_config != "unweighted"){
+    mod$spinglass <- modularity(mainG,sc_clusts$cluster,weights=W)
   }
-  mod$spinglass <- modularity(mainG,sc_clusts$cluster,weights=W)
   mod$eigen <- modularity(mainG,lev_clusts$cluster,weights=W)
   mod$walktrap <- modularity(mainG,wt_clusts$cluster,weights=W)
+  if (min(lp_clusts$cluster) == 0){
+    lp_clusts$cluster = lp_clusts$cluster + 1
+  }
   mod$label <- modularity(mainG,lp_clusts$cluster,weights=W)
   mod$louvain <- modularity(mainG,louv_clusts$cluster,weights=W)
   mod$small_louvain <- modularity(mainG,louv_small_clusts$cluster,weights=W)
@@ -237,7 +252,13 @@ for (network_config in c("weighted", "unweighted")){
     info_clusts$cluster = info_clusts$cluster + 1
   }
   mod$infomap <- modularity(mainG,info_clusts$cluster,weights=W)
-  mod$edge_between <- modularity(mainG,eb_clusts$cluster,weights=W)
+  
+  if (network_config != "unweighted"){
+    if (min(W) > 0){
+      mod$edge_between <- modularity(mainG,eb_clusts$cluster,weights=W)
+    }
+  }
+  
   
   ### write modularity data out to a file
   
